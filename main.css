@@ -1,0 +1,96 @@
+body {
+  width: 100%;
+  margin: 0 auto; }
+
+.container-fluid {
+  position: relative;
+  width: 100%;
+  padding: 0px; }
+  .container-fluid .imageContainer {
+    height: auto;
+    max-height: 700px;
+    overflow: hidden; }
+    .container-fluid .imageContainer img {
+      width: 100%; }
+  .container-fluid .overlay {
+    position: absolute;
+    top: 0%;
+    left: 0;
+    right: 0;
+    background-color: transparent;
+    overflow: hidden;
+    width: 100%;
+    height: 0px;
+    transition: .5s ease; }
+    .container-fluid .overlay .text {
+      white-space: nowrap;
+      color: white;
+      font-size: 20px;
+      position: absolute;
+      overflow: hidden;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%); }
+      .container-fluid .overlay .text ul {
+        text-align: center;
+        padding: 0px; }
+        .container-fluid .overlay .text ul li {
+          list-style: none;
+          display: inline-block;
+          margin: 0 10px; }
+
+.mainSection {
+  text-align: center; }
+  .mainSection p {
+    margin-top: 20px; }
+  .mainSection ul {
+    width: 50%;
+    margin: 0 auto;
+    text-align: left; }
+
+.selection {
+  width: 90%;
+  margin: 0 auto 50px auto; }
+  .selection h1 {
+    text-align: center;
+    margin-bottom: 40px; }
+  .selection #mainProducts {
+    width: 100%;
+    margin: 0 auto; }
+  .selection .Item {
+    width: 19%;
+    display: inline-block;
+    position: relative;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    overflow: hidden;
+    border: 1px solid black; }
+    .selection .Item img {
+      width: 100%;
+      opacity: 1;
+      display: block;
+      height: auto;
+      transition: .5s ease;
+      backface-visibility: hidden; }
+    .selection .Item .middle {
+      transition: .5s ease;
+      opacity: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      text-align: center; }
+
+.Item:hover img {
+  opacity: 0.3; }
+
+.Item:hover .middle {
+  opacity: 1; }
+
+.container-fluid:hover .overlay {
+  bottom: 0;
+  height: 150px; }
+
+/*# sourceMappingURL=main.css.map */
