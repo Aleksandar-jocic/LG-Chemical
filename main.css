@@ -8,37 +8,51 @@ body {
   padding: 0px; }
   .container-fluid .imageContainer {
     height: auto;
-    max-height: 700px;
+    max-height: 900px;
     overflow: hidden; }
     .container-fluid .imageContainer img {
       width: 100%; }
-  .container-fluid .overlay {
+
+.overlay {
+  position: absolute;
+  top: 0%;
+  left: 0;
+  right: 0;
+  background-color: transparent;
+  overflow: hidden;
+  width: 100%;
+  height: 0px;
+  transition: 1.5s ease; }
+
+.overlay-active {
+  bottom: 0;
+  height: 150px;
+  transition: 1s ease; }
+  .overlay-active #text {
+    white-space: nowrap;
+    color: white;
+    font-size: 20px;
     position: absolute;
-    top: 0%;
-    left: 0;
-    right: 0;
-    background-color: transparent;
     overflow: hidden;
-    width: 100%;
-    height: 0px;
-    transition: .5s ease; }
-    .container-fluid .overlay .text {
-      white-space: nowrap;
-      color: white;
-      font-size: 20px;
-      position: absolute;
-      overflow: hidden;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%); }
-      .container-fluid .overlay .text ul {
-        text-align: center;
-        padding: 0px; }
-        .container-fluid .overlay .text ul li {
-          list-style: none;
-          display: inline-block;
-          margin: 0 10px; }
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%); }
+    .overlay-active #text ul {
+      text-align: center;
+      padding: 0px; }
+      .overlay-active #text ul li {
+        list-style: none;
+        display: inline-block;
+        margin: 0 10px; }
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: gray;
+  height: 100px;
+  z-index: 10000; }
 
 .mainSection {
   text-align: center; }
@@ -59,15 +73,15 @@ body {
     width: 100%;
     margin: 0 auto; }
   .selection .Item {
-    width: 19%;
+    width: 15%;
     display: inline-block;
     position: relative;
     margin: 0 auto;
     margin-bottom: 30px;
-    overflow: hidden;
-    border: 1px solid black; }
+    overflow: hidden; }
     .selection .Item img {
       width: 100%;
+      border-radius: 8px;
       opacity: 1;
       display: block;
       height: auto;
@@ -82,15 +96,17 @@ body {
       transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
       text-align: center; }
+  .selection .additionalProducts {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto; }
+    .selection .additionalProducts .Item {
+      margin: 0 auto; }
 
 .Item:hover img {
   opacity: 0.3; }
 
 .Item:hover .middle {
   opacity: 1; }
-
-.container-fluid:hover .overlay {
-  bottom: 0;
-  height: 150px; }
 
 /*# sourceMappingURL=main.css.map */
