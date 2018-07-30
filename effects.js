@@ -1,12 +1,6 @@
 var navbar = $('.overlay');
 var myVar;
-
-var handler = function() {
-    navbar.addClass('overlay-active')
-    console.log('handleworks');
-    clearTimeout()
-}
-
+var handler;
 
 $(document).ready(function () {
 
@@ -14,19 +8,24 @@ $(document).ready(function () {
 
 })
 
-window.onscroll = function() {myFunction()};
+window.onscroll = function() {fixNavbar()};
 
+handler = function() {
+    navbar.addClass('overlay-active')
+    console.log('handle works');
+    clearTimeout()
+}
 
-function myFunction() {
+function fixNavbar() {
+    
     if (window.pageYOffset > 0) {
-      navbar.addClass("sticky")
-    console.log('hello');
+
+      navbar.addClass("sticky");
       
     } else {
+
       navbar.removeClass("sticky");
-    console.log('bollocks');
-      
-    }
-    
+
+    }    
 }
 

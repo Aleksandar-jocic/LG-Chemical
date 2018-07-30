@@ -4,6 +4,7 @@ body {
     width: 100%;
     margin: 0 auto;
 }
+
 .container-fluid {
     position: relative;
     width: 100%;
@@ -16,11 +17,9 @@ body {
             width: 100%;
         }
     }
-    
 }
 
 //                  HEADER                    //
-
 .overlay {
     position: absolute;
     top: 0%;
@@ -31,21 +30,22 @@ body {
     width: 100%;
     height: 0px;
     transition: 1.5s ease;
-
 }
+
 .overlay-active {
     bottom: 0;
     height: 150px;
     transition: 1s ease;
     #text {
-        ul {
+        a {
             text-align: center;
             padding: 0px;
-            li {
-                list-style: none;
-                display: inline-block;
-                margin: 0 10px;
-            }
+            list-style: none;
+            display: inline-block;
+            margin: 0 14px;
+            font-size: 0.9em;
+            text-decoration: none;
+            color: white;
         }
         white-space: nowrap;
         color: white;
@@ -57,19 +57,18 @@ body {
         transform: translate(-50%, -50%);
         -ms-transform: translate(-50%, -50%);
     }
-    
 }
+
 .sticky {
-    position: fixed ;
+    position: fixed;
     top: 0;
     width: 100%;
-    background-color: gray ;
-    // opacity: 0.8;
+    background-color: gray; // opacity: 0.8;
     height: 100px;
     z-index: 10000;
 }
-//                  MAIN                    //
 
+//                  MAIN                    //
 .mainSection {
     text-align: center;
     p {
@@ -83,7 +82,6 @@ body {
 }
 
 //                  PRODUCTS                    //
-
 .selection {
     width: 90%;
     margin: 0 auto 50px auto;
@@ -94,21 +92,17 @@ body {
     #mainProducts {
         width: 100%;
         margin: 0 auto;
-
     }
     .Item {
         width: 15%;
         display: inline-block;
         position: relative;
-        margin: 0 auto;     
-        margin-bottom: 30px;
-        // height: 300px;
-        overflow: hidden;
-        // border: 1px solid black;
+        margin: 0 auto;
+        margin-bottom: 30px; // height: 300px;
+        overflow: hidden; // border: 1px solid black;
         img {
-            width: 100%; 
-            border-radius: 8px;
-            // min-width: 200px;
+            width: 100%;
+            border-radius: 8px; // min-width: 200px;
             opacity: 1;
             display: block;
             height: auto;
@@ -137,7 +131,6 @@ body {
 }
 
 //                  GENERAL                    //
-
 .Item:hover img {
     opacity: 0.3;
 }
@@ -145,5 +138,3 @@ body {
 .Item:hover .middle {
     opacity: 1;
 }
-
-
