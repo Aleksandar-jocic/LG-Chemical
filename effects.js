@@ -5,7 +5,6 @@ var handler;
 $(document).ready(function () {
 
     myVar = setTimeout(handler, 1000);    
-
 })
 
 window.onscroll = function() {fixNavbar()};
@@ -15,6 +14,9 @@ handler = function() {
     console.log('handle works');
     clearTimeout()
 }
+$('.carousel').carousel({
+    interval: 50000
+  })
 
 function fixNavbar() {
     
