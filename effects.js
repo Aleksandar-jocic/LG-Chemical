@@ -15,7 +15,7 @@ handler = function() {
     clearTimeout()
 }
 $('.carousel').carousel({
-    interval: 300000
+    interval: 50000
   })
 
 function fixNavbar() {
