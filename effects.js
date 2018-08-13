@@ -1,13 +1,16 @@
 var navbar = $('.overlay');
-var myVar;
+var logoText = $('.logoText');
+var timeOne;
+var timeTwo;
 var handler;
+var textAppear;
 
 $(document).ready(function () {
 
-    myVar = setTimeout(handler, 1000);    
+    timeOne = setTimeout(handler, 1000);  
+    timeTwo = setTimeout(textAppear, 1500);
 })
 
-window.onscroll = function() {fixNavbar()};
 
 handler = function() {
     navbar.addClass('overlay-active')
@@ -15,8 +18,20 @@ handler = function() {
     clearTimeout()
 }
 $('.carousel').carousel({
-    interval: 50000
-  })
+    interval: 10000
+})
+
+textAppear = function() {
+    logoText.addClass('logoText-active');
+    console.log('offset works');
+    clearTimeout()
+    
+}
+
+
+
+window.onscroll = function() {fixNavbar()};
+
 
 function fixNavbar() {
     
