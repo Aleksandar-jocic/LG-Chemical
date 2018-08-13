@@ -4,30 +4,28 @@ $secondaryColor: #3feee6;
 $tertiaryColor: rgb(85, 188, 201);
 $quaternaryColor: #97caef;
 $quinaryColor: #cafafe;
-
 $one: #272727;
 $two: rgba(116, 116, 116, 0.8);
 $three: #ff652f;
 $four: #ffe400;
 $five: 14a76c;
-
 $purple: #78244c;
 $beta: #5c2028;
 $charlie: #e85a4f;
-
-
 $shadow: rgba(163, 163, 163, 0.56);
-
-
-
-
 $smallBreak: 768px;
-
-
+@mixin imgPosition {
+    height: 600px;
+    background-position: center center;
+    width: 100%;
+    background-size: cover;
+}
 
 body {
     width: 100%;
     margin: 0 auto;
+    font-family: 'Montserrat', sans-serif; // font-family: 'Josefin Sans', sans-serif;
+    // font-family: 'Sunflower', sans-serif;
 }
 
 .container-fluid {
@@ -36,40 +34,60 @@ body {
     padding: 0px;
     .imageContainer {
         height: auto;
-        max-height: 600px;
-        overflow: hidden;
+        max-height: 600px; // overflow: hidden;
         position: relative;
         #slides {
             width: 100%;
             max-height: 600px;
         }
-        img {
-            width: 100%;
-            vertical-align: baseline;
-            position: flex;
-            height: auto;
-            background-clip: border-box;
-            border-image-slice: 100%;
-        }
     }
 }
 
+.imgOne {
+    background: url('./photos/plants.jpg');
+    @include imgPosition();
+}
+
+.imgTwo {
+    background: url('./photos/pietri\ dish.jpg');
+    @include imgPosition();
+}
+
+.imgThree {
+    background: url('./photos/Smoke.jpg');
+    @include imgPosition();
+}
+
+.imgFour {
+    background: url('./photos/Thread.jpg');
+    @include imgPosition();
+}
+
+.imgFive {
+    background: url('./photos/welder.jpg');
+    @include imgPosition();
+}
+
+.imgSix {
+    background: url('./photos/house.jpg');
+    @include imgPosition();
+}
+
 .carousel-indicators {
-    position: absolute;
-    bottom: 20px;
+    position: relative;
+    bottom: 0px;
     height: 60px;
     width: 100%;
     margin: 0 auto;
     text-align: center;
     vertical-align: middle;
     :nth-child(1) {
-        border-radius: 15px 0px 0px 15px;
+        border-radius: 0px 0px 0px 7px;
     }
     :last-child {
-        border-radius: 0px 15px 15px 0px;
+        border-radius: 0px 0px 7px 0px;
     }
-    
-    li {        
+    li {
         background-color: $two;
         opacity: 0.8;
         height: 60px;
@@ -82,11 +100,9 @@ body {
         padding: 7px;
         box-sizing: border-box;
     }
-    
-    
-    
     @media screen and (max-width: $smallBreak) {
         height: 50px;
+        margin-top: 20px;
         li {
             height: 20px;
             padding: 0px;
@@ -94,7 +110,6 @@ body {
             width: 20px;
             margin: 0 5px;
             border-radius: 50%;
-            
         }
         :nth-of-type(1) {
             border-radius: 50%;
@@ -104,10 +119,11 @@ body {
         }
     }
 }
+
 .carousel-indicators .active {
     background-color: $charlie;
     color: black;
-  }
+}
 
 //                  HEADER                    //
 .overlay {
@@ -120,8 +136,20 @@ body {
     width: 100%;
     height: 0px;
     transition: 1.5s ease;
-    img {
-        width: 50px;
+    a {
+        img {
+            width: 50px;
+            height: 50px;
+        }
+        .logoText {
+            position: absolute;
+            width: 0px;
+            height: 50px;
+        }
+        .logoText-active {
+            width: 140px;
+            transition: 1s ease;
+        }
     }
 }
 
@@ -140,6 +168,10 @@ body {
             text-decoration: none;
             color: white;
         }
+        div {
+            display: inline-block;
+            margin-left: 160px;            
+        }
         white-space: nowrap;
         color: white;
         font-size: 20px;
@@ -147,8 +179,10 @@ body {
         overflow: hidden;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%,
+        -50%);
+        -ms-transform: translate(-50%,
+        -50%);
     }
 }
 
@@ -156,12 +190,11 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: $one; 
+    background-color: $one;
     opacity: 0.8;
     height: 100px;
     z-index: 10000;
 }
-
 
 //                  MAIN                    //
 .mainSection {
@@ -255,19 +288,22 @@ h1 {
         box-shadow: 0px 0px 18px 2px $shadow;
     }
 }
+
 //                  CONTACT                    //
-.container-fluid .imageContainerContact {
-   @extend .imageContainer;
-   max-height: 400px;
+.imageContainer {
+    max-height: 400px;
 }
+
+.contactCover {
+    background: url('./photos/cover2.jpg');
+    @include imgPosition();
+}
+
 .locations {
     width: 90%;
     text-align: center;
     margin: 0 auto;
 }
-
-
-
 
 //                  GENERAL                    //
 .Item:hover img {

@@ -1,39 +1,74 @@
 body {
   width: 100%;
-  margin: 0 auto; }
+  margin: 0 auto;
+  font-family: 'Montserrat', sans-serif; }
 
 .container-fluid {
   position: relative;
   width: 100%;
   padding: 0px; }
-  .container-fluid .imageContainer, .container-fluid .imageContainerContact {
+  .container-fluid .imageContainer {
     height: auto;
     max-height: 600px;
-    overflow: hidden;
     position: relative; }
-    .container-fluid .imageContainer #slides, .container-fluid .imageContainerContact #slides {
+    .container-fluid .imageContainer #slides {
       width: 100%;
       max-height: 600px; }
-    .container-fluid .imageContainer img, .container-fluid .imageContainerContact img {
-      width: 100%;
-      vertical-align: baseline;
-      position: flex;
-      height: auto;
-      background-clip: border-box;
-      border-image-slice: 100%; }
+
+.imgOne {
+  background: url("./photos/plants.jpg");
+  height: 600px;
+  background-position: center center;
+  width: 100%;
+  background-size: cover; }
+
+.imgTwo {
+  background: url("./photos/pietri dish.jpg");
+  height: 600px;
+  background-position: center center;
+  width: 100%;
+  background-size: cover; }
+
+.imgThree {
+  background: url("./photos/Smoke.jpg");
+  height: 600px;
+  background-position: center center;
+  width: 100%;
+  background-size: cover; }
+
+.imgFour {
+  background: url("./photos/Thread.jpg");
+  height: 600px;
+  background-position: center center;
+  width: 100%;
+  background-size: cover; }
+
+.imgFive {
+  background: url("./photos/welder.jpg");
+  height: 600px;
+  background-position: center center;
+  width: 100%;
+  background-size: cover; }
+
+.imgSix {
+  background: url("./photos/house.jpg");
+  height: 600px;
+  background-position: center center;
+  width: 100%;
+  background-size: cover; }
 
 .carousel-indicators {
-  position: absolute;
-  bottom: 20px;
+  position: relative;
+  bottom: 0px;
   height: 60px;
   width: 100%;
   margin: 0 auto;
   text-align: center;
   vertical-align: middle; }
   .carousel-indicators :nth-child(1) {
-    border-radius: 15px 0px 0px 15px; }
+    border-radius: 0px 0px 0px 7px; }
   .carousel-indicators :last-child {
-    border-radius: 0px 15px 15px 0px; }
+    border-radius: 0px 0px 7px 0px; }
   .carousel-indicators li {
     background-color: rgba(116, 116, 116, 0.8);
     opacity: 0.8;
@@ -48,7 +83,8 @@ body {
     box-sizing: border-box; }
   @media screen and (max-width: 768px) {
     .carousel-indicators {
-      height: 50px; }
+      height: 50px;
+      margin-top: 20px; }
       .carousel-indicators li {
         height: 20px;
         padding: 0px;
@@ -75,8 +111,16 @@ body {
   width: 100%;
   height: 0px;
   transition: 1.5s ease; }
-  .overlay img {
-    width: 50px; }
+  .overlay a img {
+    width: 50px;
+    height: 50px; }
+  .overlay a .logoText {
+    position: absolute;
+    width: 0px;
+    height: 50px; }
+  .overlay a .logoText-active {
+    width: 140px;
+    transition: 1s ease; }
 
 .overlay-active {
   bottom: 0;
@@ -101,6 +145,9 @@ body {
       font-size: 0.9em;
       text-decoration: none;
       color: white; }
+    .overlay-active #text div {
+      display: inline-block;
+      margin-left: 160px; }
 
 .sticky {
   position: fixed;
@@ -185,8 +232,15 @@ h1 {
     -moz-box-shadow: 0px 0px 18px 2px rgba(163, 163, 163, 0.56);
     box-shadow: 0px 0px 18px 2px rgba(163, 163, 163, 0.56); }
 
-.container-fluid .imageContainerContact {
+.imageContainer {
   max-height: 400px; }
+
+.contactCover {
+  background: url("./photos/cover2.jpg");
+  height: 600px;
+  background-position: center center;
+  width: 100%;
+  background-size: cover; }
 
 .locations {
   width: 90%;
