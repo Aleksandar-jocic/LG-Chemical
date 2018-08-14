@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="main.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Montserrat" rel="stylesheet"> 
-
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -73,19 +73,39 @@
 
         <div class="overlay">
             <div id="text">
-                <a href="./index.html">
-                    <img src="./photos/logoIcon.png">
-                </a>
-                <a href="./index.html">Početna</a>
-                <a href="./about.html">O nama</a>
-                <a href="./about.html">Katalog Proizvoda</a>
-                <a href="./about.html">Partneri</a>
-                <a href="./contact.html">Kontakt</a>
+                <div>
+                    <a href="./index.html">
+                        <img src="./photos/logoIcon.png">
+                        <img class="logoText" src="./photos/logotext.png" alt="">
+                    </a>
+                </div>
+
+                <!-- <a href="./delete.html">delete</a> -->
+                <div class="options">
+                    <a href="./index.html">Početna</a>
+                    <a href="./about.html">O nama</a>
+                    <a href="./about.html">Katalog Proizvoda</a>
+                    <a href="./about.html">Partneri</a>
+                    <a href="./contact.html">Kontakt</a>
+                </div>
+                <i class="fa fa-bars" id="target"></i>
+
             </div>
         </div>
+        <div class="aboutText">
+            <p>LG HEMIJA D.O.O. postoji na tržištu Srbije od 2001. godine, kao mešovito preduzeće, a od 2003. posluje u potpunosti
+                kao sastavni deo grupacije LOUFAKIS CHEMICALS SA, Thessaloniki, Greece. <br> U okviru grupacije LOUFAKIS CHEMIKALS
+                SA. posluju i kompanije u Bugarskoj, Makedoniji, Albaniji, Grčkoj i Kipru. <br> U osnovi LG HEMIJA d.o.o. se bavi
+                uvozom i distribucijom sirovina. U cilju kompletiranja ponude ostvarena je saradnja sa drugim renomiranim
+                proizvođačima širom sveta. <br> Od samog početka rada LG Hemija prati inovacije na tržištu, radi na kontinuiranom
+                usavršavanju zaposlenih, i verno odgovara potrebama potrošača. <br> Ključna uloga u aktivnostima LG HEMIJE, zajedno
+                sa prodajom, je i tehnička podrška klijentima pri svakom koraku. Ovo uključuje formulacije, savetovanje,
+                adaptaciju, nadgledanje i vođenje brige o klijentima. <br> Težište aktivnosti LG HEMIJE je na tržištu Srbije,
+                a prisutna je i na tržištima Crne Gore, Bosne i Hercegovine i Kosova.</p>
 
+        </div>
 
-        <div class="row Employees">
+        <!-- <div class="row Employees">
             <div class="col-2"></div>
             <div class="col-8">
                 <div class="singlePerson">
@@ -115,7 +135,7 @@
                 </div>
             </div>
             <div class="col-2"></div>
-        </div>
+        </div> -->
 
 
 

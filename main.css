@@ -1,5 +1,6 @@
 body {
   width: 100%;
+  min-width: 270px;
   margin: 0 auto;
   font-family: 'Montserrat', sans-serif; }
 
@@ -107,7 +108,6 @@ body {
   left: 0;
   right: 0;
   background-color: transparent;
-  overflow: hidden;
   width: 100%;
   height: 0px;
   transition: 1.5s ease; }
@@ -121,6 +121,8 @@ body {
   .overlay a .logoText-active {
     width: 140px;
     transition: 1s ease; }
+  .overlay i {
+    display: none; }
 
 .overlay-active {
   bottom: 0;
@@ -131,11 +133,12 @@ body {
     color: white;
     font-size: 20px;
     position: absolute;
-    overflow: hidden;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%); }
+    .overlay-active #text div {
+      display: inline-block; }
     .overlay-active #text a {
       text-align: center;
       padding: 0px;
@@ -145,9 +148,50 @@ body {
       font-size: 0.9em;
       text-decoration: none;
       color: white; }
-    .overlay-active #text div {
+    .overlay-active #text .options {
       display: inline-block;
       margin-left: 160px; }
+
+@media screen and (max-width: 856px) {
+  .overlay #text {
+    width: 100%; }
+    .overlay #text div {
+      float: none;
+      display: block; }
+    .overlay #text a {
+      float: none; }
+    .overlay #text .options {
+      width: 0px;
+      margin: 0px; }
+      .overlay #text .options a {
+        display: none; }
+    .overlay #text .options-responsive {
+      position: absolute;
+      top: 75px;
+      display: block;
+      width: 100%;
+      text-align: center;
+      float: none;
+      margin: 0px !important;
+      transition: 1s ease; }
+      .overlay #text .options-responsive a {
+        display: block;
+        width: 100%;
+        margin: 0px;
+        padding: 15px 0px;
+        background-color: #272727;
+        opacity: 0.8;
+        box-sizing: border-box; }
+    .overlay #text #target {
+      display: inline-block;
+      position: absolute;
+      right: 5;
+      top: 5;
+      vertical-align: middle;
+      font-size: 1.7em;
+      border: 1px solid white;
+      padding: 3px 8px;
+      border-radius: 3px; } }
 
 .sticky {
   position: fixed;
@@ -211,26 +255,9 @@ h1 {
   text-align: center;
   margin-top: 20px; }
 
-.Employees {
-  margin: 30px auto;
-  width: 100%;
-  text-align: center; }
-
-.singlePerson {
-  display: inline-block;
-  margin: 0 10px;
-  width: 100px; }
-  .singlePerson h5 {
-    text-align: center; }
-  .singlePerson img {
-    border-radius: 50%;
-    display: block;
-    height: 100px;
-    width: 100%;
-    margin: 0 auto;
-    -webkit-box-shadow: 0px 0px 18px 2px rgba(163, 163, 163, 0.56);
-    -moz-box-shadow: 0px 0px 18px 2px rgba(163, 163, 163, 0.56);
-    box-shadow: 0px 0px 18px 2px rgba(163, 163, 163, 0.56); }
+.aboutText {
+  width: 80%;
+  margin: 150px auto; }
 
 .imageContainer {
   max-height: 400px; }
