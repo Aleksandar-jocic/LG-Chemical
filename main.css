@@ -274,6 +274,102 @@ h1 {
   text-align: center;
   margin: 0 auto; }
 
+.footer {
+  background-color: rgba(163, 163, 163, 0.56); }
+
+.footImage {
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  position: relative; }
+  .footImage img {
+    width: auto;
+    max-width: 280px;
+    margin-top: 10px; }
+
+#iconPic {
+  width: 80px;
+  height: 80px;
+  display: none; }
+
+@media screen and (max-width: 856px) {
+  .footImage img {
+    display: none; }
+
+  #iconPic {
+    display: inline-block; } }
+.footImage::before {
+  content: '';
+  position: absolute;
+  display: inline-block;
+  width: calc(33% - 30px);
+  top: 50%;
+  height: 1px;
+  -webkit-transform: scale(1, 1);
+  -ms-transform: scale(1, 1);
+  transform: scale(1, 1);
+  -webkit-transform-origin: right center;
+  -ms-transform-origin: right center;
+  transform-origin: right center;
+  left: 20;
+  background-color: black;
+  text-align: center; }
+
+.footImage::after {
+  content: '';
+  position: absolute;
+  display: inline-block;
+  width: calc(33% - 30px);
+  top: 50%;
+  height: 1px;
+  -webkit-transform: scale(1, 1);
+  -ms-transform: scale(1, 1);
+  transform: scale(1, 1);
+  -webkit-transform-origin: right center;
+  -ms-transform-origin: right center;
+  transform-origin: right center;
+  right: 20;
+  background-color: black;
+  text-align: center; }
+
+.Copyright {
+  text-align: center;
+  position: relative;
+  padding-top: 10.5rem;
+  margin-top: 20px; }
+
+.Copyright::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  width: 1px;
+  height: 9.5rem;
+  background-color: black; }
+
+.footerLinks {
+  text-align: center; }
+  .footerLinks a {
+    color: black;
+    font-size: 1rem;
+    line-height: 19px; }
+  .footerLinks ul {
+    list-style-type: none; }
+    .footerLinks ul li {
+      margin: 4px 0px; }
+
+.footerContacts i {
+  padding-right: 7px; }
+.footerContacts p {
+  font-size: 0.7rem;
+  margin-bottom: 4px; }
+.footerContacts div {
+  width: 70%;
+  margin: 0 auto; }
+.footerContacts h6 {
+  text-align: center; }
+.footerContacts h6:last-of-type {
+  margin-top: 20px; }
+
 .Item:hover img {
   opacity: 0.3; }
 
