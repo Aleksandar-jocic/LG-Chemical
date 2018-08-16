@@ -259,9 +259,27 @@ h1 {
   width: 80%;
   margin: 150px auto; }
 
-.partners img {
-  width: auto;
-  max-width: 200px; }
+h1 {
+  margin-top: 100px; }
+
+.partners {
+  margin-top: 50px; }
+  .partners .partnerWrap {
+    width: 100%;
+    background-color: rgba(163, 163, 163, 0.56); }
+  .partners .row {
+    width: 70%;
+    margin: 0 auto 30px auto; }
+  .partners .loufakisDiv {
+    display: flex; }
+  .partners .alignImage {
+    display: flex;
+    height: 100%; }
+  .partners img {
+    max-width: 400px;
+    margin: auto; }
+  .partners p {
+    margin: 20px; }
 
 .imageContainer {
   max-height: 400px; }
@@ -281,6 +299,8 @@ h1 {
 .footer {
   background-color: rgba(163, 163, 163, 0.56);
   margin-top: 90px; }
+  .footer .row {
+    margin: 0px; }
 
 .footImage {
   width: 100%;
@@ -337,13 +357,14 @@ h1 {
   background-color: black;
   text-align: center; }
 
-.Copyright {
+.verticalLine {
   text-align: center;
   position: relative;
+  padding: 0px;
   padding-top: 10.5rem;
   margin-top: 20px; }
 
-.Copyright::before {
+.verticalLine::before {
   content: '';
   position: absolute;
   top: 2px;
@@ -352,7 +373,8 @@ h1 {
   background-color: black; }
 
 .footerLinks {
-  text-align: center; }
+  text-align: center;
+  padding: 0px; }
   .footerLinks a {
     color: black;
     font-size: 1rem;
@@ -362,18 +384,24 @@ h1 {
     .footerLinks ul li {
       margin: 4px 0px; }
 
-.footerContacts i {
-  padding-right: 7px; }
-.footerContacts p {
-  font-size: 0.7rem;
-  margin-bottom: 4px; }
-.footerContacts div {
-  width: 70%;
-  margin: 0 auto; }
-.footerContacts h6 {
+.footerContacts {
+  box-sizing: border-box;
+  padding: 0px; }
+  .footerContacts i {
+    padding-right: 7px; }
+  .footerContacts p {
+    font-size: 0.7rem;
+    margin-bottom: 4px; }
+  .footerContacts div {
+    width: 70%;
+    margin: 0 auto; }
+  .footerContacts h6 {
+    text-align: center; }
+  .footerContacts h6:last-of-type {
+    margin-top: 20px; }
+
+.Copyright {
   text-align: center; }
-.footerContacts h6:last-of-type {
-  margin-top: 20px; }
 
 .Item:hover img {
   opacity: 0.3; }
