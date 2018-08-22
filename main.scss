@@ -15,6 +15,7 @@ $charlie: #e85a4f;
 $shadow: rgba(163, 163, 163, 0.56);
 $smallBreak: 768px;
 $mediumBreak: 856px;
+
 @mixin imgPosition {
     height: 600px;
     background-position: center center;
@@ -46,22 +47,22 @@ body {
 }
 
 .imgOne {
-    background: url('./photos/plants.jpg');
+    background: url('./photos/slike/empirestate.jpg');
     @include imgPosition();
 }
 
 .imgTwo {
-    background: url('./photos/pietri\ dish.jpg');
+    background: url('./photos/slike/peach.jpg');
     @include imgPosition();
 }
 
 .imgThree {
-    background: url('./photos/Smoke.jpg');
+    background: url('./photos/slike/flower.jpg');
     @include imgPosition();
 }
 
 .imgFour {
-    background: url('./photos/Thread.jpg');
+    background: url('./photos/slike/jeans.jpg');
     @include imgPosition();
 }
 
@@ -325,12 +326,23 @@ h1 {
     width: 80%;
     margin: 150px auto;
 }
+.aboutCover {
+    @include imgPosition();
+    background: url('./photos/slike/employees.jpg');
+    background-position: center center;
+    
+}
 
 //                  PARTNERS                    //
 h1 {
     margin-top: 100px;
 }
-
+.partnersCover {
+    @include imgPosition();
+    background: url('./photos/slike/cookie.jpg');
+    background-position: center center;
+       
+}
 .partners {
     margin-top: 50px;
     .partnerWrap {
@@ -365,7 +377,7 @@ h1 {
 }
 
 .contactCover {
-    background: url('./photos/cover2.jpg');
+    background: url('./photos/slike/road.jpg');
     @include imgPosition();
 }
 

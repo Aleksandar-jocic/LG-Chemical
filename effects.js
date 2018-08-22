@@ -46,17 +46,11 @@ function fixNavbar() {
     }    
 }
 
-
-var optionList;
-
 document.getElementById('target').addEventListener('click', function () {
-    
-    optionList = document.getElementsByClassName('options');
 
     if ($('.options').hasClass('options-responsive')) {
         $('.options').removeClass('options-responsive');
         console.log('if');
-        
     }
     else {
         $('.options').addClass('options-responsive');
