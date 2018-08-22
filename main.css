@@ -17,28 +17,28 @@ body {
       max-height: 600px; }
 
 .imgOne {
-  background: url("./photos/plants.jpg");
+  background: url("./photos/slike/empirestate.jpg");
   height: 600px;
   background-position: center center;
   width: 100%;
   background-size: cover; }
 
 .imgTwo {
-  background: url("./photos/pietri dish.jpg");
+  background: url("./photos/slike/peach.jpg");
   height: 600px;
   background-position: center center;
   width: 100%;
   background-size: cover; }
 
 .imgThree {
-  background: url("./photos/Smoke.jpg");
+  background: url("./photos/slike/flower.jpg");
   height: 600px;
   background-position: center center;
   width: 100%;
   background-size: cover; }
 
 .imgFour {
-  background: url("./photos/Thread.jpg");
+  background: url("./photos/slike/jeans.jpg");
   height: 600px;
   background-position: center center;
   width: 100%;
@@ -259,8 +259,24 @@ h1 {
   width: 80%;
   margin: 150px auto; }
 
+.aboutCover {
+  height: 600px;
+  background-position: center center;
+  width: 100%;
+  background-size: cover;
+  background: url("./photos/slike/employees.jpg");
+  background-position: center center; }
+
 h1 {
   margin-top: 100px; }
+
+.partnersCover {
+  height: 600px;
+  background-position: center center;
+  width: 100%;
+  background-size: cover;
+  background: url("./photos/slike/cookie.jpg");
+  background-position: center center; }
 
 .partners {
   margin-top: 50px; }
@@ -285,7 +301,7 @@ h1 {
   max-height: 400px; }
 
 .contactCover {
-  background: url("./photos/cover2.jpg");
+  background: url("./photos/slike/road.jpg");
   height: 600px;
   background-position: center center;
   width: 100%;
