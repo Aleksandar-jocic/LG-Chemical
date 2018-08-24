@@ -18,7 +18,7 @@ handler = function() {
     clearTimeout()
 }
 $('.carousel').carousel({
-    interval: 10000
+    interval: 55000
 })
 
 textAppear = function() {

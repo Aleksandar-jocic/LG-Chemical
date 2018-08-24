@@ -4,6 +4,7 @@ $secondaryColor: #3feee6;
 $tertiaryColor: rgb(85, 188, 201);
 $quaternaryColor: #97caef;
 $quinaryColor: #cafafe;
+$pinterest: #c8232c;
 $one: #272727;
 $two: rgba(116, 116, 116, 0.8);
 $three: #ff652f;
@@ -11,14 +12,15 @@ $four: #ffe400;
 $five: 14a76c;
 $purple: #78244c;
 $beta: #5c2028;
-$charlie: #e85a4f;
+// $charlie: #c8232c;
+$charlie: rgb(253,28,21);
 $shadow: rgba(163, 163, 163, 0.56);
 $smallBreak: 768px;
 $mediumBreak: 856px;
 
 @mixin imgPosition {
-    height: 600px;
-    background-position: center center;
+    height: 650px;
+    background-position: bottom bottom;
     width: 100%;
     background-size: cover;
 }
@@ -37,45 +39,53 @@ body {
     padding: 0px;
     .imageContainer {
         height: auto;
-        max-height: 600px; // overflow: hidden;
+        max-height: 650px; // overflow: hidden;
         position: relative;
         #slides {
             width: 100%;
-            max-height: 600px;
+            max-height: 650px;
         }
     }
 }
 
 .imgOne {
-    background: url('./photos/slike/empirestate.jpg');
+    background: url('./photos/slike/molecules.jpg');
     @include imgPosition();
+    background-position: center 45%;
 }
 
 .imgTwo {
+    background: url('./photos/slike/legos.jpg');
+    @include imgPosition();
+    background-position: center 75%;
+    
+}
+
+.imgThree {
     background: url('./photos/slike/peach.jpg');
     @include imgPosition();
 }
 
-.imgThree {
+.imgFour {
     background: url('./photos/slike/flower.jpg');
     @include imgPosition();
 }
 
-.imgFour {
-    background: url('./photos/slike/jeans.jpg');
-    @include imgPosition();
-}
-
 .imgFive {
-    background: url('./photos/welder.jpg');
+    background: url('./photos/slike/textile.jpg');
     @include imgPosition();
+    background-position: center 60%;
+    
 }
 
 .imgSix {
     background: url('./photos/house.jpg');
     @include imgPosition();
 }
-
+.imgSeven {
+    background: url('./photos/house.jpg');
+    @include imgPosition();
+}
 .carousel-indicators {
     position: relative;
     bottom: 0px;
@@ -91,11 +101,11 @@ body {
         border-radius: 0px 0px 7px 0px;
     }
     li {
-        background-color: $two;
-        opacity: 0.8;
+        background-color: white;
+        // opacity: 0.8;
         height: 60px;
         width: 150px;
-        color: white;
+        color: black ;
         font-size: 13px;
         margin: 0;
         vertical-align: middle;
@@ -113,6 +123,8 @@ body {
             width: 20px;
             margin: 0 5px;
             border-radius: 50%;
+        background-color: gray;
+            
         }
         :nth-of-type(1) {
             border-radius: 50%;
@@ -125,7 +137,7 @@ body {
 
 .carousel-indicators .active {
     background-color: $charlie;
-    color: black;
+    color: white;
 }
 
 //                  HEADER                    //
@@ -327,9 +339,11 @@ h1 {
     margin: 150px auto;
 }
 .aboutCover {
+
+    background: url('./photos/slike/aboutPage.jpg');
     @include imgPosition();
-    background: url('./photos/slike/employees.jpg');
-    background-position: center center;
+
+    background-position: center bottom;
     
 }
 
