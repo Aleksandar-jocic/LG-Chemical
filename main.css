@@ -23,8 +23,6 @@ body {
   width: 100%;
   background-size: cover;
   background-position: center 45%; }
-<<<<<<< HEAD
-=======
   @media screen and (max-width: 856px) {
     .imgOne {
       min-height: 500px;
@@ -37,7 +35,6 @@ body {
     .imgOne {
       min-height: 300px;
       height: auto; } }
->>>>>>> 943f9ef798fd452f12a711810c0e0d2400cbf62a
 
 .imgTwo {
   background: url("./photos/slike/legos.jpg");
@@ -46,8 +43,6 @@ body {
   width: 100%;
   background-size: cover;
   background-position: center 75%; }
-<<<<<<< HEAD
-=======
   @media screen and (max-width: 856px) {
     .imgTwo {
       min-height: 500px;
@@ -60,7 +55,6 @@ body {
     .imgTwo {
       min-height: 300px;
       height: auto; } }
->>>>>>> 943f9ef798fd452f12a711810c0e0d2400cbf62a
 
 .imgThree {
   background: url("./photos/slike/peach.jpg");
@@ -68,8 +62,6 @@ body {
   background-position: center center;
   width: 100%;
   background-size: cover; }
-<<<<<<< HEAD
-=======
   @media screen and (max-width: 856px) {
     .imgThree {
       min-height: 500px;
@@ -82,7 +74,6 @@ body {
     .imgThree {
       min-height: 300px;
       height: auto; } }
->>>>>>> 943f9ef798fd452f12a711810c0e0d2400cbf62a
 
 .imgFour {
   background: url("./photos/slike/flower.jpg");
@@ -90,8 +81,6 @@ body {
   background-position: center center;
   width: 100%;
   background-size: cover; }
-<<<<<<< HEAD
-=======
   @media screen and (max-width: 856px) {
     .imgFour {
       min-height: 500px;
@@ -104,7 +93,6 @@ body {
     .imgFour {
       min-height: 300px;
       height: auto; } }
->>>>>>> 943f9ef798fd452f12a711810c0e0d2400cbf62a
 
 .imgFive {
   background: url("./photos/slike/textile.jpg");
@@ -113,8 +101,6 @@ body {
   width: 100%;
   background-size: cover;
   background-position: center 60%; }
-<<<<<<< HEAD
-=======
   @media screen and (max-width: 856px) {
     .imgFive {
       min-height: 500px;
@@ -127,7 +113,6 @@ body {
     .imgFive {
       min-height: 300px;
       height: auto; } }
->>>>>>> 943f9ef798fd452f12a711810c0e0d2400cbf62a
 
 .imgSix {
   background: url("./photos/house.jpg");
@@ -135,8 +120,6 @@ body {
   background-position: center center;
   width: 100%;
   background-size: cover; }
-<<<<<<< HEAD
-=======
   @media screen and (max-width: 856px) {
     .imgSix {
       min-height: 500px;
@@ -149,7 +132,6 @@ body {
     .imgSix {
       min-height: 300px;
       height: auto; } }
->>>>>>> 943f9ef798fd452f12a711810c0e0d2400cbf62a
 
 .imgSeven {
   background: url("./photos/house.jpg");
@@ -157,8 +139,6 @@ body {
   background-position: center center;
   width: 100%;
   background-size: cover; }
-<<<<<<< HEAD
-=======
   @media screen and (max-width: 856px) {
     .imgSeven {
       min-height: 500px;
@@ -171,7 +151,6 @@ body {
     .imgSeven {
       min-height: 300px;
       height: auto; } }
->>>>>>> 943f9ef798fd452f12a711810c0e0d2400cbf62a
 
 .carousel-indicators {
   position: relative;
@@ -210,11 +189,7 @@ body {
         background-color: gray; }
       .carousel-indicators :nth-of-type(1) {
         border-radius: 50%; }
-<<<<<<< HEAD
-      .carousel-indicators :nth-of-type(6) {
-=======
       .carousel-indicators :nth-of-type(7) {
->>>>>>> 943f9ef798fd452f12a711810c0e0d2400cbf62a
         border-radius: 50%; } }
 
 .carousel-indicators .active {
@@ -385,8 +360,6 @@ h1 {
   width: 100%;
   background-size: cover;
   background-position: center bottom; }
-<<<<<<< HEAD
-=======
   @media screen and (max-width: 856px) {
     .aboutCover {
       min-height: 500px;
@@ -399,7 +372,6 @@ h1 {
     .aboutCover {
       min-height: 300px;
       height: auto; } }
->>>>>>> 943f9ef798fd452f12a711810c0e0d2400cbf62a
 
 h1 {
   margin-top: 100px; }
@@ -410,10 +382,6 @@ h1 {
   background-position: center center;
   width: 100%;
   background-size: cover;
-<<<<<<< HEAD
-  background: url("./photos/slike/cookie.jpg");
-  background-position: center center; }
-=======
   background-position: center bottom; }
   @media screen and (max-width: 856px) {
     .partnersCover {
@@ -427,7 +395,6 @@ h1 {
     .partnersCover {
       min-height: 300px;
       height: auto; } }
->>>>>>> 943f9ef798fd452f12a711810c0e0d2400cbf62a
 
 .partners {
   margin-top: 50px; }
@@ -457,8 +424,6 @@ h1 {
   background-position: center center;
   width: 100%;
   background-size: cover; }
-<<<<<<< HEAD
-=======
   @media screen and (max-width: 856px) {
     .contactCover {
       min-height: 500px;
@@ -471,7 +436,6 @@ h1 {
     .contactCover {
       min-height: 300px;
       height: auto; } }
->>>>>>> 943f9ef798fd452f12a711810c0e0d2400cbf62a
 
 .locations {
   width: 90%;
@@ -575,18 +539,11 @@ h1 {
     font-size: 0.7rem;
     margin-bottom: 4px; }
   .footerContacts div {
-<<<<<<< HEAD
-    width: 70%;
-    margin: 0 auto; }
-  .footerContacts h6 {
-    text-align: center; }
-=======
     width: 100%;
     margin: 0 auto; }
   .footerContacts h6 {
     text-align: left;
     text-indent: 20px; }
->>>>>>> 943f9ef798fd452f12a711810c0e0d2400cbf62a
   .footerContacts h6:last-of-type {
     margin-top: 20px; }
 
