@@ -15,14 +15,30 @@ $beta: #5c2028;
 // $charlie: #c8232c;
 $charlie: rgb(253,28,21);
 $shadow: rgba(163, 163, 163, 0.56);
-$smallBreak: 768px;
-$mediumBreak: 856px;
+
+$on426: 426px;
+$on576: 576px;
+$on768: 768px;
+$on856: 856px;
 
 @mixin imgPosition {
     height: 650px;
-    background-position: bottom bottom;
+    background-position: center center;
     width: 100%;
     background-size: cover;
+    @media screen and (max-width: $on856) {
+        min-height: 500px;
+        height: auto;
+    }
+    @media screen and (max-width: $on768) {
+        min-height: 400px;
+        height: auto;
+    }
+    @media screen and (max-width: $on576) {
+        min-height: 300px;
+        height: auto;
+    }
+  
 }
 
 body {
@@ -39,7 +55,7 @@ body {
     padding: 0px;
     .imageContainer {
         height: auto;
-        max-height: 650px; // overflow: hidden;
+        max-height: 650px; 
         position: relative;
         #slides {
             width: 100%;
@@ -113,7 +129,7 @@ body {
         padding: 7px;
         box-sizing: border-box;
     }
-    @media screen and (max-width: $smallBreak) {
+    @media screen and (max-width: $on768) {
         height: 50px;
         margin-top: 20px;
         li {
@@ -129,7 +145,7 @@ body {
         :nth-of-type(1) {
             border-radius: 50%;
         }
-        :nth-of-type(6) {
+        :nth-of-type(7) {
             border-radius: 50%;
         }
     }
@@ -206,7 +222,7 @@ body {
 }
 
 .overlay #text {
-    @media screen and (max-width: $mediumBreak) {
+    @media screen and (max-width: $on856) {
         width: 100%;
         div {
             float: none;
@@ -300,7 +316,7 @@ body {
         overflow: hidden; // border: 1px solid black;
         img {
             width: 100%;
-            border-radius: 8px; // min-width: 200px;
+            border-radius: 8px; 
             opacity: 1;
             display: block;
             height: auto;
@@ -352,9 +368,9 @@ h1 {
     margin-top: 100px;
 }
 .partnersCover {
+    background: url('./photos/slike/partners.jpg');
     @include imgPosition();
-    background: url('./photos/slike/cookie.jpg');
-    background-position: center center;
+    background-position: center bottom;
        
 }
 .partners {
@@ -428,7 +444,7 @@ h1 {
     display: none;
 }
 
-@media screen and (max-width: $mediumBreak) {
+@media screen and (max-width: $on856) {
     .footImage img {
         display: none;
     }
@@ -517,11 +533,13 @@ h1 {
         margin-bottom: 4px;
     }
     div {
-        width: 70%;
-        margin: 0 auto;
+        width: 100%;
+        margin: 0 auto ;
+        // overflow: hidden;
     }
     h6 {
-        text-align: center;
+        text-align: left;
+        text-indent: 20px;
     }
     h6:last-of-type {
         margin-top: 20px;

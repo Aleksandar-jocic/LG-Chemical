@@ -19,54 +19,159 @@ body {
 .imgOne {
   background: url("./photos/slike/molecules.jpg");
   height: 650px;
-  background-position: bottom bottom;
+  background-position: center center;
   width: 100%;
   background-size: cover;
   background-position: center 45%; }
+<<<<<<< HEAD
+=======
+  @media screen and (max-width: 856px) {
+    .imgOne {
+      min-height: 500px;
+      height: auto; } }
+  @media screen and (max-width: 768px) {
+    .imgOne {
+      min-height: 400px;
+      height: auto; } }
+  @media screen and (max-width: 576px) {
+    .imgOne {
+      min-height: 300px;
+      height: auto; } }
+>>>>>>> 943f9ef798fd452f12a711810c0e0d2400cbf62a
 
 .imgTwo {
   background: url("./photos/slike/legos.jpg");
   height: 650px;
-  background-position: bottom bottom;
+  background-position: center center;
   width: 100%;
   background-size: cover;
   background-position: center 75%; }
+<<<<<<< HEAD
+=======
+  @media screen and (max-width: 856px) {
+    .imgTwo {
+      min-height: 500px;
+      height: auto; } }
+  @media screen and (max-width: 768px) {
+    .imgTwo {
+      min-height: 400px;
+      height: auto; } }
+  @media screen and (max-width: 576px) {
+    .imgTwo {
+      min-height: 300px;
+      height: auto; } }
+>>>>>>> 943f9ef798fd452f12a711810c0e0d2400cbf62a
 
 .imgThree {
   background: url("./photos/slike/peach.jpg");
   height: 650px;
-  background-position: bottom bottom;
+  background-position: center center;
   width: 100%;
   background-size: cover; }
+<<<<<<< HEAD
+=======
+  @media screen and (max-width: 856px) {
+    .imgThree {
+      min-height: 500px;
+      height: auto; } }
+  @media screen and (max-width: 768px) {
+    .imgThree {
+      min-height: 400px;
+      height: auto; } }
+  @media screen and (max-width: 576px) {
+    .imgThree {
+      min-height: 300px;
+      height: auto; } }
+>>>>>>> 943f9ef798fd452f12a711810c0e0d2400cbf62a
 
 .imgFour {
   background: url("./photos/slike/flower.jpg");
   height: 650px;
-  background-position: bottom bottom;
+  background-position: center center;
   width: 100%;
   background-size: cover; }
+<<<<<<< HEAD
+=======
+  @media screen and (max-width: 856px) {
+    .imgFour {
+      min-height: 500px;
+      height: auto; } }
+  @media screen and (max-width: 768px) {
+    .imgFour {
+      min-height: 400px;
+      height: auto; } }
+  @media screen and (max-width: 576px) {
+    .imgFour {
+      min-height: 300px;
+      height: auto; } }
+>>>>>>> 943f9ef798fd452f12a711810c0e0d2400cbf62a
 
 .imgFive {
   background: url("./photos/slike/textile.jpg");
   height: 650px;
-  background-position: bottom bottom;
+  background-position: center center;
   width: 100%;
   background-size: cover;
   background-position: center 60%; }
+<<<<<<< HEAD
+=======
+  @media screen and (max-width: 856px) {
+    .imgFive {
+      min-height: 500px;
+      height: auto; } }
+  @media screen and (max-width: 768px) {
+    .imgFive {
+      min-height: 400px;
+      height: auto; } }
+  @media screen and (max-width: 576px) {
+    .imgFive {
+      min-height: 300px;
+      height: auto; } }
+>>>>>>> 943f9ef798fd452f12a711810c0e0d2400cbf62a
 
 .imgSix {
   background: url("./photos/house.jpg");
   height: 650px;
-  background-position: bottom bottom;
+  background-position: center center;
   width: 100%;
   background-size: cover; }
+<<<<<<< HEAD
+=======
+  @media screen and (max-width: 856px) {
+    .imgSix {
+      min-height: 500px;
+      height: auto; } }
+  @media screen and (max-width: 768px) {
+    .imgSix {
+      min-height: 400px;
+      height: auto; } }
+  @media screen and (max-width: 576px) {
+    .imgSix {
+      min-height: 300px;
+      height: auto; } }
+>>>>>>> 943f9ef798fd452f12a711810c0e0d2400cbf62a
 
 .imgSeven {
   background: url("./photos/house.jpg");
   height: 650px;
-  background-position: bottom bottom;
+  background-position: center center;
   width: 100%;
   background-size: cover; }
+<<<<<<< HEAD
+=======
+  @media screen and (max-width: 856px) {
+    .imgSeven {
+      min-height: 500px;
+      height: auto; } }
+  @media screen and (max-width: 768px) {
+    .imgSeven {
+      min-height: 400px;
+      height: auto; } }
+  @media screen and (max-width: 576px) {
+    .imgSeven {
+      min-height: 300px;
+      height: auto; } }
+>>>>>>> 943f9ef798fd452f12a711810c0e0d2400cbf62a
 
 .carousel-indicators {
   position: relative;
@@ -105,7 +210,11 @@ body {
         background-color: gray; }
       .carousel-indicators :nth-of-type(1) {
         border-radius: 50%; }
+<<<<<<< HEAD
       .carousel-indicators :nth-of-type(6) {
+=======
+      .carousel-indicators :nth-of-type(7) {
+>>>>>>> 943f9ef798fd452f12a711810c0e0d2400cbf62a
         border-radius: 50%; } }
 
 .carousel-indicators .active {
@@ -272,21 +381,53 @@ h1 {
 .aboutCover {
   background: url("./photos/slike/aboutPage.jpg");
   height: 650px;
-  background-position: bottom bottom;
+  background-position: center center;
   width: 100%;
   background-size: cover;
   background-position: center bottom; }
+<<<<<<< HEAD
+=======
+  @media screen and (max-width: 856px) {
+    .aboutCover {
+      min-height: 500px;
+      height: auto; } }
+  @media screen and (max-width: 768px) {
+    .aboutCover {
+      min-height: 400px;
+      height: auto; } }
+  @media screen and (max-width: 576px) {
+    .aboutCover {
+      min-height: 300px;
+      height: auto; } }
+>>>>>>> 943f9ef798fd452f12a711810c0e0d2400cbf62a
 
 h1 {
   margin-top: 100px; }
 
 .partnersCover {
+  background: url("./photos/slike/partners.jpg");
   height: 650px;
-  background-position: bottom bottom;
+  background-position: center center;
   width: 100%;
   background-size: cover;
+<<<<<<< HEAD
   background: url("./photos/slike/cookie.jpg");
   background-position: center center; }
+=======
+  background-position: center bottom; }
+  @media screen and (max-width: 856px) {
+    .partnersCover {
+      min-height: 500px;
+      height: auto; } }
+  @media screen and (max-width: 768px) {
+    .partnersCover {
+      min-height: 400px;
+      height: auto; } }
+  @media screen and (max-width: 576px) {
+    .partnersCover {
+      min-height: 300px;
+      height: auto; } }
+>>>>>>> 943f9ef798fd452f12a711810c0e0d2400cbf62a
 
 .partners {
   margin-top: 50px; }
@@ -313,9 +454,24 @@ h1 {
 .contactCover {
   background: url("./photos/slike/road.jpg");
   height: 650px;
-  background-position: bottom bottom;
+  background-position: center center;
   width: 100%;
   background-size: cover; }
+<<<<<<< HEAD
+=======
+  @media screen and (max-width: 856px) {
+    .contactCover {
+      min-height: 500px;
+      height: auto; } }
+  @media screen and (max-width: 768px) {
+    .contactCover {
+      min-height: 400px;
+      height: auto; } }
+  @media screen and (max-width: 576px) {
+    .contactCover {
+      min-height: 300px;
+      height: auto; } }
+>>>>>>> 943f9ef798fd452f12a711810c0e0d2400cbf62a
 
 .locations {
   width: 90%;
@@ -419,10 +575,18 @@ h1 {
     font-size: 0.7rem;
     margin-bottom: 4px; }
   .footerContacts div {
+<<<<<<< HEAD
     width: 70%;
     margin: 0 auto; }
   .footerContacts h6 {
     text-align: center; }
+=======
+    width: 100%;
+    margin: 0 auto; }
+  .footerContacts h6 {
+    text-align: left;
+    text-indent: 20px; }
+>>>>>>> 943f9ef798fd452f12a711810c0e0d2400cbf62a
   .footerContacts h6:last-of-type {
     margin-top: 20px; }
 
