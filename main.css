@@ -17,7 +17,7 @@ body {
       max-height: 650px; }
 
 .imgOne {
-  background: url("./photos/slike/molecules.jpg");
+  background: url("./photos/slike/moleculesps.jpg");
   height: 650px;
   background-position: center center;
   width: 100%;
@@ -354,7 +354,7 @@ h1 {
   margin: 150px auto; }
 
 .aboutCover {
-  background: url("./photos/slike/aboutPage.jpg");
+  background: url("./photos/slike/aboutPageps.jpg");
   height: 650px;
   background-position: center center;
   width: 100%;
