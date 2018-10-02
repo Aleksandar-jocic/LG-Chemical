@@ -1,12 +1,14 @@
 class UserInterfaceModule {
     
     constructor () {
-
+        this.UISelectors = {
+            output: '#output',
+        }
     }
 
     dataReceiver(data) {
 
-        console.log(data[2]);
+        console.log(data);
 
     }
 }

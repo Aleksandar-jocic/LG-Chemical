@@ -30,7 +30,3 @@ class DataModule {
 }
 
 export default DataModule;
-
-// var raw = localStorage.getItem('products');
-
-// console.log(JSON.parse(raw));
