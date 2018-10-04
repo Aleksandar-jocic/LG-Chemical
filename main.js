@@ -13,10 +13,10 @@ class MainModule {
             let dataInterceptor = data.getData();
 
             dataInterceptor.then(function (data) {
-
-                userInterface.dataReceiver(data)
-
+                
+                userInterface.dataReceiver(data[2].data)
             })
+            
         })
     }
 }
