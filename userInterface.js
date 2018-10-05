@@ -6,10 +6,11 @@ class UserInterfaceModule {
         }
     }
 
+    //receives main groups
+
     dataReceiver(data) {
 
         // console.log(data);
-
 
         for (let i = 0; i < data.length; i++) {
 
@@ -23,10 +24,11 @@ class UserInterfaceModule {
                   
             document.querySelector(this.UISelectors.output).innerHTML += BobTheBuilder;
 
-
         }
-
     }
+    
+    //receives sub groups
+    
 }
 
 export default UserInterfaceModule;

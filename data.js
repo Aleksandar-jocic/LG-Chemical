@@ -27,8 +27,6 @@ class DataModule {
     
         }
     }
-
-    
 }
 
 export default DataModule;

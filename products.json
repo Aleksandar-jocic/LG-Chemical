@@ -235,27 +235,32 @@
 {"product_id":"222","sub_id":"16","main_id":"3","product_name":"RDS-1000 Strip Reader","product_picture":null,"product_description":""},
 {"product_id":"223","sub_id":"16","main_id":"3","product_name":"MaxSignal® Automated ELISA Station","product_picture":null,"product_description":""},
 {"product_id":"224","sub_id":"16","main_id":"3","product_name":"MaxSignal® 4302 Plate Reader","product_picture":null,"product_description":""},
-{"product_id":"225","sub_id":"16","main_id":"3","product_name":"EPSON TM-U220B 61ps Printer","product_picture":null,"product_description":""}
+{"product_id":"225","sub_id":"16","main_id":"3","product_name":"EPSON TM-U220B 61ps Printer","product_picture":null,"product_description":""},
+{"product_id":"226","sub_id":"17","main_id":"5","product_name":"Vodonik-peroksid","product_picture":null,"product_description":""},
+{"product_id":"227","sub_id":"17","main_id":"5","product_name":"Natrijum-hidrosulfit","product_picture":null,"product_description":""},
+{"product_id":"228","sub_id":"17","main_id":"5","product_name":"Mravlja kiselina","product_picture":null,"product_description":""},
+{"product_id":"229","sub_id":"17","main_id":"5","product_name":"Sirćetna kiselina","product_picture":null,"product_description":""}
 ]
 }
 ,{"type":"table","name":"sub_group","database":"products","data":
 [
-{"sub_id":"1","sub_name":"PIGMENTI"},
-{"sub_id":"2","sub_name":"PEARLESCENTNI PIGMENTI"},
-{"sub_id":"3","sub_name":"CELULOZNA VLAKNA"},
-{"sub_id":"4","sub_name":"EPOKSIDNE SMOLE"},
-{"sub_id":"5","sub_name":"STEARATI"},
-{"sub_id":"6","sub_name":"FILERI"},
-{"sub_id":"7","sub_name":"ADITIVI"},
-{"sub_id":"8","sub_name":"DIJETETSKA VLAKNA"},
-{"sub_id":"9","sub_name":"SIRILA"},
-{"sub_id":"10","sub_name":"ADITIVI-prehrana"},
-{"sub_id":"11","sub_name":"DRUGI DODACI"},
-{"sub_id":"12","sub_name":"SREDSTVA ZA DEZINFEKCIJU I ODRŽAVANJE POGONA"},
-{"sub_id":"13","sub_name":"HEMIKALIJE ZA TRETMAN VODE"},
-{"sub_id":"14","sub_name":"Trakice za određivanje ostataka rezidua"},
-{"sub_id":"15","sub_name":"ELISA testovi"},
-{"sub_id":"16","sub_name":"Oprema"}
+{"sub_id":"1","main_id":"1","sub_name":"PIGMENTI"},
+{"sub_id":"2","main_id":"1","sub_name":"PEARLESCENTNI PIGMENTI"},
+{"sub_id":"3","main_id":"1","sub_name":"CELULOZNA VLAKNA"},
+{"sub_id":"4","main_id":"1","sub_name":"EPOKSIDNE SMOLE"},
+{"sub_id":"5","main_id":"1","sub_name":"STEARATI"},
+{"sub_id":"6","main_id":"1","sub_name":"FILERI"},
+{"sub_id":"7","main_id":"1","sub_name":"ADITIVI"},
+{"sub_id":"8","main_id":"2","sub_name":"DIJETETSKA VLAKNA"},
+{"sub_id":"9","main_id":"2","sub_name":"SIRILA"},
+{"sub_id":"10","main_id":"2","sub_name":"ADITIVI-prehrana"},
+{"sub_id":"11","main_id":"2","sub_name":"DRUGI DODACI"},
+{"sub_id":"12","main_id":"2","sub_name":"SREDSTVA ZA DEZINFEKCIJU I ODRŽAVANJE POGONA"},
+{"sub_id":"13","main_id":"2","sub_name":"HEMIKALIJE ZA TRETMAN VODE"},
+{"sub_id":"14","main_id":"3","sub_name":"Trakice za određivanje ostataka rezidua"},
+{"sub_id":"15","main_id":"3","sub_name":"ELISA testovi"},
+{"sub_id":"16","main_id":"3","sub_name":"Oprema"},
+{"sub_id":"17","main_id":"5","sub_name":"Hemikalije"}
 ]
 }
 ]
