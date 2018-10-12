@@ -1,3 +1,14 @@
+<?php include "../productDB/serverConnection.php"; ?>
+
+<?php
+
+if($connection) {
+
+    echo "bastard works";
+    
+}
+?>
+
 <html lang="en">
 
 <head>
@@ -27,14 +38,14 @@
         <div class="overlay">
             <div id="text">
                 <div>
-                    <a href="../index.html">
+                    <a href="../index.php">
                         <img src="../photos/logoIcon.png">
                         <img class="logoText" src="../photos/logotext.png" alt="">
                     </a>
                 </div>
 
                 <div class="options">
-                    <a href="../index.html">Početna</a>
+                    <a href="../index.php">Početna</a>
                     <a href="./about.html">O nama</a>
                     <a href="./products.html">Katalog Proizvoda</a>
                     <a href="./partners.html">Partneri</a>
@@ -45,14 +56,37 @@
 
             <div id="output">
 
+                <div class="selection">
+                    <div class="col-lg-12">
+                    <h1>Proizvodi</h1>
+                </div>
+                <div class="row" id="mainProducts">
+
+                <?php 
+
+                    $query = "SELECT * FROM main_group";
+                    $select_all_main_groups = mysqli_query($connection, $query);
+
+                    while($row = mysqli_fetch_assoc($select_all_main_groups)) {
+
+                        $main_name = $row['main_name'];
+                        $main_id = $row['main_id'];
+
+                        echo "<div class='Item col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12'>
+                            <img src='../photos/welder.jpg' alt='Card image cap'>
+                            <div class='middle'>
+                            <div class='text'><a href='./products.php?id={$main_id}' >{$main_name}</a> </div>
+                            </div>
+                            </div>";
+                    }
+                ?>
             </div>
+
         </div>
 
     </div>
+    
     <script src="../javascript/effects.js"></script>
-    <!-- <script src="./main.js" type="module"></script> -->
-    
-    
 
 </body>
 
