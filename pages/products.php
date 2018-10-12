@@ -1,11 +1,32 @@
 <?php include "../productDB/serverConnection.php"; ?>
+<?php include "../productDB/functions.php"; ?>
+
 
 <?php
 
 if($connection) {
 
-    echo "bastard works";
+    echo "connection to db established" .'<br><br><br>';
     
+}
+
+
+
+if(isset($_GET['main_id'])) {
+
+    $mainID = $_GET['main_id'];
+
+    getSubGroupsWithMainID($mainID);
+
+}
+if(isset($_GET['sub_id'])) {
+
+    $subID = $_GET['sub_id'];
+    
+    echo "products loaded";
+
+    getProducts($subID);
+
 }
 ?>
 
@@ -47,7 +68,7 @@ if($connection) {
                 <div class="options">
                     <a href="../index.php">Početna</a>
                     <a href="./about.html">O nama</a>
-                    <a href="./products.html">Katalog Proizvoda</a>
+                    <a href="./products.php">Katalog Proizvoda</a>
                     <a href="./partners.html">Partneri</a>
                     <a href="./contact.html">Kontakt</a>
                 </div>
@@ -75,7 +96,7 @@ if($connection) {
                         echo "<div class='Item col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12'>
                             <img src='../photos/welder.jpg' alt='Card image cap'>
                             <div class='middle'>
-                            <div class='text'><a href='./products.php?id={$main_id}' >{$main_name}</a> </div>
+                            <div class='text'><a href='./products.php?main_id={$main_id}' >{$main_name}</a> </div>
                             </div>
                             </div>";
                     }
@@ -83,7 +104,6 @@ if($connection) {
             </div>
 
         </div>
-
     </div>
     
     <script src="../javascript/effects.js"></script>
