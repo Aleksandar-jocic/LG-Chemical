@@ -83,24 +83,7 @@ if(isset($_GET['sub_id'])) {
                 </div>
                 <div class="row" id="mainProducts">
 
-                <?php 
-
-                    $query = "SELECT * FROM main_group";
-                    $select_all_main_groups = mysqli_query($connection, $query);
-
-                    while($row = mysqli_fetch_assoc($select_all_main_groups)) {
-
-                        $main_name = $row['main_name'];
-                        $main_id = $row['main_id'];
-
-                        echo "<div class='Item col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12'>
-                            <img src='../photos/welder.jpg' alt='Card image cap'>
-                            <div class='middle'>
-                            <div class='text'><a href='./products.php?main_id={$main_id}' >{$main_name}</a> </div>
-                            </div>
-                            </div>";
-                    }
-                ?>
+                
             </div>
 
         </div>

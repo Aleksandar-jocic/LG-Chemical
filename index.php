@@ -1,7 +1,6 @@
 <?php include "./modules/head.php" ?>
 <?php include "./productDB/serverConnection.php" ?>
 
-
 <body>
     
     <div class="container-fluid">
@@ -22,9 +21,39 @@
                 </div>
 
                 <div class="options">
+                  <a href="./administration/admin.php">admin</a>
                     <a href="./index.php">Početna</a>
                     <a href="./pages/about.html">O nama</a>
-                    <a href="./pages/products.php">Katalog Proizvoda</a>
+                    <span id="productTrigger">Katalog Proizvoda</span>
+
+
+
+                    <div class='catalogue'>
+                        <ul>
+
+                <?php 
+
+                    $query = "SELECT * FROM main_group";
+                    $select_all_main_groups = mysqli_query($connection, $query);
+
+                    while($row = mysqli_fetch_assoc($select_all_main_groups)) {
+
+                        $main_name = $row['main_name'];
+                        $main_id = $row['main_id'];
+
+                        $writer = "<li class='productList'><a  href='./pages/products.php?main_id={$main_id}'>$main_name</a></li>";
+                        
+                        echo $writer;  
+                    }
+                    
+                ?>
+
+                        </ul>
+                    <div >
+                        <img class="cataloguePhoto" src="./photos/slike/road.jpg" alt="">
+                    </div>
+
+                </div>
                     <a href="./pages/partners.html">Partneri</a>
                     <a href="./pages/contact.html">Kontakt</a>
                 </div>
