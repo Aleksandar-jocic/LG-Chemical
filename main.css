@@ -345,6 +345,36 @@ body {
     .selection .additionalProducts .Item {
       margin: 0 auto; }
 
+.overlay #text .options .catalogue {
+  display: none;
+  background-color: gray;
+  width: 500px;
+  height: auto;
+  position: absolute;
+  top: 40px;
+  right: 55px;
+  box-sizing: content-box; }
+  .overlay #text .options .catalogue ul {
+    margin: 0;
+    padding: 10px;
+    width: 40%;
+    display: inline-block; }
+  .overlay #text .options .catalogue .productList {
+    color: gray;
+    display: block;
+    text-align: left; }
+
+.show {
+  display: block !important; }
+
+#productTrigger {
+  font-size: 18px; }
+
+.cataloguePhoto {
+  width: calc(100% - 40% - 20px);
+  padding: 10px;
+  vertical-align: initial; }
+
 h1 {
   text-align: center;
   margin-top: 20px; }
@@ -555,5 +585,8 @@ h1 {
 
 .Item:hover .middle {
   opacity: 1; }
+
+#productTrigger:hover {
+  cursor: pointer; }
 
 /*# sourceMappingURL=main.css.map */

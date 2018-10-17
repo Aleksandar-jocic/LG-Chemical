@@ -50,10 +50,18 @@ document.getElementById('target').addEventListener('click', function () {
 
     if ($('.options').hasClass('options-responsive')) {
         $('.options').removeClass('options-responsive');
-        console.log('if');
     }
     else {
         $('.options').addClass('options-responsive');
-        console.log('else');
+    }
+})
+
+document.getElementById('productTrigger').addEventListener('click', function () {
+
+    if ($('.catalogue').hasClass('show')) {
+        $('.catalogue').removeClass('show');
+    }
+    else {
+        $('.catalogue').addClass('show');
     }
 })
