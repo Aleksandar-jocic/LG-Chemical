@@ -66,7 +66,7 @@ if (!$admin) {
         <input type="submit" name="submit" value="submit">
 <?php
 
-    }else {
+    } else {
 ?>
     <h1>LG-Chemical Administration panel</h1>
 
