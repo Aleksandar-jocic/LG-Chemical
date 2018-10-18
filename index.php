@@ -84,20 +84,20 @@
 
      <?php 
 
-$query = "SELECT * FROM story";
-$select_feed = mysqli_query($connectionFeed, $query);
+// $query = "SELECT * FROM story";
+// // $select_feed = mysqli_query($connectionFeed, $query);
 
-while($row = mysqli_fetch_assoc($select_feed)) {
+// // while($row = mysqli_fetch_assoc($select_feed)) {
 
-    $story_title = $row['story_title'];
-    $story_date = $row['story_date'];
-    $story_content = $row['story_content'];
+//     $story_title = $row['story_title'];
+//     $story_date = $row['story_date'];
+//     $story_content = $row['story_content'];
     
 
-    $burner = "<div><h1>{$story_title}</h1><p>{$story_date}</p><p>{$story_content}</p></div>";
+//     // $burner = "<div><h1>{$story_title}</h1><p>{$story_date}</p><p>{$story_content}</p></div>";
 
-    echo $burner;
-}
+//     // echo $burner;
+// // }
     
     ?> 
 
