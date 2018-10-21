@@ -16,6 +16,6 @@
     $password = '';
     $database = 'feed';
 
-    // $connectionFeed = mysqli_connect($server, $username, $password, $database);
+    $connectionFeed = mysqli_connect($server, $username, $password, $database);
 
 ?>
