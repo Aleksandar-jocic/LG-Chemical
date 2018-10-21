@@ -2,33 +2,7 @@
 <?php include "../productDB/functions.php"; ?>
 
 
-<?php
 
-if($connection) {
-
-    echo "connection to db established" .'<br><br><br>';
-    
-}
-
-
-
-if(isset($_GET['main_id'])) {
-
-    $mainID = $_GET['main_id'];
-
-    getSubGroupsWithMainID($mainID);
-
-}
-if(isset($_GET['sub_id'])) {
-
-    $subID = $_GET['sub_id'];
-    
-    echo "products loaded";
-
-    getProducts($subID);
-
-}
-?>
 
 <html lang="en">
 
@@ -74,21 +48,44 @@ if(isset($_GET['sub_id'])) {
                 </div>
                 <i class="fa fa-bars" id="target"></i>
             </div>
-
-            <div id="output">
-
-                <div class="selection">
-                    <div class="col-lg-12">
-                    <h1>Proizvodi</h1>
-                </div>
-                <div class="row" id="mainProducts">
-
-                
-            </div>
-
         </div>
-    </div>
+
+        <div id="output">
+                <h1>Proizvodi</h1>
+
+
+                <div class="productListDiv">
+                    
+<?php
+// if($connection) {
+//     echo "connection to db established" .'<br><br><br>';
+// }
+
+if(isset($_GET['main_id'])) {
+
+    $mainID = $_GET['main_id'];
+
+    getSubGroupsWithMainID($mainID);
+
+}
+if(isset($_GET['sub_id'])) {
+
+    $subID = $_GET['sub_id'];
     
+    echo "products loaded";
+
+    getProducts($subID);
+
+}
+?>
+    </ul>
+
+        </div>       
+         </div>
+
+        
+    </div>
+
     <script src="../javascript/effects.js"></script>
 
 </body>

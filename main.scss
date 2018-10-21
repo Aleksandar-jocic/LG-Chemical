@@ -378,6 +378,37 @@ body {
      vertical-align: initial;
 }
 
+#output {
+    position: relative;
+    color: white;
+    background-image: url("./photos/background-dark.jpg");
+    height: auto;
+    h1 {
+        position: relative;
+        color: white;
+    }
+    a {
+        color: white;
+    }
+    .productListDiv {
+
+        margin: 20px 0px 20px 80px;
+
+        div {
+            padding: 15px;
+            border: 1px white solid;
+            width: 550px;
+            border-radius: 0px 40px 40px 0px;
+        }
+        i {
+            float: right;
+            vertical-align: middle;
+            font-size: 1.5rem;
+        }
+
+    }
+}
+
 //                  ABOUT PAGE                 //
 h1 {
     text-align: center;

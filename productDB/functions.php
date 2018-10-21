@@ -15,7 +15,7 @@ function getSubGroupsWithMainID ($mainID) {
         $sub_name = $row['sub_name'];
         $sub_id = $row['sub_id'];
 
-        $burner = "<a href='./products.php?sub_id={$sub_id}'>{$sub_name}</a>" . "<br>";
+        $burner = "<div><a href='./products.php?sub_id={$sub_id}'>{$sub_name}</a><i class='fas fa-arrow-alt-circle-right'></i></div>";
 
         echo $burner;
     }
