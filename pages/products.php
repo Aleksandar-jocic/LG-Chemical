@@ -50,16 +50,22 @@
             </div>
         </div>
 
+        <h1>Proizvodi</h1>
+
+        <div class="mainContainer">
+
+<?php 
+    getAllMain();
+?>
+
+
+        </div>
+
         <div id="output">
-                <h1>Proizvodi</h1>
 
-
-                <div class="productListDiv">
-                    
+        <div class="subProductDiv">
+        
 <?php
-// if($connection) {
-//     echo "connection to db established" .'<br><br><br>';
-// }
 
 if(isset($_GET['main_id'])) {
 
@@ -68,20 +74,27 @@ if(isset($_GET['main_id'])) {
     getSubGroupsWithMainID($mainID);
 
 }
+
+?>
+
+        </div>
+
+            <div class="productListDiv">
+
+<?php
+
+
 if(isset($_GET['sub_id'])) {
 
     $subID = $_GET['sub_id'];
     
-    echo "products loaded";
-
     getProducts($subID);
 
 }
 ?>
-    </ul>
 
-        </div>       
-         </div>
+            </div>       
+        </div>
 
         
     </div>

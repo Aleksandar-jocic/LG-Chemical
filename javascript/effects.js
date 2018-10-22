@@ -11,6 +11,15 @@ $(document).ready(function () {
     timeTwo = setTimeout(textAppear, 1500);
 })
 
+window.onscroll = function() {scroll()};
+
+
+function scroll () {
+
+    var scroll = document.body.scrollTop;
+    console.log(scroll);
+    
+}
 
 handler = function() {
     navbar.addClass('overlay-active')

@@ -2,6 +2,29 @@
 
 <?php 
 
+function getAllMain () {
+
+    global $connection;
+
+    $query = "SELECT * FROM main_group";
+
+        $select_all_main_groups = mysqli_query($connection, $query);
+
+        while($row = mysqli_fetch_assoc($select_all_main_groups)) {
+
+        $main_name = $row['main_name'];
+        $main_id = $row['main_id'];
+
+        $writer = "<div class='mainList'><a  href='./products.php?main_id={$main_id}'>$main_name</a></div>";
+                        
+        echo $writer;  
+    }
+}
+
+
+//keep the scroll position
+
+
 function getSubGroupsWithMainID ($mainID) {
 
     global $connection;
@@ -15,11 +38,12 @@ function getSubGroupsWithMainID ($mainID) {
         $sub_name = $row['sub_name'];
         $sub_id = $row['sub_id'];
 
-        $burner = "<div><a href='./products.php?sub_id={$sub_id}'>{$sub_name}</a><i class='fas fa-arrow-alt-circle-right'></i></div>";
+        $burner = "<div class='subGroups'><a href='./products.php?main_id={$mainID}&sub_id={$sub_id}'>{$sub_name}</a></div>";
 
         echo $burner;
     }
 } 
+
 function getProducts ($subID) {
 
     global $connection;
