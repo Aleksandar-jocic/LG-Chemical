@@ -203,6 +203,7 @@ body {
             font-size: 0.9em;
             text-decoration: none;
             color: white;
+            vertical-align: middle;
         }
         .options {
             display: inline-block;
@@ -376,6 +377,78 @@ body {
      width: calc(100% - 40% - 20px);
      padding: 10px;
      vertical-align: initial;
+}
+
+#output {
+    position: relative;
+    color: white;
+    background-image: url("./photos/background-dark.jpg");
+    height: auto;
+    h1 {
+        position: relative;
+        color: white;
+        padding-top: 30px;
+        margin: 0px;
+    }
+    a {
+        color: white;
+    }
+    .subProductDiv {
+        display: flex;
+        padding: 15px;
+        justify-content: center;
+        border-bottom: 1px solid white;
+
+        .subGroups {
+            padding: 15px;
+            margin: 20px 0px 20px 0px;
+        }
+        
+    }
+    .productListDiv {
+
+        padding: 15px;
+        margin: 0px 0px 20px 80px;
+
+        div {
+            padding: 15px;
+            margin: 20px 0px 20px 0px;
+            border: 1px white solid;
+            width: 550px;
+            border-radius: 0px 40px 40px 0px;
+        }
+        i {
+            float: right;
+            vertical-align: middle;
+            font-size: 1.5rem;
+        }
+
+    }
+}
+.mainContainer {
+    display: flex;
+    justify-content: center;
+
+}
+.mainList {
+
+    padding: 20px;
+    border: 1px solid $two;
+    background-color: $two;
+    margin: 20px 3px 0px 3px;
+    width: auto;
+    min-width: 160px;
+    text-align: center;
+    border-radius: 5px 5px 0px 0px;
+
+    a {
+        color: white;
+        text-decoration: unset;
+    }
+} 
+.mainListActive {
+    border: 1px solid $pinterest;
+    background-color: $pinterest;
 }
 
 //                  ABOUT PAGE                 //
@@ -593,4 +666,8 @@ h1 {
 }
 #productTrigger:hover {
     cursor: pointer;
+}
+a {
+//     // color: white;
+    text-decoration: unset;
 }
