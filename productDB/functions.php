@@ -11,15 +11,20 @@ function getAllMain () {
         $select_all_main_groups = mysqli_query($connection, $query);
 
         while($row = mysqli_fetch_assoc($select_all_main_groups)) {
-
-        $main_name = $row['main_name'];
-        $main_id = $row['main_id'];
-
-        $writer = "<div class='mainList'><a  href='./products.php?main_id={$main_id}'>$main_name</a></div>";
-                        
-        echo $writer;  
+            $super = $_GET['main_id'];
+            $main_name = $row['main_name'];
+            $main_id = $row['main_id'];
+                if ($super === $main_id) {
+                    $active = "<div class='mainList mainListActive'><a onclick=return false  href='./products.php?main_id={$main_id}#productDisplay'>$main_name</a></div>";
+                    echo $active;
+                } else {
+                    $writer = "<div class='mainList'><a onclick=return false  href='./products.php?main_id={$main_id}#productDisplay'  >$main_name</a></div>";
+                            
+                    echo $writer;  
+                }
+        }
     }
-}
+    
 
 
 //keep the scroll position
@@ -38,9 +43,28 @@ function getSubGroupsWithMainID ($mainID) {
         $sub_name = $row['sub_name'];
         $sub_id = $row['sub_id'];
 
-        $burner = "<div class='subGroups'><a href='./products.php?main_id={$mainID}&sub_id={$sub_id}'>{$sub_name}</a></div>";
+        if (isset($_GET['sub_id'])) {
 
-        echo $burner;
+                $super = $_GET['sub_id'];
+
+            if ($super === $sub_id) {
+
+                $active = "<div class='subGroups subGroupsActive'><a href='./products.php?main_id={$mainID}&sub_id={$sub_id}#productDisplay'>{$sub_name}</a></div>";
+        
+                echo $active;
+        
+            } else {
+        
+                $burner = "<div class='subGroups'><a href='./products.php?main_id={$mainID}&sub_id={$sub_id}#productDisplay'>{$sub_name}</a></div>";
+                            
+                echo $burner;  
+            }
+        }
+        else {
+            $burner = "<div class='subGroups'><a href='./products.php?main_id={$mainID}&sub_id={$sub_id}#productDisplay'>{$sub_name}</a></div>";
+
+            echo $burner;  
+        }
     }
 } 
 
