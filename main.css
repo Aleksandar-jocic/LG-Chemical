@@ -394,8 +394,12 @@ body {
     justify-content: center;
     border-bottom: 1px solid white; }
     #output .subProductDiv .subGroups {
+
       padding: 15px;
       margin: 20px 0px 20px 0px; }
+      #output .subProductDiv .subGroupsActive {
+        text-decoration: underline;
+      }
   #output .productListDiv {
     padding: 15px;
     margin: 0px 0px 20px 80px; }
@@ -649,3 +653,6 @@ a {
   text-decoration: unset; }
 
 /*# sourceMappingURL=main.css.map */
+#productDisplay {
+  padding-top: 60px;
+}
