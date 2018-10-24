@@ -1,32 +1,27 @@
 <div class="footer">
-
             <div class="footImage">
-                <img src="./photos/logo.png" alt="">
-                <img class='iconPic' src="./photos/logoIcon.png" alt="">
+                <img src="../photos/logo.png" alt="">
+                <!-- <img id='iconPic' src="../photos/logoIcon.png" alt=""> -->
             </div>
-
             <div class="row ">
-
                 <div class="col-4 footerLinks">
                     <ul>
                         <li>
-                            <a href="./about.html">O nama</a>
+                            <a href="../pages/about.html">O nama</a>
                         </li>
                         <li>
-                            <a href="./about.html">Proizvodi</a>
+                            <a href="../pages/about.html">Proizvodi</a>
                         </li>
                         <li>
-                            <a href="./about.html">Partneri</a>
+                            <a href="../pages/partners.html">Partneri</a>
                         </li>
                         <li>
-                            <a href="./contact.html">Kontakt</a>
+                            <a href="../pages/contact.html">Kontakt</a>
                         </li>
                     </ul>
                 </div>
-
                 <div class="verticalLine col-4">
                 </div>
-
                 <div class="col-4 footerContacts">
                     <h6>LG HEMIJA</h6>
                     <div>
@@ -50,4 +45,4 @@
                         <i class="far fa-copyright"></i> 2018</p>
                 </div>
             </div>
-        </div>
+        </div> 

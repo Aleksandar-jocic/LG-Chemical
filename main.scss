@@ -196,7 +196,7 @@ body {
         }
         a {
             text-align: center;
-            padding: 0px;
+            padding: 5px 0px 5px 0px;
             list-style: none;
             display: inline-block;
             margin: 0 14px;
@@ -208,6 +208,9 @@ body {
         .options {
             display: inline-block;
             margin-left: 160px;
+            border-top: 1px solid rgb(212, 212, 212);
+            border-bottom: 1px solid rgb(236, 236, 236);
+            
         }
         white-space: nowrap;
         color: white;
@@ -233,12 +236,13 @@ body {
             float: none;
         }
         .options {
-            width: 0px; // float: right;
+            width: 0px; 
             margin: 0px;
             a {
                 display: none;
             }
         }
+        
         .options-responsive {
             position: absolute;
             top: 75px;
@@ -282,7 +286,9 @@ body {
     height: 100px;
     z-index: 10000;
 }
-
+.optionsBorder {
+    border: 0px !important;
+}
 //                  MAIN                    //
 .mainSection {
     text-align: center;
@@ -295,6 +301,57 @@ body {
         text-align: left;
     }
 }
+#newsCover {
+    background: url('./photos/background-dark.jpg');
+    background-size: cover;
+    h1, h2 {
+        color: white;
+    }
+}
+
+
+#feed {
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+
+
+    .newsDiv {
+        width: 48%;
+        height: 400px;
+        overflow: hidden;
+        padding: 20px;
+        display: inline-block;
+        vertical-align: top;
+        background-color: rgba(rgb(219, 219, 219), 0.8);
+        border-radius: 3px;
+        box-sizing: border-box;
+
+        .dateSpan {
+            text-align: left;
+            color: $charlie;
+        }
+        p {
+            text-align: left;
+            width: 100%;
+            
+        }
+        @media screen and (max-width: $on856) {
+            display: block;
+            width: 100%;
+            margin: 0 auto;
+            margin-bottom: 30px;
+        }
+    }
+    @media screen and (max-width: $on856) {
+        width: 100%;
+        display: block;
+    }
+}
+
 
 //                  PRODUCTS                    //
 .selection {
@@ -545,7 +602,7 @@ h1 {
     }
 }
 
-#iconPic {
+.iconPic {
     width: 80px;
     height: 80px;
     display: none;
@@ -670,4 +727,76 @@ h1 {
 a {
 //     // color: white;
     text-decoration: unset;
+}
+.logoHRWhite {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    
+    img {
+        width: auto;
+        max-width: 30px;
+        // margin-top: 10px;
+    }
+}
+.logoHR {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    
+    img {
+        width: auto;
+        max-width: 30px;
+        // margin-top: 10px;
+    }
+}
+.logoHR::before {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    width: calc(10% - 30px);
+    top: 50%;
+    height: 1px;
+    background-color: black;
+    text-align: center;
+    left: 40%;
+    
+}
+.logoHR::after {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    width: calc(10% - 30px);
+    top: 50%;
+    height: 1px;
+    background-color: black;
+    text-align: center;
+    right: 40%;
+}
+.logoHRWhite::before {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    width: calc(10% - 30px);
+    top: 50%;
+    height: 1px;
+    background-color: white;
+    text-align: center;
+    left: 40%;
+    
+}
+.logoHRWhite::after {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    width: calc(10% - 30px);
+    top: 50%;
+    height: 1px;
+    background-color: white;
+    text-align: center;
+    right: 40%;
 }

@@ -1,4 +1,5 @@
 var navbar = $('.overlay');
+var navbarOptions = $('.options');
 var logoText = $('.logoText');
 var timeOne;
 var timeTwo;
@@ -7,8 +8,8 @@ var textAppear;
 
 $(document).ready(function () {
 
-    timeOne = setTimeout(handler, 1000);  
-    timeTwo = setTimeout(textAppear, 1500);
+    timeOne = setTimeout(handler, 0);  
+    timeTwo = setTimeout(textAppear, 1000);
 })
 
 window.onscroll = function() {scroll()};
@@ -22,7 +23,7 @@ function scroll () {
 }
 
 handler = function() {
-    navbar.addClass('overlay-active')
+    navbar.addClass('overlay-active');
     console.log('handle works');
     clearTimeout()
 }
@@ -46,11 +47,13 @@ function fixNavbar() {
     
     if (window.pageYOffset > 0) {
 
-      navbar.addClass("sticky");
+    navbar.addClass("sticky");
+    navbarOptions.addClass('optionsBorder');
       
     } else {
 
       navbar.removeClass("sticky");
+      navbarOptions.removeClass('optionsBorder');
 
     }    
 }

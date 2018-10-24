@@ -24,7 +24,7 @@
                   <a href="./administration/admin.php">admin</a>
                     <a href="./index.php">Početna</a>
                     <a href="./pages/about.html">O nama</a>
-                    <span id="productTrigger">Katalog Proizvoda</span>
+                    <a href="#!" id="productTrigger">Katalog Proizvoda</a>
 
 
 
@@ -61,14 +61,16 @@
             </div>
         </div>
 
-        <br>
-        <br>
-        <hr>
-
+        
+      
 
         <div class="mainSection">
             <h1>LG HEMIJA</h1>
+            <div class="logoHR">
+                <img  src="./photos/logoIcon.png" alt="">
+            </div>
             <h4>proizvodi hemijske industrije</h4>
+            
             <p>LG HEMIJA D.O.O. je deo grupacije LOUFAKIS CHEMICALS SA., koja se bavi distribucijom hemijskih proizvoda namenjenih
                 industriji: </p>
             <ul>
@@ -79,28 +81,43 @@
             </ul>
         </div>
 
-
+        <div id="newsCover">
+        <h1>News</h1>
+        <div class="logoHRWhite">
+                <img  src="./photos/logoIcon.png" alt="">
+        </div>
         <div id="feed">
-
+                
      <?php 
 
 $query = "SELECT * FROM story";
 $select_feed = mysqli_query($connectionFeed, $query);
+
 
 while($row = mysqli_fetch_assoc($select_feed)) {
 
     $story_title = $row['story_title'];
     $story_date = $row['story_date'];
     $story_content = $row['story_content'];
+
+    if (strlen($story_content) > 400) {
+        
+        // echo "longer";
+
+    } else {
+
+        // echo "cool";
+
+    }
     
 
-    $burner = "<div><h1>{$story_title}</h1><p>{$story_date}</p><p>{$story_content}</p></div>";
+    $burner = "<div class='newsDiv'><h2>{$story_title}</h2><p class='dateSpan'>{$story_date}</p><p>{$story_content}</p></div>";
 
     echo $burner;
 }
     
     ?> 
-
+</div>
         </div>
 
         <hr>
