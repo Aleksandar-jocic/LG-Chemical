@@ -2,7 +2,7 @@
 
             <div class="footImage">
                 <img src="./photos/logo.png" alt="">
-                <img class='iconPic' src="./photos/logoIcon.png" alt="">
+                <!-- <img class='iconPic' src="./photos/logoIcon.png" alt=""> -->
             </div>
 
             <div class="row ">
