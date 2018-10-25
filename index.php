@@ -49,9 +49,9 @@
                 ?>
 
                         </ul>
-                    <div >
+                    <!-- <div >
                         <img class="cataloguePhoto" src="./photos/slike/road.jpg" alt="">
-                    </div>
+                    </div> -->
 
                 </div>
                     <a href="./pages/partners.html">Partneri</a>

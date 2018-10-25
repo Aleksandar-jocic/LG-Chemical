@@ -20,6 +20,7 @@ $on426: 426px;
 $on576: 576px;
 $on768: 768px;
 $on856: 856px;
+$on960: 960px;
 
 @mixin imgPosition {
     height: 650px;
@@ -226,7 +227,7 @@ body {
 }
 
 .overlay #text {
-    @media screen and (max-width: $on856) {
+    @media screen and (max-width: $on960) {
         width: 100%;
         div {
             float: none;
@@ -238,6 +239,7 @@ body {
         .options {
             width: 0px; 
             margin: 0px;
+            
             a {
                 display: none;
             }
@@ -251,8 +253,8 @@ body {
             text-align: center;
             float: none;
             margin: 0px !important;
-            transition: 1s ease; // transform: scale(2.3);
-            // -ms-transform: translate(-50%, -50%);
+            transition: 1s ease; 
+            z-index: 10000;
             a {
                 display: block;
                 width: 100%;
@@ -354,6 +356,14 @@ body {
 
 
 //                  PRODUCTS                    //
+
+.productCover {
+
+    background: url('./photos/slike/machanisation.jpg');
+    @include imgPosition();
+    background-position: center center;
+    
+}
 .selection {
     width: 90%;
     margin: 0 auto 50px auto;
@@ -404,32 +414,72 @@ body {
 
 .overlay #text .options .catalogue {
     display: none;
-    background-color: gray;
-    width: 500px;
+    background-color: rgba($color: #9b9b9b, $alpha: 0.7);
+    width: 709px;
     height: auto;
     position: absolute;
-    top: 40px;
-    right: 55px;
+    top: 50px;
+    right: 0px;
     box-sizing: content-box;
+    transition: 0.5s ease;
 
+    
+    
     ul {
         margin: 0;
         padding: 10px;
-        width: 40%;
-        display: inline-block;
+        // width: 40%;
+        display: flex;
+        justify-content: space-between;
+
+        @media screen and (max-width: $on856) {
+            position: absolute;
+            width: 100% !important;
+            padding: 0px;
+            display: block;
+            top: 178px;
+            height: auto;
+            a {
+                color: white !important;
+            }
+        }
+
     }
     .productList {
-    color: gray;
+
     display: block;
-    text-align: left;
+    text-align: center;
+    font-size: 0.9rem;
+    a {
+    color: rgb(46, 46, 46);
+    padding: 7px 0px 7px 0px;
+        
     }
+    }
+}
+#productTrigger {
+    
+}
+.triggerDrop {
+    margin-bottom: 250px !important;
+
 }
 .show {
     display: block !important;
+
+    @media screen and (max-width: $on856) {
+        position: absolute;
+        width: 100% !important;
+        display: block;
+    }
 }
-#productTrigger {
-    font-size: 18px;
+.redBorder {
+    border-bottom: 1px solid red !important;
 }
+.dropSpace {
+    top: 80px !important;
+}
+
 .cataloguePhoto {
      width: calc(100% - 40% - 20px);
      padding: 10px;
@@ -439,7 +489,10 @@ body {
 #output {
     position: relative;
     color: white;
-    background-image: url("./photos/background-dark.jpg");
+    box-shadow: inset 200px 200px 20px 1000px rgba(31, 31, 31, 0.8);    
+    background-image: url("./photos/slike/cookie.jpg");
+    background-position: center center;
+    background-size: cover;
     height: auto;
     h1 {
         position: relative;
@@ -452,13 +505,16 @@ body {
     }
     .subProductDiv {
         display: flex;
-        padding: 15px;
+        padding: 10px 0px 0px 0px;
         justify-content: center;
-        border-bottom: 1px solid white;
 
         .subGroups {
             padding: 15px;
             margin: 20px 0px 20px 0px;
+        }
+        .subGroupsActive {
+            border-bottom: 1px solid $charlie;
+            padding-bottom: 5px;
         }
         
     }

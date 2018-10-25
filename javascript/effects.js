@@ -1,6 +1,7 @@
 var navbar = $('.overlay');
 var navbarOptions = $('.options');
 var logoText = $('.logoText');
+var catalogue = $('.catalogue');
 var timeOne;
 var timeTwo;
 var handler;
@@ -49,12 +50,15 @@ function fixNavbar() {
 
     navbar.addClass("sticky");
     navbarOptions.addClass('optionsBorder');
+    catalogue.addClass('dropSpace');
+    
       
     } else {
 
-      navbar.removeClass("sticky");
-      navbarOptions.removeClass('optionsBorder');
-
+    navbar.removeClass("sticky");
+    navbarOptions.removeClass('optionsBorder');
+    catalogue.removeClass('dropSpace');
+    
     }    
 }
 
@@ -66,9 +70,27 @@ document.getElementById('target').addEventListener('click', function () {
     else {
         $('.options').addClass('options-responsive');
     }
+
+
+   
 })
 
 document.getElementById('productTrigger').addEventListener('click', function () {
+
+    if ($('.options').hasClass('redBorder')) {
+        $('.options').removeClass('redBorder');
+    }
+    else {
+        $('.options').addClass('redBorder');
+    }
+
+    if ($('#productTrigger').hasClass('triggerDrop')) {
+        $('#productTrigger').removeClass('triggerDrop');
+    }
+    else {
+        $('#productTrigger').addClass('triggerDrop');
+    }
+
 
     if ($('.catalogue').hasClass('show')) {
         $('.catalogue').removeClass('show');

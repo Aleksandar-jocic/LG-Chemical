@@ -26,7 +26,7 @@
     <div class="container-fluid">
         <div class="imageContainer">
 
-            <div class="aboutCover">
+            <div class="productCover">
             </div>
 
         </div>
@@ -80,7 +80,9 @@ if(isset($_GET['main_id'])) {
 ?>
 
         </div>
-
+        <div class="logoHRWhite">
+                <img  src="../photos/logoIcon.png" alt="">
+            </div>
             <div class="productListDiv">
 
 <?php
