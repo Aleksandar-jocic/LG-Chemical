@@ -70,7 +70,17 @@ if (!$admin) {
 ?>
     <h1>LG-Chemical Administration panel</h1>
 
-    products panel
+<div>
+
+<div>Proizvodi</div>
+<div>Aktuelnosti</div>
+<div>P</div>
+
+</div>
+
+
+
+    <!-- products panel
 
         -main group
 
@@ -100,7 +110,7 @@ if (!$admin) {
 
     admin side panel
 
-        -change admin credentials 
+        -change admin credentials  -->
 
 <?php        
     }

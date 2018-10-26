@@ -314,7 +314,10 @@ body {
 
 #newsCover {
   background: url("./photos/background-dark.jpg");
-  background-size: cover; }
+  background-size: cover;
+  background-attachment: fixed;
+  overflow: hidden;
+}
   #newsCover h1, #newsCover h2 {
     color: white; }
 
@@ -626,7 +629,10 @@ h1 {
 
 .footer {
   background-color: rgba(163, 163, 163, 0.56);
-  margin-top: 90px; }
+  margin-top: 90px;
+  border-radius: 85% 85% 0 0 / 30%;
+
+}
   .footer .row {
     margin: 0px; }
 

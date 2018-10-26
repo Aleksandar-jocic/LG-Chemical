@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>LG hemija</title>
+    <link rel="stylesheet" href="../modules/preLoader.css">
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../main.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -23,6 +24,9 @@
 </head>
 
 <body>
+    <div class="loader">
+        <img src="../photos/39.gif" alt="">
+    </div>
     <div class="container-fluid">
         <div class="imageContainer">
 
@@ -103,7 +107,8 @@ if(isset($_GET['sub_id'])) {
         
     </div>
     <?php include "../modules/footerRest.php"; ?>
-
+   
+   <script src="../javascript/preloaderJs.js"></script>
     <script src="../javascript/effects.js"></script>
 </body>
 

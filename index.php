@@ -1,7 +1,36 @@
 <?php include "./modules/head.php" ?>
 <?php include "./productDB/serverConnection.php" ?>
 
+<style media="screen">
+        .loader {
+            position: fixed;
+            z-index: 99;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .loader.hidden {
+            animation: fadeOut 1s;
+            animation-fill-mode: forwards;
+        }
+        @keyframes fadeOut {
+
+            100% {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+    </style>
 <body>
+
+<div class="loader">
+    <img src="./photos/39.gif" alt="">
+</div>
     
     <div class="container-fluid">
 
@@ -179,6 +208,16 @@ while($row = mysqli_fetch_assoc($select_feed)) {
         <?php include "./modules/footer.php" ?>
 
     </div>
+    <script type="text/javascript"> 
+
+        window.addEventListener('load', function () {
+            
+            const loader = document.querySelector(".loader");
+            
+            loader.className += " hidden";
+        });
+    
+    </script>
     <script src="./javascript/effects.js"></script>
     
 </body>
