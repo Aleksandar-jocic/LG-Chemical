@@ -105,6 +105,7 @@ body {
 }
 .carousel-indicators {
     position: relative;
+    z-index: 1;
     bottom: 0px;
     height: 60px;
     width: 100%;
@@ -129,10 +130,13 @@ body {
         display: inline-block;
         padding: 7px;
         box-sizing: border-box;
+        z-index: 1;
+        
     }
     @media screen and (max-width: $on768) {
         height: 50px;
         margin-top: 20px;
+        z-index: 1;
         li {
             height: 20px;
             padding: 0px;
@@ -140,7 +144,9 @@ body {
             width: 20px;
             margin: 0 5px;
             border-radius: 50%;
-        background-color: gray;
+            background-color: gray;
+            z-index: 1;
+        
             
         }
         :nth-of-type(1) {
@@ -155,6 +161,9 @@ body {
 .carousel-indicators .active {
     background-color: $charlie;
     color: white;
+}
+.die {
+    display: none !important;
 }
 
 //                  HEADER                    //
@@ -205,12 +214,15 @@ body {
             text-decoration: none;
             color: white;
             vertical-align: middle;
+            z-index: 100;
+            
         }
         .options {
             display: inline-block;
             margin-left: 160px;
             border-top: 1px solid rgb(212, 212, 212);
             border-bottom: 1px solid rgb(236, 236, 236);
+            z-index: 100;
             
         }
         white-space: nowrap;
@@ -239,7 +251,7 @@ body {
         .options {
             width: 0px; 
             margin: 0px;
-            
+            z-index: 1000;
             a {
                 display: none;
             }
@@ -306,6 +318,8 @@ body {
 #newsCover {
     background: url('./photos/background-dark.jpg');
     background-size: cover;
+    background-attachment: fixed;
+    overflow: hidden;
     h1, h2 {
         color: white;
     }
@@ -461,11 +475,17 @@ body {
     
 }
 .triggerDrop {
-    margin-bottom: 250px !important;
+    margin-bottom: 207px !important;
 
 }
 .show {
     display: block !important;
+    a {
+        width: 100px;
+    }
+    :last-child {
+        border-bottom: 1px solid white;
+    }
 
     @media screen and (max-width: $on856) {
         position: absolute;
@@ -477,7 +497,7 @@ body {
     border-bottom: 1px solid red !important;
 }
 .dropSpace {
-    top: 80px !important;
+    top: 50px !important;
 }
 
 .cataloguePhoto {
@@ -641,6 +661,7 @@ h1 {
 .footer {
     background-color: $shadow;
     margin-top: 90px;
+    border-radius: 85% 85% 0 0 / 30%;
     .row {
         margin: 0px;
     }

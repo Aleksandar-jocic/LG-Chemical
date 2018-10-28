@@ -2,6 +2,7 @@ var navbar = $('.overlay');
 var navbarOptions = $('.options');
 var logoText = $('.logoText');
 var catalogue = $('.catalogue');
+var carouselIndex = $('carousel-indicators');
 var timeOne;
 var timeTwo;
 var handler;
@@ -42,6 +43,7 @@ textAppear = function() {
 
 
 window.onscroll = function() {fixNavbar()};
+// window.onscroll = function() {fixCarousel()};
 
 
 function fixNavbar() {
@@ -51,7 +53,6 @@ function fixNavbar() {
     navbar.addClass("sticky");
     navbarOptions.addClass('optionsBorder');
     catalogue.addClass('dropSpace');
-    
       
     } else {
 
@@ -62,13 +63,33 @@ function fixNavbar() {
     }    
 }
 
+// function fixCarousel() {
+
+//     if (window.pageYOffset === 0 && window.innerWidth < 960) {
+
+//         console.log('yaaaas');
+        
+//         $('carousel-indicators').addClass('die');      
+//     }
+//     else {
+//         $('carousel-indicators').removeClass('die');
+//     }
+// }
+
 document.getElementById('target').addEventListener('click', function () {
 
+    $('.catalogue').removeClass('show');
+    $('#productTrigger').removeClass('triggerDrop');
+    
     if ($('.options').hasClass('options-responsive')) {
         $('.options').removeClass('options-responsive');
+        $('.carousel-indicators').removeClass('die');  
+        
     }
     else {
         $('.options').addClass('options-responsive');
+        $('.carousel-indicators').addClass('die');  
+        
     }
 
 

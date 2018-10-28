@@ -154,6 +154,7 @@ body {
 
 .carousel-indicators {
   position: relative;
+  z-index: 1;
   bottom: 0px;
   height: 60px;
   width: 100%;
@@ -174,11 +175,13 @@ body {
     vertical-align: middle;
     display: inline-block;
     padding: 7px;
-    box-sizing: border-box; }
+    box-sizing: border-box;
+    z-index: 1; }
   @media screen and (max-width: 768px) {
     .carousel-indicators {
       height: 50px;
-      margin-top: 20px; }
+      margin-top: 20px;
+      z-index: 1; }
       .carousel-indicators li {
         height: 20px;
         padding: 0px;
@@ -186,7 +189,8 @@ body {
         width: 20px;
         margin: 0 5px;
         border-radius: 50%;
-        background-color: gray; }
+        background-color: gray;
+        z-index: 1; }
       .carousel-indicators :nth-of-type(1) {
         border-radius: 50%; }
       .carousel-indicators :nth-of-type(7) {
@@ -195,6 +199,9 @@ body {
 .carousel-indicators .active {
   background-color: #fd1c15;
   color: white; }
+
+.die {
+  display: none !important; }
 
 .overlay {
   position: absolute;
@@ -242,12 +249,14 @@ body {
       font-size: 0.9em;
       text-decoration: none;
       color: white;
-      vertical-align: middle; }
+      vertical-align: middle;
+      z-index: 100; }
     .overlay-active #text .options {
       display: inline-block;
       margin-left: 160px;
       border-top: 1px solid #d4d4d4;
-      border-bottom: 1px solid #ececec; }
+      border-bottom: 1px solid #ececec;
+      z-index: 100; }
 
 @media screen and (max-width: 960px) {
   .overlay #text {
@@ -259,7 +268,8 @@ body {
       float: none; }
     .overlay #text .options {
       width: 0px;
-      margin: 0px; }
+      margin: 0px;
+      z-index: 1000; }
       .overlay #text .options a {
         display: none; }
     .overlay #text .options-responsive {
@@ -314,7 +324,9 @@ body {
 
 #newsCover {
   background: url("./photos/background-dark.jpg");
-  background-size: cover; }
+  background-size: cover;
+  background-attachment: fixed;
+  overflow: hidden; }
   #newsCover h1, #newsCover h2 {
     color: white; }
 
@@ -446,10 +458,14 @@ body {
       padding: 7px 0px 7px 0px; }
 
 .triggerDrop {
-  margin-bottom: 250px !important; }
+  margin-bottom: 207px !important; }
 
 .show {
   display: block !important; }
+  .show a {
+    width: 100px; }
+  .show :last-child {
+    border-bottom: 1px solid white; }
   @media screen and (max-width: 856px) {
     .show {
       position: absolute;
@@ -460,7 +476,7 @@ body {
   border-bottom: 1px solid red !important; }
 
 .dropSpace {
-  top: 80px !important; }
+  top: 50px !important; }
 
 .cataloguePhoto {
   width: calc(100% - 40% - 20px);
@@ -626,7 +642,8 @@ h1 {
 
 .footer {
   background-color: rgba(163, 163, 163, 0.56);
-  margin-top: 90px; }
+  margin-top: 90px;
+  border-radius: 85% 85% 0 0 / 30%; }
   .footer .row {
     margin: 0px; }
 
