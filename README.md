@@ -3,7 +3,7 @@
 -on products.php
 
 #get scrolly !!!!!!!!!!!!!!!!!
-logo hr
+#logo hr
 cut the pic *
 style:
     underscore for sub
@@ -14,7 +14,7 @@ add footer
 
 -on home.php
 
-fix news layout
+#fix news layout
 check responsive
 products links
 product 
