@@ -74,10 +74,6 @@
                 ?>
 
                         </ul>
-                    <!-- <div >
-                        <img class="cataloguePhoto" src="./photos/slike/road.jpg" alt="">
-                    </div> -->
-
                 </div>
                     <a href="./pages/partners.html">Partneri</a>
                     <a href="./pages/contact.html">Kontakt</a>
@@ -85,9 +81,6 @@
                 <i class="fa fa-bars" id="target"></i>
             </div>
         </div>
-
-        
-      
 
         <div class="mainSection">
             <h1>LG HEMIJA</h1>
@@ -134,76 +127,53 @@ while($row = mysqli_fetch_assoc($select_feed)) {
         // echo "cool";
 
     }
-    
 
     $burner = "<div class='newsDiv'><h2>{$story_title}</h2><p class='dateSpan'>{$story_date}</p><p>{$story_content}</p></div>";
 
     echo $burner;
 }
-    
-    ?> 
+?> 
+
 </div>
         </div>
 
-        <hr>
-        <br>
-        <br>
 
         <div class="selection">
             <div class="col-lg-12">
                 <h1>Proizvodi</h1>
+                <div class="logoHR">
+                    <img  src="./photos/logoIcon.png" alt="">
+                </div>  
             </div>
+
             <div class="row" id="mainProducts">
-                <div class="Item col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12">
-                    <img src="./photos/welder.jpg" alt="Card image cap">
-                    <div class="middle">
-                        <div class="text">INDUSTRIJA GRAĐEVINSKIH MATERIJALA</div>
-                    </div>
 
+<?php 
 
-                </div>
-                <div class="Item col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12">
-                    <img src="./photos/plants.jpg" alt="Card image cap">
-                    <div class="middle">
-                        <div class="text">PREHRAMBENA INDUSTRIJA</div>
-                    </div>
+        $query = "SELECT * FROM main_group";
+        $select_all_main_groups = mysqli_query($connection, $query);
 
+        while($row = mysqli_fetch_assoc($select_all_main_groups)) {
 
-                </div>
-                <div class="Item col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12">
-                    <img src="./photos/Thread.jpg" alt="Card image cap">
-                    <div class="middle">
-                        <div class="text">TEKSTILNA INDUSTRIJA</div>
-                    </div>
+            $main_name = $row['main_name'];
+            $main_id = $row['main_id'];
 
+            $writer = "<div class='Item col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12'><img src='./photos/slike/legos.jpg' alt='Card image cap'><div class='middle'><a class='text' href='./pages/products.php?main_id={$main_id}'>$main_name</a>
+            </div></div>";
+                        
+            echo $writer;  
 
-                </div>
-                <div class="Item col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12">
-                    <img src="./photos/house.jpg" alt="Card image cap">
-                    <div class="middle">
-                        <div class="text">INDUSTRIJA KUĆNE HEMIJE</div>
-                    </div>
-
-
-                </div>
-                <div class="Item col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12">
-                    <img src="./photos/pietri dish.jpg" alt="Card image cap">
-                    <div class="middle">
-                        <div class="text">BAZNA HEMIJA</div>
-                    </div>
-                </div>
-                <div class="Item col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12">
-                    <img src="./photos/Smoke.jpg" alt="Card image cap">
-                    <div class="middle">
-                        <div class="text">Industrijski mirisi</div>
-                    </div>
-                </div>
-            </div>
+        }
+?>
         </div>
 
-        <?php include "./modules/footer.php" ?>
 
     </div>
+    
+    <?php include "./modules/footer.php" ?>
+    
+</div>    
+
     <script type="text/javascript"> 
         window.addEventListener('load', function () {
             
@@ -211,7 +181,6 @@ while($row = mysqli_fetch_assoc($select_feed)) {
             
             loader.className += " hidden";
         });
-    
     </script>
     <script src="./javascript/effects.js"></script>
     
