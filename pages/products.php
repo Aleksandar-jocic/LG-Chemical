@@ -81,7 +81,7 @@ if(isset($_GET['main_id'])) {
 ?>
 
         </div>
-        <div class="logoHRWhite">
+        <div id="afterChoice" class="logoHRWhite">
                 <img  src="../photos/logoIcon.png" alt="">
             </div>
             <div class="productListDiv">
@@ -98,12 +98,30 @@ if(isset($_GET['sub_id'])) {
 }
 ?>
 
-            </div>       
+           
+
+
+            </div> 
+
+                
+             
         </div>
 
         
+          
     </div>
     <?php include "../modules/footerRest.php"; ?>
+    <div id="toTop" class="wrapper-dropdown-5 invisibleCircle"><span>GO</span>
+
+                    <ul class="dropdown">
+
+                        <li><a href="#productDisplay">Glavni proizvodi</a></li>
+                        <li><a href="#output">Podgrupe</a></li>
+                        <li><a href="#">Top</a></li>
+
+                    </ul>
+                </div> 
+
     <script src="../javascript/preLoader.js"></script>
     <script src="../javascript/effects.js"></script>
 </body>

@@ -2,9 +2,12 @@
 
 <?php 
 
+
 function getAllMain () {
 
     global $connection;
+
+    $width = 
 
     $query = "SELECT * FROM main_group";
 
@@ -15,7 +18,7 @@ function getAllMain () {
             $main_name = $row['main_name'];
             $main_id = $row['main_id'];
                 if ($super === $main_id) {
-                    $active = "<div class='mainList mainListActive'><a onclick=return false  href='./products.php?main_id={$main_id}#productDisplay'>$main_name</a></div>";
+                    $active = "<div class='mainList mainListActive'><a onclick=return false href='./products.php?main_id={$main_id}#productDisplay'>$main_name</a></div>";
                     echo $active;
                 } else {
                     $writer = "<div class='mainList'><a onclick=return false  href='./products.php?main_id={$main_id}#productDisplay'  >$main_name</a></div>";
@@ -85,7 +88,7 @@ function getProducts ($subID) {
         // $product_picture = $row['product_picture'];
         // $product_description = $row['product_description'];
 
-        $burner = "<div><a href='./products.php?pid={$product_id}'>{$product_name}</a><br></div>";
+        $burner = "<div><p>{$product_name}</p></div>";
 
         echo $burner;
     }
