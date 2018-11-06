@@ -7,6 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="../photos/favicon.ico" type="image/x-icon">
     <title>LG hemija</title>
     <link rel="stylesheet" href="../css/preLoader.css">
     <link rel="stylesheet" href="../css/bootstrap.css">
@@ -42,9 +43,9 @@
 
                 <div class="options">
                     <a href="../index.php">Početna</a>
-                    <a href="./about.html">O nama</a>
+                    <a href="./about.php">O nama</a>
                     <a href="./products.php">Katalog Proizvoda</a>
-                    <a href="./partners.html">Partneri</a>
+                    <a href="./partners.php">Partneri</a>
                     <a href="./contact.html">Kontakt</a>
                 </div>
                 <i class="fa fa-bars" id="target"></i>
@@ -56,11 +57,10 @@
                 <img  src="../photos/logoIcon.png" alt="">
             </div>
         <div class="mainContainer">
-
+            
 <?php 
     getAllMain();
 ?>
-
 
         </div>
 
@@ -111,13 +111,12 @@ if(isset($_GET['sub_id'])) {
           
     </div>
     <?php include "../modules/footerRest.php"; ?>
-    <div id="toTop" class="wrapper-dropdown-5 invisibleCircle"><span>GO</span>
+    <div id="toTop" class="wrapper-dropdown-5 invisibleCircle"><i class="fas fa-arrow-circle-up"></i>
 
                     <ul class="dropdown">
 
-                        <li><a href="#productDisplay">Glavni proizvodi</a></li>
-                        <li><a href="#output">Podgrupe</a></li>
-                        <li><a href="#">Top</a></li>
+                        <li><a href="#">Vrh</a></li>
+                        <li><a href="#output">Proizvodi</a></li>
 
                     </ul>
                 </div> 

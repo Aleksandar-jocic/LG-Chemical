@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="../photos/favicon.ico" type="image/x-icon">
     <title>LG hemija</title>
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../main.css">
@@ -30,12 +31,11 @@
                     </a>
                 </div>
 
-                <!-- <a href="./delete.html">delete</a> -->
                 <div class="options">
                     <a href="../index.php">Početna</a>
-                    <a href="./about.html">O nama</a>
-                    <a href="./products.html">Katalog Proizvoda</a>
-                    <a href="./partners.html">Partneri</a>
+                    <a href="./about.php">O nama</a>
+                    <a href="./products.php?main_id=1">Katalog Proizvoda</a>
+                    <a href="./partners.php">Partneri</a>
                     <a href="./contact.html">Kontakt</a>
                 </div>
                 <i class="fa fa-bars" id="target"></i>
@@ -46,48 +46,69 @@
         <div class="row locations">
             <div class="col-12 col-xl-6">
                 <h2>Sedište firme</h2>
+                <div class="logoHR">
+                        <img  src="../photos/logoIcon.png" alt="">
+                    </div>
                 <p>Bulevar Mihajla Pupina 3/3 11070 Novi Beograd</p>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1000.6919249867859!2d20.434015860668936!3d44.81373736715794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a655957728401%3A0x680ad532d8a302b5!2sBulevar+Mihajla+Pupina+3%2C+Beograd!5e0!3m2!1sen!2srs!4v1533293770468"
                     width="500" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
             </div>
             <div class="col-12 col-xl-6">
                 <h2>Magacin</h2>
+                <div class="logoHR">
+                        <img  src="../photos/logoIcon.png" alt="">
+                    </div>
                 <p>Žitna 41 Dobanovci
                 </p>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3364.3705316031314!2d20.220464268265424!3d44.840159129304!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a683180ca0d7f%3A0x94d14162fd2bd539!2sEurologistic!5e0!3m2!1sen!2srs!4v1534161315900"
                     width="500" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
             </div>
         </div>
+
+        <div class="row">
+            
+            <div class="col-12 question">
+
+                <h2>Imate pitanje za nas?</h2>
+                <p>Pošaljite nam upit i kontaktiraćemo Vas u najkraćem mogućem roku</p>
+                <div class="logoHR">
+                        <img  src="../photos/logoIcon.png" alt="">
+                </div>
+            </div>
+
+        </div>
+
+        <!-- footer -->
         <div class="footer">
 
             <div class="footImage">
-                <img src="../photos/logo.png" alt="">
-                <img id='iconPic' src="../photos/logoIcon.png" alt="">
+                <img class="iconFullLogo" src="../photos/logo.png" alt="">
+                <img class="iconPic" src="../photos/logoIcon.png">
             </div>
-
-            <div class="row ">
-
-                <div class="col-4 footerLinks">
+        
+            <div class="footerContent">
+        
+                <div class="footerLinks">
                     <ul>
                         <li>
-                            <a href="./about.html">O nama</a>
+                            <a href="../index.php">Početna</a>
                         </li>
                         <li>
-                            <a href="./about.html">Proizvodi</a>
+                            <a href="./about.php">O nama</a>
                         </li>
                         <li>
-                            <a href="./about.html">Partneri</a>
+                            <a href="./products.php">Proizvodi</a>
+                        </li>
+                        <li>
+                            <a href="./partners.php">Partneri</a>
                         </li>
                         <li>
                             <a href="./contact.html">Kontakt</a>
                         </li>
                     </ul>
                 </div>
-
-                <div class="verticalLine col-4">
-                </div>
-
-                <div class="col-4 footerContacts">
+                
+                <div class="footerContacts">
                     <h6>LG HEMIJA</h6>
                     <div>
                         <p>
@@ -105,16 +126,15 @@
                             <i class="fas fa-phone"></i>Telefon: 063 248 053</p>
                     </div>
                 </div>
-                <div class="col-12 Copyright">
-                    <p>Copyright
-                        <i class="far fa-copyright"></i> 2018</p>
-                </div>
             </div>
+            <div class="Copyright">
+                    <p>Copyright
+                        <i class="far fa-copyright"></i> 2018 by <a href="https://github.com/Aleksandar-jocic" target='_blank'>TC</a> </p>
+                </div>
         </div>
 
 
     </div>
     <script src="../javascript/effects.js"></script>
-    <!-- <script src="./data.js"></script> -->
 
 </body>

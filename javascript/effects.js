@@ -26,6 +26,37 @@ $('.wrapper-dropdown-5').click(function () {
     }
 });
 
+$(".fa-arrow-down").click(function(event) {
+
+    if ($(this).parents('.singleProduct').hasClass('expandProduct') || $(this).parents('.newsDiv').hasClass('expandNews')) {
+
+        $(this).parents('.singleProduct').removeClass('expandProduct');
+        $(this).parents('.newsDiv').removeClass('expandNews');
+        
+        $(this).removeClass('fa-arrow-up');
+
+    } else {
+        
+        $(this).parents('.singleProduct').addClass('expandProduct');
+        $(this).parents('.newsDiv').addClass('expandNews');
+        
+        $(this).addClass('fa-arrow-up');
+    }
+
+});
+
+
+// document.querySelector(".readMore").addEventListener('click', function(event){
+
+
+//     var s = event.target.className;
+    
+//     console.log(s);
+//     console.log(event.target);
+//     console.log(event.currentTarget);
+   
+//    });
+
 
 
 
@@ -75,10 +106,11 @@ function hiddenClass () {
     }
     
 }
+
 document.getElementById('target').addEventListener('click', function () {
 
     $('.catalogue').removeClass('show');
-    $('#productTrigger').removeClass('triggerDrop');
+    $('.productTrigger').removeClass('triggerDrop');
     
     if ($('.options').hasClass('options-responsive')) {
         $('.options').removeClass('options-responsive');
@@ -95,7 +127,7 @@ document.getElementById('target').addEventListener('click', function () {
    
 })
 
-document.getElementById('productTrigger').addEventListener('click', function () {
+$('.productTrigger').click(function () {
 
     if ($('.options').hasClass('redBorder')) {
         $('.options').removeClass('redBorder');
@@ -104,11 +136,11 @@ document.getElementById('productTrigger').addEventListener('click', function () 
         $('.options').addClass('redBorder');
     }
 
-    if ($('#productTrigger').hasClass('triggerDrop')) {
-        $('#productTrigger').removeClass('triggerDrop');
+    if ($('.productTrigger').hasClass('triggerDrop')) {
+        $('.productTrigger').removeClass('triggerDrop');
     }
     else {
-        $('#productTrigger').addClass('triggerDrop');
+        $('.productTrigger').addClass('triggerDrop');
     }
 
 
