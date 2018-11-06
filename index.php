@@ -48,34 +48,34 @@
                 <div class="options">
                   <a href="./administration/admin.php">admin</a>
                     <a href="./index.php">Početna</a>
-                    <a href="./pages/about.html">O nama</a>
-                    <a href="#!" id="productTrigger">Katalog Proizvoda</a>
+                    <a href="./pages/about.php">O nama</a>
+                    <a href="#!" class="productTrigger">Katalog Proizvoda</a>
 
 
 
                     <div class='catalogue'>
+
                         <ul>
+<?php 
 
-                <?php 
+    $query = "SELECT * FROM main_group";
+    $select_all_main_groups = mysqli_query($connection, $query);
 
-                    $query = "SELECT * FROM main_group";
-                    $select_all_main_groups = mysqli_query($connection, $query);
+    while($row = mysqli_fetch_assoc($select_all_main_groups)) {
 
-                    while($row = mysqli_fetch_assoc($select_all_main_groups)) {
+        $main_name = $row['main_name'];
+        $main_id = $row['main_id'];
 
-                        $main_name = $row['main_name'];
-                        $main_id = $row['main_id'];
-
-                        $writer = "<li class='productList'><a  href='./pages/products.php?main_id={$main_id}'>$main_name</a></li>";
-                        
-                        echo $writer;  
-                    }
+        $writer = "<li class='productList'><a  href='./pages/products.php?main_id={$main_id}'>$main_name</a></li>";
+        
+        echo $writer;  
+    }
                     
-                ?>
+?>
 
                         </ul>
-                </div>
-                    <a href="./pages/partners.html">Partneri</a>
+                    </div>
+                    <a href="./pages/partners.php">Partneri</a>
                     <a href="./pages/contact.html">Kontakt</a>
                 </div>
                 <i class="fa fa-bars" id="target"></i>
@@ -92,25 +92,29 @@
             <p>LG HEMIJA D.O.O. je deo grupacije LOUFAKIS CHEMICALS SA., koja se bavi distribucijom hemijskih proizvoda namenjenih
                 industriji: </p>
             <ul>
-                <li>materijala za završne radove u građevinarstvu, </li>
-                <li>prehrane</li>
-                <li>tekstila i kože, </li>
-                <li>deterdženata i kućne hemije</li>
+                <li><i class="fas fa-chevron-circle-right"></i> materijala za završne radove u građevinarstvu, </li>
+                <li><i class="fas fa-chevron-circle-right"></i> prehrane</li>
+                <li><i class="fas fa-chevron-circle-right"></i> tekstila i kože, </li>
+                <li><i class="fas fa-chevron-circle-right"></i> deterdženata i kućne hemije</li>
             </ul>
         </div>
 
         <div id="newsCover">
-        <h1>News</h1>
+        <h1>Aktuelnosti</h1>
         <div class="logoHRWhite">
                 <img  src="./photos/logoIcon.png" alt="">
         </div>
-        <div id="feed">
-                
+        
+        <div id="feed" class="row">
+            
      <?php 
 
 $query = "SELECT * FROM story";
 $select_feed = mysqli_query($connectionFeed, $query);
 
+function storyTeller() {
+
+}
 
 while($row = mysqli_fetch_assoc($select_feed)) {
 
@@ -118,21 +122,24 @@ while($row = mysqli_fetch_assoc($select_feed)) {
     $story_date = $row['story_date'];
     $story_content = $row['story_content'];
 
-    if (strlen($story_content) > 400) {
+
+    if (strlen($story_content) > 145) {
         
-        // echo "longer";
+        $burner = "<div class='col-12 col-sm-6 newsDiv'><h2>{$story_title}</h2><p class='dateSpan'>{$story_date} </p><i class='fas fa-arrow-down readMore'></i><p class='storyContent'>{$story_content}</p></div>";
+
+        echo $burner;
 
     } else {
 
-        // echo "cool";
+        $burner = "<div class='col-12 col-sm-6 newsDiv'><h2>{$story_title}</h2><p class='dateSpan'>{$story_date} </p><p>{$story_content}</p></div>";
+
+        echo $burner;
 
     }
 
-    $burner = "<div class='newsDiv'><h2>{$story_title}</h2><p class='dateSpan'>{$story_date}</p><p>{$story_content}</p></div>";
-
-    echo $burner;
-}
+}  
 ?> 
+
 
 </div>
         </div>

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="../photos/favicon.ico" type="image/x-icon">
     <title>LG hemija</title>
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../main.css">
@@ -30,12 +31,11 @@
                     </a>
                 </div>
 
-                <!-- <a href="./delete.html">delete</a> -->
                 <div class="options">
                     <a href="../index.php">Početna</a>
-                    <a href="./about.html">O nama</a>
-                    <a href="./products.html">Katalog Proizvoda</a>
-                    <a href="./partners.html">Partneri</a>
+                    <a href="./about.php">O nama</a>
+                    <a href="./products.php?main_id=1">Katalog Proizvoda</a>
+                    <a href="./partners.php">Partneri</a>
                     <a href="./contact.html">Kontakt</a>
                 </div>
                 <i class="fa fa-bars" id="target"></i>
@@ -45,6 +45,10 @@
 
         <!-- MAIN -->
         <h1>Naši partneri</h1>
+        <div class="logoHR">
+            <img  src="../photos/logoIcon.png" alt="">
+        </div>
+        <div class='partnersMain'>
         <div class="partners">
             <div class="partnerWrap">
                 <div class="row">
@@ -132,65 +136,15 @@
             </div>
 
         </div>
-
-        <div class="footer">
-
-            <div class="footImage">
-                <img src="../photos/logo.png" alt="">
-                <img id='iconPic' src="../photos/logoIcon.png" alt="">
-            </div>
-
-            <div class="row ">
-
-                <div class="col-4 footerLinks">
-                    <ul>
-                        <li>
-                            <a href="./about.html">O nama</a>
-                        </li>
-                        <li>
-                            <a href="./about.html">Proizvodi</a>
-                        </li>
-                        <li>
-                            <a href="./about.html">Partneri</a>
-                        </li>
-                        <li>
-                            <a href="./contact.html">Kontakt</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="verticalLine col-4">
-                </div>
-
-                <div class="col-4 footerContacts">
-                    <h6>LG HEMIJA</h6>
-                    <div>
-                        <p>
-                            <i class="fas fa-map-marker-alt"></i> Bulevar Mihajla Pupina 3/3</p>
-                        <p>
-                            <i class="fas fa-phone"></i>Telefon: 011/66 00 191</p>
-                        <p>
-                            <i class="fas fa-envelope-open"></i>Email:
-                            <a href="mailto:office@lghemija.co.rs"> office@lghemija.co.rs</a>
-                        </p>
-                    </div>
-                    <h6>Magacin</h6>
-                    <div>
-                        <p>
-                            <i class="fas fa-phone"></i>Telefon: 063 248 053</p>
-                    </div>
-                </div>
-                <div class="col-12 Copyright">
-                    <p>Copyright
-                        <i class="far fa-copyright"></i> 2018</p>
-                </div>
-            </div>
         </div>
+
+            <!-- footer -->
+            <?php include "../modules/footerRest.php" ?>
+
     </div>
 
 
     <script src="../javascript/effects.js"></script>
-    <!-- <script src="./data.js"></script> -->
 
 </body>
 

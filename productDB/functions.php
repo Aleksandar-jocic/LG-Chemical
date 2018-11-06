@@ -2,7 +2,7 @@
 
 <?php 
 
-
+//mainContainer
 function getAllMain () {
 
     global $connection;
@@ -32,7 +32,7 @@ function getAllMain () {
 
 //keep the scroll position
 
-
+//subProductDiv
 function getSubGroupsWithMainID ($mainID) {
 
     global $connection;
@@ -71,6 +71,8 @@ function getSubGroupsWithMainID ($mainID) {
     }
 } 
 
+//productListDiv
+
 function getProducts ($subID) {
 
     global $connection;
@@ -84,13 +86,23 @@ function getProducts ($subID) {
         $product_name = $row['product_name'];
         $product_id = $row['product_id'];
         $product_main_id = $row['main_id'];
+        $product_picture = $row['product_picture'];
+        $product_description = $row['product_description'];
 
-        // $product_picture = $row['product_picture'];
-        // $product_description = $row['product_description'];
+        if(strlen($product_description) > 160) {
 
-        $burner = "<div><p>{$product_name}</p></div>";
+            $burner = "<div class='singleProduct' id='{$product_id}'><div class='productName'><p>{$product_name} <i class='fas fa-arrow-down readMore'></i></p></div><div class='productDescription'><p>{$product_description}</p></i></div><div class='productPicture'><img src='../photos/{$product_picture}'></div></div>";
 
-        echo $burner;
+             echo $burner;
+            
+        } else {
+
+            $burner = "<div class='singleProduct' id='{$product_id}'><div class='productName'><p>{$product_name}</p></div><div class='productDescription'><p>{$product_description}</p></div><div class='productPicture'><img src='../photos/{$product_picture}'></div></div>";
+
+            echo $burner;
+        }
+
+       
     }
 } 
 
