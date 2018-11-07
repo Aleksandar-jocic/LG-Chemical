@@ -1,111 +1,116 @@
-<?php
-   
-   
+<?php include "../productDB/serverConnection.php"; ?>
+<?php include "./adminFunctions.php"; ?>
 
 
+<?php 
+  session_start(); 
 
+  if (!isset($_SESSION['username'])) {
+  	$_SESSION['msg'] = "You must log in first";
+  	header('location: login.php');
+  }
+  if (isset($_GET['logout'])) {
+  	session_destroy();
+  	unset($_SESSION['username']);
+  	header("location: login.php");
+  }
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Admin panel</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+	<title>Home</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
-    
+<div class="header">
+	<h2>Home Page</h2>
+</div>
+<div class="content">
+  	<!-- notification message -->
+  	<?php if (isset($_SESSION['success'])) : ?>
+      <div class="error success" >
+      	<h3>
+          <?php 
+          	echo $_SESSION['success']; 
+          	unset($_SESSION['success']);
+          ?>
+      	</h3>
+      </div>
+  	<?php endif ?>
 
-<?php 
-        $admin = false;
-        $serverName = "localhost";
-        $userName = "root";
-        $password = "";
-        $dbname = "admins";
-        $connection = mysqli_connect($serverName, $userName, $password, $dbname);
+    <!-- logged in user information -->
+    <?php  if (isset($_SESSION['username'])) : ?>
+    	<p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
+    	<p> <a href="admin.php?logout='1'" style="color: red;">logout</a> </p>
+    <?php endif ?>
+</div>
 
-    if(isset($_POST['submit'])) {
+<div>
 
-    $userName = $_POST["username"];
-    $password = $_POST["password"];
+	<div class="adminMainSelect"><a href="./admin.php?ext=products">Products</a></div>
+	<div class="adminMainSelect"><a href="./admin.php?ext=news">News</a></div>
+	<div class="adminMainSelect"><a href="./admin.php?ext=partners">Partners</a></div>
 
-    $userName = mysqli_real_escape_string($connection, $userName);
-    $password = mysqli_real_escape_string($connection, $password);
+</div>
 
-    $query = "SELECT * FROM adminlist";
+	<?php 
+	
+	if(isset($_GET['ext'])) {
 
-    $getAdmin = mysqli_query($connection, $query);
-    
-    if(!$getAdmin) {
+		$ext = $_GET['ext'];
 
-        die("fail");
+		if($ext === 'products') {
 
-    } 
-    while($row = mysqli_fetch_array($getAdmin)) {
+	?>
+			<div>
+				<div><a href="./admin.php?ext=products&selected=main_group">Main groups</a></div>
+				<div><a href="./admin.php?ext=products&selected=sub_group">sub groups</a></div>
+				<div><a href="./admin.php?ext=products&selected=product">Products</a></div>
+			</div>
 
-        $adminUser = $row['username'];
-        $adminPass = $row['password'];
-    }
-    if ($userName === $adminUser && $password === $adminPass) {
+	<?php		
+		} else if ($ext === 'news') {
 
-        $admin = true;
+			getNews();
 
-    } else {
+		} else if ($ext === 'partners') {
 
-        echo "wrong password";
-    }
-}
-if (!$admin) {
-?>
-        <form method="POST" action="admin.php"><br>
-        Username: <input type="text" name="username"><br><br><br>
-        Password: <input type="password" name="password"><br><br>
-        <input type="submit" name="submit" value="submit">
-<?php
+			getPartners();
+		}
+	}
 
-    } else {
-?>
-    <h1>LG-Chemical Administration panel</h1>
+	if(isset($_GET['selected'])) {
 
-    products panel
+		$selected = $_GET['selected'];
 
-        -main group
+		if($selected === 'main_group') {
 
-            ===add
-            ===edit
-            ===remove
+			getMainProducts();
 
-        -sub group
+		} else if ($selected === 'sub_group') {
 
-            ===add
-            ===edit
-            ===remove
+			getSubProducts();
 
-        -products group
+		} else {
 
-            ===add
-            ===edit
-            ===remove
+			getProducts();
 
-    news panel
+		}
+	}
+	
+	?>
 
-        -feed list
-        
-            ==add
-            ===edit
-            ===remove
-
-    admin side panel
-
-        -change admin credentials 
-
-<?php        
-    }
-?>
- 
-    
+	<div>
+	<?php 
+	
+	testdb();
+	
+	
+	?>
+	
+	
+	</div>
+		<script src="./admin.js"></script>
 </body>
 </html>

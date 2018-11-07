@@ -23,7 +23,7 @@ function getAllMain () {
                     echo $writer;  
                 }
         }
-    }
+}
     
 
 
