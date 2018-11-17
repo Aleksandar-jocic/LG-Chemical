@@ -164,16 +164,17 @@ while($row = mysqli_fetch_assoc($select_feed)) {
 
             $main_name = $row['main_name'];
             $main_id = $row['main_id'];
+            $main_picture = $row['main_picture'];
+?>
 
-            $writer = "<div class='Item col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12'><img src='./photos/slike/legos.jpg' alt='Card image cap'><div class='middle'><a class='text' href='./pages/products.php?main_id={$main_id}'>$main_name</a>
-            </div></div>";
+            <div class="Item col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12"><div class="tester1" style="background-image: url('./photos/slike/<?php echo $main_picture; ?>')"></div><div class="middle"><a class="text" href="./pages/products.php?main_id=<?php echo $main_id; ?>"><?php echo $main_name; ?></a>
+            </div></div>
                         
-            echo $writer;  
-
+            <!-- echo $writer;   -->
+<?php
         }
 ?>
         </div>
-
 
     </div>
     
