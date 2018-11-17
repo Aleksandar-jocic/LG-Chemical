@@ -44,10 +44,13 @@
         </div>
 
         <!-- MAIN -->
-        <h1>Naši partneri</h1>
-        <div class="logoHR">
-            <img  src="../photos/logoIcon.png" alt="">
+        <div class="PartnersWrap">
+            <h1>Naši partneri</h1>
+            <div class="logoHR">
+                <img  src="../photos/logoIcon.png" alt="">
+            </div>
         </div>
+        
         <div class='partnersMain'>
         <div class="partners">
             <div class="partnerWrap">

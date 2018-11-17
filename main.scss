@@ -98,15 +98,14 @@ body {
     background: url('./photos/slike/textilePSed.jpg');
     @include imgPosition();
     background-position: center 60%;
-    
 }
 
 .imgSix {
-    background: url('./photos/house.jpg');
+    background: url('./photos/slike/vials.jpg');
     @include imgPosition();
 }
 .imgSeven {
-    background: url('./photos/house.jpg');
+    background: url('./photos/slike/houseChem.jpg');
     @include imgPosition();
 }
 .carousel-indicators {
@@ -344,7 +343,9 @@ body {
 //          NEWS            //
 
 #newsCover {
-    background: url('./photos/background-dark.jpg');
+    background: url('./photos/slike/bubbles.jpg');
+    box-shadow: inset 200px 200px 20px 1000px rgba(31, 31, 31, 0.8);    
+    
     background-size: cover;
     background-attachment: fixed;
     overflow: hidden;
@@ -443,19 +444,30 @@ body {
 
 .productCover {
 
-    background: url('./photos/slike/machanisation.jpg');
+    background: url('./photos/slike/mecha.jpg');
     @include imgPosition();
-    background-position: center center;
+    height: 550px;
+    background-position: center 85%;
     
+}
+.productsWrap {
+    background-color: #d7cec7;
+    height: 100px;
+    box-sizing: border-box;
+    padding: 10px 0px 10px 0px;
+    
+    h1 {
+        color: black;
+        margin: 0px;
+    }
+    .logoHR {
+        margin: 0px;
+    }
 }
 .selection {
     width: 90%;
     margin: 40px auto 50px auto;
-    h1 {
-        text-align: center;
-        margin-bottom: 10px;
-        margin-top: 0px;
-    }
+    
     #mainProducts {
         width: 100%;
         margin: 0 auto;
@@ -467,14 +479,15 @@ body {
         margin: 0 auto;
         margin-bottom: 30px; // height: 300px;
         overflow: hidden; // border: 1px solid black;
-        img {
-            width: 100%;
+
+        .tester1 {
             border-radius: 8px; 
             opacity: 1;
-            display: block;
-            height: auto;
             transition: .5s ease;
-            backface-visibility: hidden;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 160px;
         }
         .middle {
             transition: .5s ease;
@@ -496,7 +509,6 @@ body {
         }
     }
 }
-
 .overlay #text .options .catalogue {
     display: none;
     background-color: rgba(155, 155, 155, 0.7);
@@ -641,7 +653,7 @@ body {
     .productListDiv {
 
         padding: 15px;
-        margin: 0px 0px 20px 80px;
+        margin-left: 80px;
 
         p {
             margin: 0px;
@@ -658,9 +670,6 @@ body {
             overflow: hidden;
             position: relative;
             transition: height 0.8ms ease;
-            
-
-          
 
             .productName {
                 border-bottom: 1px solid white;
@@ -669,15 +678,13 @@ body {
                     width: 100%;
                 }
                 i {
-
                     font-size: 0.95rem;
                     vertical-align: middle;
                     padding: 5px;
                     color: $charlie;
-                        
                 }
-                
             }
+
             .productDescription {
                 padding: 10px 20px 0px 0px;
                 width: 80%;
@@ -700,14 +707,39 @@ body {
             
             @media screen and (max-width: $on960) {
                 display: block;
-                width: 100%;
-                margin: 10px 0px 10px 0px;
+                width: 80%;
+                margin: 10px auto 10px auto;
                 padding: 10px;
-                border: none;
+                border: 1px solid white;
                 border-top: 1px solid white;
                 border-bottom: 1px solid white;
                 border-radius: 0px;
                 text-align: center;
+
+
+                .productPicture { 
+                    
+                    img {
+                        max-width: 100px;
+                        max-height: 100px;
+                    }
+                }
+            }
+            @media screen and (max-width: $on576) {
+
+                .productDescription {
+                    width: 70%;
+                }
+
+                .productPicture { 
+
+                    width: 30%;
+
+                    img {
+                        max-width: 80px;
+                        max-height: 80px;
+                    }
+                }
             }
         }
        
@@ -732,6 +764,40 @@ body {
         }
 
     }
+    #paginator {
+
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        border-top: 1px solid gray;
+        padding-top: 7px;
+        vertical-align: middle;
+
+        .paginationPreviousNext {
+
+            margin: 0px 15px;
+            padding-top: 5px;
+         
+        }
+
+        .paginationButton {
+            margin: 0px 7px;
+            width: 35px;
+            height: 35px;
+            padding: 3px 0px 0px 0px;
+            
+            a {
+                font-size: 1.1rem;
+                vertical-align: bottom;
+            }
+        }
+        .pageActive {
+            border-radius: 50%;
+            border: 1px solid $charlie;
+            background-color: rgba(253, 28, 21, 0.4);
+        }
+    }
 }
 .readMore {
     width: 25px;
@@ -754,6 +820,7 @@ body {
 .mainContainer {
     display: flex;
     justify-content: center;
+    background-color: #d7cec7;
     @media screen and (max-width: $on960) {
         display: block;
         margin: 0px;
@@ -787,6 +854,11 @@ body {
 .mainListActive {
     border: 1px solid $pinterest;
     background-color: $pinterest;
+}
+.grayScale {
+    height: 20px;
+    background-color: #d7cec7;
+    
 }
 
 //                  ABOUT PAGE                 //
@@ -892,29 +964,33 @@ h1 {
 
 
 //                  PARTNERS                    //
-h1 {
-    margin-top: 100px;
+.PartnersWrap {
+
+    background-color: #d7cec7;
+    height: 100px;
+    box-sizing: border-box;
+    padding: 10px 0px 10px 0px;
+    
+    h1 {
+        color: black;
+        margin: 0px;
+    }
+    .logoHR {
+        margin: 0px;
+    }
+
 }
 .partnersCover {
 
     background: url('./photos/slike/partnersPSed.jpg');
     background-position: center;
     background-size: cover;
-    height: 700px;
+    height: 550px;
     position: relative;
 
-        h1 {
-            color: white;
-            margin: 0px;
-        }
-        .logoHRWhite {
-            margin: 0px;
-        }
-        
 }
 .partnersMain {
-    margin-top: 50px;
-    background: url('./photos/legosPeople.jpg');
+    background: url('./photos/slike/fan.jpg');
     box-shadow: inset 200px 200px 20px 1000px rgba(53, 53, 53, 0.6);    
     background-position: center;
     background-size: cover;
@@ -959,8 +1035,9 @@ h1 {
 }
 
 .contactCover {
-    background: url('./photos/slike/road.jpg');
+    background: url('./photos/slike/contact.jpg');
     @include imgPosition();
+    background-position: center 65%;
 }
 
 .locations {
@@ -972,15 +1049,25 @@ h1 {
     text-align: center;
     margin-top: 30px;
 }
+.formMail {
+    width: 50%;
+    margin: 0 auto;
+    background-color: lightgray;
+    padding: 20px;
+    input {
+        background: transparent;
+        border-bottom: 1px solid $charlie;
+    }
+}
 //                  FOOTER                    //
 .footer {
     // background: url('./photos/slike/footerimage.jpg');
-    box-shadow: inset 200px 200px 20px 1000px rgba(8, 11, 31, 0.7);    
-    background: url('./photos/footerImage.jpg');
+    box-shadow: inset 200px 200px 20px 1000px rgba(63, 63, 63, 0.7);    
+    background: url('./photos/footerImageGray.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    margin-top: 30px;
+    // margin-top: 30px;
     width: 100%;
 }
 
@@ -1122,7 +1209,7 @@ h1 {
 p {
     cursor: default;
 }
-.Item:hover img {
+.Item:hover .tester1 {
     opacity: 0.3;
 }
 
@@ -1219,8 +1306,8 @@ h1, h2, h3, h4 :hover {
 .wrapper-dropdown-5 {
     /* Size & position */
     position: fixed;
-    bottom: 150px;
-    right: 50px;
+    bottom: 50px;
+    right: 10px;
     width: 70px;
     height: 70px;
     border-radius: 50%;

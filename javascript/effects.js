@@ -45,6 +45,18 @@ $(".fa-arrow-down").click(function(event) {
 
 });
 
+$(".mainList").click(function () {
+
+    console.log('something');
+    
+
+});
+
+function getBackground () {
+
+    // $(this).parents('#output').css({'background-image': '../photos/slike/' + });
+
+}
 
 // document.querySelector(".readMore").addEventListener('click', function(event){
 

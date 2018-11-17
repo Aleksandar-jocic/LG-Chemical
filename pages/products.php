@@ -44,24 +44,25 @@
                 <div class="options">
                     <a href="../index.php">Početna</a>
                     <a href="./about.php">O nama</a>
-                    <a href="./products.php">Katalog Proizvoda</a>
+                    <a href="./products.php?main_id=1&sub_id=1&page=1">Katalog Proizvoda</a>
                     <a href="./partners.php">Partneri</a>
                     <a href="./contact.html">Kontakt</a>
                 </div>
                 <i class="fa fa-bars" id="target"></i>
             </div>
         </div>
-
-        <h1 id="productDisplay">Proizvodi</h1>
-        <div class="logoHR">
+        <div class='productsWrap'>
+            <h1 id="productDisplay">Proizvodi</h1>
+            <div class="logoHR">
                 <img  src="../photos/logoIcon.png" alt="">
             </div>
+        </div>
+
         <div class="mainContainer">
             
 <?php 
     getAllMain();
 ?>
-
         </div>
 
         <div id="output">
@@ -97,19 +98,10 @@ if(isset($_GET['sub_id'])) {
 
 }
 ?>
-
-           
-
-
             </div> 
-
-                
-             
         </div>
-
-        
-          
     </div>
+    <div class='grayScale'></div>
     <?php include "../modules/footerRest.php"; ?>
     <div id="toTop" class="wrapper-dropdown-5 invisibleCircle"><i class="fas fa-arrow-circle-up"></i>
 

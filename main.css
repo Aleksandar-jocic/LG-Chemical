@@ -115,7 +115,7 @@ body {
       height: auto; } }
 
 .imgSix {
-  background: url("./photos/house.jpg");
+  background: url("./photos/slike/vials.jpg");
   height: 650px;
   background-position: center center;
   width: 100%;
@@ -134,7 +134,7 @@ body {
       height: auto; } }
 
 .imgSeven {
-  background: url("./photos/house.jpg");
+  background: url("./photos/slike/houseChem.jpg");
   height: 650px;
   background-position: center center;
   width: 100%;
@@ -335,7 +335,8 @@ body {
           font-size: 0.9rem; } }
 
 #newsCover {
-  background: url("./photos/background-dark.jpg");
+  background: url("./photos/slike/bubbles.jpg");
+  box-shadow: inset 200px 200px 20px 1000px rgba(31, 31, 31, 0.8);
   background-size: cover;
   background-attachment: fixed;
   overflow: hidden;
@@ -408,12 +409,13 @@ body {
       display: block; } }
 
 .productCover {
-  background: url("./photos/slike/machanisation.jpg");
+  background: url("./photos/slike/mecha.jpg");
   height: 650px;
   background-position: center center;
   width: 100%;
   background-size: cover;
-  background-position: center center; }
+  height: 550px;
+  background-position: center 85%; }
   @media screen and (max-width: 856px) {
     .productCover {
       min-height: 500px;
@@ -427,13 +429,20 @@ body {
       min-height: 300px;
       height: auto; } }
 
+.productsWrap {
+  background-color: #d7cec7;
+  height: 100px;
+  box-sizing: border-box;
+  padding: 10px 0px 10px 0px; }
+  .productsWrap h1 {
+    color: black;
+    margin: 0px; }
+  .productsWrap .logoHR {
+    margin: 0px; }
+
 .selection {
   width: 90%;
   margin: 40px auto 50px auto; }
-  .selection h1 {
-    text-align: center;
-    margin-bottom: 10px;
-    margin-top: 0px; }
   .selection #mainProducts {
     width: 100%;
     margin: 0 auto; }
@@ -444,14 +453,14 @@ body {
     margin: 0 auto;
     margin-bottom: 30px;
     overflow: hidden; }
-    .selection .Item img {
-      width: 100%;
+    .selection .Item .tester1 {
       border-radius: 8px;
       opacity: 1;
-      display: block;
-      height: auto;
       transition: .5s ease;
-      backface-visibility: hidden; }
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 160px; }
     .selection .Item .middle {
       transition: .5s ease;
       opacity: 0;
@@ -575,7 +584,7 @@ body {
         display: block; } }
   #output .productListDiv {
     padding: 15px;
-    margin: 0px 0px 20px 80px; }
+    margin-left: 80px; }
     #output .productListDiv p {
       margin: 0px;
       font-size: 0.9rem; }
@@ -614,14 +623,25 @@ body {
       @media screen and (max-width: 960px) {
         #output .productListDiv .singleProduct {
           display: block;
-          width: 100%;
-          margin: 10px 0px 10px 0px;
+          width: 80%;
+          margin: 10px auto 10px auto;
           padding: 10px;
-          border: none;
+          border: 1px solid white;
           border-top: 1px solid white;
           border-bottom: 1px solid white;
           border-radius: 0px;
-          text-align: center; } }
+          text-align: center; }
+          #output .productListDiv .singleProduct .productPicture img {
+            max-width: 100px;
+            max-height: 100px; } }
+      @media screen and (max-width: 576px) {
+        #output .productListDiv .singleProduct .productDescription {
+          width: 70%; }
+        #output .productListDiv .singleProduct .productPicture {
+          width: 30%; }
+          #output .productListDiv .singleProduct .productPicture img {
+            max-width: 80px;
+            max-height: 80px; } }
     #output .productListDiv .expandProduct {
       height: auto;
       max-height: 400px;
@@ -637,6 +657,29 @@ body {
         width: 100%;
         margin: 30px 0px 10px 0px;
         padding: 0px; } }
+  #output #paginator {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    border-top: 1px solid gray;
+    padding-top: 7px;
+    vertical-align: middle; }
+    #output #paginator .paginationPreviousNext {
+      margin: 0px 15px;
+      padding-top: 5px; }
+    #output #paginator .paginationButton {
+      margin: 0px 7px;
+      width: 35px;
+      height: 35px;
+      padding: 3px 0px 0px 0px; }
+      #output #paginator .paginationButton a {
+        font-size: 1.1rem;
+        vertical-align: bottom; }
+    #output #paginator .pageActive {
+      border-radius: 50%;
+      border: 1px solid #fd1c15;
+      background-color: rgba(253, 28, 21, 0.4); }
 
 .readMore {
   width: 25px;
@@ -656,7 +699,8 @@ body {
 
 .mainContainer {
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  background-color: #d7cec7; }
   @media screen and (max-width: 960px) {
     .mainContainer {
       display: block;
@@ -685,6 +729,10 @@ body {
 .mainListActive {
   border: 1px solid #c8232c;
   background-color: #c8232c; }
+
+.grayScale {
+  height: 20px;
+  background-color: #d7cec7; }
 
 h1 {
   text-align: center;
@@ -763,24 +811,26 @@ h1 {
   .aboutUsWrap .logoHR {
     margin: 0px; }
 
-h1 {
-  margin-top: 100px; }
+.PartnersWrap {
+  background-color: #d7cec7;
+  height: 100px;
+  box-sizing: border-box;
+  padding: 10px 0px 10px 0px; }
+  .PartnersWrap h1 {
+    color: black;
+    margin: 0px; }
+  .PartnersWrap .logoHR {
+    margin: 0px; }
 
 .partnersCover {
   background: url("./photos/slike/partnersPSed.jpg");
   background-position: center;
   background-size: cover;
-  height: 700px;
+  height: 550px;
   position: relative; }
-  .partnersCover h1 {
-    color: white;
-    margin: 0px; }
-  .partnersCover .logoHRWhite {
-    margin: 0px; }
 
 .partnersMain {
-  margin-top: 50px;
-  background: url("./photos/legosPeople.jpg");
+  background: url("./photos/slike/fan.jpg");
   box-shadow: inset 200px 200px 20px 1000px rgba(53, 53, 53, 0.6);
   background-position: center;
   background-size: cover;
@@ -813,11 +863,12 @@ h1 {
   max-height: 400px; }
 
 .contactCover {
-  background: url("./photos/slike/road.jpg");
+  background: url("./photos/slike/contact.jpg");
   height: 650px;
   background-position: center center;
   width: 100%;
-  background-size: cover; }
+  background-size: cover;
+  background-position: center 65%; }
   @media screen and (max-width: 856px) {
     .contactCover {
       min-height: 500px;
@@ -840,13 +891,21 @@ h1 {
   text-align: center;
   margin-top: 30px; }
 
+.formMail {
+  width: 50%;
+  margin: 0 auto;
+  background-color: lightgray;
+  padding: 20px; }
+  .formMail input {
+    background: transparent;
+    border-bottom: 1px solid #fd1c15; }
+
 .footer {
-  box-shadow: inset 200px 200px 20px 1000px rgba(8, 11, 31, 0.7);
-  background: url("./photos/footerImage.jpg");
+  box-shadow: inset 200px 200px 20px 1000px rgba(63, 63, 63, 0.7);
+  background: url("./photos/footerImageGray.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  margin-top: 30px;
   width: 100%; }
 
 .footImage {
@@ -958,7 +1017,7 @@ h1 {
 p {
   cursor: default; }
 
-.Item:hover img {
+.Item:hover .tester1 {
   opacity: 0.3; }
 
 .Item:hover .middle {
@@ -1040,8 +1099,8 @@ h1, h2, h3, h4 :hover {
 .wrapper-dropdown-5 {
   /* Size & position */
   position: fixed;
-  bottom: 150px;
-  right: 50px;
+  bottom: 50px;
+  right: 10px;
   width: 70px;
   height: 70px;
   border-radius: 50%;
