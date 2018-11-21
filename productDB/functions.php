@@ -71,24 +71,47 @@ function getSubGroupsWithMainID ($mainID) {
 function getProducts ($subID) {
 
     global $connection;
-
+    // global $product_id;
+    
     $query = "SELECT * FROM product WHERE sub_id={$subID}";
 
     $select_products = mysqli_query($connection, $query);
 
-    while($row = mysqli_fetch_assoc($select_products)) {
+$results_per_page = 10;
+$number_of_results = mysqli_num_rows($select_products);
+$number_of_pages = ceil($number_of_results/$results_per_page);
+// determine which page number visitor is currently on
+if (!isset($_GET['page'])) {
+    $page = 1;
+  } else {
+    $page = $_GET['page'];
+  }
+$this_page_first_result = ($page-1)*$results_per_page;
 
-        $product_name = $row['product_name'];
-        $product_id = $row['product_id'];
-        $product_main_id = $row['main_id'];
+$sql='SELECT * FROM product WHERE sub_id={$subID}';
+
+$result = mysqli_query($connection, $sql);
+echo $result;
+
+    while($row = mysqli_fetch_assoc($result)) {
+
+        // $product_name = $row['product_name'];
+        // $product_id = $row['product_id'];
+        // $product_main_id = $row['main_id'];
 
         // $product_picture = $row['product_picture'];
         // $product_description = $row['product_description'];
 
-        $burner = "<div><a href='./products.php?pid={$product_id}'>{$product_name}</a><br></div>";
+        $burner = "<div><a href='./products.php?'>adf</a><br>asdasdasdasdas</div>";
 
         echo $burner;
     }
-} 
+}
+    // display the links to the pages
+// for ($page=1;$page<=$number_of_pages;$page++) {
+
+//     echo '<a href="./products.php?pid='.$product_id . '&page=' . $page . '">' . $page . '</a> ';
+//   }
+// } 
 
 ?>

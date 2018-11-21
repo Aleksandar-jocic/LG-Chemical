@@ -11,7 +11,6 @@ function testdb () {
 
     global $testConn;
 
-
     $query = "SELECT * FROM people";
 
     $selectPeople = mysqli_query($testConn, $query);
@@ -23,23 +22,89 @@ function testdb () {
         $id = $row['id'];
         
 
-        $writer = "<div>$firstName $lastName $id <span class='deleteMe' id='del_$id'>Delete</span></div>";
+        $writer = "<div>$firstName $lastName $id <span class='changeMe' id='cha_$id'>change </span><span class='deleteMe' id='del_$id'>Delete</span></div>";
                 
         echo $writer;  
     }
 
 }
+if (isset($_POST['deleteSth'])) {
 
-function deleteEntry () {
+    $id = $_POST['deleteSth'];
 
-    $id = $_POST['id'];
-
-    $query = "DELETE FROM people WHERE id=$adminId";
-    $delete = mysqli_query($connectionAdmin, $query);
-
-    echo 1;
+    deleteEntry($id);
 
 }
+
+function deleteEntry ($id) {
+
+    global $testConn;
+
+    if($id) {
+
+        $query = "DELETE FROM people WHERE id=$id";
+        $delete = mysqli_query($testConn, $query);
+    
+        echo 1;
+
+    } else {
+        
+        echo 0;
+    }
+
+}
+
+
+
+if(isset($_POST['changeSth'])) {
+
+    $id = $_POST['changeSth'];
+    $newName = $_POST['newName'];
+    $newLastName = $_POST['newLastName'];
+
+    changeEntry($id, $newName, $newLastName);
+}
+function changeEntry ($id, $newName, $newLastName) {
+
+    global $testConn;
+
+    if($newName) {
+
+        $query = "UPDATE people SET firstName='$newName', lastName='$newLastName' WHERE id=$id";
+
+        mysqli_query($testConn, $query);
+
+        echo 1;
+
+    } else {
+
+        echo 0;
+    }
+}
+
+
+
+
+if (isset($_POST['uploadPerson'])) {
+
+    $firstName = $_POST['firstName'];
+    $lastName = $_POST['lastName'];
+
+    insertEntry ($firstName, $lastName);
+}
+function insertEntry ($firstName, $lastName) {
+
+    global $testConn;
+
+    $query = "INSERT INTO people (firstName, lastName) VALUES ('$firstName', '$lastName')";
+
+
+    mysqli_query($testConn, $query);
+    header('location: admin.php');
+
+}
+
+
 
 function getMainProducts () {
 
