@@ -7,31 +7,45 @@ var timeOne;
 var timeTwo;
 var handler;
 var textAppear;
+var feed;
+var product;
 
 $(document).ready(function () {
 
     timeOne = setTimeout(handler, 0);  
     timeTwo = setTimeout(textAppear, 1000);
+
+    if (window.location.pathname == '/index.php') {
+
+        feed();
+
+    } else if (window.location.pathname == '/pages/products.php') {
+
+        product();
+
+    }
 })
 
 $('.wrapper-dropdown-5').click(function () {
 
-
     if ($('.wrapper-dropdown-5').hasClass('active')) {
+
         $('.wrapper-dropdown-5').removeClass('active');
-        
     }
     else {
+
         $('.wrapper-dropdown-5').addClass('active');
     }
 });
 
 $(".fa-arrow-down").click(function(event) {
 
-    if ($(this).parents('.singleProduct').hasClass('expandProduct') || $(this).parents('.newsDiv').hasClass('expandNews')) {
+    if ($(this).parents('.singleProduct').hasClass('expandProduct') || $(this).parents('.newsDiv').hasClass('expandNews') || $(this).parents('.alignText').hasClass('.expandPartners')) {
 
         $(this).parents('.singleProduct').removeClass('expandProduct');
         $(this).parents('.newsDiv').removeClass('expandNews');
+        // $(this).parents('.alignText').removeClass('expandPartners');
+        
         
         $(this).removeClass('fa-arrow-up');
 
@@ -39,16 +53,16 @@ $(".fa-arrow-down").click(function(event) {
         
         $(this).parents('.singleProduct').addClass('expandProduct');
         $(this).parents('.newsDiv').addClass('expandNews');
+        // $(this).parents('.alignText').addClass('expandPartners');
+        
         
         $(this).addClass('fa-arrow-up');
     }
-
 });
 
 $(".mainList").click(function () {
 
     console.log('something');
-    
 
 });
 
@@ -57,20 +71,6 @@ function getBackground () {
     // $(this).parents('#output').css({'background-image': '../photos/slike/' + });
 
 }
-
-// document.querySelector(".readMore").addEventListener('click', function(event){
-
-
-//     var s = event.target.className;
-    
-//     console.log(s);
-//     console.log(event.target);
-//     console.log(event.currentTarget);
-   
-//    });
-
-
-
 
 handler = function() {
     navbar.addClass('overlay-active');
@@ -85,10 +85,36 @@ textAppear = function() {
     logoText.addClass('logoText-active');
     console.log('offset works');
     clearTimeout()
-    
 }
 
-window.onscroll = function() {fixNavbar(); hiddenClass()};
+window.onscroll = function() {fixNavbar(); hiddenClass();};
+
+function feed() {
+
+    var tar = $('.storyContent');
+
+    for(var i = 0; i < tar.length; i++) {
+
+        if(tar[i].clientHeight > 150) {
+
+            tar[i].previousElementSibling.style.display = 'inline-block';
+
+        }
+    }
+}
+
+function product() {
+
+    var tar = $('.productDescription > p');
+
+    for(var i = 0; i < tar.length; i++) {
+
+        if(tar[i].clientHeight > 70) {
+
+            tar[i].parentElement.previousElementSibling.lastChild.style.display = 'inline-block';
+        }
+    }
+}
 
 function fixNavbar() {
     
@@ -103,7 +129,6 @@ function fixNavbar() {
     navbar.removeClass("sticky");
     navbarOptions.removeClass('optionsBorder');
     catalogue.removeClass('dropSpace');
-    
     }    
 }
 
@@ -116,7 +141,6 @@ function hiddenClass () {
 
         $('.wrapper-dropdown-5').addClass('invisibleCircle');
     }
-    
 }
 
 document.getElementById('target').addEventListener('click', function () {
@@ -132,11 +156,7 @@ document.getElementById('target').addEventListener('click', function () {
     else {
         $('.options').addClass('options-responsive');
         $('.carousel-indicators').addClass('die');  
-        
     }
-
-
-   
 })
 
 $('.productTrigger').click(function () {
@@ -155,7 +175,6 @@ $('.productTrigger').click(function () {
         $('.productTrigger').addClass('triggerDrop');
     }
 
-
     if ($('.catalogue').hasClass('show')) {
         $('.catalogue').removeClass('show');
     }
@@ -164,3 +183,17 @@ $('.productTrigger').click(function () {
     }
 })
 
+
+
+//      onscroll after window offset passes element offset      //
+
+// offset()
+// function offset () {
+
+//     var windowOffset = window.pageYOffset;
+//     var targetOffset = $('#breaker').offset()['top'];
+
+
+//     // console.log(windowOffset);
+    
+// }
