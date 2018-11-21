@@ -53,93 +53,84 @@
         
         <div class='partnersMain'>
         <div class="partners">
-            <div class="partnerWrap">
-                <div class="row">
-                    <div class="col-12 col-md-6 loufakisDiv">
-                        <img src="../photos/partners/Loufakis-transparent-Logo.png" alt="">
-                    </div>
-                    <div class="col-12 col-md-6 ">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat iusto ipsam aliquam tempora nemo
-                            dolorem incidunt. Tempore itaque amet saepe quo accusamus sit, natus nisi odio, harum minima,
-                            cumque nobis?
-                        </p>
-                    </div>
-                </div>
-            </div>
+            
 
             <div class="partnerWrap">
 
-                <div class="row">
-                    <div class="col-12 col-md-6 ">
-                        <a class="alignImage" href="http://www.biooscientific.com/" target='_blank'>
+                    <div class="alignImage">
+                        <a class="" href="http://www.biooscientific.com/" target='_blank'> 
                             <img src="../photos/partners/Bioo-Logo-Reflected.jpg" alt="">
                         </a>
 
                     </div>
-                    <div class="col-12 col-md-6 ">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat iusto ipsam aliquam tempora nemo
-                            dolorem incidunt. Tempore itaque amet saepe quo accusamus sit, natus nisi odio, harum minima,
-                            cumque nobis?
+                    <div class="alignText">
+                        <p>Bioo Scientific Corporation, osnovan 2003. god., Austinu, Teksas, kompanija koja se bavi biotehnologijom i pruža inovativna rešenja za food &amp; feed safety. Nagrađena NIH, NSF, FDA i USDA kvalitetom, koji je doprineo daljem razvitak. Bioo Scientific nudi širok asortiman ELISA testova, strip testova, testova na enzyme, otkrivanje mikrobioloških i industrijskih zagađivača, prirodnih toksina, hormona, antibiotika i drugih ostataka veterinarskih lekova u stočnoj hrani.
                         </p>
+                        <div class='optionsPartners'>
+                            <span>Download</span>
+                            <span><i class='fas fa-arrow-down readMore'></i></span>
+                        </div>
+                        
+                        
                     </div>
-                </div>
             </div>
 
             <div class="partnerWrap">
 
-                <div class="row">
-                    <div class="col-12 col-md-6 ">
-                        <a class="alignImage" href="http://www.cff.de/de/" target='_blank'>
+                    <div class="alignImage">
+                        <a class="" href="http://www.cff.de/de/" target='_blank'>
                             <img src="../photos/partners/cfflogo636088585956067656.jpg" alt="">
                         </a>
 
                     </div>
-                    <div class="col-12 col-md-6 ">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat iusto ipsam aliquam tempora nemo
-                            dolorem incidunt. Tempore itaque amet saepe quo accusamus sit, natus nisi odio, harum minima,
-                            cumque nobis?
+                    <div class="alignText">
+                        <p>CFF GmbH &amp; Co. KG je Vaš snažan partner u prirodnim celuloznim vlaknima, sa globalnom mrežom u različitim tipovima industrije. CFF celulozna vlakna, proizvedena od organskih i obnovljivih sirovina, koriste se u izgradnji puteva, građevinskoj industriju, industrijskoj aplikaciji, filtraciji i prehrambenoj industriji. Priroda i rasprostranjenost CFF proizvoda je jedan od najvažnijih faktora uspeha. Rado će Vas uveriti u pitanja tehnologije, inovacija, kvaliteta i usluga i sarađivati sa Vama kako biste poboljšali svoje proizvode i proizvodni proces.
                         </p>
+                        
                     </div>
-                </div>
             </div>
 
             <div class="partnerWrap">
 
-                <div class="row">
-                    <div class="col-12 col-md-6 ">
-                        <a class="alignImage" href="http://www.kukdo.com/" target='_blank'>
+                    <div class="alignImage">
+                        <a class="" href="http://www.kukdo.com/" target='_blank'>
                             <img src="../photos/partners/KUKDO-logo.png" alt="">
                         </a>
 
                     </div>
-                    <div class="col-12 col-md-6 ">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat iusto ipsam aliquam tempora nemo
-                            dolorem incidunt. Tempore itaque amet saepe quo accusamus sit, natus nisi odio, harum minima,
-                            cumque nobis?
+                    <div class="alignText">
+                        <p>Kukdo Chemical Industry. Co., Ltd., osnovan 1972. god. u Seulu, Koreja, svetski je lider u proizvodnji epoksi smola. Shodno potrebama, logistički centar postavljen je u Evropi, čime klijentima obezbeđuju siguran i efikasan transport svojih proizvoda. Sa zaokruženim rešenjem, inovativnim materijalima, racionalnim troškovima, tu su da Vam pruže kontinuiranu podršku i odgovore na Vaše potrebe.
                         </p>
                     </div>
-                </div>
+                    
             </div>
 
             <div class="partnerWrap">
 
-                <div class="row">
-                    <div class="col-12 col-md-6 ">
-                        <a class="alignImage" href="http://yipinusa.com/" target='_blank'>
+                    <div class="alignImage">
+                        <a class="" href="http://yipinusa.com/" target='_blank'>
                             <img src="../photos/partners/yipin.png" alt="">
                         </a>
                     </div>
-                    <div class="col-12 col-md-6 ">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat iusto ipsam aliquam tempora nemo
-                            dolorem incidunt. Tempore itaque amet saepe quo accusamus sit, natus nisi odio, harum minima,
-                            cumque nobis?
+                    <div class="alignText">
+                        <p>Yipin pigmenti, svetski lideri u industriji pigmenata od 1931. god.. Raspolaže punom linijom mikroniziranih gvožđe oksida, hrom oksida zelene, ultramarin plave, ftalata plave i zelene, perlascentnih pigmenata, termostabilnih pigmenata, i antikorozivnih proizvoda za primenu u hemijskoj industriji. Raznolikost kvaliteta pigmenata u zavisnosti od tipa primene, omogućio je plasiranje proizvoda i u kozmetičkoj industriji i prehrambenoj industriji (FDA).
                         </p>
                     </div>
-                </div>
             </div>
 
+            <div class="partnerWrap">
+                    <div class="alignImage">
+                        <img src="" alt="">
+                    </div>
+                    <div class="alignText">
+                        <p>Guangxi Chesir Pearl Material Co.,Ltd, osnovan 2011. god., vodeći internacionalni proizvođač pearlescenih pigmenata za industriju boja i lakova, štamparije, plastiku i industriju kozmetike. Godišnji kapacitet od 10000mt perlescentnih pigmenata i 5000mt sintetičke mike, sertifikovani kvalitet, i kontinuirana ekspanzija i inovacija, omogućavaju ovoj kompaniji da se nađe na liderskoj poziciji, među najboljima na tržištu.
+                        </p>
+                    </div>
+            </div>
         </div>
         </div>
+
+    <div class='grayScale'></div>
 
             <!-- footer -->
             <?php include "../modules/footerRest.php" ?>

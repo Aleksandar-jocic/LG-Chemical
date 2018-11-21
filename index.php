@@ -1,33 +1,37 @@
 <?php include "./modules/head.php" ?>
 <?php include "./productDB/serverConnection.php" ?>
+<?php include "./productDB/functions.php"; ?>
+
 <style media="screen">
-        .loader {
-            position: fixed;
-            z-index: 99;
-            top: 0px;
-            left: 0px;
-            width: 100%;
-            height: 100%;
-            background: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+    .loader {
+        position: fixed;
+        z-index: 99;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        background: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    .loader.hidden {
+        animation: fadeOut 1s;
+        animation-fill-mode: forwards;
+    }
+    @keyframes fadeOut {
+        100% {
+            opacity: 0;
+            visibility: hidden;
         }
-        .loader.hidden {
-            animation: fadeOut 1s;
-            animation-fill-mode: forwards;
-        }
-        @keyframes fadeOut {
-            100% {
-                opacity: 0;
-                visibility: hidden;
-            }
-        }
-    </style>
+    }
+</style>
 <body>
 <div class="loader">
     <img src="./photos/39.gif" alt="">
 </div>
+
     <div class="container-fluid">
 
         <div class="imageContainer">
@@ -51,30 +55,14 @@
                     <a href="./pages/about.php">O nama</a>
                     <a href="#!" class="productTrigger">Katalog Proizvoda</a>
 
-
-
                     <div class='catalogue'>
-
                         <ul>
 <?php 
-
-    $query = "SELECT * FROM main_group";
-    $select_all_main_groups = mysqli_query($connection, $query);
-
-    while($row = mysqli_fetch_assoc($select_all_main_groups)) {
-
-        $main_name = $row['main_name'];
-        $main_id = $row['main_id'];
-
-        $writer = "<li class='productList'><a  href='./pages/products.php?main_id={$main_id}'>$main_name</a></li>";
-        
-        echo $writer;  
-    }
-                    
+getAllMainForHeader();
 ?>
-
                         </ul>
                     </div>
+
                     <a href="./pages/partners.php">Partneri</a>
                     <a href="./pages/contact.html">Kontakt</a>
                 </div>
@@ -82,12 +70,10 @@
             </div>
         </div>
 
+        <!-- BELLOW CAROUSEL -->
+
         <div class="mainSection">
-            <h1>LG HEMIJA</h1>
-            <div class="logoHR">
-                <img  src="./photos/logoIcon.png" alt="">
-            </div>
-            <h4>proizvodi hemijske industrije</h4>
+            <h4 id='breaker'>Proizvodi hemijske industrije</h4>
             
             <p>LG HEMIJA D.O.O. je deo grupacije LOUFAKIS CHEMICALS SA., koja se bavi distribucijom hemijskih proizvoda namenjenih
                 industriji: </p>
@@ -99,88 +85,41 @@
             </ul>
         </div>
 
+        <!-- NEWS AREA -->
+
         <div id="newsCover">
-        <h1>Aktuelnosti</h1>
-        <div class="logoHRWhite">
+            <h1>Aktuelnosti</h1>
+            <!-- <div class="logoHRWhite">
                 <img  src="./photos/logoIcon.png" alt="">
-        </div>
+            </div> -->
         
-        <div id="feed" class="row">
-            
-     <?php 
-
-$query = "SELECT * FROM story";
-$select_feed = mysqli_query($connectionFeed, $query);
-
-function storyTeller() {
-
-}
-
-while($row = mysqli_fetch_assoc($select_feed)) {
-
-    $story_title = $row['story_title'];
-    $story_date = $row['story_date'];
-    $story_content = $row['story_content'];
-
-
-    if (strlen($story_content) > 145) {
-        
-        $burner = "<div class='col-12 col-sm-6 newsDiv'><h2>{$story_title}</h2><p class='dateSpan'>{$story_date} </p><i class='fas fa-arrow-down readMore'></i><p class='storyContent'>{$story_content}</p></div>";
-
-        echo $burner;
-
-    } else {
-
-        $burner = "<div class='col-12 col-sm-6 newsDiv'><h2>{$story_title}</h2><p class='dateSpan'>{$story_date} </p><p>{$story_content}</p></div>";
-
-        echo $burner;
-
-    }
-
-}  
+            <div id="feed" class="row">
+<?php 
+storyTeller();
 ?> 
-
-
-</div>
+            </div>
         </div>
 
+        <!-- PRODUCTS AREA -->
 
         <div class="selection">
             <div class="col-lg-12">
                 <h1>Proizvodi</h1>
-                <div class="logoHR">
+                <!-- <div class="logoHR">
                     <img  src="./photos/logoIcon.png" alt="">
-                </div>  
+                </div>   -->
             </div>
 
             <div class="row" id="mainProducts">
-
 <?php 
-
-        $query = "SELECT * FROM main_group";
-        $select_all_main_groups = mysqli_query($connection, $query);
-
-        while($row = mysqli_fetch_assoc($select_all_main_groups)) {
-
-            $main_name = $row['main_name'];
-            $main_id = $row['main_id'];
-            $main_picture = $row['main_picture'];
+getAllMainForIndexProducts();
 ?>
-
-            <div class="Item col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12"><div class="tester1" style="background-image: url('./photos/slike/<?php echo $main_picture; ?>')"></div><div class="middle"><a class="text" href="./pages/products.php?main_id=<?php echo $main_id; ?>"><?php echo $main_name; ?></a>
-            </div></div>
-                        
-            <!-- echo $writer;   -->
-<?php
-        }
-?>
+            </div>
         </div>
-
-    </div>
     
     <?php include "./modules/footer.php" ?>
     
-</div>    
+    </div>    
 
     <script type="text/javascript"> 
         window.addEventListener('load', function () {
@@ -191,7 +130,5 @@ while($row = mysqli_fetch_assoc($select_feed)) {
         });
     </script>
     <script src="./javascript/effects.js"></script>
-    
 </body>
-
 </html>

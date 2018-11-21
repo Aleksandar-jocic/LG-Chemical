@@ -2,6 +2,70 @@
 
 <?php 
 
+function getAllMainForHeader() {
+
+    global $connection;
+
+    $query = "SELECT * FROM main_group";
+    $select_all_main_groups = mysqli_query($connection, $query);
+
+    while($row = mysqli_fetch_assoc($select_all_main_groups)) {
+
+        $main_name = $row['main_name'];
+        $main_id = $row['main_id'];
+
+        $writer = "<li class='productList'><a  href='./pages/products.php?main_id={$main_id}'>$main_name</a></li>";
+        
+        echo $writer;  
+    }
+}
+
+function storyTeller () {
+
+    global $connectionFeed;
+    
+    $query = "SELECT * FROM story";
+    $select_feed = mysqli_query($connectionFeed, $query);
+
+    while($row = mysqli_fetch_assoc($select_feed)) {
+
+        $story_title = $row['story_title'];
+        $story_date = $row['story_date'];
+        $story_content = $row['story_content'];
+
+
+        $burner = "<div class='col-12 col-sm-6 newsDiv'><h2>{$story_title}</h2><p class='dateSpan'>{$story_date}</p><i class='fas fa-arrow-down readMore'></i><p class='storyContent'>{$story_content}</p></div>";
+
+        echo $burner;
+
+    }  
+}
+function getAllMainForIndexProducts () {
+
+    global $connection;
+    
+    $query = "SELECT * FROM main_group";
+    $select_all_main_groups = mysqli_query($connection, $query);
+
+    while($row = mysqli_fetch_assoc($select_all_main_groups)) {
+
+        $main_name = $row['main_name'];
+        $main_id = $row['main_id'];
+        $main_picture = $row['main_picture'];
+?>
+
+    <div class="Item col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12">
+        <div class="tester1" style="background-image: url('./photos/slike/<?php echo $main_picture; ?>')">
+        </div>
+        <div class="middle">
+            <a class="text" href="./pages/products.php?main_id=<?php echo $main_id; ?>"><?php echo $main_name; ?></a>
+        </div>
+    </div>
+
+<?php
+    }
+}
+
 //mainContainer
 function getAllMain () {
 
@@ -115,18 +179,11 @@ function getProducts ($subID) {
         $product_picture = $row['product_picture'];
         $product_description = $row['product_description'];
 
-        if(strlen($product_description) > 160) {
 
-            $burner = "<div class='singleProduct' id='{$product_id}'><div class='productName'><p>{$product_name} <i class='fas fa-arrow-down readMore'></i></p></div><div class='productDescription'><p>{$product_description}</p></i></div><div class='productPicture'><img src='../photos/{$product_picture}'></div></div>";
+        $burner = "<div class='singleProduct' id='{$product_id}'><div class='productName'><p>{$product_name}</p><i class='fas fa-arrow-down readMore'></i></div><div class='productDescription'><p>{$product_description}</p></i></div><div class='productPicture'><img src='../photos/{$product_picture}'></div></div>";
 
-             echo $burner;
-            
-        } else {
-
-            $burner = "<div class='singleProduct' id='{$product_id}'><div class='productName'><p>{$product_name}</p></div><div class='productDescription'><p>{$product_description}</p></div><div class='productPicture'><img src='../photos/{$product_picture}'></div></div>";
-
-            echo $burner;
-        }
+        echo $burner;
+        
     }
 ?>
     <div id='paginator'>
@@ -168,7 +225,6 @@ function getProducts ($subID) {
 
         echo "<div class='paginationPreviousNext'><a href='./products.php?main_id={$product_main_id}&sub_id={$subID}&page={$nextPage}#productDisplay'><i class='fas fa-angle-double-right'></i></a></div>";
     }
-    
 } 
 ?>
     </div>

@@ -55,6 +55,7 @@
                 </div>
 
                 <div class="options">
+                    <a href="./administration/admin.php">admin</a>
                     <a href="../index.php">Početna</a>
                     <a href="./about.php">O nama</a>
 
@@ -142,6 +143,7 @@
         </div>
 
 <!-- footer -->
+<div class='grayScale'></div>
 
         <?php include "../modules/footerRest.php" ?>
 

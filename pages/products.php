@@ -53,9 +53,9 @@
         </div>
         <div class='productsWrap'>
             <h1 id="productDisplay">Proizvodi</h1>
-            <div class="logoHR">
+            <!-- <div class="logoHR">
                 <img  src="../photos/logoIcon.png" alt="">
-            </div>
+            </div> -->
         </div>
 
         <div class="mainContainer">
@@ -82,9 +82,9 @@ if(isset($_GET['main_id'])) {
 ?>
 
         </div>
-        <div id="afterChoice" class="logoHRWhite">
+        <!-- <div id="afterChoice" class="logoHRWhite">
                 <img  src="../photos/logoIcon.png" alt="">
-            </div>
+            </div> -->
             <div class="productListDiv">
 
 <?php
