@@ -16,7 +16,7 @@
                     <a href="./about.php">O nama</a>
                 </li>
                 <li>
-                    <a href="./products.php">Proizvodi</a>
+                    <a href="./products.php?main_id=1&sub_id=1&page=1">Proizvodi</a>
                 </li>
                 <li>
                     <a href="./partners.php">Partneri</a>

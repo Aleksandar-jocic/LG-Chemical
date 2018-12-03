@@ -13,33 +13,48 @@ function getAllMainForHeader() {
 
         $main_name = $row['main_name'];
         $main_id = $row['main_id'];
+        $main_icon = $row['main_icon'];
+?>
 
-        $writer = "<li class='productList'><a  href='./pages/products.php?main_id={$main_id}'>$main_name</a></li>";
+        <li class='productList'>
+            <div class='mainIconDiv'>
+                <img src="./photos/icons/<?php echo $main_icon; ?>">
+            </div>
+            <div class='mainLinkDiv'>
+                <a href='./pages/products.php?main_id=<?php echo $main_id; ?>'><?php echo $main_name; ?></a>
+            </div>
+        </li>
         
-        echo $writer;  
+<?php
+    }
+}
+function getAllMainForHeaderPages() {
+
+    global $connection;
+
+    $query = "SELECT * FROM main_group";
+    $select_all_main_groups = mysqli_query($connection, $query);
+
+    while($row = mysqli_fetch_assoc($select_all_main_groups)) {
+
+        $main_name = $row['main_name'];
+        $main_id = $row['main_id'];
+        $main_icon = $row['main_icon'];
+?>
+
+        <li class='productList'>
+            <div class='mainIconDiv'>
+                <img src="../photos/icons/<?php echo $main_icon; ?>">
+            </div>
+            <div class='mainLinkDiv'>
+                <a href='./products.php?main_id=<?php echo $main_id; ?>'><?php echo $main_name; ?></a>
+            </div>
+        </li>
+        
+<?php
     }
 }
 
-function storyTeller () {
-
-    global $connectionFeed;
-    
-    $query = "SELECT * FROM story";
-    $select_feed = mysqli_query($connectionFeed, $query);
-
-    while($row = mysqli_fetch_assoc($select_feed)) {
-
-        $story_title = $row['story_title'];
-        $story_date = $row['story_date'];
-        $story_content = $row['story_content'];
-
-
-        $burner = "<div class='col-12 col-sm-6 newsDiv'><h2>{$story_title}</h2><p class='dateSpan'>{$story_date}</p><i class='fas fa-arrow-down readMore'></i><p class='storyContent'>{$story_content}</p></div>";
-
-        echo $burner;
-
-    }  
-}
 function getAllMainForIndexProducts () {
 
     global $connection;
@@ -51,11 +66,11 @@ function getAllMainForIndexProducts () {
 
         $main_name = $row['main_name'];
         $main_id = $row['main_id'];
-        $main_picture = $row['main_picture'];
+        $main_index_picture = $row['main_index_picture'];
 ?>
 
     <div class="Item col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12">
-        <div class="tester1" style="background-image: url('./photos/slike/<?php echo $main_picture; ?>')">
+        <div class="tester1" style="background-image: url('./photos/chemeter/chemeterIndex/<?php echo $main_index_picture; ?>')">
         </div>
         <div class="middle">
             <a class="text" href="./pages/products.php?main_id=<?php echo $main_id; ?>"><?php echo $main_name; ?></a>
@@ -139,6 +154,14 @@ function getSubGroupsWithMainID ($mainID) {
     }
 } 
 
+
+function getChemeter () {
+
+    $write = "<div class='chemeterExclusion'><img src='../photos/chemeter/SiamSRP-2.jpg'><img src='../photos/chemeter/SiamSRP-3.jpg'><img src='../photos/chemeter/SiamSRP-4.jpg'><img src='../photos/chemeter/SiamSRP-5.jpg'><img src='../photos/chemeter/SiamSRP-6.jpg'></div>";
+
+    echo $write;
+}
+
 //productListDiv
 
 function getProducts ($subID) {
@@ -186,7 +209,7 @@ function getProducts ($subID) {
         
     }
 ?>
-    <div id='paginator'>
+    <!-- <div id='paginator'> -->
 <?php
 
 
@@ -227,4 +250,4 @@ function getProducts ($subID) {
     }
 } 
 ?>
-    </div>
+    <!-- </div> -->
