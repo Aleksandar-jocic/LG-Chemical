@@ -75,7 +75,15 @@ if(isset($_GET['main_id'])) {
 
     $mainID = $_GET['main_id'];
 
-    getSubGroupsWithMainID($mainID);
+    if($mainID == 6) {
+
+        getChemeter();
+    } else {
+
+        getSubGroupsWithMainID($mainID);
+
+    }
+
 
 }
 

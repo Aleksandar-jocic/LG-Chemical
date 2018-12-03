@@ -40,12 +40,12 @@
                 </a>
                 <ol class="carousel-indicators">
                     <li data-target="#slides" data-slide-to="0" class="active">O nama</li>
-                    <li data-target="#slides" data-slide-to="1">Građevinska industrija</li>
-                    <li data-target="#slides" data-slide-to="2">Prehrambena industrija</li>
-                    <li data-target="#slides" data-slide-to="3">Industrijski mirisi</li>
-                    <li data-target="#slides" data-slide-to="4">Tekstilna Industrija</li>
+                    <li data-target="#slides" data-slide-to="1">Građevina</li>
+                    <li data-target="#slides" data-slide-to="2">Prehrana</li>
+                    <li data-target="#slides" data-slide-to="3">Sigurnost hrane</li>
+                    <li data-target="#slides" data-slide-to="4">Industrijski mirisi</li>
                     <li data-target="#slides" data-slide-to="5">Bazna hemija</li>
-                    <li data-target="#slides" data-slide-to="6">Kućna hemija</li>
+                    <li data-target="#slides" data-slide-to="6">Chemeter</li>
 
                 </ol>
             </div>

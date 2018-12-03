@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 21, 2018 at 09:49 PM
+-- Generation Time: Dec 03, 2018 at 03:53 PM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.8
 
@@ -31,20 +31,22 @@ SET time_zone = "+00:00";
 CREATE TABLE `main_group` (
   `main_id` int(11) NOT NULL,
   `main_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `main_picture` varchar(20) COLLATE utf8_unicode_ci NOT NULL
+  `main_picture` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `main_index_picture` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `main_icon` varchar(30) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `main_group`
 --
 
-INSERT INTO `main_group` (`main_id`, `main_name`, `main_picture`) VALUES
-(1, 'Gradjevina', 'legosPSed.jpg'),
-(2, 'Prehrana', 'peach.jpg'),
-(3, 'Testovi', 'microscope.jpg'),
-(4, 'Industrijski mirisi', 'flowerPSed.jpg'),
-(5, 'Bazna hemija', 'vials.jpg'),
-(6, 'Chemeter', 'chemeter.png');
+INSERT INTO `main_group` (`main_id`, `main_name`, `main_picture`, `main_index_picture`, `main_icon`) VALUES
+(1, 'Gradjevina', 'legosPSed.jpg', 'gradjevina(small)red.jpg', 'paint-roller.png'),
+(2, 'Prehrana', 'peach.jpg', 'hrana(small)red.jpg', 'piece-of-cake.png'),
+(3, 'Sigurnost hrane', 'microscope.jpg', 'testovi(small)red.jpg', 'shield.png'),
+(4, 'Industrijski mirisi', 'flowerPSed.jpg', 'mirisi(small)red.jpg', 'cologne.png'),
+(5, 'Bazna hemija', 'vials.jpg', 'bazna(small)red.jpg', 'flask.png'),
+(6, 'Chemeter', 'chemeter.png', 'Chemeter(small).jpg', 'pipette.png');
 
 -- --------------------------------------------------------
 
@@ -320,11 +322,11 @@ INSERT INTO `sub_group` (`sub_id`, `main_id`, `sub_name`) VALUES
 (7, 1, 'ADITIVI'),
 (8, 2, 'DIJETETSKA VLAKNA'),
 (9, 2, 'SIRILA'),
-(10, 2, 'ADITIVI-prehrana'),
+(10, 2, 'ADITIVI'),
 (11, 2, 'DRUGI DODACI'),
-(12, 2, 'SREDSTVA ZA DEZINFEKCIJU I ODRŽAVANJE POGONA'),
+(12, 2, 'SREDSTVA ZA ODRŽAVANJE POGONA'),
 (13, 2, 'HEMIKALIJE ZA TRETMAN VODE'),
-(14, 3, 'Trakice za određivanje ostataka rezidua'),
+(14, 3, 'Trakice za detekciju'),
 (15, 3, 'ELISA testovi'),
 (16, 3, 'Oprema'),
 (17, 5, 'Hemikalije');

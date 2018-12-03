@@ -34,7 +34,7 @@
                 <div class="options">
                     <a href="../index.php">Početna</a>
                     <a href="./about.php">O nama</a>
-                    <a href="./products.php?main_id=1">Katalog Proizvoda</a>
+                    <a href="./products.php?main_id=1&sub_id=1&page=1">Katalog Proizvoda</a>
                     <a href="./partners.php">Partneri</a>
                     <a href="./contact.html">Kontakt</a>
                 </div>
@@ -65,13 +65,80 @@
             </div>
         </div>
 
+        <div class="employees">
+
+            <h2>Zaposleni</h2>
+
+            <div class="singlePerson">
+                <div>
+                    <p class="empName">Panagiotis Loufakis</p>
+                    <p class="empTitle">Direktor</p>
+
+                </div>
+                <div>
+                    <p class="empContact">Kontakt</p>
+                    <p><i class="far fa-envelope"></i>panos@lghemija.co.rs</p>
+                    <p><i class="fas fa-phone"></i>+381 62 833 9040</p>
+                </div>
+            </div>
+            <div class="singlePerson">
+                <div>
+                    <p class="empName">Jelena Bogdanović</p>
+                    <p class="empTitle">Tehnička podrška i prodaja, materijali za završne radove u građevinarstvu</p>
+
+                </div>
+                <div>
+                    <p class="empContact">Kontakt</p>
+                    <p><i class="far fa-envelope"></i>jelena@lghemija.co.rs</p>
+                    <p><i class="fas fa-phone"></i>+381 63 680 744</p>
+                </div>
+            </div>
+            <div class="singlePerson">
+                <div>
+                    <p class="empName">Ivan Šojić</p>
+                    <p class="empTitle">Tehnička podrška I prodaja, sirovine I adtitivi za prehranu</p>
+
+                </div>
+                <div>
+                    <p class="empContact">Kontakt</p>
+                    <p><i class="far fa-envelope"></i>ivan@lghemija.co.rs</p>
+                    <p><i class="fas fa-phone"></i>+381 62 658 949</p>
+                </div>
+            </div>
+            <div class="singlePerson">
+                <div>
+                    <p class="empName">Nataša Milićević</p>
+                    <p class="empTitle">Prodaja i SIAM tehnička podrška</p>
+
+                </div>
+                <div>
+                    <p class="empContact">Kontakt</p>
+                    <p><i class="far fa-envelope"></i>natasa@lghemija.co.rs</p>
+                    <p><i class="fas fa-phone"></i>+381 62 699 569</p>
+                </div>
+            </div>
+            <div class="singlePerson">
+                <div>
+                    <p class="empName">Suzana Nikolić</p>
+                    <p class="empTitle">Tehnički asistent</p>
+
+                </div>
+                <div>
+                    <p class="empContact">Kontakt</p>
+                    <p><i class="far fa-envelope"></i>office@lghemija.co.rs</p>
+                    <p><i class="fas fa-phone"></i>+381 63 244 540</p>
+                </div>
+            </div>
+
+        </div>
+
         <div class="mailWrap">
-                <h2>Imate pitanje za nas?</h2>
-                <p>Pošaljite nam upit i kontaktiraćemo Vas u najkraćem mogućem roku</p>
+            <h2>Imate pitanje za nas?</h2>
+            <p>Pošaljite nam upit i kontaktiraćemo Vas u najkraćem mogućem roku</p>
             <div class="formMail">
 
                 <form action="../administration/contact.php" method="post">
-                   <label>Ime: </label><input focus class="nameEmailInput" type="text" name="first_name"><br>
+                    <label>Ime: </label><input focus class="nameEmailInput" type="text" name="first_name"><br>
                     <label>Email: </label><input class="nameEmailInput" type="text" name="email"><br>
                     <label>Upit: </label><br><textarea rows="5" name="message" cols="30"></textarea><br>
                     <input class="button" type="submit" name="submit" value="Pоšalji">
@@ -99,7 +166,7 @@
                             <a href="./about.php">O nama</a>
                         </li>
                         <li>
-                            <a href="./products.php">Proizvodi</a>
+                            <a href="./products.php?main_id=1&sub_id=1&page=1">Proizvodi</a>
                         </li>
                         <li>
                             <a href="./partners.php">Partneri</a>

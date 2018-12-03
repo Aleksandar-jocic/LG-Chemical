@@ -76,7 +76,7 @@ body {
       height: auto; } }
 
 .imgFour {
-  background: url("./photos/slike/flowerPSed.jpg");
+  background: url("./photos/slike/microscopeP.jpg");
   height: 650px;
   background-position: center center;
   width: 100%;
@@ -95,7 +95,7 @@ body {
       height: auto; } }
 
 .imgFive {
-  background: url("./photos/slike/textilePSed.jpg");
+  background: url("./photos/slike/familyP.jpg");
   height: 650px;
   background-position: center center;
   width: 100%;
@@ -115,7 +115,7 @@ body {
       height: auto; } }
 
 .imgSix {
-  background: url("./photos/slike/vials.jpg");
+  background: url("./photos/slike/vialsP.jpg");
   height: 650px;
   background-position: center center;
   width: 100%;
@@ -134,7 +134,7 @@ body {
       height: auto; } }
 
 .imgSeven {
-  background: url("./photos/slike/houseChem.jpg");
+  background: url("./photos/chemeter/chemCover-2.jpg");
   height: 650px;
   background-position: center center;
   width: 100%;
@@ -338,7 +338,7 @@ body {
   margin-top: 80px; }
 
 #newsCover {
-  background: url("./photos/slike/bubbles.jpg");
+  background: url("./photos/slike/bubblesP.jpg");
   box-shadow: inset 200px 200px 20px 1000px rgba(31, 31, 31, 0.8);
   background-size: cover;
   background-attachment: fixed;
@@ -357,11 +357,12 @@ body {
   width: 60%;
   margin: 0 auto;
   text-align: center;
-  height: auto; }
+  height: auto;
+  transition: height 1s ease; }
   #feed .col-sm-6 {
-    -ms-flex: 0 0 calc(50% - 40px);
-    flex: 0 0 calc(50% - 40px);
-    max-width: calc(50% - 40px); }
+    -ms-flex: 0 0 calc(50%);
+    flex: 0 0 calc(50% - 30px);
+    max-width: calc(50%); }
     @media screen and (max-width: 856px) {
       #feed .col-sm-6 {
         -ms-flex: 0 0 55%;
@@ -374,22 +375,23 @@ body {
         max-width: 80%; } }
   #feed .newsDiv {
     height: auto;
-    max-height: 300px;
+    max-height: 350px;
     overflow: hidden;
     text-overflow: ellipsis;
-    padding: 20px;
+    padding: 5px 20px;
     display: inline-block;
     background-color: rgba(219, 219, 219, 0.8);
     border-radius: 3px;
     box-sizing: border-box;
     transition: max-height 1s ease;
-    margin: 20px;
+    margin: 25px 15px;
     vertical-align: top; }
     #feed .newsDiv i {
-      display: none; }
+      display: inline-block; }
     #feed .newsDiv h2 {
       border-bottom: 1px solid white;
-      padding-bottom: 10px; }
+      padding-bottom: 10px;
+      margin-top: 15px; }
     #feed .newsDiv .dateSpan {
       text-align: left;
       display: inline-block;
@@ -397,6 +399,13 @@ body {
     #feed .newsDiv p {
       text-align: left;
       width: calc(100% - 25px); }
+    #feed .newsDiv .feedCover {
+      box-sizing: border-box;
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid white; }
+      #feed .newsDiv .feedCover img {
+        width: 100%; }
     #feed .newsDiv .storyContent {
       width: 100%; }
     @media screen and (max-width: 856px) {
@@ -405,6 +414,19 @@ body {
         width: 100%;
         margin: 0 auto;
         margin-bottom: 30px; } }
+  #feed span {
+    position: relative;
+    width: 110px;
+    margin: 0 auto 15px auto;
+    padding: 10px;
+    background-color: #cccccc;
+    border-radius: 20px;
+    color: #fd1c15; }
+  #feed span:hover {
+    cursor: pointer; }
+  #feed .getBasicNews {
+    display: block;
+    clear: both; }
   @media screen and (max-width: 1080px) {
     #feed {
       width: 100%;
@@ -415,7 +437,7 @@ body {
       display: block; } }
 
 .productCover {
-  background: url("./photos/slike/mecha.jpg");
+  background: url("./photos/slike/mechaP.jpg");
   height: 650px;
   background-position: center center;
   width: 100%;
@@ -476,6 +498,9 @@ body {
       transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
       text-align: center; }
+      .selection .Item .middle .text {
+        color: #fd1c15;
+        font-size: 1.3rem; }
   .selection .additionalProducts {
     width: 100%;
     text-align: center;
@@ -485,12 +510,12 @@ body {
 
 .overlay #text .options .catalogue {
   display: none;
-  background-color: rgba(155, 155, 155, 0.7);
-  width: 400px;
+  background-color: rgba(80, 80, 80, 0.8);
+  width: 160px;
   height: auto;
   position: absolute;
   top: 50px;
-  right: 110px;
+  right: 228px;
   box-sizing: content-box; }
   .overlay #text .options .catalogue ul {
     margin: 0;
@@ -499,7 +524,7 @@ body {
     @media screen and (max-width: 960px) {
       .overlay #text .options .catalogue ul {
         position: absolute;
-        top: 178px !important;
+        top: 121px !important;
         width: 100% !important;
         right: 0px;
         padding: 0px; }
@@ -511,7 +536,7 @@ body {
         width: 100% !important;
         padding: 0px;
         display: block;
-        top: 178px;
+        top: 121px;
         right: 0px;
         height: auto; }
         .overlay #text .options .catalogue ul a {
@@ -521,9 +546,37 @@ body {
     text-align: center;
     font-size: 0.8rem;
     width: auto; }
+    .overlay #text .options .catalogue .productList .mainIconDiv {
+      width: 20%; }
+    .overlay #text .options .catalogue .productList .mainLinkDiv {
+      width: 80%; }
     .overlay #text .options .catalogue .productList a {
-      color: #2e2e2e;
-      padding: 7px 0px 7px 0px; }
+      color: white;
+      padding: 7px 0px 7px 0px;
+      text-align: center; }
+    .overlay #text .options .catalogue .productList img {
+      width: 24px;
+      height: 24px;
+      text-align: left; }
+    @media screen and (max-width: 960px) {
+      .overlay #text .options .catalogue .productList {
+        border-bottom: 1px solid white;
+        background-color: #272727;
+        display: flex;
+        justify-content: center; }
+        .overlay #text .options .catalogue .productList .mainIconDiv {
+          width: 30px;
+          padding: 4px 0px 3px 0px; }
+        .overlay #text .options .catalogue .productList .mainLinkDiv {
+          width: 180px; } }
+
+.chemeterExclusion {
+  width: 80%;
+  margin: 0 auto;
+  height: 1130px;
+  overflow-y: scroll; }
+  .chemeterExclusion img {
+    width: 100%; }
 
 .triggerDrop {
   margin-bottom: 0px !important; }
@@ -544,16 +597,19 @@ body {
       width: 100% !important;
       display: block;
       right: 0px !important; }
-      .show a {
-        width: 100px;
-        border-bottom: 1px solid white; } }
+      .show .mainIconDiv {
+        width: 20%;
+        display: inline-block !important; }
+      .show .mainLinkDiv {
+        width: 80%;
+        display: inline-block !important; } }
 
 .redBorder {
   border-bottom: 1px solid red !important; }
 
 .dropSpace {
   top: 80px !important;
-  background-color: rgba(95, 95, 95, 0.9) !important; }
+  background-color: rgba(80, 80, 80, 0.8) !important; }
   .dropSpace a {
     color: white !important; }
   @media screen and (max-width: 960px) {
@@ -582,7 +638,8 @@ body {
     text-align: center; }
     #output .subProductDiv .subGroups {
       padding: 15px;
-      margin: 25px 0px 10px 0px; }
+      margin: 25px 0px 10px 0px;
+      font-size: 0.8rem; }
       @media screen and (max-width: 960px) {
         #output .subProductDiv .subGroups {
           padding: 5px;
@@ -601,20 +658,20 @@ body {
       #output .subProductDiv {
         display: block; } }
   #output .productListDiv {
-    padding: 15px;
-    margin-left: 80px; }
+    padding: 15px; }
     #output .productListDiv p {
       margin: 0px;
       font-size: 0.9rem; }
     #output .productListDiv .singleProduct {
       padding: 15px;
-      margin: 20px 0px 20px 0px;
+      margin-bottom: 20px;
       border: 1px white solid;
       width: 500px;
       height: auto;
       max-height: 150px;
       overflow: hidden;
       position: relative;
+      left: calc(50% - 500px);
       transition: height 0.8ms ease; }
       #output .productListDiv .singleProduct .productName {
         border-bottom: 1px solid white;
@@ -651,7 +708,8 @@ body {
           border-top: 1px solid white;
           border-bottom: 1px solid white;
           border-radius: 0px;
-          text-align: center; }
+          text-align: center;
+          left: unset; }
           #output .productListDiv .singleProduct .productPicture img {
             max-width: 100px;
             max-height: 100px; } }
@@ -748,7 +806,8 @@ body {
   border-radius: 3px 3px 0px 0px; }
   .mainList a {
     color: white;
-    text-decoration: unset; }
+    text-decoration: unset;
+    font-size: 1.1rem; }
   @media screen and (max-width: 960px) {
     .mainList {
       display: block;
@@ -788,6 +847,13 @@ h1 {
     background-color: rgba(255, 255, 255, 0.5);
     text-align: center;
     box-sizing: content-box; }
+    .aboutText .aboutParagraph i {
+      font-size: 1.6rem;
+      padding-bottom: 15px;
+      color: #fd1c15; }
+    .aboutText .aboutParagraph span {
+      font-size: 1.2rem;
+      padding-left: 15px; }
     .aboutText .aboutParagraph p {
       margin: 0px; }
     .aboutText .aboutParagraph .markerSolid {
@@ -860,7 +926,7 @@ h1 {
   position: relative; }
 
 .partnersMain {
-  background: url("./photos/slike/fan.jpg");
+  background: url("./photos/slike/fanP.jpg");
   box-shadow: inset 200px 200px 20px 1000px rgba(53, 53, 53, 0.6);
   background-position: center;
   background-size: cover;
@@ -908,10 +974,17 @@ h1 {
       height: 100%;
       padding-left: 20px;
       width: 49%; }
+      .partners .partnerWrap .alignText .pdfDownload {
+        padding-top: 15px; }
+        .partners .partnerWrap .alignText .pdfDownload a {
+          background-color: rgba(255, 255, 255, 0.6);
+          padding: 7px 12px;
+          border-radius: 20px;
+          color: #fd1c15; }
       .partners .partnerWrap .alignText p {
         margin: 0px;
         max-height: 165px;
-        overflow: hidden; }
+        overflow-y: scroll; }
       .partners .partnerWrap .alignText .optionsPartners {
         height: 50px;
         display: flex;
@@ -936,7 +1009,7 @@ h1 {
   max-height: 400px; }
 
 .contactCover {
-  background: url("./photos/slike/contact.jpg");
+  background: url("./photos/slike/contactP.jpg");
   height: 650px;
   background-position: center center;
   width: 100%;
@@ -969,6 +1042,46 @@ h1 {
       max-width: 500px; }
     .locations .col-12 {
       padding: 0px; } }
+
+.employees {
+  width: 90%;
+  margin: 20px auto; }
+  .employees h2 {
+    text-align: center; }
+  .employees p {
+    margin-bottom: 3px; }
+  .employees .singlePerson {
+    padding: 15px;
+    width: 580px;
+    margin-bottom: 20px; }
+    .employees .singlePerson .empName {
+      margin-top: 10px;
+      font-size: 1.2rem; }
+    .employees .singlePerson i {
+      margin-right: 10px;
+      color: #fd1c15; }
+    .employees .singlePerson .empContact {
+      width: 150px;
+      margin: 0 auto;
+      text-align: center;
+      border-bottom: 1px solid #fd1c15;
+      padding-bottom: 5px;
+      margin-bottom: 10px; }
+    .employees .singlePerson p {
+      font-size: 0.9rem; }
+    .employees .singlePerson .empTitle {
+      font-size: 0.8rem; }
+    .employees .singlePerson div {
+      width: 45%;
+      box-sizing: border-box;
+      display: inline-block;
+      vertical-align: top;
+      margin-right: 25px; }
+    @media screen and (max-width: 576px) {
+      .employees .singlePerson div {
+        display: block; }
+      .employees .singlePerson .empContact {
+        margin: 5px 0px; } }
 
 .mailWrap {
   background: url("./photos/slike/dandelion.jpg");

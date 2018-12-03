@@ -50,7 +50,7 @@
                 </div>
 
                 <div class="options">
-                  <a href="./administration/admin.php">admin</a>
+                  <!-- <a href="./administration/admin.php">admin</a> -->
                     <a href="./index.php">Početna</a>
                     <a href="./pages/about.php">O nama</a>
                     <a href="#!" class="productTrigger">Katalog Proizvoda</a>
@@ -94,9 +94,9 @@ getAllMainForHeader();
             </div> -->
         
             <div id="feed" class="row">
-<?php 
-storyTeller();
-?> 
+
+<?php include "./modules/feed.php"; ?>
+
             </div>
         </div>
 

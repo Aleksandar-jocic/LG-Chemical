@@ -1,4 +1,5 @@
 <?php include "../productDB/serverConnection.php" ?>
+<?php include "../productDB/functions.php"; ?>
 
 <html lang="en">
 
@@ -55,7 +56,6 @@
                 </div>
 
                 <div class="options">
-                    <a href="./administration/admin.php">admin</a>
                     <a href="../index.php">Početna</a>
                     <a href="./about.php">O nama</a>
 
@@ -64,23 +64,9 @@
 
                     <div class='catalogue'>
                         <ul>
-
-                <?php 
-
-                    $query = "SELECT * FROM main_group";
-                    $select_all_main_groups = mysqli_query($connection, $query);
-
-                    while($row = mysqli_fetch_assoc($select_all_main_groups)) {
-
-                        $main_name = $row['main_name'];
-                        $main_id = $row['main_id'];
-
-                        $writer = "<li class='productList'><a  href='../pages/products.php?main_id={$main_id}'>$main_name</a></li>";
-                        
-                        echo $writer;  
-                    }
-                    
-                ?>
+<?php 
+getAllMainForHeaderPages();
+?>
                         </ul>
                     </div>
 
@@ -96,48 +82,39 @@
             <div class='aboutParagraph'>
                 <p>LG Hemija osnovana je 2001. godine sa ciljem da podrži proizvođače na
                     domaćem tržištu snabdevajući ih sirovinama od strane renomiranih inostranih
-                    proizvođača.
+                    proizvođača. LG Hemija je deo grupacije aktivne u proizvodnji i distribuciji polimera i drugih
+                    hemikalija. Fokusirana je na domaće tržište, a dobru saradnju razvija i sa
+                    firmama iz okruženja.
                 </p>
-                <div class="markerSolid"></div>
+                <!-- <div class="markerSolid"></div> -->
             </div>
-            
-            
+       
             <div class='aboutParagraph'>
-            
-            <p>
-                LG Hemija je deo grupacije aktivne u proizvodnji i distribuciji polimera i drugih
-                hemikalija. Fokusirana je na domaće tržište, a dobru saradnju razvija i sa
-                firmama iz okruženja.
-            </p>
-            <div class="markerSolid"></div>
+                <i class="fas fa-box-open"></i><span><strong>Plasman proizvoda</strong></span>
+                <p>
+                    Proizvode plasiramo primarno u građevinskoj industriji, prehrambenoj
+                    industriji, industriji kozmetike i kućne hemije.
+                </p>  
+                <!-- <div class="markerSolid"></div> -->
             </div>
-            <div class='aboutParagraph'>
-           
-            <p>
-                Proizvode plasiramo primarno u građevinskoj industriji, prehrambenoj
-                industriji, industriji kozmetike i kućne hemije.
-            </p>  
-            <div class="markerSolid"></div>
-            
-            
-            </div>
-            <div class='aboutParagraph'>
 
+            <div class='aboutParagraph'>
+                <i class="fas fa-bullseye"></i><span><strong>Ciljevi</strong></span>
                 <p>Naši dugoročni ciljevi su
                 plasiranje proizvoda proverenog kvaliteta od renomiranih dobavljača, pružanje
                 prepoznatljive tehničke podrške i uspostavljanje višegodišnje, stabilne
                 saradnje sa kupcima.
-            </p>
-            <div class="markerSolid"></div>
+                </p>
+                <!-- <div class="markerSolid"></div> -->
             </div>
-            
 
             <div class='aboutParagraph'>
-            <p>
-                Ključna karakteristika kompanije je proširenje ponude proizvoda i usluga koje
-                se sistemski prate i prenose na domaće tržište, na taj način doprinoseći
-                zajedničkom razvoju.
-            </p>
+                <i class="fas fa-key"></i><span><strong>Ključna karakteristika kompanije</strong></span>
+                <p>
+                    Predstavlje proširenje ponude proizvoda i usluga koje
+                    se sistemski prate i prenose na domaće tržište, na taj način doprinoseći
+                    zajedničkom razvoju.
+                </p>
             </div>
 
         </div>
