@@ -15,27 +15,16 @@ $(document).ready(function () {
     timeOne = setTimeout(handler, 0);  
     timeTwo = setTimeout(textAppear, 1000);
 
-
     if (window.location.pathname == '/pages/products.php') {
 
         product();
-
     } 
-
-    // else if (window.location.pathname == '/pages/products.php') {
-
-    //     product();
-
-    // }
-})
+});
 
 $('.getAllNews').click(function () {
 
-    // var el = this;
-    // var id = this.id;
-
     var data = {getAllNews: 1};
-
+    
     $.ajax({
 
         url: '../modules/feed.php',
@@ -43,13 +32,26 @@ $('.getAllNews').click(function () {
         data: data,
         success: function(response) {
 
-            $('.getAllNews').remove();
-            $('#feed').append(response);
-
-            console.log(response);
+            $('.getAllNews').css('display', 'none');
+            $(response).insertBefore('.getBasicNews');
+            $('.getBasicNews').css('display', 'block');
         }
     })
-})
+});
+$('.getBasicNews').click(function () {
+
+    var allNews = $('.newsDiv');
+
+    for(var i = 0; i < allNews.length; i++) {
+
+        if (i > 3) {
+
+            allNews[i].remove();
+        }
+    }
+    $('.getBasicNews').css('display', 'none');
+    $('.getAllNews').css('display', 'block');
+});
 
 $('.wrapper-dropdown-5').click(function () {
 
@@ -62,6 +64,17 @@ $('.wrapper-dropdown-5').click(function () {
         $('.wrapper-dropdown-5').addClass('active');
     }
 });
+$('.dropUpSuper').click(function () {
+
+    if($('.dropUpSuper').hasClass('active')) {
+
+        $('.dropUpSuper').removeClass('active');
+        
+    } else {
+
+        $('.dropUpSuper').addClass('active');
+    }
+})
 
 $(".fa-arrow-down").click(function(event) {
 
@@ -69,66 +82,31 @@ $(".fa-arrow-down").click(function(event) {
 
         $(this).parents('.singleProduct').removeClass('expandProduct');
         $(this).parents('.newsDiv').removeClass('expandNews');
-        // $(this).parents('.alignText').removeClass('expandPartners');
-        
-        
         $(this).removeClass('fa-arrow-up');
 
     } else {
         
         $(this).parents('.singleProduct').addClass('expandProduct');
         $(this).parents('.newsDiv').addClass('expandNews');
-        // $(this).parents('.alignText').addClass('expandPartners');
-        
-        
         $(this).addClass('fa-arrow-up');
     }
 });
 
-$(".mainList").click(function () {
-
-    console.log('something');
-
-});
-
-function getBackground () {
-
-    // $(this).parents('#output').css({'background-image': '../photos/slike/' + });
-
-}
-
 handler = function() {
     navbar.addClass('overlay-active');
-    console.log('handle works');
     clearTimeout()
 }
+
 $('.carousel').carousel({
-    interval: 55000
+    interval: 3500
 })
 
 textAppear = function() {
     logoText.addClass('logoText-active');
-    console.log('offset works');
     clearTimeout()
 }
 
 window.onscroll = function() {fixNavbar(); hiddenClass();};
-
-// function feed() {
-
-//     var tar = $('.storyContent');
-//     console.log(tar[1].previousElementSibling.previousElementSibling);
-    
-
-//     for(var i = 0; i < tar.length; i++) {
-
-//         if(tar[i].clientHeight > 40) {
-
-//             tar[i].previousElementSibling.previousElementSibling.style.display = 'inline-block';
-
-//         }
-//     }
-// }
 
 function product() {
 
@@ -142,15 +120,6 @@ function product() {
         }
     }
 }
-
-// function partner() {
-
-//     var tar = $('.alignText > p');
-
-//     for(var i = 0; i < tar.length; i++) {
-
-//     }
-// }
 
 function fixNavbar() {
     
@@ -218,18 +187,10 @@ $('.productTrigger').click(function () {
         $('.catalogue').addClass('show');
     }
 })
-
-
-
 //      onscroll after window offset passes element offset      //
-
 // offset()
 // function offset () {
-
 //     var windowOffset = window.pageYOffset;
 //     var targetOffset = $('#breaker').offset()['top'];
-
-
 //     // console.log(windowOffset);
-    
 // }

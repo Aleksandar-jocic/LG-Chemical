@@ -1,29 +1,16 @@
 <?php include "../productDB/functions.php"; ?>
+<?php include "../modules/headRest.php"; ?>
 
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" href="../photos/favicon.ico" type="image/x-icon">
-    <title>LG hemija</title>
-    <link rel="stylesheet" href="../css/bootstrap.css">
-    <link rel="stylesheet" href="../main.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Montserrat|Sunflower:300" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
-        crossorigin="anonymous">
-</head>
 
 <body>
+<div class="loader">
+    <img src="../photos/39.gif" alt="">
+</div>
     <div class="container-fluid">
         <div class="imageContainer">
-
-            <div class="partnersCover">
-            </div>
+            <div class="partnersCover"></div>
         </div>
+
         <div class="overlay">
             <div id="text">
                 <div>
@@ -36,8 +23,6 @@
                 <div class="options">
                     <a href="../index.php">Početna</a>
                     <a href="./about.php">O nama</a>
-                    <!-- product list catalogue -->
-                    
                     <a href="#!" class="productTrigger">Katalog Proizvoda</a>
 
                     <div class='catalogue'>
@@ -52,23 +37,21 @@ getAllMainForHeaderPages();
                     <a href="./contact.html">Kontakt</a>
                 </div>
                 <i class="fa fa-bars" id="target"></i>
-
             </div>
         </div>
 
-        <!-- MAIN -->
+        <!-- PARTNERS SINGLE -->
         <div class="PartnersWrap">
             <h1>Naši partneri</h1>
             <div class="logoHR">
                 <img  src="../photos/logoIcon.png" alt="">
             </div>
         </div>
-        
+
         <div class='partnersMain'>
             <div class="partners">
 
                 <div class="partnerWrap">
-
                     <div class="alignImage">
                         <a class="" href="http://www.biooscientific.com/" target='_blank'> 
                             <img src="../partners/BIOOlogo.png" alt="">
@@ -92,8 +75,14 @@ getAllMainForHeaderPages();
                     <div class="alignText">
                         <p>CFF GmbH &amp; Co. KG je Vaš snažan partner u prirodnim celuloznim vlaknima, sa globalnom mrežom u različitim tipovima industrije. CFF celulozna vlakna, proizvedena od organskih i obnovljivih sirovina, koriste se u izgradnji puteva, građevinskoj industriju, industrijskoj aplikaciji, filtraciji i prehrambenoj industriji. Priroda i rasprostranjenost CFF proizvoda je jedan od najvažnijih faktora uspeha. Rado će Vas uveriti u pitanja tehnologije, inovacija, kvaliteta i usluga i sarađivati sa Vama kako biste poboljšali svoje proizvode i proizvodni proces.
                         </p>
-                        <div class='pdfDownload'>
-                            <a href="../partners/CFFpdf.pdf" download>Download pdf</a>
+                        <div class='dropUpSuper'>
+                            <span>Download pdf</span>
+                            <div class='dropUp'>
+                                <a href="../partners/CFFpdf.pdf" download>CFF</a>
+                                <a href="../partners/CFF-healthyAspects.pdf" download>Healthy aspects</a>
+                                <a href="../partners/SANACEL-dietaryFibre.pdf" download>Dietary fibre</a>
+                                <a href="../partners/SANACEL-functionalFibres.pdf" download>Functional fibres</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -144,20 +133,15 @@ getAllMainForHeaderPages();
                         </div>
                     </div>
                 </div>
-                
             </div>
         </div>
 
-    <div class='grayScale'></div>
-
+        <div class='grayScale'></div>
             <!-- footer -->
             <?php include "../modules/footerRest.php" ?>
-
     </div>
 
-
+    <script src="../javascript/preLoader.js"></script>
     <script src="../javascript/effects.js"></script>
-
 </body>
-
 </html>

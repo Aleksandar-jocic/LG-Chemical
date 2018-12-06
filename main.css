@@ -134,7 +134,7 @@ body {
       height: auto; } }
 
 .imgSeven {
-  background: url("./photos/chemeter/chemCover-2.jpg");
+  background: url("./photos/chemeter/chemCover.jpg");
   height: 650px;
   background-position: center center;
   width: 100%;
@@ -176,7 +176,14 @@ body {
     display: inline-block;
     padding: 7px;
     box-sizing: border-box;
-    z-index: 1; }
+    z-index: 1;
+    transition: all 0.4s ease-out; }
+  .carousel-indicators li.active:hover {
+    background-color: #fd1c15;
+    color: white; }
+  .carousel-indicators li:hover {
+    background-color: rgba(253, 28, 21, 0.8);
+    color: white; }
   @media screen and (max-width: 768px) {
     .carousel-indicators {
       height: 50px;
@@ -358,7 +365,7 @@ body {
   margin: 0 auto;
   text-align: center;
   height: auto;
-  transition: height 1s ease; }
+  transition: all 0.5s ease-out; }
   #feed .col-sm-6 {
     -ms-flex: 0 0 calc(50%);
     flex: 0 0 calc(50% - 30px);
@@ -383,7 +390,7 @@ body {
     background-color: rgba(219, 219, 219, 0.8);
     border-radius: 3px;
     box-sizing: border-box;
-    transition: max-height 1s ease;
+    transition: all 0.5s ease-out;
     margin: 25px 15px;
     vertical-align: top; }
     #feed .newsDiv i {
@@ -414,6 +421,10 @@ body {
         width: 100%;
         margin: 0 auto;
         margin-bottom: 30px; } }
+  #feed .newsDiv:hover {
+    -webkit-box-shadow: 3px 3px 7px 0px dimgray;
+    -moz-box-shadow: 3px 3px 7px 0px dimgray;
+    box-shadow: 3px 3px 7px 0px dimgray; }
   #feed span {
     position: relative;
     width: 110px;
@@ -425,8 +436,10 @@ body {
   #feed span:hover {
     cursor: pointer; }
   #feed .getBasicNews {
-    display: block;
-    clear: both; }
+    display: none;
+    width: 100%;
+    padding: 10px;
+    margin: 0 auto 15px auto; }
   @media screen and (max-width: 1080px) {
     #feed {
       width: 100%;
@@ -511,16 +524,18 @@ body {
 .overlay #text .options .catalogue {
   display: none;
   background-color: rgba(80, 80, 80, 0.8);
-  width: 160px;
+  min-width: 215px;
   height: auto;
   position: absolute;
   top: 50px;
-  right: 228px;
+  right: 200px;
   box-sizing: content-box; }
   .overlay #text .options .catalogue ul {
     margin: 0;
-    padding: 10px;
-    display: block; }
+    padding: 0px;
+    box-sizing: border-box;
+    display: block;
+    width: auto; }
     @media screen and (max-width: 960px) {
       .overlay #text .options .catalogue ul {
         position: absolute;
@@ -544,16 +559,22 @@ body {
   .overlay #text .options .catalogue .productList {
     display: block;
     text-align: center;
-    font-size: 0.8rem;
-    width: auto; }
+    width: auto;
+    box-sizing: border-box;
+    transition: all 0.4s ease-out; }
     .overlay #text .options .catalogue .productList .mainIconDiv {
       width: 20%; }
     .overlay #text .options .catalogue .productList .mainLinkDiv {
-      width: 80%; }
+      width: 80%;
+      box-sizing: content-box; }
     .overlay #text .options .catalogue .productList a {
       color: white;
       padding: 7px 0px 7px 0px;
-      text-align: center; }
+      text-align: left;
+      font-size: 1.1rem;
+      width: 100%;
+      margin: 0px;
+      box-sizing: content-box; }
     .overlay #text .options .catalogue .productList img {
       width: 24px;
       height: 24px;
@@ -569,6 +590,13 @@ body {
           padding: 4px 0px 3px 0px; }
         .overlay #text .options .catalogue .productList .mainLinkDiv {
           width: 180px; } }
+  .overlay #text .options .catalogue .productList:hover {
+    background-color: rgba(253, 28, 21, 0.5); }
+    @media screen and (max-width: 960px) {
+      .overlay #text .options .catalogue .productList:hover {
+        background-color: #272727;
+        border: none;
+        border-bottom: 1px solid white; } }
 
 .chemeterExclusion {
   width: 80%;
@@ -582,12 +610,14 @@ body {
   margin-bottom: 0px !important; }
   @media screen and (max-width: 960px) {
     .triggerDrop {
-      margin-bottom: 193px !important; } }
+      margin-bottom: 248px !important; } }
 
 .show {
   display: block !important;
   transition: all 0.5s ease;
-  right: 0px; }
+  right: 0px;
+  width: auto;
+  box-sizing: border-box; }
   .show a {
     width: auto;
     right: 0px; }
@@ -602,7 +632,8 @@ body {
         display: inline-block !important; }
       .show .mainLinkDiv {
         width: 80%;
-        display: inline-block !important; } }
+        display: inline-block !important;
+        padding-left: 20px; } }
 
 .redBorder {
   border-bottom: 1px solid red !important; }
@@ -645,6 +676,9 @@ body {
           padding: 5px;
           font-size: 0.8rem;
           margin: 10px 0px 10px 0px; } }
+    #output .subProductDiv .subGroups:hover {
+      border-bottom: 1px solid #fd1c15;
+      padding-bottom: 7px; }
     #output .subProductDiv .subGroupsActive {
       border-bottom: 1px solid #fd1c15;
       padding-bottom: 7px; }
@@ -672,7 +706,7 @@ body {
       overflow: hidden;
       position: relative;
       left: calc(50% - 500px);
-      transition: height 0.8ms ease; }
+      transition: all 0.3s ease-out; }
       #output .productListDiv .singleProduct .productName {
         border-bottom: 1px solid white;
         padding-bottom: 10px;
@@ -726,6 +760,10 @@ body {
             #output .productListDiv .singleProduct .productPicture img {
               max-width: 80px;
               max-height: 80px; } }
+    #output .productListDiv .singleProduct:hover {
+      -webkit-box-shadow: 3px 3px 9px 0px rgba(255, 255, 255, 0.85);
+      -moz-box-shadow: 3px 3px 9px 0px rgba(255, 255, 255, 0.85);
+      box-shadow: 3px 3px 9px 0px rgba(255, 255, 255, 0.85); }
     #output .productListDiv .expandProduct {
       height: auto;
       max-height: 500px;
@@ -759,6 +797,7 @@ body {
       height: 35px;
       padding: 3px 0px 0px 0px; }
       #output #paginator .paginationButton a {
+        padding: 3px 5px;
         font-size: 1.1rem;
         vertical-align: bottom; }
     #output #paginator .pageActive {
@@ -803,7 +842,8 @@ body {
   width: auto;
   min-width: 160px;
   text-align: center;
-  border-radius: 3px 3px 0px 0px; }
+  border-radius: 3px 3px 0px 0px;
+  transition: all 0.4s ease-out; }
   .mainList a {
     color: white;
     text-decoration: unset;
@@ -816,9 +856,15 @@ body {
       border-radius: 0px;
       padding: 10px; } }
 
+.mainList:hover {
+  background-color: rgba(253, 28, 21, 0.8); }
+
 .mainListActive {
-  border: 1px solid #c8232c;
-  background-color: #c8232c; }
+  border: 1px solid #fd1c15;
+  background-color: #fd1c15; }
+
+.mainListActive:hover {
+  background-color: #fd1c15; }
 
 .grayScale {
   height: 20px;
@@ -849,11 +895,12 @@ h1 {
     box-sizing: content-box; }
     .aboutText .aboutParagraph i {
       font-size: 1.6rem;
-      padding-bottom: 15px;
+      padding-bottom: 5px;
       color: #fd1c15; }
     .aboutText .aboutParagraph span {
       font-size: 1.2rem;
-      padding-left: 15px; }
+      padding-bottom: 15px;
+      display: block; }
     .aboutText .aboutParagraph p {
       margin: 0px; }
     .aboutText .aboutParagraph .markerSolid {
@@ -939,11 +986,10 @@ h1 {
   padding: 20px;
   margin: 0 auto; }
   .partners .partnerWrap {
-    width: 100%;
+    width: 80%;
+    margin: 0 auto;
     background-color: rgba(255, 255, 255, 0.5);
     height: 250px;
-    overflow: hidden;
-    max-height: 250px;
     margin-top: 20px;
     padding: 20px; }
     .partners .partnerWrap .alignImage {
@@ -974,13 +1020,6 @@ h1 {
       height: 100%;
       padding-left: 20px;
       width: 49%; }
-      .partners .partnerWrap .alignText .pdfDownload {
-        padding-top: 15px; }
-        .partners .partnerWrap .alignText .pdfDownload a {
-          background-color: rgba(255, 255, 255, 0.6);
-          padding: 7px 12px;
-          border-radius: 20px;
-          color: #fd1c15; }
       .partners .partnerWrap .alignText p {
         margin: 0px;
         max-height: 165px;
@@ -992,13 +1031,64 @@ h1 {
         .partners .partnerWrap .alignText .optionsPartners span {
           position: relative;
           top: 50%; }
+      .partners .partnerWrap .alignText .pdfDownload {
+        padding-top: 15px;
+        text-align: right; }
+        .partners .partnerWrap .alignText .pdfDownload a {
+          background-color: rgba(255, 255, 255, 0.9);
+          padding: 7px 12px;
+          border-radius: 20px;
+          color: #fd1c15; }
+      .partners .partnerWrap .alignText .dropUpSuper {
+        padding-top: 15px;
+        text-align: right;
+        position: relative; }
+        .partners .partnerWrap .alignText .dropUpSuper span {
+          background-color: rgba(255, 255, 255, 0.9);
+          padding: 7px 12px;
+          border-radius: 20px;
+          color: #fd1c15; }
+        .partners .partnerWrap .alignText .dropUpSuper span:hover {
+          cursor: pointer; }
+        .partners .partnerWrap .alignText .dropUpSuper .dropUp {
+          /* Size & position */
+          position: absolute;
+          top: 50px;
+          right: 12px;
+          padding: 0px;
+          text-align: center;
+          box-sizing: border-box;
+          /* Styles */
+          border-radius: 1px;
+          border-top: none;
+          border-bottom: none;
+          list-style: none;
+          transition: all 0.4s ease-out;
+          font-size: 0.7rem;
+          /* Hiding */
+          max-height: 0;
+          overflow: hidden; }
+          .partners .partnerWrap .alignText .dropUpSuper .dropUp a {
+            background-color: rgba(255, 255, 255, 0.9);
+            display: block;
+            width: 114px;
+            text-decoration: none;
+            color: black;
+            padding: 10px 0;
+            transition: all 0.5s ease-out; }
+          .partners .partnerWrap .alignText .dropUpSuper .dropUp a:hover {
+            background-color: rgba(201, 201, 201, 0.9);
+            color: #fd1c15; }
+      .partners .partnerWrap .alignText .dropUpSuper.active .dropUp {
+        max-height: 400px; }
       @media screen and (max-width: 960px) {
         .partners .partnerWrap .alignText {
           display: block;
           width: 100%;
           height: auto; } }
-    .partners .partnerWrap .expandPartners p {
-      overflow: visible; }
+    @media screen and (max-width: 1440px) {
+      .partners .partnerWrap {
+        width: 100%; } }
     @media screen and (max-width: 960px) {
       .partners .partnerWrap {
         width: 100%;
@@ -1045,7 +1135,8 @@ h1 {
 
 .employees {
   width: 90%;
-  margin: 20px auto; }
+  margin: 30px auto 15px auto;
+  padding-left: 20px; }
   .employees h2 {
     text-align: center; }
   .employees p {
@@ -1053,7 +1144,10 @@ h1 {
   .employees .singlePerson {
     padding: 15px;
     width: 580px;
-    margin-bottom: 20px; }
+    margin-bottom: 20px;
+    transition: all 0.4s ease-out; }
+    .employees .singlePerson .contactDiv {
+      margin: 0px; }
     .employees .singlePerson .empName {
       margin-top: 10px;
       font-size: 1.2rem; }
@@ -1072,7 +1166,7 @@ h1 {
     .employees .singlePerson .empTitle {
       font-size: 0.8rem; }
     .employees .singlePerson div {
-      width: 45%;
+      width: 47%;
       box-sizing: border-box;
       display: inline-block;
       vertical-align: top;
@@ -1082,6 +1176,8 @@ h1 {
         display: block; }
       .employees .singlePerson .empContact {
         margin: 5px 0px; } }
+  .employees .singlePerson:hover {
+    background-color: rgba(197, 197, 197, 0.7); }
 
 .mailWrap {
   background: url("./photos/slike/dandelion.jpg");
@@ -1097,6 +1193,7 @@ h1 {
 .formMail {
   width: 380px;
   box-sizing: border-box;
+  margin-left: 100px;
   padding: 0px;
   color: white; }
   .formMail label {
@@ -1135,9 +1232,19 @@ h1 {
     cursor: pointer;
     box-shadow: unset;
     transition: all 0.2s ease; }
+  @media screen and (max-width: 1080px) {
+    .formMail {
+      margin-left: 80px; } }
+  @media screen and (max-width: 960px) {
+    .formMail {
+      margin-left: 40px; } }
+  @media screen and (max-width: 576px) {
+    .formMail {
+      margin-left: 0px; } }
   @media screen and (max-width: 426px) {
     .formMail {
-      width: 260px; } }
+      width: auto;
+      margin-left: 0px; } }
 
 .footer {
   box-shadow: inset 200px 200px 20px 1000px rgba(63, 63, 63, 0.7);
