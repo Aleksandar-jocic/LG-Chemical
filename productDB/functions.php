@@ -1,7 +1,5 @@
 <?php include "serverConnection.php"; ?>
-
 <?php 
-
 function getAllMainForHeader() {
 
     global $connection;
@@ -24,7 +22,6 @@ function getAllMainForHeader() {
                 <a href='./pages/products.php?main_id=<?php echo $main_id; ?>'><?php echo $main_name; ?></a>
             </div>
         </li>
-        
 <?php
     }
 }
@@ -50,11 +47,9 @@ function getAllMainForHeaderPages() {
                 <a href='./products.php?main_id=<?php echo $main_id; ?>'><?php echo $main_name; ?></a>
             </div>
         </li>
-        
 <?php
     }
 }
-
 function getAllMainForIndexProducts () {
 
     global $connection;
@@ -98,10 +93,10 @@ function getAllMain () {
             $main_picture = $row['main_picture'];
 
                 if ($super === $main_id) {
-                    $active = "<div class='mainList mainListActive'><a name='$main_picture' onclick=getBackground() href='./products.php?main_id={$main_id}#productDisplay'>$main_name</a></div>";
+                    $active = "<div class='mainList mainListActive'><a name='$main_picture' href='./products.php?main_id={$main_id}#productDisplay'>$main_name</a></div>";
                     echo $active;
                 } else {
-                    $writer = "<div class='mainList'><a name='$main_picture' onclick=getBackground() href='./products.php?main_id={$main_id}#productDisplay'  >$main_name</a></div>";
+                    $writer = "<div class='mainList'><a name='$main_picture'  href='./products.php?main_id={$main_id}#productDisplay'  >$main_name</a></div>";
                             
                     echo $writer;  
                 }
@@ -120,9 +115,6 @@ function getSubGroupsWithMainID ($mainID) {
     $query = "SELECT * FROM sub_group WHERE main_id={$mainID}";
 
     $select_all_sub_groups = mysqli_query($connection, $query);
-    // $getClass = mysqli_fetch_assoc($select_all_sub_groups);
-
-    // $output = 
 
     while($row = mysqli_fetch_assoc($select_all_sub_groups)) {
 
@@ -209,10 +201,8 @@ function getProducts ($subID) {
         
     }
 ?>
-    <!-- <div id='paginator'> -->
+    <div id='paginator'>
 <?php
-
-
     $previousPage = $paginationPage - 1;
 
     $nextPage = $paginationPage + 1;
@@ -250,4 +240,4 @@ function getProducts ($subID) {
     }
 } 
 ?>
-    <!-- </div> -->
+    </div>

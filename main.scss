@@ -22,6 +22,7 @@ $on768: 768px;
 $on856: 856px;
 $on960: 960px;
 $on1080: 1080px;
+$on1440: 1440px;
 
 @mixin imgPosition {
     height: 650px;
@@ -105,7 +106,7 @@ body {
     @include imgPosition();
 }
 .imgSeven {
-    background: url('./photos/chemeter/chemCover-2.jpg');
+    background: url('./photos/chemeter/chemCover.jpg');
     @include imgPosition();
 }
 .carousel-indicators {
@@ -136,7 +137,15 @@ body {
         padding: 7px;
         box-sizing: border-box;
         z-index: 1;
-        
+        transition: all 0.4s ease-out;
+    }
+    li.active:hover {
+        background-color: rgb(253, 28, 21);
+        color: white;
+    }
+    li:hover {
+        background-color: rgba(253, 28, 21, 0.8);
+        color: white;
     }
     @media screen and (max-width: $on768) {
         height: 50px;
@@ -319,8 +328,10 @@ body {
         margin: 0 auto;
         text-align: left;
         list-style-type: none;
+
         li {
             padding: 4px;
+            
         }
         i {
             color: $charlie;
@@ -370,7 +381,7 @@ body {
     margin: 0 auto;
     text-align: center;
     height: auto;
-    transition: height 1s ease;
+    transition: all 0.5s ease-out;
     
     .col-sm-6 {
         -ms-flex: 0 0 calc(50%);
@@ -400,7 +411,7 @@ body {
         background-color: rgba(219, 219, 219, 0.8);
         border-radius: 3px;
         box-sizing: border-box;
-        transition: max-height 1s ease;
+        transition: all 0.5s ease-out;
         margin: 25px 15px;
         vertical-align: top;
         
@@ -445,6 +456,11 @@ body {
             margin-bottom: 30px;
         }
     }
+    .newsDiv:hover {
+        -webkit-box-shadow: 3px 3px 7px 0px rgba(105, 105, 105, 1);
+        -moz-box-shadow: 3px 3px 7px 0px rgba(105, 105, 105, 1);
+        box-shadow: 3px 3px 7px 0px rgba(105, 105, 105, 1);
+    }
     span {
         position: relative;
         width: 110px;
@@ -459,8 +475,12 @@ body {
         cursor: pointer;
     }
     .getBasicNews {
-        display: block;
-        clear: both;
+        display: none;
+        width: 100%;
+        padding: 10px;
+        margin: 0 auto 15px auto;
+        
+        // clear: both;
     }
     @media screen and (max-width: $on1080) {
 
@@ -552,20 +572,23 @@ body {
 .overlay #text .options .catalogue {
     display: none;
     background-color: rgba(80, 80, 80, 0.8);
-    width: 160px;
+    min-width: 215px;
+    // width: auto;
     height: auto;
     position: absolute;
     top: 50px;
-    right: 228px;
+    // left: 428px;
+    right: 200px;
     box-sizing: content-box;
 
     
     
     ul {
         margin: 0;
-        padding: 10px;
+        padding: 0px;
+        box-sizing: border-box;
         display: block;
-
+        width: auto;
         @media screen and (max-width: $on960) {
 
             position: absolute;
@@ -597,20 +620,32 @@ body {
 
         display: block;
         text-align: center;
-        font-size: 0.8rem;
         width: auto;
+        box-sizing: border-box;
+        transition: all 0.4s ease-out;
         
         .mainIconDiv {
             width: 20%;
         }
         .mainLinkDiv {
             width: 80%;
+            // padding-left: 10px;
+            box-sizing: content-box;
+            
         }
 
         a {
         color: white;
         padding: 7px 0px 7px 0px;
-        text-align: center;
+        text-align: left;
+        font-size: 1.1rem;
+        width: 100%;
+        margin: 0px;
+        box-sizing: content-box;
+        
+        
+        // margin-left: 10px;
+        
         }
 
         img {
@@ -634,6 +669,21 @@ body {
             }
         }
     }
+    .productList:hover {
+        
+        background-color: rgba(253, 28, 21, 0.5);
+        // border-bottom: 1px solid $charlie;
+        // border-top: 1px solid $charlie;
+
+        @media screen and (max-width: $on960) {
+
+            background-color: #272727;
+            border: none;
+            border-bottom: 1px solid white;
+          
+        }
+        
+    }
 }
 
 .chemeterExclusion {
@@ -650,13 +700,15 @@ body {
     margin-bottom: 0px !important;
 
     @media screen and (max-width: $on960) {
-    margin-bottom: 193px !important;
+    margin-bottom: 248px !important;
     }
 }
 .show {
     display: block !important;
     transition: all 0.5s ease;
     right: 0px;
+    width: auto;
+    box-sizing: border-box;
     
     a {
         width: auto;
@@ -678,6 +730,7 @@ body {
         .mainLinkDiv {
             width: 80%;
             display: inline-block !important;
+            padding-left: 20px;
             // border-bottom: 1px solid white;
         }
     }
@@ -727,12 +780,19 @@ body {
             padding: 15px;
             margin: 25px 0px 10px 0px;
             font-size: 0.8rem;
-
+            // transition: all 0.4s ease-out;
+            
             @media screen and (max-width: $on960) {
                 padding: 5px;
                 font-size: 0.8rem;
                 margin: 10px 0px 10px 0px;
             }
+        }
+        .subGroups:hover {
+            
+            border-bottom: 1px solid $charlie;
+            padding-bottom: 7px;
+            
         }
         .subGroupsActive {
             border-bottom: 1px solid $charlie;
@@ -772,7 +832,8 @@ body {
             overflow: hidden;
             position: relative;
             left: calc(50% - 500px);
-            transition: height 0.8ms ease;
+            transition: all 0.3s ease-out;
+            // transition: height 0.8ms ease;
 
             .productName {
                 border-bottom: 1px solid white;
@@ -853,6 +914,11 @@ body {
                 }
             }
         }
+        .singleProduct:hover {
+            -webkit-box-shadow: 3px 3px 9px 0px rgba(255,255,255,0.85);
+            -moz-box-shadow: 3px 3px 9px 0px rgba(255,255,255,0.85);
+            box-shadow: 3px 3px 9px 0px rgba(255,255,255,0.85);
+        }
        
         .expandProduct {
 
@@ -900,6 +966,7 @@ body {
             padding: 3px 0px 0px 0px;
             
             a {
+                padding: 3px 5px;
                 font-size: 1.1rem;
                 vertical-align: bottom;
             }
@@ -955,6 +1022,7 @@ body {
     min-width: 160px;
     text-align: center;
     border-radius: 3px 3px 0px 0px;
+    transition: all 0.4s ease-out;
 
     a {
         color: white;
@@ -970,9 +1038,16 @@ body {
         
     }
 } 
+.mainList:hover {
+    background-color: rgba(253, 28, 21, 0.8);
+}
 .mainListActive {
-    border: 1px solid $pinterest;
-    background-color: $pinterest;
+    border: 1px solid $charlie;
+    background-color: $charlie;
+}
+.mainListActive:hover {
+    background-color: $charlie;
+    
 }
 .grayScale {
     height: 20px;
@@ -1010,12 +1085,14 @@ h1 {
         box-sizing: content-box;
         i {
             font-size: 1.6rem;
-            padding-bottom: 15px;
+            padding-bottom: 5px;
             color: $charlie;
         }
         span {
             font-size: 1.2rem;
-            padding-left: 15px;
+            padding-bottom: 15px;
+            display: block;
+            
         }
         p {
             margin: 0px;
@@ -1137,11 +1214,10 @@ h1 {
     margin: 0 auto;
 
     .partnerWrap {
-        width: 100%;
+        width: 80%;
+        margin: 0 auto;
         background-color: rgba(255, 255, 255, 0.5);
         height: 250px;
-        overflow: hidden;
-        max-height: 250px;
         margin-top: 20px;
         padding: 20px;
 
@@ -1177,17 +1253,8 @@ h1 {
             height: 100%;
             padding-left: 20px;
             width: 49%;
-            .pdfDownload {
-            padding-top: 15px;
 
-                a {
-                    background-color: rgba(255, 255, 255, 0.6);
-                    padding: 7px 12px;
-                    border-radius: 20px;
-                    color: $charlie;
-                }
-
-            }
+            
             p {
                 margin: 0px;
                 max-height: 165px;
@@ -1203,6 +1270,79 @@ h1 {
                     top: 50%;
                 }
             }
+            .pdfDownload {
+                padding-top: 15px;
+                text-align: right;
+
+                a {
+                    background-color: rgba(255, 255, 255, 0.9);
+                    padding: 7px 12px;
+                    border-radius: 20px;
+                    color: $charlie;
+                }
+            }
+            .dropUpSuper {
+                padding-top: 15px;
+                text-align: right;
+                position: relative;
+                
+                span {
+                    background-color: rgba(255, 255, 255, 0.9);
+                    padding: 7px 12px;
+                    border-radius: 20px;
+                    color: $charlie;
+                }
+                span:hover {
+                    cursor: pointer;
+                }
+
+                .dropUp {
+                    /* Size & position */
+                    position: absolute;
+                    top: 50px;
+                    right: 12px;
+                    padding: 0px;
+                    text-align: center;
+                    box-sizing: border-box;
+
+                    /* Styles */
+                    // background: lightgray;
+                    border-radius: 1px;
+                    // border: 1px solid white;
+                    border-top: none;
+                    border-bottom: none;
+                    list-style: none;
+                    transition: all 0.4s ease-out;
+                    font-size: 0.7rem;
+
+                    /* Hiding */
+                    max-height: 0;
+                    overflow: hidden;
+
+                    a {
+                        background-color: rgba(255, 255, 255, 0.9);
+                        display: block;
+                        width: 114px;
+                        text-decoration: none;
+                        color: black;
+                        padding: 10px 0;
+                        transition: all 0.5s ease-out;
+                        // border-bottom: 1px solid $charlie;
+                    }
+                    
+                    a:hover {
+                        background-color: rgba(201, 201, 201, 0.9);
+                        color: $charlie;
+                    }
+                    
+                }
+                
+                
+            }
+            .dropUpSuper.active .dropUp {
+                // border-bottom: 1px solid rgba(0,0,0,0.2);
+                max-height: 400px;
+            }
             @media screen and (max-width: $on960) {
 
                 display: block;
@@ -1210,11 +1350,13 @@ h1 {
                 height: auto;
             }
         }
-        .expandPartners {
-            p {
-                overflow: visible;
-            }
+        
+
+        @media screen and (max-width: $on1440) {
+                
+            width: 100%;
         }
+       
         @media screen and (max-width: $on960) {
                 
             width: 100%;
@@ -1261,7 +1403,8 @@ h1 {
 .employees {
 
     width: 90%;
-    margin: 20px auto;
+    margin: 30px auto 15px auto;
+    padding-left: 20px;
     h2 {
         text-align: center;
     }
@@ -1273,7 +1416,12 @@ h1 {
         padding: 15px;
         width: 580px;
         margin-bottom: 20px;
+        transition: all 0.4s ease-out;
+        
         // border-bottom: 1px solid $charlie;
+        .contactDiv {
+            margin: 0px;
+        }
 
         .empName{
             margin-top: 10px;
@@ -1298,7 +1446,7 @@ h1 {
             font-size: 0.8rem;
         }
         div {
-            width: 45%;
+            width: 47%;
             box-sizing: border-box;
             display: inline-block;
             vertical-align: top;
@@ -1313,6 +1461,9 @@ h1 {
                 margin: 5px 0px;
             }
         }
+    }
+    .singlePerson:hover {
+        background-color: rgba(197, 197, 197, 0.7);
     }
 }
 .mailWrap {
@@ -1333,7 +1484,7 @@ h1 {
 .formMail {
     width: 380px;
     box-sizing: border-box;
-    // margin: 0 auto;
+    margin-left: 100px;
     padding: 0px;
     color: white;
     label {
@@ -1383,8 +1534,19 @@ h1 {
         transition: all 0.2s ease;
         
     }
+    @media screen and (max-width: $on1080) {
+        margin-left: 80px;
+    }
+    @media screen and (max-width: $on960) {
+        margin-left: 40px;
+    }
+    @media screen and (max-width: $on576) {
+        margin-left: 0px;
+    }
     @media screen and (max-width: $on426) {
-        width: 260px;
+        width: auto;
+        margin-left: 0px;
+        
     }
 }
 
@@ -1727,7 +1889,6 @@ h1, h2, h3, h4 :hover {
     margin-top: 5px;
 }
 .wrapper-dropdown-5.active {
-    // background: gray;
     box-shadow: none;
     border-bottom: none;
     color: $charlie;
@@ -1735,7 +1896,6 @@ h1, h2, h3, h4 :hover {
 .wrapper-dropdown-5.active .dropdown {
     border-bottom: 1px solid rgba(0,0,0,0.2);
     max-height: 400px;
-    // @include Shadow
 }
 .wrapper-dropdown-5 .dropdown li a:hover {
     color: $charlie;

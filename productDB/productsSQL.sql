@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 03, 2018 at 03:53 PM
+-- Generation Time: Dec 07, 2018 at 04:50 PM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.8
 
@@ -41,12 +41,12 @@ CREATE TABLE `main_group` (
 --
 
 INSERT INTO `main_group` (`main_id`, `main_name`, `main_picture`, `main_index_picture`, `main_icon`) VALUES
-(1, 'Gradjevina', 'legosPSed.jpg', 'gradjevina(small)red.jpg', 'paint-roller.png'),
+(1, 'Građevina', 'legosPSed.jpg', 'gradjevina(small)red.jpg', 'paint-roller.png'),
 (2, 'Prehrana', 'peach.jpg', 'hrana(small)red.jpg', 'piece-of-cake.png'),
-(3, 'Sigurnost hrane', 'microscope.jpg', 'testovi(small)red.jpg', 'shield.png'),
+(3, 'Sigurnost hrane', 'microscope.jpg', 'testovi(small)red.jpg', 'pipette.png'),
 (4, 'Industrijski mirisi', 'flowerPSed.jpg', 'mirisi(small)red.jpg', 'cologne.png'),
 (5, 'Bazna hemija', 'vials.jpg', 'bazna(small)red.jpg', 'flask.png'),
-(6, 'Chemeter', 'chemeter.png', 'Chemeter(small).jpg', 'pipette.png');
+(6, 'Chemeter', 'chemeter.png', 'Chemeter(small).jpg', 'shield.png');
 
 -- --------------------------------------------------------
 

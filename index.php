@@ -2,31 +2,6 @@
 <?php include "./productDB/serverConnection.php" ?>
 <?php include "./productDB/functions.php"; ?>
 
-<style media="screen">
-    .loader {
-        position: fixed;
-        z-index: 99;
-        top: 0px;
-        left: 0px;
-        width: 100%;
-        height: 100%;
-        background: white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        
-    }
-    .loader.hidden {
-        animation: fadeOut 1s;
-        animation-fill-mode: forwards;
-    }
-    @keyframes fadeOut {
-        100% {
-            opacity: 0;
-            visibility: hidden;
-        }
-    }
-</style>
 <body>
 <div class="loader">
     <img src="./photos/39.gif" alt="">
@@ -34,11 +9,13 @@
 
     <div class="container-fluid">
 
+        <!-- CAROUSEL -->
+
         <div class="imageContainer">
-
             <?php include "./modules/carousel.php" ?>
-
         </div>
+
+        <!-- NAVBAR -->
 
         <div class="overlay">
             <div id="text">
@@ -50,7 +27,6 @@
                 </div>
 
                 <div class="options">
-                  <!-- <a href="./administration/admin.php">admin</a> -->
                     <a href="./index.php">Početna</a>
                     <a href="./pages/about.php">O nama</a>
                     <a href="#!" class="productTrigger">Katalog Proizvoda</a>
@@ -89,14 +65,13 @@ getAllMainForHeader();
 
         <div id="newsCover">
             <h1>Aktuelnosti</h1>
-            <!-- <div class="logoHRWhite">
-                <img  src="./photos/logoIcon.png" alt="">
-            </div> -->
-        
             <div id="feed" class="row">
 
 <?php include "./modules/feed.php"; ?>
 
+                <div class='getBasicNews'>
+                    <span id='spanTarget'>Prikaži manje</span>
+                </div>
             </div>
         </div>
 
@@ -105,30 +80,22 @@ getAllMainForHeader();
         <div class="selection">
             <div class="col-lg-12">
                 <h1>Proizvodi</h1>
-                <!-- <div class="logoHR">
-                    <img  src="./photos/logoIcon.png" alt="">
-                </div>   -->
             </div>
 
             <div class="row" id="mainProducts">
 <?php 
 getAllMainForIndexProducts();
 ?>
+
             </div>
         </div>
     
-    <?php include "./modules/footer.php" ?>
+        <!-- FOOTER -->
+<?php include "./modules/footer.php" ?>
     
     </div>    
 
-    <script type="text/javascript"> 
-        window.addEventListener('load', function () {
-            
-            const loader = document.querySelector(".loader");
-            
-            loader.className += " hidden";
-        });
-    </script>
+    <script src="./javascript/preLoader.js"></script>
     <script src="./javascript/effects.js"></script>
 </body>
 </html>
