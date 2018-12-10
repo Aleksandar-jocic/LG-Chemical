@@ -75,6 +75,7 @@ function getAllMainForIndexProducts () {
 <?php
     }
 }
+//Subgroup Counter
 
 //mainContainer
 function getAllMain () {
@@ -85,6 +86,7 @@ function getAllMain () {
 
         $select_all_main_groups = mysqli_query($connection, $query);
 
+        $row_num = mysqli_num_rows($select_all_main_groups);
 
         while($row = mysqli_fetch_assoc($select_all_main_groups)) {
             $super = $_GET['main_id'];
@@ -92,13 +94,27 @@ function getAllMain () {
             $main_id = $row['main_id'];
             $main_picture = $row['main_picture'];
 
+
                 if ($super === $main_id) {
-                    $active = "<div class='mainList mainListActive'><a name='$main_picture' href='./products.php?main_id={$main_id}#productDisplay'>$main_name</a></div>";
-                    echo $active;
+
+
+                ?>
+
+                <div class='mainList mainListActive' style="width: <?php echo 100/$row_num; ?>%">
+                    <a name='<?php echo $main_picture ?>' href='./products.php?main_id=<?php echo $main_id; ?>#productDisplay'><?php echo $main_name ?></a>
+                 </div>
+
+                 <?php
+
                 } else {
-                    $writer = "<div class='mainList'><a name='$main_picture'  href='./products.php?main_id={$main_id}#productDisplay'  >$main_name</a></div>";
-                            
-                    echo $writer;  
+
+            ?>
+
+                    <div class='mainList' style="width:  <?php echo 100/$row_num; ?>%">
+                        <a name='<?php echo $main_picture ?>' href='./products.php?main_id=<?php echo $main_id; ?>#productDisplay'><?php echo $main_name ?></a>
+                    </div>
+
+                       <?php
                 }
         }
 }

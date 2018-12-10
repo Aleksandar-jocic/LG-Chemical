@@ -15,7 +15,7 @@ $(document).ready(function () {
     timeOne = setTimeout(handler, 0);  
     timeTwo = setTimeout(textAppear, 1000);
 
-    if (window.location.pathname == '/pages/products.php') {
+    if (window.location.pathname === '/LG-Chemical/pages/products.php') {
 
         product();
     } 
@@ -27,7 +27,7 @@ $('.getAllNews').click(function () {
     
     $.ajax({
 
-        url: '../modules/feed.php',
+        url: './modules/feed.php',
         type: 'POST',
         data: data,
         success: function(response) {
@@ -111,7 +111,7 @@ window.onscroll = function() {fixNavbar(); hiddenClass();};
 function product() {
 
     var tar = $('.productDescription > p');
-
+    console.log('uso sam');
     for(var i = 0; i < tar.length; i++) {
 
         if(tar[i].clientHeight > 70) {

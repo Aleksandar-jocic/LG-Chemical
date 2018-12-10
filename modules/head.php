@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="../photos/favicon.ico" type="image/x-icon">
     <title>LG hemija</title>
-    <link rel="stylesheet" href="../css/preLoader.css">
+    <link rel="stylesheet" href="./css/preLoader.css">
     <link rel="stylesheet" href="./css/bootstrap.css">
     <link rel="stylesheet" href="main.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
