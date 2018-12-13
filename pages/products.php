@@ -50,22 +50,26 @@
 <?php
 if(isset($_GET['main_id'])) {
 
-    $mainID = $_GET['main_id'];
-
-    if($mainID == 6) {
-        getChemeter();
-    } else {
-        getSubGroupsWithMainID($mainID);
-    }
+        getSubGroupsWithMainID($_GET['main_id']);
 }
 ?>
             </div>
 
             <div class="productListDiv">
 <?php
+if(isset($_GET['main_id'])) {
+
+    $mainID = $_GET['main_id'];
+    if($mainID == 6) {
+        
+        getChemeter();
+    }
+}
+
 if(isset($_GET['sub_id'])) {
 
     getProducts($_GET['sub_id']);
+
 }
 ?>
             </div> 

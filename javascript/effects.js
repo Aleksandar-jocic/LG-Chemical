@@ -64,7 +64,7 @@ $('.wrapper-dropdown-5').click(function () {
         $('.wrapper-dropdown-5').addClass('active');
     }
 });
-$('.dropUpSuper').click(function () {
+$('.dropUpSuper > span').click(function () {
 
     if($('.dropUpSuper').hasClass('active')) {
 
@@ -78,17 +78,25 @@ $('.dropUpSuper').click(function () {
 
 $(".fa-arrow-down").click(function(event) {
 
-    if ($(this).parents('.singleProduct').hasClass('expandProduct') || $(this).parents('.newsDiv').hasClass('expandNews') || $(this).parents('.alignText').hasClass('.expandPartners')) {
+    if($(this).parents('.singleProduct').hasClass('expandProduct')) {
 
         $(this).parents('.singleProduct').removeClass('expandProduct');
-        $(this).parents('.newsDiv').removeClass('expandNews');
         $(this).removeClass('fa-arrow-up');
+        
+    } else {
+
+        $(this).parents('.singleProduct').addClass('expandProduct');
+        $(this).addClass('fa-arrow-up');
+        
+    }
+
+    if ($(this).parents('.newsDiv').hasClass('expandNews')) {
+
+        $(this).parents('.newsDiv').removeClass('expandNews');
 
     } else {
         
-        $(this).parents('.singleProduct').addClass('expandProduct');
         $(this).parents('.newsDiv').addClass('expandNews');
-        $(this).addClass('fa-arrow-up');
     }
 });
 
@@ -112,13 +120,24 @@ function product() {
 
     var tar = $('.productDescription > p');
 
-    for(var i = 0; i < tar.length; i++) {
+    if (window.innerWidth < 960) {
 
-        if(tar[i].clientHeight > 70) {
+        for(var i = 0; i < tar.length; i++) {
 
-            tar[i].parentElement.previousElementSibling.lastChild.style.display = 'inline-block';
+            if(tar[i].clientHeight > 70) {
+    
+                tar[i].parentElement.previousElementSibling.previousElementSibling.lastElementChild.style.display = 'inline-block';
+            }
         }
     }
+    for(var i = 0; i < tar.length; i++) {
+
+        if(tar[i].innerHTML === "") {
+            tar[i].parentElement.style.display = 'none';
+            tar[i].parentElement.previousElementSibling.style.cssText = "display: block; margin: 0 auto;";
+        }
+    }
+    // console.log(tar[4].parentElement.previousElementSibling);
 }
 
 function fixNavbar() {
