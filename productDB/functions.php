@@ -84,7 +84,7 @@ function getAllMain () {
     $query = "SELECT * FROM main_group";
 
         $select_all_main_groups = mysqli_query($connection, $query);
-
+        $row_num = mysqli_num_rows($select_all_main_groups);
 
         while($row = mysqli_fetch_assoc($select_all_main_groups)) {
             $super = $_GET['main_id'];
@@ -93,12 +93,21 @@ function getAllMain () {
             $main_picture = $row['main_picture'];
 
                 if ($super === $main_id) {
-                    $active = "<div class='mainList mainListActive'><a name='$main_picture' href='./products.php?main_id={$main_id}#productDisplay'>$main_name</a></div>";
-                    echo $active;
+
+
+?>
+                <div class='mainList mainListActive' style="width: <?php echo 100/$row_num; ?>%">
+                    <a name='<?php echo $main_picture ?>' href='./products.php?main_id=<?php echo $main_id; ?>#productDisplay'><?php echo $main_name ?>
+                    </a>
+                </div>
+<?php
                 } else {
-                    $writer = "<div class='mainList'><a name='$main_picture'  href='./products.php?main_id={$main_id}#productDisplay'  >$main_name</a></div>";
-                            
-                    echo $writer;  
+?>
+                    <div class='mainList' style="width: <?php echo 100/$row_num; ?>%">
+                        <a name='<?php echo $main_picture ?>' href='./products.php?main_id=<?php echo $main_id; ?>#productDisplay'><?php echo $main_name ?>
+                        </a>
+                    </div>
+<?php
                 }
         }
 }
@@ -146,7 +155,6 @@ function getSubGroupsWithMainID ($mainID) {
     }
 } 
 
-
 function getChemeter () {
 
     $write = "<div class='chemeterExclusion'><img src='../photos/chemeter/SiamSRP-2.jpg'><img src='../photos/chemeter/SiamSRP-3.jpg'><img src='../photos/chemeter/SiamSRP-4.jpg'><img src='../photos/chemeter/SiamSRP-5.jpg'><img src='../photos/chemeter/SiamSRP-6.jpg'></div>";
@@ -193,12 +201,20 @@ function getProducts ($subID) {
         $product_main_id = $row['main_id'];
         $product_picture = $row['product_picture'];
         $product_description = $row['product_description'];
+?>
 
-
-        $burner = "<div class='singleProduct' id='{$product_id}'><div class='productName'><p>{$product_name}</p><i class='fas fa-arrow-down readMore'></i></div><div class='productDescription'><p>{$product_description}</p></i></div><div class='productPicture'><img src='../photos/{$product_picture}'></div></div>";
-
-        echo $burner;
-        
+        <div class='singleProduct' id='<?php echo $product_id ?>'>
+            <div class='productName'>
+                <p><?php echo $product_name ?></p><i class='fas fa-arrow-down readMore'></i>
+            </div>
+            <div class='productPicture'>
+                <img src='../photos/<?php echo $product_picture ?>'>
+            </div>
+            <div class='productDescription'>
+                <p><?php echo $product_description ?></p>
+            </div>
+        </div>
+<?php     
     }
 ?>
     <div id='paginator'>
