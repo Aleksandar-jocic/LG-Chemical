@@ -1394,6 +1394,54 @@ h1 {
     margin: 0px;
     color: white; }
 
+.adminHead {
+  width: 100%;
+  background-color: #272727;
+  color: #ff9900;
+  padding: 30px 0px; }
+  .adminHead h2 {
+    font-size: 2.4rem;
+    margin-left: 120px; }
+  .adminHead p {
+    margin-left: 120px; }
+
+.adminMain {
+  display: flex;
+  justify-content: center;
+  border-bottom: 2px solid #ff9900; }
+  .adminMain .adminMainSelect {
+    width: 200px;
+    padding: 15px;
+    text-align: center; }
+    .adminMain .adminMainSelect a {
+      color: black;
+      padding: 15px; }
+  .adminMain .adminMainSelect:hover {
+    background-color: #ff9900; }
+
+.productsSelected {
+  width: 250px;
+  padding: 20px;
+  display: inline-block;
+  vertical-align: top;
+  background-color: #272727; }
+  .productsSelected div {
+    padding: 5px; }
+    .productsSelected div a {
+      color: #ff9900; }
+
+.adminOutput {
+  display: inline-block;
+  width: 800px;
+  margin-bottom: 50px;
+  padding: 10px 0px;
+  border-left: 2px solid #ff9900; }
+  .adminOutput .adminMainGroupList {
+    padding: 5px 0px 0px 5px; }
+    .adminOutput .adminMainGroupList a {
+      color: black;
+      padding: 3px 0px 3px 10px; }
+
 p {
   cursor: default; }
 
