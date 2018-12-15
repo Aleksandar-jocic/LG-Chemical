@@ -2,6 +2,7 @@
 $one: #272727;
 $two: rgba(116, 116, 116, 0.8);
 $charlie: rgb(253, 28, 21);
+$admin: rgb(255, 153, 0);
 //breakPoints
 $on426: 426px;
 $on576: 576px;
@@ -1636,6 +1637,75 @@ h1 {
         color: white;
     }
 }
+//                  ADMIN                    //
+
+.adminHead {
+    width: 100%;
+    background-color: #272727;
+    color: $admin;
+    padding: 30px 0px;
+    h2 {
+        font-size: 2.4rem;
+        margin-left: 120px;
+    }
+    p {
+        margin-left: 120px;
+    }
+}
+.adminMain {
+
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px solid $admin;
+    // background-color: #646464;
+
+    .adminMainSelect {
+
+        width: 200px;
+        padding: 15px;
+        text-align: center;
+        a {
+            color: black;
+            padding: 15px;
+            
+        }
+    }
+    .adminMainSelect:hover {
+        background-color: $admin;
+    }
+}
+.productsSelected {
+    width: 250px;
+    padding: 20px;
+    display: inline-block;
+    vertical-align: top;
+    background-color: #272727;
+    // height: 200px;
+    
+    div {
+        padding: 5px;
+        a {
+            color: $admin;
+        }
+    }
+}
+.adminOutput {
+    display: inline-block;
+    width: 800px;
+    margin-bottom: 50px;
+    padding: 10px 0px;
+    border-left: 2px solid $admin;
+
+    .adminMainGroupList {
+        padding: 5px 0px 0px 5px;
+        
+        a {
+            color: black;
+            padding: 3px 0px 3px 10px;
+        }
+    }
+}
+
 //                  GENERAL                    //
 
 p {
