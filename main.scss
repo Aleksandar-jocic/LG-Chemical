@@ -343,12 +343,13 @@ body {
     }
 }
 #feed {
-    width: 60%;
+    width: 50%;
     margin: 0 auto;
     text-align: center;
     height: auto;
     transition: all 0.5s ease-out;
-    
+    display: flex;
+    justify-content: center;
     .col-sm-6 {
         -ms-flex: 0 0 calc(50%);
         flex: 0 0 calc(50% - 30px);
@@ -364,7 +365,6 @@ body {
             flex: 0 0 80%;
             max-width: 80%;
         }
-
     }
     .newsDiv {
         height: auto;
@@ -410,7 +410,13 @@ body {
         }
         .storyContent {
             width: 100%;
-            
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .storyFull {
+            overflow: unset;
+            white-space: unset;
         }
         @media screen and (max-width: $on856) {
             display: block;
@@ -420,7 +426,8 @@ body {
         }
     }
     span {
-        position: relative;
+        // position: relative;
+        display: block;
         width: 110px;
         margin: 0 auto 15px auto;
         padding: 10px;
@@ -431,6 +438,11 @@ body {
     span:hover {
         cursor: pointer;
     }
+    .getAllNews {
+        display: block;
+        width: 110px !important;
+        
+    }
     .getBasicNews {
         display: none;
         width: 100%;
@@ -439,7 +451,7 @@ body {
     }
     @media screen and (max-width: $on1080) {
 
-        width: 100%;
+        width: 80%;
         display: block;
     }
     
@@ -1691,15 +1703,61 @@ h1 {
 }
 .adminOutput {
     display: inline-block;
-    width: 800px;
+    width: 80%;
     margin-bottom: 50px;
     padding: 10px 0px;
     border-left: 2px solid $admin;
+    table {
+        margin-left: 10px;
+        font-size: 0.9rem;
+        border-collapse: collapse;
+
+        .cellId {
+            text-align: center;
+        }
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+        tr, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            text-align: center;
+        }
+        td {
+            padding: 7px;
+            border: 1px solid #dddddd;
+        }
+        .tableOptions {
+            width: 80px;
+            text-align: center;
+            background-color: white;
+        }
+        
+        button {
+            background-color: white;
+            border: 0px;
+            color: $charlie;
+        }
+        .editMain {
+            color: $admin;
+        }
+        .delete {
+            color: $charlie;
+            
+        }
+        button:hover {
+            cursor: pointer;
+        }
+    }
+    
 
     .adminMainGroupList {
         padding: 5px 0px 0px 5px;
         
-        a {
+        span {
             color: black;
             padding: 3px 0px 3px 10px;
         }

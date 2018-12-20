@@ -1,5 +1,76 @@
 $(document).ready(function(){
   
+    $('.deleteMain').click(function () {
+
+      var id = $(this).attr('rel');
+      $('.deleteMainConfirm').attr('rel', id);
+
+      console.log($('.deleteMainConfirm').attr('rel', id));
+      console.log($(id));
+    });
+
+    $('.deleteSub').click(function () {
+
+      var id = $(this).attr('rel');
+      $('.deleteSubConfirm').attr('rel', id);
+
+
+      console.log($('.deleteSubConfirm').attr('rel', id));
+      console.log($(id));
+      
+      
+    });
+
+    $('.editMain').click(function () {
+
+      var id = $(this).attr('rel');
+      $('.editMainModal').attr('rel', id);
+      
+      var main_name = $(this).parent().prev().prev().prev().prev()[0].innerText;
+      var main_picture = $(this).parent().prev().prev().prev()[0].innerText;
+      var main_index_picture = $(this).parent().prev().prev()[0].innerText;
+      var main_icon = $(this).parent().prev()[0].innerText;
+      
+      $('#main_name').val(main_name);
+      $('#main_picture').val(main_picture);
+      $('#main_index_picture').val(main_index_picture);
+      $('#main_icon').val(main_icon);
+      
+    });
+
+    $('.editMainModal').click(function () {
+
+      var sameMainId = $(this).attr('rel');
+
+      var newMainName =  $('#main_name').val();
+      var newMainPicture =  $('#main_picture').val();
+      var newMainIndexPicture =  $('#main_index_picture').val();
+      var newMainIcon =  $('#main_icon').val();
+      
+      var data = {changeThisMainId: sameMainId, mainName: newMainName, mainPicture: newMainPicture, mainIndexPicture: newMainIndexPicture, mainIcon: newMainIcon};
+
+      var editRow = $('#edit_' + sameMainId);
+      console.log(editRow.prev()[0].innerText);
+      
+      $.ajax({
+
+        url: './adminFunctions.php',
+        type: 'POST',
+        data: data,
+        success: function(response) {
+          if(response == 1) {
+
+              editRow.prev()[0].innerText = newMainIcon;
+              editRow.prev().prev()[0].innerText = newMainIndexPicture;
+              editRow.prev().prev().prev()[0].innerText = newMainPicture;
+              editRow.prev().prev().prev().prev()[0].innerText = newMainName;
+              
+            console.log('updated successfully');
+          }
+        }
+      })
+    })
+
     var changeId;
     $('.changeMe').click(function () {
       var el = this;
@@ -27,7 +98,6 @@ $(document).ready(function(){
             success: function(response) {
 
                 if(response == 1) {
-
                   
                   var id = $('#cha_' + changeId);
 
@@ -53,41 +123,56 @@ $(document).ready(function(){
         });
 
     // Delete 
-    $('.deleteMe').click(function(){
-
-      var el = this;
-      var id = this.id;
-      var splitid = id.split("_");
+    $('.deleteMainConfirm').click(function(){
 
       // Delete id
-      var deleteid = splitid[1];
-      //  console.log(deleteid);
-
+      var deleteId = $(this).attr('rel');
+      console.log(deleteId);
+      
       // AJAX Request
       $.ajax({
         url: './adminFunctions.php',
         type: 'POST',
-        data: 'deleteSth=' + deleteid,
+        data: 'deleteMain=' + deleteId,
         success: function(response){
 
           if(response == 1){
         // Remove row from HTML Table
-        console.log("deleted");
-        
-        $(el).parent().fadeOut(800,function(){
-            $(this).remove();
-        console.log("deleted");
-
+            var elementToDelete = $('#delete_' + deleteId);
+            $(elementToDelete).parent().fadeOut(800,function() {
+              $(this).remove();
         });
           }else{
-            console.log(response);
-            
             alert('Invalid ID.');
           }
-
         }
       });
-
     });
-   
+
+
+    $('.deleteSubConfirm').click(function(){
+
+      // Delete id
+      var deleteId = $(this).attr('rel');
+      console.log(deleteId);
+      var data = {deleteSub: deleteId}
+      // AJAX Request
+      $.ajax({
+        url: './adminFunctions.php',
+        type: 'POST',
+        data: data,
+        success: function(response){
+
+          if(response == 1){
+        // Remove row from HTML Table
+            var elementToDelete = $('#deleteSub_' + deleteId);
+            $(elementToDelete).parent().fadeOut(800,function() {
+              $(this).remove();
+        });
+          }else{
+            alert('Invalid ID.');
+          }
+        }
+      });
+    });
 });

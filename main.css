@@ -361,11 +361,13 @@ body {
     transition: max-height 1s ease; }
 
 #feed {
-  width: 60%;
+  width: 50%;
   margin: 0 auto;
   text-align: center;
   height: auto;
-  transition: all 0.5s ease-out; }
+  transition: all 0.5s ease-out;
+  display: flex;
+  justify-content: center; }
   #feed .col-sm-6 {
     -ms-flex: 0 0 calc(50%);
     flex: 0 0 calc(50% - 30px);
@@ -414,7 +416,13 @@ body {
       #feed .newsDiv .feedCover img {
         width: 100%; }
     #feed .newsDiv .storyContent {
-      width: 100%; }
+      width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap; }
+    #feed .newsDiv .storyFull {
+      overflow: unset;
+      white-space: unset; }
     @media screen and (max-width: 856px) {
       #feed .newsDiv {
         display: block;
@@ -422,7 +430,7 @@ body {
         margin: 0 auto;
         margin-bottom: 30px; } }
   #feed span {
-    position: relative;
+    display: block;
     width: 110px;
     margin: 0 auto 15px auto;
     padding: 10px;
@@ -431,6 +439,9 @@ body {
     color: #fd1c15; }
   #feed span:hover {
     cursor: pointer; }
+  #feed .getAllNews {
+    display: block;
+    width: 110px !important; }
   #feed .getBasicNews {
     display: none;
     width: 100%;
@@ -438,7 +449,7 @@ body {
     margin: 0 auto 15px auto; }
   @media screen and (max-width: 1080px) {
     #feed {
-      width: 100%;
+      width: 80%;
       display: block; } }
   @media screen and (max-width: 856px) {
     #feed {
@@ -1432,13 +1443,44 @@ h1 {
 
 .adminOutput {
   display: inline-block;
-  width: 800px;
+  width: 80%;
   margin-bottom: 50px;
   padding: 10px 0px;
   border-left: 2px solid #ff9900; }
+  .adminOutput table {
+    margin-left: 10px;
+    font-size: 0.9rem;
+    border-collapse: collapse; }
+    .adminOutput table .cellId {
+      text-align: center; }
+    .adminOutput table tr:nth-child(even) {
+      background-color: #dddddd; }
+    .adminOutput table tr, .adminOutput table th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px; }
+    .adminOutput table th {
+      text-align: center; }
+    .adminOutput table td {
+      padding: 7px;
+      border: 1px solid #dddddd; }
+    .adminOutput table .tableOptions {
+      width: 80px;
+      text-align: center;
+      background-color: white; }
+    .adminOutput table button {
+      background-color: white;
+      border: 0px;
+      color: #fd1c15; }
+    .adminOutput table .editMain {
+      color: #ff9900; }
+    .adminOutput table .delete {
+      color: #fd1c15; }
+    .adminOutput table button:hover {
+      cursor: pointer; }
   .adminOutput .adminMainGroupList {
     padding: 5px 0px 0px 5px; }
-    .adminOutput .adminMainGroupList a {
+    .adminOutput .adminMainGroupList span {
       color: black;
       padding: 3px 0px 3px 10px; }
 

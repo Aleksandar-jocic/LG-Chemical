@@ -15,24 +15,36 @@ function storyTeller () {
     global $connectionFeed;
 
     $query = "SELECT * FROM story LIMIT 4";
-    $select_feed = mysqli_query($connectionFeed, $query);
+    $queryAll = "SELECT * FROM story";
 
-    while($row = mysqli_fetch_assoc($select_feed)) {
+    $select_feed_4 = mysqli_query($connectionFeed, $query);
+    $select_feed_all = mysqli_query($connectionFeed, $queryAll);
+
+    $num_of_rows = mysqli_num_rows($select_feed_all);
+
+    while($row = mysqli_fetch_assoc($select_feed_4)) {
 
         $story_title = $row['story_title'];
         $story_date = $row['story_date'];
         $story_content = $row['story_content'];
         $story_cover = $row['story_cover'];
 
+?>
+        <div class='col-12 col-sm-6 newsDiv'>
+            <h2><?php echo $story_title; ?></h2>
+            <p class='dateSpan'><?php echo $story_date; ?></p><i class='fas fa-arrow-down readMore'></i>
 
-        $burner = "<div class='col-12 col-sm-6 newsDiv'><h2>{$story_title}</h2><p class='dateSpan'>{$story_date}</p><i class='fas fa-arrow-down readMore'></i><div class='feedCover'><img src='./photos/feedImg/{$story_cover}'></div><p class='storyContent'>{$story_content}</p></div>";
-
-
-        echo $burner;
+            <div class='feedCover'>
+                <img src='./photos/feedImg/<?php echo $story_cover; ?>'>
+            </div>
+            <p class='storyContent'><?php echo $story_content; ?></p>
+        </div>
+<?php
     }  
-echo "<span class='getAllNews'>Prikaži još</span>";
-// echo "";
+    if($num_of_rows > 4) {
 
+        echo "<div class='col-12'><span class='getAllNews '>Prikaži još</span></div>";
+    } 
 }
 
 function storyTellerAll () {
@@ -49,9 +61,17 @@ function storyTellerAll () {
         $story_content = $row['story_content'];
         $story_cover = $row['story_cover'];
 
-        $burner = "<div class='col-12 col-sm-6 newsDiv'><h2>{$story_title}</h2><p class='dateSpan'>{$story_date}</p><i class='fas fa-arrow-down readMore'></i><div class='feedCover'><img src='./photos/feedImg/{$story_cover}'></div><p class='storyContent'>{$story_content}</p></div>";
+?>
+        <div class='col-12 col-sm-6 newsDiv'>
+            <h2><?php echo $story_title; ?></h2>
+            <p class='dateSpan'><?php echo $story_date; ?></p><i class='fas fa-arrow-down readMore'></i>
 
-        echo $burner;
+            <div class='feedCover'>
+                <img src='./photos/feedImg/<?php echo $story_cover; ?>'>
+            </div>
+            <p class='storyContent'><?php echo $story_content; ?></p>
+        </div>
+<?php
     }  
 }
 ?>

@@ -3,6 +3,8 @@
 <?php 
 $connectionAdmin = mysqli_connect('localhost', 'root', '', 'admins');
 mysqli_query($connectionAdmin, "SET NAMES utf8");
+
+
 function testdb () {
     global $testConn;
     $query = "SELECT * FROM people";
@@ -17,15 +19,15 @@ function testdb () {
         echo $writer;  
     }
 }
-if (isset($_POST['deleteSth'])) {
-    $id = $_POST['deleteSth'];
-    deleteEntry($id);
+if (isset($_POST['deleteMain'])) {
+    
+    deleteMainEntry($_POST['deleteMain']);
 }
-function deleteEntry ($id) {
-    global $testConn;
+function deleteMainEntry ($id) {
+    global $connection;
     if($id) {
-        $query = "DELETE FROM people WHERE id=$id";
-        $delete = mysqli_query($testConn, $query);
+        $query = "DELETE FROM main_group WHERE main_id=$id";
+        mysqli_query($connection, $query);
     
         echo 1;
     } else {
@@ -33,6 +35,50 @@ function deleteEntry ($id) {
         echo 0;
     }
 }
+if (isset($_POST['deleteSub'])) {
+    
+    deleteSubEntry($_POST['deleteSub']);
+}
+function deleteSubEntry ($id) {
+    global $connection;
+
+    if($id) {
+
+        $query = "DELETE FROM sub_group WHERE sub_id=$id";
+        mysqli_query($connection, $query);
+    
+        echo 1;
+    } else {
+        
+        echo 0;
+    }
+}
+if (isset($_POST['changeThisMainId'])) {
+
+    $id = $_POST['changeThisMainId'];
+
+    $mainName = $_POST['mainName'];
+    $mainPicture = $_POST['mainPicture'];
+    $mainIndexPicture = $_POST['mainIndexPicture'];
+    $mainIcon = $_POST['mainIcon'];
+    
+
+    changeMainBranch($id, $mainName, $mainPicture, $mainIndexPicture, $mainIcon);
+}
+function changeMainBranch($id, $mainName, $mainPicture, $mainIndexPicture, $mainIcon) {
+
+    global $connection;
+    if($id) {
+
+        $query = "UPDATE main_group SET main_name='$mainName', main_picture='$mainPicture', main_index_picture='$mainIndexPicture', main_icon='$mainIcon' WHERE main_id=$id";
+        mysqli_query($connection, $query);
+        
+        echo 1;
+    } else {
+        echo 0;
+    }
+}
+
 if(isset($_POST['changeSth'])) {
     $id = $_POST['changeSth'];
     $newName = $_POST['newName'];
@@ -68,40 +114,118 @@ function getMainProducts () {
     global $connection;
     $query = "SELECT * FROM main_group";
     $select_all_main_groups = mysqli_query($connection, $query);
+?>
+    <table>
+        <tr>
+            <th>main_id</th>
+            <th>main_name</th>
+            <th>main_picture</th>
+            <th>main_index_picture</th>
+            <th>main_icon</th>
+            <th colspan="2" class='tableOptions'>options</th>
+        </tr>
+<?php
     while($row = mysqli_fetch_assoc($select_all_main_groups)) {
         $main_name = $row['main_name'];
         $main_id = $row['main_id'];
-       
-        $writer = "<div class='adminMainGroupList'><a href='./products.php?main_id={$main_id}#productDisplay'  >$main_name</a></div>";
-                
-        echo $writer;  
+        $main_picture = $row['main_picture'];
+        $main_index_picture = $row['main_index_picture'];
+        $main_icon = $row['main_icon']
+?>
+        <tr class='adminMainGroupList'>
+            <td class='cellId'><?php echo $main_id; ?></td>
+            <td><?php echo $main_name; ?></td>
+            <td><?php echo $main_picture; ?></td>
+            <td><?php echo $main_index_picture; ?></td>
+            <td><?php echo $main_icon; ?></td>
+
+            <td id='edit_<?php echo $main_id; ?>' class='tableOptions edit'><button rel='<?php echo $main_id; ?>' type="button" class='editMain' data-toggle="modal" data-target="#modalMainEdit">Edit</button>
+            </td>
+
+            <td id='delete_<?php echo $main_id; ?>' class='tableOptions delete'><button rel='<?php echo $main_id; ?>' type="button" class='deleteMain' data-toggle="modal" data-target="#modalMain">Delete</button>
+            </td>
+        </tr>
+<?php                
     }
+    echo "</table>";
 }
 function getSubProducts () {
     global $connection;
     $query = "SELECT * FROM sub_group";
     $select_all_main_groups = mysqli_query($connection, $query);
+
+?>
+    <table>
+        <tr>
+            <th>main_id</th>
+            <th>sub_id</th>
+            <th>sub_name</th>
+            <th colspan="2" class='tableOptions'>options</th>
+        </tr>
+
+<?php
     while($row = mysqli_fetch_assoc($select_all_main_groups)) {
-        $sub_name = $row['sub_name'];
+
+        $main_id = $row['main_id'];
         $sub_id = $row['sub_id'];
-       
-        $writer = "<div class='adminSubGroupList'>$sub_id $sub_name</div>";
-                
-        echo $writer;  
+        $sub_name = $row['sub_name'];
+?>
+       <tr class='adminSubGroupList'>
+            <td class='cellId'><?php echo $main_id; ?></td>
+            <td class='cellId'><?php echo $sub_id; ?></td>
+            <td><?php echo $sub_name; ?></td>
+            <td class='tableOptions edit'>Edit</td>
+
+
+            <td id='deleteSub_<?php echo $sub_id; ?>' class='tableOptions delete'><button rel='<?php echo $sub_id; ?>' type="button" class='deleteSub' data-toggle="modal" data-target="#modalSub">Delete</button>
+            </td>
+        </tr>       
+<?php
     }
+    echo "</table>";
 }
 function getProducts () {
     global $connection;
     $query = "SELECT * FROM product";
     $select_all_main_groups = mysqli_query($connection, $query);
+?>
+    <table>
+        <tr>
+            <th>main_id</th>
+            <th>sub_id</th>
+            <th>product_id</th>
+            <th>product_name</th>
+            <th>product_picture</th>
+            <th>product_description</th>
+            <th colspan="2" class='tableOptions'>options</th>
+        </tr>
+<?php
     while($row = mysqli_fetch_assoc($select_all_main_groups)) {
-        $product_name = $row['product_name'];
+
+        $product_main_id = $row['main_id'];
+        $product_sub_id = $row['sub_id'];
         $product_id = $row['product_id'];
-       
-        $writer = "<div class='adminProductList'>$product_name $product_id</div>";
-                
-        echo $writer;  
+        $product_name = $row['product_name'];
+        $product_picture = $row['product_picture'];
+        $product_description = $row['product_description'];
+        $product_description = substr($product_description,0, 50);
+        
+?>
+        <tr class='adminProductList'>
+            <td class='cellId'><?php echo $product_main_id; ?></td>
+            <td class='cellId'><?php echo $product_sub_id; ?></td>
+            <td class='cellId'><?php echo $product_id; ?></td>
+            <td><?php echo $product_name; ?></td>
+            <td><?php echo $product_picture; ?></td>
+            <td><?php echo $product_description; ?></td>
+
+            <td class='tableOptions edit'>Edit</td>
+            <td id='delete_<?php echo $sub_id; ?>' class='tableOptions delete'><button rel='<?php echo $sub_id; ?>' type="button" class='deleteSub' data-toggle="modal" data-target="#modalSub">Delete</button>
+            </td>
+        </tr>       
+ <?php     
     }
+    echo "</table>";
 }
 
 
