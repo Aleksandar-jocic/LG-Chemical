@@ -1,5 +1,4 @@
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,26 +13,20 @@
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
         crossorigin="anonymous">
-
 </head>
 
-<body> 
-<?php include('adminServer.php') ?>
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Registration system PHP and MySQL</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
-</head>
+
 <body>
+<?php include('adminServer.php') ?>
+
   <div class="header">
   	<h2>Login</h2>
   </div>
 	 
   <form method="post" action="login.php">
   	<?php include('errors.php'); ?>
-  	<div class="input-group">
-  		<label>Username</label>
+  	  <div class="input-group">
+  		  <label>Username</label>
   		<input type="text" name="username" >
   	</div>
   	<div class="input-group">
@@ -47,11 +40,6 @@
   		Not yet a member? <a href="register.php">Sign up</a>
   	</p>
   </form>
-
-        <!-- <form method="POST" action="./admin.php"><br>
-        Username: <input type="text" name="username"><br><br><br>
-        Password: <input type="password" name="password"><br><br>
-        <input type="submit" name="submit" value="submit"> -->
 
 </body>
 </html>
