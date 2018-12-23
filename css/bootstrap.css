@@ -5353,7 +5353,7 @@ button.close {
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 1050;
+  z-index: 10050;
   display: none;
   overflow: hidden;
   outline: 0;
@@ -5439,8 +5439,8 @@ button.close {
   align-items: flex-start;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 1rem;
-  border-bottom: 1px solid #e9ecef;
+  padding: 0.6rem;
+  /* border-bottom: 1px solid #e9ecef; */
   border-top-left-radius: 0.3rem;
   border-top-right-radius: 0.3rem;
 }

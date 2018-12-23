@@ -19,38 +19,70 @@ $(document).ready(function () {
 
         product();
     } 
+    clampFeed();
+    getFourStories();
+});
+
+function clampFeed () {
+
+    var elementToClamp = $('.storyContent');
+
+    for (var i = 0; i < elementToClamp.length; i++) {
+        $clamp(elementToClamp.get(i), {clamp: 2});
+    }
+};
+
+$('.fa-expand').click(function() {
+
+    var storyId = $(this)[0].id.split('_')[1];
+
+    var data = {singleStoryInfoWithId: storyId};
+
+    $.ajax({
+
+        url: '../modules/singleFeed.php',
+        type: 'POST',
+        data: data,
+        success: function(response) {
+            $('.newsModal').text('');
+            $('.newsModal').append(response);
+            console.log(response);
+        }
+    });
 });
 
 $('.getAllNews').click(function () {
 
-    var data = {getAllNews: 1};
-    
-    $.ajax({
-
-        url: '../modules/feed.php',
-        type: 'POST',
-        data: data,
-        success: function(response) {
-
-            $('.getAllNews').parent().css('display', 'none');
-            $(response).insertBefore('.getBasicNews');
-            $('.getBasicNews').css('display', 'block');
-        }
-    })
-});
-$('.getBasicNews').click(function () {
-
-    var allNews = $('.newsDiv');
+    var allNews = window.document.getElementsByClassName('newsDiv');
 
     for(var i = 0; i < allNews.length; i++) {
 
         if (i > 3) {
 
-            allNews[i].remove();
+            allNews[i].style.display = 'inline-block';
+        }
+    }
+    $('.getAllNews').parent().css('display', 'none');
+    $('.getBasicNews').css('display', 'block');
+});
+function getFourStories () {
+
+    var allNews = window.document.getElementsByClassName('newsDiv');
+
+    for(var i = 0; i < allNews.length; i++) {
+
+        if (i > 3) {
+
+            allNews[i].style.display = 'none';
         }
     }
     $('.getBasicNews').css('display', 'none');
     $('.getAllNews').parent().css('display', 'block');
+}
+$('.getBasicNews').click(function () {
+
+    getFourStories();
+    
 });
 
 $('.wrapper-dropdown-5').click(function () {
@@ -96,11 +128,18 @@ $(".fa-arrow-down").click(function(event) {
         $(this).parents('.newsDiv').removeClass('expandNews');
         $(this).removeClass('fa-arrow-up');
 
+        
     } else {
 
         $(this).next().next().addClass('storyFull');
         $(this).parents('.newsDiv').addClass('expandNews');
         $(this).addClass('fa-arrow-up');
+
+
+        console.log($(this).next().next()[0]);
+        var elementToUnClamp = $(this).next().next()[0];
+        
+        $clamp(elementToUnClamp, {clamp: '300px'});
     }
 });
 

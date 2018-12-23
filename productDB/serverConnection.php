@@ -17,5 +17,5 @@
     $database = 'feed';
 
     $connectionFeed = mysqli_connect($server, $username, $password, $database);
-    mysqli_query($connection, "SET NAMES utf8");
+    mysqli_query($connectionFeed, "SET NAMES utf8");
 ?>

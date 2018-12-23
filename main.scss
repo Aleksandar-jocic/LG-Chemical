@@ -1,7 +1,7 @@
 //colors
 $one: #272727;
 $two: rgba(116, 116, 116, 0.8);
-$charlie: rgb(253, 28, 21);
+$charlie: #fd1c15;
 $admin: rgb(255, 153, 0);
 //breakPoints
 $on426: 426px;
@@ -342,8 +342,25 @@ body {
         transition: max-height 1s ease;
     }
 }
+.modalSingleStory {
+    h2 {
+        text-align: center;
+        border-bottom: 1px solid $charlie;
+        padding-bottom: 10px;
+    }
+    .feedCover {
+        width: 100%;
+        height: 260px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+    }
+
+}
 #feed {
-    width: 50%;
+    width: 60%;
     margin: 0 auto;
     text-align: center;
     height: auto;
@@ -366,6 +383,7 @@ body {
             max-width: 80%;
         }
     }
+    
     .newsDiv {
         height: auto;
         max-height: 350px;
@@ -399,20 +417,20 @@ body {
             
         }
         .feedCover {
-            box-sizing: border-box;
+            width: 100%;
+            height: 160px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
             margin-bottom: 10px;
             padding-bottom: 10px;
-            border-bottom: 1px solid white;
-
-            img {
-                width: 100%;
-            }
         }
+        
         .storyContent {
             width: 100%;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
+            // overflow: hidden;
+            // text-overflow: ellipsis;
+            // white-space: nowrap;
         }
         .storyFull {
             overflow: unset;
@@ -793,7 +811,7 @@ body {
             max-height: 160px;
             overflow: hidden;
             position: relative;
-            transition: all 0.3s ease-out;
+            transition: all 0.9s ease-out;
             
             .productName {
                 border-bottom: 1px solid white;

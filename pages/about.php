@@ -4,7 +4,7 @@
 
 <body>
 <div class="loader">
-    <img src="../photos/39.gif" alt="">
+    <img src="../photos/preLoad.gif" alt="">
 </div>
     <div class="container-fluid" id="aboutPage">
 
@@ -30,7 +30,7 @@
         <div class="overlay">
             <div id="text">
                 <div>
-                    <a href="./index.html">
+                    <a href="../index.php">
                         <img src="../photos/logoIcon.png">
                         <img class="logoText" src="../photos/logotext.png" alt="">
                     </a>
