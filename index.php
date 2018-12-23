@@ -1,10 +1,11 @@
 <?php include "./modules/head.php" ?>
 <?php include "./productDB/serverConnection.php" ?>
 <?php include "./productDB/functions.php"; ?>
+<?php include "./modules/modal.php" ?>
 
 <body>
 <div class="loader">
-    <img src="./photos/39.gif" alt="">
+    <img src="./photos/preLoad.gif" alt="">
 </div>
 
     <div class="container-fluid">
@@ -94,8 +95,9 @@ getAllMainForIndexProducts();
 <?php include "./modules/footer.php" ?>
     
     </div>    
-
     <script src="./javascript/preLoader.js"></script>
+    <script src="./javascript/clamp.js"></script>
     <script src="./javascript/effects.js"></script>
+    
 </body>
 </html>

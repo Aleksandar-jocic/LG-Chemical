@@ -4,7 +4,7 @@
 
 <body>
 <div class="loader">
-    <img src="../photos/39.gif" alt="">
+    <img src="../photos/preLoad.gif" alt="">
 </div>
     <div class="container-fluid">
 
