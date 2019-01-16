@@ -4,6 +4,9 @@ body {
   margin: 0 auto;
   font-family: 'Montserrat', sans-serif; }
 
+.loader {
+  width: 100%; }
+
 .container-fluid {
   position: relative;
   width: 100%;
@@ -1191,7 +1194,8 @@ h1 {
     margin-bottom: 3px; }
   .employees .singlePerson {
     padding: 15px;
-    width: 580px;
+    max-width: 580px;
+    width: auto;
     margin-bottom: 20px;
     transition: all 0.4s ease-out; }
     .employees .singlePerson .contactDiv {
@@ -1221,7 +1225,10 @@ h1 {
       margin-right: 25px; }
     @media screen and (max-width: 576px) {
       .employees .singlePerson div {
-        display: block; }
+        display: block;
+        width: 100%;
+        margin-right: 0px;
+        margin-bottom: 20px; }
       .employees .singlePerson .empContact {
         margin: 5px 0px; } }
   .employees .singlePerson:hover {
@@ -1342,6 +1349,9 @@ h1 {
   left: calc(50% - 320px);
   background-color: white;
   text-align: center; }
+  @media screen and (max-width: 960px) {
+    .footImage::before {
+      display: none; } }
 
 .footImage::after {
   content: '';
@@ -1353,6 +1363,9 @@ h1 {
   right: calc(50% - 320px);
   background-color: white;
   text-align: center; }
+  @media screen and (max-width: 960px) {
+    .footImage::after {
+      display: none; } }
 
 .footerContent {
   width: 50%;
@@ -1442,24 +1455,29 @@ h1 {
     background-color: #ff9900; }
 
 .productsSelected {
-  width: 250px;
+  width: calc(15% - 10px);
   padding: 20px;
   display: inline-block;
   vertical-align: top;
-  background-color: #272727; }
+  background-color: #272727;
+  border-right: 2px solid #ff9900; }
   .productsSelected div {
     padding: 5px; }
     .productsSelected div a {
       color: #ff9900; }
+    .productsSelected div i {
+      color: #ff9900;
+      float: right;
+      font-size: 1rem;
+      padding: 5px 0px; }
 
 .adminOutput {
   display: inline-block;
-  width: 80%;
+  width: 85%;
   margin-bottom: 50px;
-  padding: 10px 0px;
-  border-left: 2px solid #ff9900; }
+  padding: 10px 0px; }
   .adminOutput table {
-    margin-left: 10px;
+    margin-left: 5px;
     font-size: 0.9rem;
     border-collapse: collapse; }
     .adminOutput table .cellId {
@@ -1483,12 +1501,18 @@ h1 {
       background-color: white;
       border: 0px;
       color: #fd1c15; }
-    .adminOutput table .editMain {
+    .adminOutput table .editMain, .adminOutput table .editSub, .adminOutput table .editProduct {
       color: #ff9900; }
     .adminOutput table .delete {
       color: #fd1c15; }
     .adminOutput table button:hover {
       cursor: pointer; }
+    .adminOutput table th:hover, .adminOutput table td:hover {
+      cursor: default; }
+    .adminOutput table .adminMainGroupList:hover, .adminOutput table .adminSubGroupList:hover, .adminOutput table .adminProductList:hover {
+      background-color: #272727;
+      color: #ff9900;
+      transition: all 0.2s ease-out; }
   .adminOutput .adminMainGroupList {
     padding: 5px 0px 0px 5px; }
     .adminOutput .adminMainGroupList span {

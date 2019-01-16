@@ -1,178 +1,316 @@
-$(document).ready(function(){
-  
-    $('.deleteMain').click(function () {
+$(document).ready(function () {
 
-      var id = $(this).attr('rel');
-      $('.deleteMainConfirm').attr('rel', id);
+  //*************          DELETE MAIN ENTRY         *************//
+  $('.deleteMain').click(function () {
 
-      console.log($('.deleteMainConfirm').attr('rel', id));
-      console.log($(id));
-    });
+    var id = $(this).attr('rel');
+    $('.deleteMainConfirm').attr('rel', id);
 
-    $('.deleteSub').click(function () {
+    console.log($('.deleteMainConfirm').attr('rel', id));
+    console.log($(id));
+  });
+  $('.deleteMainConfirm').click(function () {
 
-      var id = $(this).attr('rel');
-      $('.deleteSubConfirm').attr('rel', id);
+    // Delete id
+    var deleteId = $(this).attr('rel');
+    console.log(deleteId);
 
+    // AJAX Request
+    $.ajax({
+      url: './adminFunctions.php',
+      type: 'POST',
+      data: 'deleteMain=' + deleteId,
+      success: function (response) {
 
-      console.log($('.deleteSubConfirm').attr('rel', id));
-      console.log($(id));
-      
-      
-    });
-
-    $('.editMain').click(function () {
-
-      var id = $(this).attr('rel');
-      $('.editMainModal').attr('rel', id);
-      
-      var main_name = $(this).parent().prev().prev().prev().prev()[0].innerText;
-      var main_picture = $(this).parent().prev().prev().prev()[0].innerText;
-      var main_index_picture = $(this).parent().prev().prev()[0].innerText;
-      var main_icon = $(this).parent().prev()[0].innerText;
-      
-      $('#main_name').val(main_name);
-      $('#main_picture').val(main_picture);
-      $('#main_index_picture').val(main_index_picture);
-      $('#main_icon').val(main_icon);
-      
-    });
-
-    $('.editMainModal').click(function () {
-
-      var sameMainId = $(this).attr('rel');
-
-      var newMainName =  $('#main_name').val();
-      var newMainPicture =  $('#main_picture').val();
-      var newMainIndexPicture =  $('#main_index_picture').val();
-      var newMainIcon =  $('#main_icon').val();
-      
-      var data = {changeThisMainId: sameMainId, mainName: newMainName, mainPicture: newMainPicture, mainIndexPicture: newMainIndexPicture, mainIcon: newMainIcon};
-
-      var editRow = $('#edit_' + sameMainId);
-      console.log(editRow.prev()[0].innerText);
-      
-      $.ajax({
-
-        url: './adminFunctions.php',
-        type: 'POST',
-        data: data,
-        success: function(response) {
-          if(response == 1) {
-
-              editRow.prev()[0].innerText = newMainIcon;
-              editRow.prev().prev()[0].innerText = newMainIndexPicture;
-              editRow.prev().prev().prev()[0].innerText = newMainPicture;
-              editRow.prev().prev().prev().prev()[0].innerText = newMainName;
-              
-            console.log('updated successfully');
-          }
-        }
-      })
-    })
-
-    var changeId;
-    $('.changeMe').click(function () {
-      var el = this;
-      var id = this.id;
-      var splitid = id.split("_");
-      changeId = splitid[1];
-      $('.update').css('display', 'block');
-    });
-
-        $('.changePerson').click(function () {
-
-        console.log(changeId);
-          
-
-          var newNameFor = $('.newNameInput').val();
-          var newLastNameFor = $('.newLastNameInput').val();
-
-          var data = {changeSth: changeId, newName: newNameFor, newLastName: newLastNameFor};
-
-          $.ajax({
-
-            url: './adminFunctions.php',
-            type: 'POST',
-            data: data,
-            success: function(response) {
-
-                if(response == 1) {
-                  
-                  var id = $('#cha_' + changeId);
-
-                  id.parent().fadeOut(800,function(){
-
-                    id.parent().show('');
-                    
-                      console.log(id.parent());
-                      
-
-                  });
-                  
-                  console.log("response good");
-                  
-                } else {
-
-                  console.log("response not so good");
-
-                }
-            }
+        if (response == 1) {
+          // Remove row from HTML Table
+          var elementToDelete = $('#delete_' + deleteId);
+          $(elementToDelete).parent().fadeOut(800, function () {
+            $(this).remove();
           });
-
-        });
-
-    // Delete 
-    $('.deleteMainConfirm').click(function(){
-
-      // Delete id
-      var deleteId = $(this).attr('rel');
-      console.log(deleteId);
-      
-      // AJAX Request
-      $.ajax({
-        url: './adminFunctions.php',
-        type: 'POST',
-        data: 'deleteMain=' + deleteId,
-        success: function(response){
-
-          if(response == 1){
-        // Remove row from HTML Table
-            var elementToDelete = $('#delete_' + deleteId);
-            $(elementToDelete).parent().fadeOut(800,function() {
-              $(this).remove();
-        });
-          }else{
-            alert('Invalid ID.');
-          }
+        } else {
+          alert('Invalid ID.');
         }
-      });
+      }
     });
+  });
+  //*************          DELETE SUB ENTRY         *************//
 
+  $('.deleteSub').click(function () {
 
-    $('.deleteSubConfirm').click(function(){
+    var id = $(this).attr('rel');
+    $('.deleteSubConfirm').attr('rel', id);
 
-      // Delete id
-      var deleteId = $(this).attr('rel');
-      console.log(deleteId);
-      var data = {deleteSub: deleteId}
-      // AJAX Request
-      $.ajax({
-        url: './adminFunctions.php',
-        type: 'POST',
-        data: data,
-        success: function(response){
+    console.log($('.deleteSubConfirm').attr('rel', id));
+    console.log($(id));
+  });
+  $('.deleteSubConfirm').click(function () {
 
-          if(response == 1){
-        // Remove row from HTML Table
-            var elementToDelete = $('#deleteSub_' + deleteId);
-            $(elementToDelete).parent().fadeOut(800,function() {
-              $(this).remove();
-        });
-          }else{
-            alert('Invalid ID.');
-          }
+    // Delete id
+    var deleteId = $(this).attr('rel');
+    console.log(deleteId);
+    var data = {
+      deleteSub: deleteId
+    }
+    // AJAX Request
+    $.ajax({
+      url: './adminFunctions.php',
+      type: 'POST',
+      data: data,
+      success: function (response) {
+
+        if (response == 1) {
+          // Remove row from HTML Table
+          var elementToDelete = $('#deleteSub_' + deleteId);
+          $(elementToDelete).parent().fadeOut(800, function () {
+            $(this).remove();
+          });
+        } else {
+          alert('Invalid ID.');
         }
-      });
+      }
     });
+  });
+  //*************          DELETE PRODUCT ENTRY         *************//
+
+  $('.deleteProduct').click(function () {
+
+    var id = $(this).attr('rel');
+    $('.deleteProductConfirm').attr('rel', id);
+
+    console.log($('.deleteProductConfirm').attr('rel', id));
+    console.log($(id));
+  });
+  $('.deleteProductConfirm').click(function () {
+
+    // Delete id
+    var deleteId = $(this).attr('rel');
+    console.log(deleteId);
+
+    // AJAX Request
+    $.ajax({
+      url: './adminFunctions.php',
+      type: 'POST',
+      data: 'deleteProduct=' + deleteId,
+      success: function (response) {
+
+        if (response == 1) {
+          // Remove row from HTML Table
+          var elementToDelete = $('#deleteProduct_' + deleteId);
+          $(elementToDelete).parent().fadeOut(800, function () {
+            $(this).remove();
+          });
+        } else {
+          alert('Invalid ID.');
+        }
+      }
+    });
+  });
+  
+
+  //*************          EDIT MAIN ENTRY         *************//
+
+  $('.editMain').click(function () {
+
+    var id = $(this).attr('rel');
+    $('.editMainModal').attr('rel', id);
+
+    var main_name = $(this).parent().prev().prev().prev().prev()[0].innerText;
+    var main_picture = $(this).parent().prev().prev().prev()[0].innerText;
+    var main_index_picture = $(this).parent().prev().prev()[0].innerText;
+    var main_icon = $(this).parent().prev()[0].innerText;
+
+    $('#main_name').val(main_name);
+    $('#main_picture').val(main_picture);
+    $('#main_index_picture').val(main_index_picture);
+    $('#main_icon').val(main_icon);
+
+  });
+
+  $('.editMainModal').click(function () {
+
+    var sameMainId = $(this).attr('rel');
+
+    var newMainName = $('#main_name').val();
+    var newMainPicture = $('#main_picture').val();
+    var newMainIndexPicture = $('#main_index_picture').val();
+    var newMainIcon = $('#main_icon').val();
+
+    var data = {
+      changeThisMainId: sameMainId,
+      mainName: newMainName,
+      mainPicture: newMainPicture,
+      mainIndexPicture: newMainIndexPicture,
+      mainIcon: newMainIcon
+    };
+
+    var editRow = $('#edit_' + sameMainId);
+    console.log(editRow.prev()[0].innerText);
+
+    $.ajax({
+
+      url: './adminFunctions.php',
+      type: 'POST',
+      data: data,
+      success: function (response) {
+        if (response == 1) {
+
+          editRow.prev()[0].innerText = newMainIcon;
+          editRow.prev().prev()[0].innerText = newMainIndexPicture;
+          editRow.prev().prev().prev()[0].innerText = newMainPicture;
+          editRow.prev().prev().prev().prev()[0].innerText = newMainName;
+
+          console.log('updated successfully');
+        }
+      }
+    })
+  })
+  //*************          EDIT SUB ENTRY         *************//
+
+  $('.editSub').click(function () {
+
+    var id = $(this).attr('rel');
+    $('.editSubModal').attr('rel', id);
+
+    var sub_name = $(this).parent().prev()[0].innerText;
+    var main_id = $(this).parent().prev().prev().prev()[0].innerText;
+
+    $('#main_id').val(main_id);
+    $('#sub_name').val(sub_name);
+
+  });
+  $('.editSubModal').click(function () {
+
+    var sameSubId = $(this).attr('rel');
+
+    var newSubName = $('#sub_name').val();
+    var newMainId = $('#main_id').val();
+
+    var data = {
+      changeThisSubId: sameSubId,
+      subName: newSubName,
+      mainId: newMainId,
+    };
+
+    var editRow = $('#editSub_' + sameSubId);
+    console.log(editRow.prev()[0].innerText);
+
+    $.ajax({
+
+      url: './adminFunctions.php',
+      type: 'POST',
+      data: data,
+      success: function (response) {
+        if (response == 1) {
+
+          editRow.prev()[0].innerText = newSubName;
+          editRow.prev().prev().prev()[0].innerText = newMainId;
+
+          console.log(editRow.prev()[0].innerText);
+          console.log(editRow.prev().prev()[0].innerText);
+
+        }
+      }
+    })
+  })
+  //*************          EDIT PRODUCT ENTRY         *************//
+ 
+  $('.editProduct').click(function () {
+
+    var id = $(this).attr('rel');
+    $('.editProductModal').attr('rel', id);
+
+    var main_id_product = $(this).parent().prev().prev().prev().prev().prev().prev()[0].innerText;
+    var sub_id = $(this).parent().prev().prev().prev().prev().prev()[0].innerText;
+    var product_name = $(this).parent().prev().prev().prev()[0].innerText;
+    var product_picture = $(this).parent().prev().prev()[0].innerText;
+    var product_description = $(this).parent().prev()[0].innerText;
+
+    $('#main_id_product').val(main_id_product);
+    $('#sub_id').val(sub_id);
+    $('#product_name').val(product_name);
+    $('#product_picture').val(product_picture);
+    $('#product_description').val(product_description);
+
+  });
+  $('.editProductModal').click(function () {
+
+    var sameProductId = $(this).attr('rel');
+
+    var mainProductId = $('#main_id_product').val();
+    var subId = $('#sub_id').val();
+    var productName = $('#product_name').val();
+    var productPicture = $('#product_picture').val();
+    var productDescription = $('#product_description').val();
+
+    var data = {
+      changeThisProductId: sameProductId,
+      mainProductId: mainProductId,
+      subId: subId,
+      productName: productName,
+      productPicture: productPicture,
+      productDescription: productDescription
+    };
+
+    var editRow = $('#editProduct_' + sameProductId);
+    console.log(editRow.prev()[0].innerText);
+
+    $.ajax({
+
+      url: './adminFunctions.php',
+      type: 'POST',
+      data: data,
+      success: function (response) {
+        if (response == 1) {
+
+          editRow.prev()[0].innerText = productDescription;
+          editRow.prev().prev()[0].innerText = productPicture;
+          editRow.prev().prev().prev()[0].innerText = productName;
+          editRow.prev().prev().prev().prev().prev()[0].innerText = subId;
+          editRow.prev().prev().prev().prev().prev().prev()[0].innerText = mainProductId;
+
+          console.log('updated successfully');
+        }
+      }
+    })
+  });
+
+  //*************          ADD MAIN ENTRY         *************//
+  $('.addMainEntry').click(function() {
+
+    var addMain = true;
+
+    var mainName = $('#add_main_name').val();
+    var mainPicture = $('#add_main_picture').val();
+    var mainIndexPicture = $('#add_main_index_picture').val();
+    var mainIcon = $('#add_main_icon').val();
+
+    var data = {
+      addMain: addMain,
+      mainName: mainName,
+      mainPicture: mainPicture,
+      mainIndexPicture: mainIndexPicture,
+      mainIcon: mainIcon,
+    }
+    
+    $.ajax({
+
+      url: './adminFunctions.php',
+      type: 'POST',
+      data: data,
+      success: function (response) {
+
+        if (response == 1) {
+          window.location.reload();
+        }
+      }
+    })
+  });
+
+  //*************          ADD SUB ENTRY         *************//
+
+
+  
+  //*************          ADD PRODUCT ENTRY         *************//
+
 });

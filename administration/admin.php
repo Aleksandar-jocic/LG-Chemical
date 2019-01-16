@@ -1,7 +1,6 @@
 <?php include "../productDB/serverConnection.php"; ?>
 <?php include "./adminFunctions.php"; ?>
 
-
 <?php 
   session_start(); 
   if (!isset($_SESSION['username'])) {
@@ -73,9 +72,9 @@
 		if($ext === 'products') {
 	?>
 			<div class="productsSelected">
-				<div><a href="./admin.php?ext=products&selected=main_group">Main groups</a></div>
-				<div><a href="./admin.php?ext=products&selected=sub_group">Sub groups</a></div>
-				<div><a href="./admin.php?ext=products&selected=product">Products</a></div>
+				<div><a href="./admin.php?ext=products&selected=main_group">Main groups</a><i class="fas fa-plus addNew" data-toggle="modal" data-target="#modalAddMain"></i></div>
+				<div><a href="./admin.php?ext=products&selected=sub_group">Sub groups</a><i class="fas fa-plus addNew" data-toggle="modal" data-target="#modalMainEdit"></i></div>
+				<div><a href="./admin.php?ext=products&selected=product">Products</a><i class="fas fa-plus addNew" data-toggle="modal" data-target="#modalMainEdit"></i></div>
 			</div>
 
 	<?php		
@@ -102,118 +101,8 @@
 	}
 ?>
         </div>
+		<?php include "./adminModal.php"; ?>
 
-	<div>
-	<?php 
-	
-	testdb();
-	
-	
-	?>
-	<!-- Modal -->
-<div class="modal fade" id="modalMain" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  	<div class="modal-dialog modal-dialog-centered" role="document">
-    	<div class="modal-content">
-     		<div class="modal-header">
-       			<h5 class="modal-title" id="exampleModalLongTitle">Delete Entry</h5>
-        		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          			<span aria-hidden="true">&times;</span>
-        		</button>
-      		</div>
-      		<div class="modal-body">
-        		Are you sure you want to delete this product?
-      		</div>
-      		<div class="modal-footer">
-        		<button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-        		<button type="button" class="btn btn-primary deleteMainConfirm" data-dismiss="modal">Delete</button>
-      		</div>
-    	</div>
-  	</div>
-</div>
-	<!-- Modal -->
-<div class="modal fade" id="modalSub" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  	<div class="modal-dialog modal-dialog-centered" role="document">
-    	<div class="modal-content">
-     		<div class="modal-header">
-       			<h5 class="modal-title" id="exampleModalLongTitle">Delete Entry</h5>
-        		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          			<span aria-hidden="true">&times;</span>
-        		</button>
-      		</div>
-      		<div class="modal-body">
-        		Are you sure you want to delete this product?
-      		</div>
-      		<div class="modal-footer">
-        		<button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-        		<button type="button" class="btn btn-primary deleteSubConfirm" data-dismiss="modal">Delete</button>
-      		</div>
-    	</div>
-  	</div>
-</div>
-	<!-- Edit Modal -->
-	<div class="modal fade" id="modalMainEdit" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  	<div class="modal-dialog modal-dialog-centered" role="document">
-    	<div class="modal-content">
-     		<div class="modal-header">
-       			<h5 class="modal-title" id="exampleModalLongTitle">Edit Entry</h5>
-        		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          			<span aria-hidden="true">&times;</span>
-        		</button>
-      		</div>
-      		<div class="modal-body">
-				<form method="post" action="adminFunctions.php">
-			  
-					<label for="main_name">main_name: </label>
-					<input id="main_name" type="text"><br>
-
-					<label for="main_picture">main_picture: </label>
-					<input id="main_picture" type="text"><br>
-
-					<label for="main_index_picture">main_index_picture: </label>
-					<input id="main_index_picture" type="text"><br>
-
-					<label for="main_icon">main_icon: </label>
-					<input id="main_icon" type="text">
-				</form>
-      		</div>
-      		<div class="modal-footer">
-        		<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-        		<button type="button" class="btn btn-primary editMainModal" data-dismiss="modal">Save changes</button>
-      		</div>
-    	</div>
-  	</div>
-</div>
-	<!-- <form method="post" action="adminFunctions.php">
-		<div class="input-group">
-			<label>first name</label>
-			<input type="text" name="firstName" >
-		</div>
-		<div class="input-group">
-			<label>last name</label>
-			<input type="text" name="lastName">
-		</div>
-		<div class="input-group">
-			<button type="submit" class="btn uploadPerson" name="uploadPerson">enter</button>
-		</div>
-  	</form> -->
-
-	<div class="update" style="display:none">
-		<form method="post" action="adminFunctions.php">
-			<div class="input-group">
-				<label>new name</label>
-				<input class='newNameInput' type="text" name="newName" >
-			</div>
-			<div class="input-group">
-				<label>new last name</label>
-				<input class='newLastNameInput' type="text" name="newLastName">
-			</div>
-			<div class="input-group">
-				<button type="button" class="btn changePerson" name="changePerson">change</button>
-			</div>
-		</form>
-	</div>
-	
-	</div>
 		<script src="./admin.js"></script>
 </body>
 </html>

@@ -4,12 +4,12 @@
 <?php include "./modules/modal.php" ?>
 
 <body>
-<div class="loader">
-    <img src="./photos/preLoad.gif" alt="">
-</div>
+
 
     <div class="container-fluid">
-
+        <div class="loader">
+            <img src="./photos/preLoad.gif" alt="">
+        </div>
         <!-- CAROUSEL -->
 
         <div class="imageContainer">

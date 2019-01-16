@@ -5,20 +5,40 @@ $connectionAdmin = mysqli_connect('localhost', 'root', '', 'admins');
 mysqli_query($connectionAdmin, "SET NAMES utf8");
 
 
-function testdb () {
-    global $testConn;
-    $query = "SELECT * FROM people";
-    $selectPeople = mysqli_query($testConn, $query);
-    while($row = mysqli_fetch_assoc($selectPeople)) {
-        $firstName = $row['firstName'];
-        $lastName = $row['lastName'];
-        $id = $row['id'];
+//          ADD MAIN ENTRY            //
+
+if (isset($_POST['addMain'])) {
+    
+    $mainName = $_POST['mainName'];
+    $mainPicture = $_POST['mainPicture'];
+    $mainIndexPicture = $_POST['mainIndexPicture'];
+    $mainIcon = $_POST['mainIcon'];
+
+    addNewMainEntry($mainName, $mainPicture, $mainIndexPicture, $mainIcon);
+}
+function addNewMainEntry($mainName, $mainPicture, $mainIndexPicture, $mainIcon) {
+
+    global $connection;
+    
+    if($mainName) {
+
+        $query = "INSERT INTO main_group (main_name, main_picture, main_index_picture, main_icon) VALUES ('$mainName', '$mainPicture', '$mainIndexPicture', '$mainIcon')";
+        mysqli_query($connection, $query);
+    
+
+        echo 1;
+    } else {
         
-        $writer = "<div>$firstName $lastName $id <span class='changeMe' id='cha_$id'>change </span><span class='deleteMe' id='del_$id'>Delete</span></div>";
-                
-        echo $writer;  
+        echo 0;
     }
 }
+//          ADD SUB ENTRY            //
+
+
+//          ADD PRODUCT ENTRY            //
+
+
+//          DELETE MAIN ENTRY            //
 if (isset($_POST['deleteMain'])) {
     
     deleteMainEntry($_POST['deleteMain']);
@@ -35,6 +55,7 @@ function deleteMainEntry ($id) {
         echo 0;
     }
 }
+//          DELETE SUB ENTRY            //
 if (isset($_POST['deleteSub'])) {
     
     deleteSubEntry($_POST['deleteSub']);
@@ -53,6 +74,26 @@ function deleteSubEntry ($id) {
         echo 0;
     }
 }
+//          DELETE PRODUCT ENTRY            //
+if (isset($_POST['deleteProduct'])) {
+    
+    deleteProductEntry($_POST['deleteProduct']);
+}
+function deleteProductEntry ($id) {
+    global $connection;
+
+    if($id) {
+
+        $query = "DELETE FROM product WHERE product_id=$id";
+        mysqli_query($connection, $query);
+    
+        echo 1;
+    } else {
+        
+        echo 0;
+    }
+}
+//          EDIT MAIN ENTRY            //
 if (isset($_POST['changeThisMainId'])) {
 
     $id = $_POST['changeThisMainId'];
@@ -78,38 +119,60 @@ function changeMainBranch($id, $mainName, $mainPicture, $mainIndexPicture, $main
         echo 0;
     }
 }
+//          EDIT SUB ENTRY            //
 
-if(isset($_POST['changeSth'])) {
-    $id = $_POST['changeSth'];
-    $newName = $_POST['newName'];
-    $newLastName = $_POST['newLastName'];
-    changeEntry($id, $newName, $newLastName);
+if (isset($_POST['changeThisSubId'])) {
+
+    $id = $_POST['changeThisSubId'];
+
+    $subName = $_POST['subName'];
+    $mainId = $_POST['mainId'];
+
+    changeSubBranch($id, $subName, $mainId);
 }
-function changeEntry ($id, $newName, $newLastName) {
-    global $testConn;
-    if($newName) {
-        $query = "UPDATE people SET firstName='$newName', lastName='$newLastName' WHERE id=$id";
-        mysqli_query($testConn, $query);
+function changeSubBranch($id, $subName, $mainId) {
+
+    global $connection;
+
+    if($id) {
+
+        $query = "UPDATE sub_group SET sub_name='$subName', main_id='$mainId' WHERE sub_id=$id";
+        mysqli_query($connection, $query);
+        
         echo 1;
     } else {
         echo 0;
     }
 }
-if (isset($_POST['uploadPerson'])) {
-    $firstName = $_POST['firstName'];
-    $lastName = $_POST['lastName'];
-    insertEntry ($firstName, $lastName);
+//          EDIT PRODUCT ENTRY            //
+
+if (isset($_POST['changeThisProductId'])) {
+
+    $id = $_POST['changeThisProductId'];
+
+    $mainProductId = $_POST['mainProductId'];
+    $subId = $_POST['subId'];
+    $productName = $_POST['productName'];
+    $productPicture = $_POST['productPicture'];
+    $productDescription = $_POST['productDescription'];
+
+    changeProduct($id, $mainProductId, $subId, $productName, $productPicture, $productDescription);
 }
-function insertEntry ($firstName, $lastName) {
-    global $testConn;
-    $query = "INSERT INTO people (firstName, lastName) VALUES ('$firstName', '$lastName')";
-    mysqli_query($testConn, $query);
-    header('location: admin.php');
+function changeProduct($id, $mainProductId, $subId, $productName, $productPicture, $productDescription) {
+
+    global $connection;
+    if($id) {
+
+        $query = "UPDATE product SET sub_id='$subId', main_id='$mainProductId', product_name='$productName', product_picture='$productPicture', product_description='$productDescription' WHERE product_id=$id";
+        mysqli_query($connection, $query);
+        
+        echo 1;
+    } else {
+        echo 0;
+    }
 }
 
-
-
-//              PRODUCTS               //
+//              GET ALL MAIN               //
 function getMainProducts () {
     global $connection;
     $query = "SELECT * FROM main_group";
@@ -149,6 +212,7 @@ function getMainProducts () {
     }
     echo "</table>";
 }
+//              GET ALL SUB               //
 function getSubProducts () {
     global $connection;
     $query = "SELECT * FROM sub_group";
@@ -174,8 +238,9 @@ function getSubProducts () {
             <td class='cellId'><?php echo $main_id; ?></td>
             <td class='cellId'><?php echo $sub_id; ?></td>
             <td><?php echo $sub_name; ?></td>
-            <td class='tableOptions edit'>Edit</td>
 
+            <td id='editSub_<?php echo $sub_id; ?>' class='tableOptions edit'><button rel='<?php echo $sub_id; ?>' type="button" class='editSub' data-toggle="modal" data-target="#modalSubEdit">Edit</button>
+            </td>
 
             <td id='deleteSub_<?php echo $sub_id; ?>' class='tableOptions delete'><button rel='<?php echo $sub_id; ?>' type="button" class='deleteSub' data-toggle="modal" data-target="#modalSub">Delete</button>
             </td>
@@ -184,6 +249,7 @@ function getSubProducts () {
     }
     echo "</table>";
 }
+//              GET ALL PRODUCTS               //
 function getProducts () {
     global $connection;
     $query = "SELECT * FROM product";
@@ -219,8 +285,10 @@ function getProducts () {
             <td><?php echo $product_picture; ?></td>
             <td><?php echo $product_description; ?></td>
 
-            <td class='tableOptions edit'>Edit</td>
-            <td id='delete_<?php echo $sub_id; ?>' class='tableOptions delete'><button rel='<?php echo $sub_id; ?>' type="button" class='deleteSub' data-toggle="modal" data-target="#modalSub">Delete</button>
+            <td id='editProduct_<?php echo $product_id; ?>' class='tableOptions edit'><button rel='<?php echo $product_id; ?>' type="button" class='editProduct' data-toggle="modal" data-target="#modalProductEdit">Edit</button>
+            </td>
+
+            <td id='deleteProduct_<?php echo $product_id; ?>' class='tableOptions delete'><button rel='<?php echo $product_id; ?>' type="button" class='deleteProduct' data-toggle="modal" data-target="#modalProduct">Delete</button>
             </td>
         </tr>       
  <?php     
@@ -231,7 +299,7 @@ function getProducts () {
 
 
 
-
+//              GET ALL NEWS               //
 
 function getNews () {
     global $connectionFeed;
