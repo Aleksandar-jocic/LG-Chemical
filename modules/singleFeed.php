@@ -9,11 +9,11 @@ getStoryWitId($_POST['singleStoryInfoWithId']);
 
 function getStoryWitId ($id) {
 
-    global $connectionFeed;
+    global $connection;
 
     $query = "SELECT story_title, story_date, story_content, story_cover FROM story WHERE story_id={$id} LIMIT 1";
 
-    $result = mysqli_query($connectionFeed, $query);
+    $result = mysqli_query($connection, $query);
 
     $row = mysqli_fetch_assoc($result);
     

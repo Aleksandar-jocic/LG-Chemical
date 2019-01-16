@@ -40,8 +40,13 @@ body {
     width: 100%;
     min-width: 270px;
     margin: 0 auto;
+    // overflow-x: hidden;
     font-family: 'Montserrat', sans-serif; // font-family: 'Josefin Sans', sans-serif;
     // font-family: 'Sunflower', sans-serif;
+}
+.loader {
+    width: 100%;
+
 }
 .container-fluid {
     position: relative;
@@ -1390,7 +1395,8 @@ h1 {
     .singlePerson {
 
         padding: 15px;
-        width: 580px;
+        max-width: 580px;
+        width: auto;
         margin-bottom: 20px;
         transition: all 0.4s ease-out;
         
@@ -1431,6 +1437,10 @@ h1 {
 
             div {
                 display: block;
+                width: 100%;
+                margin-right: 0px;
+                margin-bottom: 20px;
+                
             }
             .empContact {
                 margin: 5px 0px;
@@ -1576,6 +1586,9 @@ h1 {
     left: calc(50% - 320px);
     background-color: white;
     text-align: center; 
+    @media screen and (max-width: $on960) {
+        display: none;
+    }
 }
 
 .footImage::after {
@@ -1588,6 +1601,9 @@ h1 {
     right: calc(50% - 320px);
     background-color: white;
     text-align: center;
+    @media screen and (max-width: $on960) {
+        display: none;
+    }
 }
 .footerContent {
     width: 50%;
@@ -1705,11 +1721,13 @@ h1 {
     }
 }
 .productsSelected {
-    width: 250px;
+    width: calc(15% - 10px);
     padding: 20px;
     display: inline-block;
     vertical-align: top;
     background-color: #272727;
+    border-right: 2px solid $admin;
+    
     // height: 200px;
     
     div {
@@ -1717,16 +1735,21 @@ h1 {
         a {
             color: $admin;
         }
+        i {
+            color: $admin;
+            float: right;
+            font-size: 1rem;
+            padding: 5px 0px;
+        }
     }
 }
 .adminOutput {
     display: inline-block;
-    width: 80%;
+    width: 85%;
     margin-bottom: 50px;
     padding: 10px 0px;
-    border-left: 2px solid $admin;
     table {
-        margin-left: 10px;
+        margin-left: 5px;
         font-size: 0.9rem;
         border-collapse: collapse;
 
@@ -1759,7 +1782,7 @@ h1 {
             border: 0px;
             color: $charlie;
         }
-        .editMain {
+        .editMain, .editSub, .editProduct {
             color: $admin;
         }
         .delete {
@@ -1769,9 +1792,16 @@ h1 {
         button:hover {
             cursor: pointer;
         }
+        th:hover, td:hover {
+            cursor: default;
+        }
+      
+        .adminMainGroupList:hover, .adminSubGroupList:hover, .adminProductList:hover {
+            background-color: #272727;
+            color: $admin;
+            transition: all 0.2s ease-out;
+        }
     }
-    
-
     .adminMainGroupList {
         padding: 5px 0px 0px 5px;
         

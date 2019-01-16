@@ -14,11 +14,11 @@ storyTeller();
 
 function storyTeller () {
 
-    global $connectionFeed;
+    global $connection;
 
     $query = "SELECT * FROM story";
 
-    $select_feed = mysqli_query($connectionFeed, $query);
+    $select_feed = mysqli_query($connection, $query);
     $num_of_rows = mysqli_num_rows($select_feed);
 
     while($row = mysqli_fetch_assoc($select_feed)) {

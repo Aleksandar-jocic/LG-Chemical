@@ -48,6 +48,7 @@
     </div>
     <div class="Copyright">
             <p>Copyright
-                <i class="far fa-copyright"></i> 2018 by <a href="https://github.com/Aleksandar-jocic" target='_blank'>TC</a> </p>
-        </div>
+                <i class="far fa-copyright"></i> 2018 by <a href="https://github.com/Aleksandar-jocic" target='_blank'>TC</a>
+            </p>
+    </div>
 </div>
