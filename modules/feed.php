@@ -31,7 +31,7 @@ function storyTeller () {
 ?>
         <div class='col-12 col-sm-6 newsDiv'>
             <h2><?php echo $story_title; ?></h2>
-            <p class='dateSpan'><?php echo $story_date; ?></p><i id='story_<?php echo $story_id; ?>' data-toggle='modal' data-target='#exampleModalLong' class='fas fa-expand readMore'></i>
+            <p class='dateSpan'><?php echo $story_date; ?></p><i id='story_<?php echo $story_id; ?>' data-toggle='modal' data-target='#newsModal' class='fas fa-expand readMore'></i>
             <div class='feedCover' style="background-image: url('./photos/feedImg/<?php echo $story_cover; ?>')">
             </div>
             <p class='storyContent'><?php echo $story_content; ?></p>

@@ -205,10 +205,10 @@ function getProducts ($subID) {
 
         <div class='singleProduct' id='<?php echo $product_id ?>'>
             <div class='productName'>
-                <p><?php echo $product_name ?></p><i class='fas fa-arrow-down readMore'></i>
+                <p><?php echo $product_name ?></p><i id='product_<?php echo $product_id; ?>' data-toggle='modal' data-target='#productModal' class='fas fa-expand readMore'></i>
             </div>
             <div class='productPicture'>
-                <img src='../photos/<?php echo $product_picture ?>'>
+                <img src='../photos/productImg/<?php echo $product_picture ?>'>
             </div>
             <div class='productDescription'>
                 <p><?php echo $product_description ?></p>

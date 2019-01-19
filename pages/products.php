@@ -1,6 +1,8 @@
 <?php include "../productDB/serverConnection.php"; ?>
 <?php include "../productDB/functions.php"; ?>
 <?php include "../modules/headRest.php"; ?>
+<?php include "../modules/modal.php"; ?>
+
 
 <body>
 <div class="loader">
@@ -89,6 +91,7 @@ if(isset($_GET['sub_id'])) {
     </div> 
 
     <script src="../javascript/preLoader.js"></script>
+    <script src="../javascript/clamp.js"></script>
     <script src="../javascript/effects.js"></script>
 </body>
 </html>

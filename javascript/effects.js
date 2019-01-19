@@ -17,6 +17,7 @@ $(document).ready(function () {
 
     if (window.location.pathname == '/pages/products.php') {
 
+        clampProducts();
         product();
     } 
     clampFeed();
@@ -31,24 +32,48 @@ function clampFeed () {
         $clamp(elementToClamp.get(i), {clamp: 2});
     }
 };
+function clampProducts () {
 
+    var elementToClamp = $('.productDescription > p');
+
+    for (var i = 0; i < elementToClamp.length; i++) {
+        $clamp(elementToClamp.get(i), {clamp: 5});
+    }
+};
 $('.fa-expand').click(function() {
 
-    var storyId = $(this)[0].id.split('_')[1];
+    var checkOrigin = $(this)[0].id.split('_')[0];
+    console.log(checkOrigin);
+    
+    var id = $(this)[0].id.split('_')[1];
 
-    var data = {singleStoryInfoWithId: storyId};
 
-    $.ajax({
+    if(checkOrigin === 'product') {
+        var data = {singleProductInfoWithId: id};
 
-        url: '../modules/singleFeed.php',
-        type: 'POST',
-        data: data,
-        success: function(response) {
-            $('.newsModal').text('');
-            $('.newsModal').append(response);
-            console.log(response);
-        }
-    });
+        $.ajax({
+            url: '../modules/singleQuery.php',
+            type: 'POST',
+            data: data,
+            success: function(response) {
+                $('.productModal').text('');
+                $('.productModal').append(response);                
+            }
+        })
+    } else {
+        var data = {singleStoryInfoWithId: id};
+
+        $.ajax({
+    
+            url: '../modules/singleQuery.php',
+            type: 'POST',
+            data: data,
+            success: function(response) {
+                $('.newsModal').text('');
+                $('.newsModal').append(response);
+            }
+        });
+    }
 });
 
 $('.getAllNews').click(function () {

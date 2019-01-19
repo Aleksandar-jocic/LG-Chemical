@@ -136,12 +136,18 @@ $(document).ready(function () {
     var newMainIndexPicture = $('#main_index_picture').val();
     var newMainIcon = $('#main_icon').val();
 
+    // var mainPictureUpload = 1;
+
+    // console.log(mainPictureUpload);
+    
+
     var data = {
       changeThisMainId: sameMainId,
       mainName: newMainName,
       mainPicture: newMainPicture,
       mainIndexPicture: newMainIndexPicture,
-      mainIcon: newMainIcon
+      mainIcon: newMainIcon,
+      // mainPictureUpload: mainPictureUpload
     };
 
     var editRow = $('#edit_' + sameMainId);
@@ -308,9 +314,65 @@ $(document).ready(function () {
   });
 
   //*************          ADD SUB ENTRY         *************//
+  $('.addSubEntry').click(function() {
 
+    var addSub = true;
 
+    var subName = $('#add_sub_name').val();
+    var subBelongsTo = $('#add_sub_to_main').val();
+
+    var data = {
+      addSub: addSub,
+      subName: subName,
+      subBelongsTo: subBelongsTo,
+    }
+    
+    $.ajax({
+
+      url: './adminFunctions.php',
+      type: 'POST',
+      data: data,
+      success: function (response) {
+
+        if (response == 1) {
+          window.location.reload();
+        }
+      }
+    })
+  });
   
   //*************          ADD PRODUCT ENTRY         *************//
+  $('.addProductEntry').click(function() {
 
+    var addProduct = true;
+
+    var productName = $('#add_product_name').val();
+    var productPicture = $('#add_product_picture').val();
+    var productDescription = $('#add_product_description').val();
+    var belongsToSub = $('#add_product_to_sub').val();
+    var belongsToMain = $('#add_product_to_main').val();
+    
+
+    var data = {
+      addProduct: addProduct,
+      productName: productName,
+      productPicture: productPicture,
+      productDescription: productDescription,
+      belongsToSub: belongsToSub,
+      belongsToMain: belongsToMain,
+    }
+    
+    $.ajax({
+
+      url: './adminFunctions.php',
+      type: 'POST',
+      data: data,
+      success: function (response) {
+
+        if (response == 1) {
+          window.location.reload();
+        }
+      }
+    })
+  });
 });

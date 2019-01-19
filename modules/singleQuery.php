@@ -32,3 +32,32 @@ function getStoryWitId ($id) {
     </div>
 <?php
 }
+if(isset($_POST['singleProductInfoWithId'])) {
+
+    getProductWitId($_POST['singleProductInfoWithId']);
+    // exit();
+};
+function getProductWitId($id) {
+
+    global $connection;
+
+    $query = "SELECT product_name, product_picture, product_description FROM product WHERE product_id={$id} LIMIT 1";
+    $result = mysqli_query($connection, $query);
+    $row = mysqli_fetch_assoc($result);
+ 
+    $product_name = $row['product_name'];
+    $product_picture = $row['product_picture'];
+    $product_description = $row['product_description'];
+
+?>
+    <div class="modalSingleProduct">
+        <div>
+            <h2><?php echo $product_name; ?></h2>
+            <img src='../photos/productImg/<?php echo $product_picture; ?>'>
+        </div>
+        <p class='productDescriptionContent'><?php echo $product_description; ?>
+        </p>
+    </div>
+<?php
+}
+?>

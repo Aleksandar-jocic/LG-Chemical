@@ -729,8 +729,6 @@ body {
     #output .productListDiv p {
       margin: 0px;
       font-size: 0.9rem; }
-    #output .productListDiv .singleProduct:hover {
-      max-height: 1000px; }
     #output .productListDiv .singleProduct {
       vertical-align: top;
       padding: 15px;
@@ -751,11 +749,9 @@ body {
           width: 100%;
           display: inline-block; }
         #output .productListDiv .singleProduct .productName i {
-          display: none;
-          font-size: 0.95rem;
-          vertical-align: middle;
-          padding: 5px;
-          color: #fd1c15; }
+          width: 25px;
+          height: 25px;
+          font-size: 0.95rem; }
       #output .productListDiv .singleProduct .productDescription {
         padding: 10px 0px 0px 10px;
         width: calc(100% - 100px);
@@ -860,6 +856,31 @@ body {
       #output #paginator {
         height: auto;
         flex-wrap: wrap; } }
+
+#productModal {
+  background-color: rgba(0, 0, 0, 0.5); }
+  #productModal .modal-content {
+    background-color: white; }
+  #productModal .modal-header {
+    padding: 5px 5px 0px 0px; }
+  #productModal .productModal {
+    padding-top: 2px; }
+  #productModal .modal-footer {
+    border-top: 1px solid #cfcfcf; }
+
+.modalSingleProduct div {
+  display: flex;
+  border-bottom: 1px solid #fd1c15;
+  padding-bottom: 15px;
+  margin-bottom: 10px; }
+  .modalSingleProduct div h2 {
+    text-align: center;
+    margin: 0px;
+    align-self: center; }
+  .modalSingleProduct div img {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto; }
 
 .readMore {
   display: none;
@@ -1518,6 +1539,51 @@ h1 {
     .adminOutput .adminMainGroupList span {
       color: black;
       padding: 3px 0px 3px 10px; }
+
+.editGeneric .modal-header {
+  background-color: #272727;
+  color: #ff9900; }
+  .editGeneric .modal-header i {
+    padding: 5px; }
+  .editGeneric .modal-header i:hover {
+    cursor: pointer; }
+.editGeneric .editModalGeneral {
+  display: flex;
+  justify-content: space-between; }
+  .editGeneric .editModalGeneral .labelGeneral {
+    width: 37%; }
+    .editGeneric .editModalGeneral .labelGeneral label {
+      width: 100%;
+      line-height: 27px;
+      margin-bottom: 5px; }
+  .editGeneric .editModalGeneral .inputGeneral {
+    width: 60%; }
+    .editGeneric .editModalGeneral .inputGeneral input {
+      width: 100%;
+      margin-bottom: 5px;
+      border: 0px;
+      border-bottom: 1px solid #ff9900; }
+    .editGeneric .editModalGeneral .inputGeneral .uploadFileInput {
+      width: 60%; }
+    .editGeneric .editModalGeneral .inputGeneral label {
+      padding: 2px 10px;
+      background-color: #6c757d;
+      border-radius: 4px;
+      margin: 0 auto;
+      color: white;
+      float: right; }
+    .editGeneric .editModalGeneral .inputGeneral #fileToUpload {
+      display: none; }
+.editGeneric .btn-secondary {
+  border: 0px; }
+.editGeneric .btn-secondary:hover {
+  background-color: #272727; }
+.editGeneric .editMainModal {
+  background-color: #6c757d;
+  color: #ff9900;
+  border: 0px; }
+.editGeneric .editMainModal:hover {
+  background-color: #272727; }
 
 p {
   cursor: default; }

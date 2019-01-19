@@ -58,31 +58,59 @@
     	</div>
   	</div>
 </div>
+
+
+
+
+
 	<!-- Edit Modal main-->
-<div class="modal fade" id="modalMainEdit" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade editGeneric" id="modalMainEdit" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   	<div class="modal-dialog modal-dialog-centered" role="document">
     	<div class="modal-content">
      		<div class="modal-header">
-       			<h5 class="modal-title" id="exampleModalLongTitle">Edit Entry</h5>
-        		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          			<span aria-hidden="true">&times;</span>
+				   <h5 class="modal-title" id="exampleModalLongTitle">Edit Entry</h5>
+				   <i class="fas fa-times" class="close" data-dismiss="modal" aria-label="Close"></i>
         		</button>
       		</div>
       		<div class="modal-body">
-				<form method="post" action="adminFunctions.php">
+				<!-- <form method="post" action="adminFunctions.php" enctype="multipart/form-data" class="editModalGeneral"> -->
 			  
-					<label for="main_name">main_name: </label>
-					<input id="main_name" type="text"><br>
+					<div class="labelGeneral">
+						<label for="main_name">main_name: </label>
+						<label for="main_picture">main_picture: </label>
+						<label for="main_index_picture">main_index_picture: </label>
+						<label for="main_icon">main_icon: </label>
+					</div>
+					<div class="inputGeneral">
+						<input id="main_name" type="text">
+						<div>
 
-					<label for="main_picture">main_picture: </label>
-					<input id="main_picture" type="text"><br>
 
-					<label for="main_index_picture">main_index_picture: </label>
-					<input id="main_index_picture" type="text"><br>
+						<form method="post" action="adminFunctions.php" enctype="multipart/form-data" class="editModalGeneral">
 
-					<label for="main_icon">main_icon: </label>
-					<input id="main_icon" type="text">
-				</form>
+							<input class="uploadFileInput" id="main_picture" type="text">
+								<label for="fileToUpload">Upload</label>
+								<input type="file" name="fileToUpload" id="fileToUpload">
+						</form>
+
+
+
+
+						</div>
+						<div>
+							<input class="uploadFileInput" id="main_index_picture" type="text">
+
+								<!-- <label for="fileToUpload">Upload</label> -->
+								<!-- <input type="file" name="fileToUpload" id="fileToUpload"> -->
+						</div>
+						<div>
+							<input class="uploadFileInput" id="main_icon" type="text">
+
+								<!-- <label for="fileToUpload">Upload</label> -->
+								<!-- <input type="file" name="fileToUpload" id="fileToUpload"> -->
+						</div>
+					</div>
+				<!-- </form> -->
       		</div>
       		<div class="modal-footer">
         		<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -91,6 +119,12 @@
     	</div>
   	</div>
 </div>
+
+
+
+
+
+
 	<!-- Edit Modal sub-->
 	<div class="modal fade" id="modalSubEdit" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   	<div class="modal-dialog modal-dialog-centered" role="document">
@@ -186,6 +220,72 @@
       		<div class="modal-footer">
         		<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
         		<button type="button" class="btn btn-primary addMainEntry" data-dismiss="modal">Save changes</button>
+      		</div>
+    	</div>
+  	</div>
+</div>
+	<!-- add Modal sub-->
+<div class="modal fade" id="modalAddSub" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  	<div class="modal-dialog modal-dialog-centered" role="document">
+    	<div class="modal-content">
+     		<div class="modal-header">
+       			<h5 class="modal-title" id="exampleModalLongTitle">Add sub branch</h5>
+        		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          			<span aria-hidden="true">&times;</span>
+        		</button>
+      		</div>
+      		<div class="modal-body">
+				<form method="post" action="adminFunctions.php">
+					
+					<label for="add_sub_name">sub_name: </label>
+                    <input id="add_sub_name" type="text"><br>
+
+					<label for="add_sub_to_main">belongs to main branch: </label>
+                    <input id="add_sub_to_main" type="number"><br>
+
+                   
+				</form>
+      		</div>
+      		<div class="modal-footer">
+        		<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        		<button type="button" class="btn btn-primary addSubEntry" data-dismiss="modal">Save changes</button>
+      		</div>
+    	</div>
+  	</div>
+</div>
+	<!-- add Modal product-->
+<div class="modal fade" id="modalAddProduct" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  	<div class="modal-dialog modal-dialog-centered" role="document">
+    	<div class="modal-content">
+     		<div class="modal-header">
+       			<h5 class="modal-title" id="exampleModalLongTitle">Add product</h5>
+        		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          			<span aria-hidden="true">&times;</span>
+        		</button>
+      		</div>
+      		<div class="modal-body">
+				<form method="post" action="adminFunctions.php">
+					
+					<label for="add_product_to_main">belongs to main branch:</label>
+                    <input id="add_product_to_main" type="text"><br>
+
+					<label for="add_product_to_sub">belongs to sub branch:</label>
+                    <input id="add_product_to_sub" type="text"><br>
+
+					<label for="add_product_name">product_name: </label>
+                    <input id="add_product_name" type="text"><br>
+
+					<label for="add_product_picture">product_picture: </label>
+                    <input id="add_product_picture" type="text"><br>
+					
+					<label for="add_product_description">product_description: </label>
+                    <input id="add_product_description" type="text"><br>
+                   
+				</form>
+      		</div>
+      		<div class="modal-footer">
+        		<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        		<button type="button" class="btn btn-primary addProductEntry" data-dismiss="modal">Save changes</button>
       		</div>
     	</div>
   	</div>

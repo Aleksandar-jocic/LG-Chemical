@@ -801,10 +801,6 @@ body {
             margin: 0px;
             font-size: 0.9rem;
         }
-        .singleProduct:hover {
-
-            max-height: 1000px;
-        }
         .singleProduct {
             vertical-align: top;
             padding: 15px;
@@ -828,11 +824,9 @@ body {
                     display: inline-block;
                 }
                 i {
-                    display: none;
+                    width: 25px;
+                    height: 25px;
                     font-size: 0.95rem;
-                    vertical-align: middle;
-                    padding: 5px;
-                    color: $charlie;
                 }
             }
 
@@ -984,6 +978,41 @@ body {
 
             height: auto;
             flex-wrap: wrap;
+        }
+    }
+}
+#productModal {
+    background-color: rgba(0, 0, 0, 0.5);
+
+    .modal-content {
+        background-color: rgb(255, 255, 255);
+    }
+    .modal-header {
+        padding: 5px 5px 0px 0px;
+    }
+    .productModal {
+        padding-top: 2px;
+    }
+    .modal-footer {
+        border-top: 1px solid rgb(207, 207, 207);
+    }
+}
+.modalSingleProduct {
+    div {
+        display: flex;
+        border-bottom: 1px solid $charlie;
+        padding-bottom: 15px;
+        margin-bottom: 10px;
+        h2 {
+            text-align: center;
+            margin: 0px;
+            align-self: center;
+        }
+        
+        img {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto;
         }
     }
 }
@@ -1811,6 +1840,72 @@ h1 {
         }
     }
 }
+.editGeneric {
+    
+    .modal-header {
+        background-color: #272727;
+        color: $admin;    
+        i {
+            padding: 5px;
+        }    
+        i:hover {
+            cursor: pointer;
+        }
+    }
+    .editModalGeneral {
+
+        display: flex;
+        justify-content: space-between;
+    
+        .labelGeneral {
+           width: 37%;
+           label {
+                width: 100%;
+                line-height: 27px;
+                margin-bottom: 5px;
+            }
+        }
+        .inputGeneral {
+            width: 60%;
+            input {
+                width: 100%;
+                margin-bottom: 5px;
+                border: 0px;
+                border-bottom: 1px solid $admin;
+            }
+            .uploadFileInput {
+                width: 60%;
+            }
+            label {
+                padding: 2px 10px;
+                background-color: #6c757d;
+                border-radius: 4px;
+                margin: 0 auto;
+                color: white;
+                float: right;
+            }
+            #fileToUpload {
+                display: none;
+            }
+        }
+    }
+    .btn-secondary {
+        border: 0px;
+    }
+    .btn-secondary:hover {
+        background-color: #272727;
+    }    
+    .editMainModal {
+        background-color: #6c757d;
+        color: $admin;
+        border: 0px;
+    }
+    .editMainModal:hover {
+        background-color: #272727;
+    }
+
+}
+
 
 //                  GENERAL                    //
 

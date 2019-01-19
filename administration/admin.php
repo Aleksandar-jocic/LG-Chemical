@@ -72,9 +72,24 @@
 		if($ext === 'products') {
 	?>
 			<div class="productsSelected">
-				<div><a href="./admin.php?ext=products&selected=main_group">Main groups</a><i class="fas fa-plus addNew" data-toggle="modal" data-target="#modalAddMain"></i></div>
-				<div><a href="./admin.php?ext=products&selected=sub_group">Sub groups</a><i class="fas fa-plus addNew" data-toggle="modal" data-target="#modalMainEdit"></i></div>
-				<div><a href="./admin.php?ext=products&selected=product">Products</a><i class="fas fa-plus addNew" data-toggle="modal" data-target="#modalMainEdit"></i></div>
+				<div>
+					<a href="./admin.php?ext=products&selected=main_group">Main groups</a>
+				
+					<i class="fas fa-plus addNew" data-toggle="modal" data-target="#modalAddMain"></i>
+				
+				</div>
+				<div>
+					<a href="./admin.php?ext=products&selected=sub_group">Sub groups</a>
+				
+					<i class="fas fa-plus addNew" data-toggle="modal" data-target="#modalAddSub"></i>
+				
+				</div>
+				<div>
+					<a href="./admin.php?ext=products&selected=product">Products</a>
+				
+					<i class="fas fa-plus addNew" data-toggle="modal" data-target="#modalAddProduct"></i>
+				
+				</div>
 			</div>
 
 	<?php		
@@ -100,7 +115,26 @@
 		}
 	}
 ?>
-        </div>
+		</div>
+
+
+
+
+		<!-- // <div>
+		// 	<form action="adminFunctions.php" method="post" enctype="multipart/form-data">
+
+		// 		Select image to upload:
+				
+		// 		<input type="file" name="fileToUpload" id="fileToUpload">
+
+		// 		<input type="submit" value="Upload Image" name="submit">
+				
+		// 	</form>
+		// </div> -->
+
+
+
+
 		<?php include "./adminModal.php"; ?>
 
 		<script src="./admin.js"></script>
