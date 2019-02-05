@@ -59,7 +59,7 @@ getAllMainForHeaderPages();
                     </div>
 
                     <div class="alignText">
-                        <p>Bioo Scientific Corporation, osnovan 2003. god., Austinu, Teksas, kompanija koja se bavi biotehnologijom i pruža inovativna rešenja za food &amp; feed safety. Nagrađena NIH, NSF, FDA i USDA kvalitetom, koji je doprineo daljem razvitak. Bioo Scientific nudi širok asortiman ELISA testova, strip testova, testova na enzyme, otkrivanje mikrobioloških i industrijskih zagađivača, prirodnih toksina, hormona, antibiotika i drugih ostataka veterinarskih lekova u stočnoj hrani.
+                        <p>Bioo Scientific Corporation, osnovan 2003. god., Austinu, Teksas, kompanija koja se bavi biotehnologijom i pruža inovativna rešenja za food &amp; feed safety. <br>Nagrađena NIH, NSF, FDA i USDA kvalitetom, koji je doprineo daljem razvitku. <br>Bioo Scientific nudi širok asortiman ELISA testova, strip testova, testova na enzime, otkrivanje mikrobioloških i industrijskih zagađivača, prirodnih toksina, hormona, antibiotika i drugih ostataka veterinarskih lekova u stočnoj hrani.
                         </p>
                     </div>
                 </div>
@@ -73,7 +73,7 @@ getAllMainForHeaderPages();
                     </div>
 
                     <div class="alignText">
-                        <p>CFF GmbH &amp; Co. KG je Vaš snažan partner u prirodnim celuloznim vlaknima, sa globalnom mrežom u različitim tipovima industrije. CFF celulozna vlakna, proizvedena od organskih i obnovljivih sirovina, koriste se u izgradnji puteva, građevinskoj industriju, industrijskoj aplikaciji, filtraciji i prehrambenoj industriji. Priroda i rasprostranjenost CFF proizvoda je jedan od najvažnijih faktora uspeha. Rado će Vas uveriti u pitanja tehnologije, inovacija, kvaliteta i usluga i sarađivati sa Vama kako biste poboljšali svoje proizvode i proizvodni proces.
+                        <p>CFF GmbH &amp; Co. KG je Vaš snažan partner u prirodnim celuloznim vlaknima, sa globalnom mrežom u različitim tipovima industrije. <br>CFF celulozna vlakna, proizvedena od organskih i obnovljivih sirovina, koriste se u izgradnji puteva, građevinskoj industriju, industrijskoj aplikaciji, filtraciji i prehrambenoj industriji. Priroda i rasprostranjenost CFF proizvoda je jedan od najvažnijih faktora uspeha. Rado će Vas uveriti u pitanja tehnologije, inovacija, kvaliteta i usluga i sarađivati sa Vama kako biste poboljšali svoje proizvode i proizvodni proces.
                         </p>
                         <div class='dropUpSuper'>
                             <span>Download pdf</span>
@@ -113,7 +113,7 @@ getAllMainForHeaderPages();
                     </div>
 
                     <div class="alignText">
-                        <p>Yipin pigmenti, svetski lideri u industriji pigmenata od 1931. god.. Raspolaže punom linijom mikroniziranih gvožđe oksida, hrom oksida zelene, ultramarin plave, ftalata plave i zelene, perlascentnih pigmenata, termostabilnih pigmenata, i antikorozivnih proizvoda za primenu u hemijskoj industriji. Raznolikost kvaliteta pigmenata u zavisnosti od tipa primene, omogućio je plasiranje proizvoda i u kozmetičkoj industriji i prehrambenoj industriji (FDA).
+                        <p>Yipin pigmenti, svetski lideri u industriji pigmenata od 1931. godine. Raspolaže punom linijom mikroniziranih gvožđe oksida, hrom oksida zelene, ultramarin plave, ftalata plave i zelene, perlascentnih pigmenata, termostabilnih pigmenata, i antikorozivnih proizvoda za primenu u hemijskoj industriji. <br>Raznolikost kvaliteta pigmenata u zavisnosti od tipa primene, omogućio je plasiranje proizvoda i u kozmetičkoj industriji i prehrambenoj industriji (FDA).
                         </p>
                     </div>
                 </div>

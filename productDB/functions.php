@@ -1,5 +1,54 @@
 <?php include "serverConnection.php"; ?>
 <?php 
+if(isset($_POST['searchBarSubmit'])) {
+    searchBar($_POST['searchBarSubmit']);
+}
+function searchBar($search) {
+
+    global $connection;
+
+    $query = "SELECT * FROM product WHERE product_name LIKE '%$search%'";
+    $get_search_results = mysqli_query($connection, $query);
+
+    $number_of_results = mysqli_num_rows($get_search_results);
+    
+
+    while($row = mysqli_fetch_assoc($get_search_results)) {
+
+        $product_name = $row['product_name'];
+        $product_picture = $row['product_picture'];
+        $product_description = $row['product_description'];
+        $product_id = $row['product_id'];
+
+?>
+    <div class='singleProduct' id='<?php echo $product_id ?>'>
+        <div class="productPictureSpec">
+            <img src='../photos/productImg/<?php echo $product_picture ?>'>
+        </div>
+        <div class="productContent">
+            <div class='productName'>
+                <p>
+                    <?php echo $product_name ?>
+                </p>
+            </div>
+            <div class='productDescriptionSpec'>
+                <p>
+                    <?php echo $product_description ?>
+                </p>
+                <span id='product_<?php echo $product_id; ?>' data-toggle='modal' data-target='#productModal'
+                class='singleProductWithId'>detaljnije</span>
+            </div>
+        </div>
+    </div>
+<?php      
+    }
+?>
+    <p class='numOfRes' style="display: none;" id='number-of-results'>
+        <?php echo htmlspecialchars($number_of_results); ?>
+    </p>
+<?php
+    die();
+}
 function getAllMainForHeader() {
 
     global $connection;
@@ -14,14 +63,16 @@ function getAllMainForHeader() {
         $main_icon = $row['main_icon'];
 ?>
 
-        <li class='productList'>
-            <div class='mainIconDiv'>
-                <img src="./photos/icons/<?php echo $main_icon; ?>">
-            </div>
-            <div class='mainLinkDiv'>
-                <a href='./pages/products.php?main_id=<?php echo $main_id; ?>'><?php echo $main_name; ?></a>
-            </div>
-        </li>
+<li class='productList'>
+	<div class='mainIconDiv'>
+		<img src="./photos/icons/<?php echo $main_icon; ?>">
+	</div>
+	<div class='mainLinkDiv'>
+		<a href='./pages/products.php?main_id=<?php echo $main_id; ?>'>
+			<?php echo $main_name; ?>
+		</a>
+	</div>
+</li>
 <?php
     }
 }
@@ -39,14 +90,16 @@ function getAllMainForHeaderPages() {
         $main_icon = $row['main_icon'];
 ?>
 
-        <li class='productList'>
-            <div class='mainIconDiv'>
-                <img src="../photos/icons/<?php echo $main_icon; ?>">
-            </div>
-            <div class='mainLinkDiv'>
-                <a href='./products.php?main_id=<?php echo $main_id; ?>'><?php echo $main_name; ?></a>
-            </div>
-        </li>
+<li class='productList'>
+	<div class='mainIconDiv'>
+		<img src="../photos/icons/<?php echo $main_icon; ?>">
+	</div>
+	<div class='mainLinkDiv'>
+		<a href='./products.php?main_id=<?php echo $main_id; ?>'>
+			<?php echo $main_name; ?>
+		</a>
+	</div>
+</li>
 <?php
     }
 }
@@ -64,13 +117,15 @@ function getAllMainForIndexProducts () {
         $main_index_picture = $row['main_index_picture'];
 ?>
 
-    <div class="Item col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12">
-        <div class="tester1" style="background-image: url('./photos/chemeter/chemeterIndex/<?php echo $main_index_picture; ?>')">
-        </div>
-        <div class="middle">
-            <a class="text" href="./pages/products.php?main_id=<?php echo $main_id; ?>"><?php echo $main_name; ?></a>
-        </div>
-    </div>
+<div class="Item col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12">
+	<div class="tester1" style="background-image: url('./photos/indexImg/<?php echo $main_index_picture; ?>')">
+	</div>
+	<div class="middle">
+		<a class="text" href="./pages/products.php?main_id=<?php echo $main_id; ?>">
+			<?php echo $main_name; ?>
+		</a>
+	</div>
+</div>
 
 <?php
     }
@@ -96,17 +151,19 @@ function getAllMain () {
 
 
 ?>
-                <div class='mainList mainListActive' style="width: <?php echo 100/$row_num; ?>%">
-                    <a name='<?php echo $main_picture ?>' href='./products.php?main_id=<?php echo $main_id; ?>#productDisplay'><?php echo $main_name ?>
-                    </a>
-                </div>
+<div class='mainList mainListActive' style="width: <?php echo 100/$row_num; ?>%">
+	<a name='<?php echo $main_picture ?>' href='./products.php?main_id=<?php echo $main_id; ?>#productDisplay'>
+		<?php echo $main_name ?>
+	</a>
+</div>
 <?php
                 } else {
 ?>
-                    <div class='mainList' style="width: <?php echo 100/$row_num; ?>%">
-                        <a name='<?php echo $main_picture ?>' href='./products.php?main_id=<?php echo $main_id; ?>#productDisplay'><?php echo $main_name ?>
-                        </a>
-                    </div>
+<div class='mainList' style="width: <?php echo 100/$row_num; ?>%">
+	<a name='<?php echo $main_picture ?>' href='./products.php?main_id=<?php echo $main_id; ?>#productDisplay'>
+		<?php echo $main_name ?>
+	</a>
+</div>
 <?php
                 }
         }
@@ -203,22 +260,28 @@ function getProducts ($subID) {
         $product_description = $row['product_description'];
 ?>
 
-        <div class='singleProduct' id='<?php echo $product_id ?>'>
-            <div class='productName'>
-                <p><?php echo $product_name ?></p><i id='product_<?php echo $product_id; ?>' data-toggle='modal' data-target='#productModal' class='fas fa-expand readMore'></i>
-            </div>
-            <div class='productPicture'>
-                <img src='../photos/productImg/<?php echo $product_picture ?>'>
-            </div>
-            <div class='productDescription'>
-                <p><?php echo $product_description ?></p>
-            </div>
-        </div>
+<div class='singleProduct' id='<?php echo $product_id ?>'>
+	<div class='productName'>
+		<p>
+			<?php echo $product_name ?>
+		</p>
+		<i id='product_<?php echo $product_id; ?>' data-toggle='modal' data-target='#productModal'
+		 class='fas fa-expand readMore'></i>
+	</div>
+	<div class='productPicture'>
+		<img src='../photos/productImg/<?php echo $product_picture ?>'>
+	</div>
+	<div class='productDescription'>
+		<p>
+			<?php echo $product_description ?>
+		</p>
+	</div>
+</div>
 <?php     
     }
 ?>
-    <div id='paginator'>
-<?php
+<div class='paginator'>
+	<?php
     $previousPage = $paginationPage - 1;
 
     $nextPage = $paginationPage + 1;
@@ -256,4 +319,4 @@ function getProducts ($subID) {
     }
 } 
 ?>
-    </div>
+</div>

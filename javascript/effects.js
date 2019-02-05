@@ -24,6 +24,48 @@ $(document).ready(function () {
     getFourStories();
 });
 
+$('#searchBarSubmit').click(function(e){
+    
+    e.preventDefault();
+    var searchQuery = $('#searchBar').val();
+
+    $('.searchOutput').text('');
+
+    if($('#searchBar').val() === '') {
+
+        var errorText = "<p style='text-align:center'>Unesite naziv ili deo naziva proizvoda koji tražite</p>";
+        $('.searchResults').text('Rezultati Pretrage');
+        $('.searchOutput').append(errorText);
+        
+    } else {
+
+        $('.loaderSmall').css('display', 'block');
+
+        $('.searchResults').text('Rezultati Pretrage');
+    
+        var data = {
+            searchBarSubmit: searchQuery
+        }
+        $.ajax({
+    
+            url: './productDB/functions.php',
+            type: 'POST',
+            data: data,
+            success: function(response) {
+                
+                $('.searchOutput').append(response);
+                $('.loaderSmall').css('display', 'none');
+                var numOfRes = $('#number-of-results').text();
+                
+                if(numOfRes > 8) {
+                    $('.searchOutput').css({"max-height":"520px",'overflow-y':'scroll',"box-shadow":"-4px 2px 4px 0px gray"});
+                } else {
+                    $('.searchOutput').css({"max-height":"520px",'overflow-y':'hidden',"box-shadow":"unset"});
+                }
+            }
+        })
+    }
+})
 function clampFeed () {
 
     var elementToClamp = $('.storyContent');
@@ -75,7 +117,22 @@ $('.fa-expand').click(function() {
         });
     }
 });
+$(document).on('click', '.singleProductWithId', function(){
+    
+    var id = $(this)[0].id.split('_')[1];
+    
+    var data = {singleProductInfoWithId: id};
 
+    $.ajax({
+        url: '../modules/singleQuery.php',
+        type: 'POST',
+        data: data,
+        success: function(response) {
+            $('.productModal').text('');
+            $('.productModal').append(response);                
+        }
+    })
+})
 $('.getAllNews').click(function () {
 
     var allNews = window.document.getElementsByClassName('newsDiv');
@@ -174,7 +231,7 @@ handler = function() {
 }
 
 $('.carousel').carousel({
-    interval: 3500
+    interval: 35000
 })
 
 textAppear = function() {
@@ -248,6 +305,11 @@ document.getElementById('target').addEventListener('click', function () {
     else {
         $('.options').addClass('options-responsive');
         $('.carousel-indicators').addClass('die');  
+    }
+    if ($('.searchArea').hasClass('hidden')) {
+        $('.searchArea').removeClass('hidden');
+    } else {
+        $('.searchArea').addClass('hidden');
     }
 })
 

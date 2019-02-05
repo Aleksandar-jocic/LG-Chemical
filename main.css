@@ -284,7 +284,7 @@ body {
         display: none; }
     .overlay #text .options-responsive {
       position: absolute;
-      top: 75px;
+      top: 80px;
       display: block;
       width: 100%;
       text-align: center;
@@ -297,8 +297,7 @@ body {
         width: 100%;
         margin: 0px;
         padding: 15px 0px;
-        background-color: #272727;
-        opacity: 0.8;
+        background-color: rgba(39, 39, 39, 0.9);
         box-sizing: border-box; }
     .overlay #text #target {
       display: inline-block;
@@ -315,8 +314,7 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: #272727;
-  opacity: 0.8;
+  background-color: rgba(39, 39, 39, 0.9);
   height: 100px;
   z-index: 10000; }
 
@@ -346,6 +344,217 @@ body {
 
 #breaker {
   margin-top: 80px; }
+
+.searchArea {
+  position: absolute;
+  bottom: 20px;
+  left: calc(50% - 340px);
+  z-index: 2; }
+  .searchArea .searchBar {
+    padding: 8px;
+    width: 680px;
+    margin: 0 auto;
+    border-radius: 50px;
+    background-color: rgba(180, 180, 180, 0.7);
+    transition: 0.3s ease; }
+    .searchArea .searchBar form {
+      margin: 0px;
+      width: 400px;
+      margin: 0 auto;
+      padding: 2px 4px 2px 10px;
+      border-radius: 25px;
+      text-align: center;
+      background-color: white; }
+      .searchArea .searchBar form i {
+        color: #fd1c15;
+        font-size: 1.2rem;
+        padding: 4px 0px; }
+      .searchArea .searchBar form #searchBar {
+        background-color: transparent;
+        border: 0px;
+        width: calc(100% - 30px); }
+      .searchArea .searchBar form #searchBarSubmit {
+        display: none; }
+  @media screen and (max-width: 856px) {
+    .searchArea {
+      bottom: 70px; } }
+  @media screen and (max-width: 576px) {
+    .searchArea {
+      left: calc(50% - 300px); }
+      .searchArea .searchBar {
+        width: 600px; }
+        .searchArea .searchBar form {
+          width: 200px; } }
+
+.searchBar:hover {
+  background-color: rgba(117, 117, 117, 0.8); }
+
+.hidden {
+  display: none; }
+
+.loaderSmall {
+  display: none;
+  text-align: center;
+  margin-top: 20px; }
+  .loaderSmall img {
+    width: 35px;
+    height: 35px; }
+
+.searchOutputCover {
+  margin-top: 80px; }
+  .searchOutputCover h2 {
+    text-align: center; }
+  .searchOutputCover .searchOutput {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 30px;
+    max-height: 600px; }
+    .searchOutputCover .searchOutput .singleProduct {
+      vertical-align: top;
+      padding: 15px;
+      margin: 10px;
+      border: 1px white solid;
+      width: calc(50% - 23px);
+      display: inline-block;
+      height: auto;
+      max-height: 160px;
+      overflow: hidden;
+      position: relative;
+      transition: all 0.9s ease-out; }
+      .searchOutputCover .searchOutput .singleProduct .productName {
+        border-bottom: 1px solid white;
+        padding-bottom: 10px;
+        display: flex; }
+        .searchOutputCover .searchOutput .singleProduct .productName p {
+          width: 100%;
+          display: inline-block; }
+        .searchOutputCover .searchOutput .singleProduct .productName i {
+          width: 25px;
+          height: 25px;
+          font-size: 0.95rem; }
+      .searchOutputCover .searchOutput .singleProduct .productDescription {
+        padding: 10px 0px 0px 10px;
+        width: calc(100% - 100px);
+        display: inline-block; }
+      .searchOutputCover .searchOutput .singleProduct .productPicture {
+        display: inline-block;
+        width: 80px;
+        padding-top: 10px;
+        vertical-align: top; }
+        .searchOutputCover .searchOutput .singleProduct .productPicture img {
+          display: inline-block;
+          width: 80px;
+          height: 80px;
+          margin: 0 auto; }
+      @media screen and (max-width: 1080px) {
+        .searchOutputCover .searchOutput .singleProduct .productPicture img {
+          width: 75px;
+          height: 75px; }
+        .searchOutputCover .searchOutput .singleProduct .productDescription {
+          width: 70%; } }
+      @media screen and (max-width: 960px) {
+        .searchOutputCover .searchOutput .singleProduct {
+          display: block;
+          width: 60%;
+          margin: 10px auto 10px auto;
+          padding: 15px;
+          border: 1px solid white;
+          border-top: 1px solid white;
+          border-bottom: 1px solid white;
+          border-radius: 0px;
+          text-align: center;
+          left: unset;
+          height: 150px; }
+          .searchOutputCover .searchOutput .singleProduct .productDescription {
+            width: 73%; }
+            .searchOutputCover .searchOutput .singleProduct .productDescription p {
+              text-align: left; }
+          .searchOutputCover .searchOutput .singleProduct .productPicture {
+            width: 25%; }
+            .searchOutputCover .searchOutput .singleProduct .productPicture img {
+              width: 65px;
+              height: 65px; }
+          .searchOutputCover .searchOutput .singleProduct .singleProduct:hover {
+            max-height: 150px; } }
+      @media screen and (max-width: 856px) {
+        .searchOutputCover .searchOutput .singleProduct {
+          width: 70%; } }
+      @media screen and (max-width: 576px) {
+        .searchOutputCover .searchOutput .singleProduct {
+          width: 90%; }
+          .searchOutputCover .searchOutput .singleProduct .productDescription {
+            width: 70%; }
+          .searchOutputCover .searchOutput .singleProduct .productPicture {
+            width: 30%; }
+            .searchOutputCover .searchOutput .singleProduct .productPicture img {
+              max-width: 80px;
+              max-height: 80px; } }
+    .searchOutputCover .searchOutput .singleProduct {
+      padding: 5px;
+      max-width: 470px; }
+    .searchOutputCover .searchOutput .productPictureSpec {
+      width: 100px;
+      display: inline-block;
+      vertical-align: top; }
+      .searchOutputCover .searchOutput .productPictureSpec img {
+        width: 100px;
+        height: 100px; }
+      @media screen and (max-width: 576px) {
+        .searchOutputCover .searchOutput .productPictureSpec {
+          width: 70px; }
+          .searchOutputCover .searchOutput .productPictureSpec img {
+            width: 70px;
+            height: 70px; } }
+      @media screen and (max-width: 426px) {
+        .searchOutputCover .searchOutput .productPictureSpec {
+          width: 40px; }
+          .searchOutputCover .searchOutput .productPictureSpec img {
+            width: 40px;
+            height: 40px; } }
+    .searchOutputCover .searchOutput .productContent {
+      width: calc(100% - 110px);
+      display: inline-block;
+      min-height: 100px;
+      max-height: 150px;
+      padding-left: 10px; }
+      .searchOutputCover .searchOutput .productContent .productName {
+        border-bottom: 1px solid #fd1c15;
+        padding-bottom: 4px; }
+        .searchOutputCover .searchOutput .productContent .productName p {
+          margin: 0px;
+          font-size: 1rem;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis; }
+      .searchOutputCover .searchOutput .productContent .productDescriptionSpec {
+        width: 100%;
+        padding-top: 5px; }
+        .searchOutputCover .searchOutput .productContent .productDescriptionSpec p {
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          margin-bottom: 5px;
+          font-size: 0.8rem; }
+        .searchOutputCover .searchOutput .productContent .productDescriptionSpec span {
+          text-align: center;
+          padding: 5px 10px;
+          background-color: rgba(153, 153, 153, 0.8);
+          color: #fd1c15;
+          border-radius: 20px;
+          float: right;
+          transition: 0.3s ease; }
+        .searchOutputCover .searchOutput .productContent .productDescriptionSpec span:hover {
+          background-color: #fd1c15;
+          color: white;
+          cursor: pointer; }
+      @media screen and (max-width: 426px) {
+        .searchOutputCover .searchOutput .productContent {
+          width: calc(100% - 70px); } }
+    .searchOutputCover .searchOutput .singleProduct:hover {
+      background-color: rgba(201, 201, 201, 0.7); }
+    @media screen and (max-width: 768px) {
+      .searchOutputCover .searchOutput {
+        width: 100%; } }
 
 #newsCover {
   background: url("./photos/slike/bubblesP.jpg");
@@ -827,7 +1036,7 @@ body {
         width: 100% !important;
         margin: 30px 0px 0px 0px;
         padding-bottom: 10px; } }
-  #output #paginator {
+  #output .paginator {
     width: 100%;
     height: auto;
     display: flex;
@@ -836,24 +1045,24 @@ body {
     border-top: 1px solid gray;
     padding-top: 7px;
     vertical-align: middle; }
-    #output #paginator .paginationPreviousNext {
+    #output .paginator .paginationPreviousNext {
       margin: 0px 15px;
       padding-top: 5px; }
-    #output #paginator .paginationButton {
+    #output .paginator .paginationButton {
       margin: 0px 7px;
       width: 35px;
       height: 35px;
       padding: 3px 0px 0px 0px; }
-      #output #paginator .paginationButton a {
+      #output .paginator .paginationButton a {
         padding: 3px 5px;
         font-size: 1.1rem;
         vertical-align: bottom; }
-    #output #paginator .pageActive {
+    #output .paginator .pageActive {
       border-radius: 50%;
       border: 1px solid #fd1c15;
       background-color: rgba(253, 28, 21, 0.4); }
     @media screen and (max-width: 576px) {
-      #output #paginator {
+      #output .paginator {
         height: auto;
         flex-wrap: wrap; } }
 
@@ -866,7 +1075,7 @@ body {
   #productModal .productModal {
     padding-top: 2px; }
   #productModal .modal-footer {
-    border-top: 1px solid #cfcfcf; }
+    border-top: 0px; }
 
 .modalSingleProduct div {
   display: flex;
@@ -1322,6 +1531,13 @@ h1 {
       width: auto;
       margin-left: 0px; } }
 
+.queryBody p {
+  color: white;
+  margin-top: 15px; }
+.queryBody a {
+  color: #ff9900;
+  padding: 5px; }
+
 .footer {
   box-shadow: inset 200px 200px 20px 1000px rgba(63, 63, 63, 0.7);
   background: url("./photos/footerImageGray.jpg");
@@ -1450,6 +1666,59 @@ h1 {
     margin: 0px;
     color: white; }
 
+.loginCoverSet {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .loginCoverSet .loginCover {
+    width: 100%;
+    background-color: #272727;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px; }
+    .loginCoverSet .loginCover .errorLogin {
+      color: white; }
+    .loginCoverSet .loginCover .loginContent {
+      display: inline-block;
+      width: 350px; }
+      .loginCoverSet .loginCover .loginContent .header {
+        color: #ff9900;
+        display: block;
+        text-align: center; }
+      .loginCoverSet .loginCover .loginContent .logBody {
+        text-align: center;
+        display: flex;
+        justify-content: space-between; }
+        .loginCoverSet .loginCover .loginContent .logBody .labelLog {
+          width: 37%;
+          color: white; }
+          .loginCoverSet .loginCover .loginContent .logBody .labelLog label {
+            width: 100%;
+            line-height: 27px;
+            margin-bottom: 5px; }
+        .loginCoverSet .loginCover .loginContent .logBody .inputLog {
+          width: 60%; }
+          .loginCoverSet .loginCover .loginContent .logBody .inputLog input {
+            width: 100%;
+            margin-bottom: 5px;
+            border: 0px;
+            border-bottom: 1px solid #ff9900;
+            background-color: transparent;
+            color: #ff9900; }
+      .loginCoverSet .loginCover .loginContent .footerLog {
+        width: 100%;
+        text-align: center;
+        margin-top: 15px; }
+        .loginCoverSet .loginCover .loginContent .footerLog button {
+          background-color: white;
+          color: black;
+          border: 0px; }
+        .loginCoverSet .loginCover .loginContent .footerLog button:hover {
+          background-color: #ff9900; }
+
 .adminHead {
   width: 100%;
   background-color: #272727;
@@ -1478,6 +1747,7 @@ h1 {
 .productsSelected {
   width: calc(15% - 10px);
   padding: 20px;
+  padding-left: 5px;
   display: inline-block;
   vertical-align: top;
   background-color: #272727;
@@ -1491,6 +1761,8 @@ h1 {
       float: right;
       font-size: 1rem;
       padding: 5px 0px; }
+    .productsSelected div i:hover {
+      cursor: pointer; }
 
 .adminOutput {
   display: inline-block;
@@ -1540,6 +1812,32 @@ h1 {
       color: black;
       padding: 3px 0px 3px 10px; }
 
+.deleteGeneric .modal-header {
+  background-color: #272727;
+  color: #ff9900; }
+  .deleteGeneric .modal-header i {
+    padding: 5px; }
+  .deleteGeneric .modal-header i:hover {
+    cursor: pointer; }
+.deleteGeneric .btn-secondary {
+  border: 0px; }
+.deleteGeneric .btn-secondary:hover {
+  background-color: #272727; }
+.deleteGeneric .btn-lg-con {
+  background-color: #6c757d;
+  color: #ff9900;
+  border: 0px; }
+.deleteGeneric .btn-lg-con:hover {
+  background-color: #272727; }
+
+.editSubGeneric .modal-header {
+  background-color: #272727;
+  color: #ff9900; }
+  .editSubGeneric .modal-header i {
+    padding: 5px; }
+  .editSubGeneric .modal-header i:hover {
+    cursor: pointer; }
+
 .editGeneric .modal-header {
   background-color: #272727;
   color: #ff9900; }
@@ -1547,42 +1845,42 @@ h1 {
     padding: 5px; }
   .editGeneric .modal-header i:hover {
     cursor: pointer; }
-.editGeneric .editModalGeneral {
+.editGeneric .editModalGeneral .modal-body {
   display: flex;
   justify-content: space-between; }
-  .editGeneric .editModalGeneral .labelGeneral {
-    width: 37%; }
-    .editGeneric .editModalGeneral .labelGeneral label {
-      width: 100%;
-      line-height: 27px;
-      margin-bottom: 5px; }
-  .editGeneric .editModalGeneral .inputGeneral {
-    width: 60%; }
-    .editGeneric .editModalGeneral .inputGeneral input {
-      width: 100%;
-      margin-bottom: 5px;
-      border: 0px;
-      border-bottom: 1px solid #ff9900; }
-    .editGeneric .editModalGeneral .inputGeneral .uploadFileInput {
-      width: 60%; }
-    .editGeneric .editModalGeneral .inputGeneral label {
-      padding: 2px 10px;
-      background-color: #6c757d;
-      border-radius: 4px;
-      margin: 0 auto;
-      color: white;
-      float: right; }
-    .editGeneric .editModalGeneral .inputGeneral #fileToUpload {
-      display: none; }
+.editGeneric .editModalGeneral .labelGeneral {
+  width: 37%; }
+  .editGeneric .editModalGeneral .labelGeneral label {
+    width: 100%;
+    line-height: 27px;
+    margin-bottom: 5px; }
+.editGeneric .editModalGeneral .inputGeneral {
+  width: 60%; }
+  .editGeneric .editModalGeneral .inputGeneral input {
+    width: 100%;
+    margin-bottom: 5px;
+    border: 0px;
+    border-bottom: 1px solid #ff9900; }
+  .editGeneric .editModalGeneral .inputGeneral .uploadFileInput {
+    width: 66%; }
+  .editGeneric .editModalGeneral .inputGeneral label {
+    padding: 2px 10px;
+    background-color: #6c757d;
+    border-radius: 4px;
+    margin: 0 auto;
+    color: white;
+    float: right; }
+  .editGeneric .editModalGeneral .inputGeneral .noneTypeInput {
+    display: none; }
 .editGeneric .btn-secondary {
   border: 0px; }
 .editGeneric .btn-secondary:hover {
   background-color: #272727; }
-.editGeneric .editMainModal {
+.editGeneric .btn-lg-con {
   background-color: #6c757d;
   color: #ff9900;
   border: 0px; }
-.editGeneric .editMainModal:hover {
+.editGeneric .btn-lg-con:hover {
   background-color: #272727; }
 
 p {

@@ -35,7 +35,124 @@ $on1440: 1440px;
     -moz-box-shadow: 2px 4px 13px 0px  $charlie;
     box-shadow: 2px 4px 13px 0px  $charlie;    
 }
-
+@mixin ButtonPreset {
+    .btn-secondary {
+        border: 0px;
+    }
+    .btn-secondary:hover {
+        background-color: #272727;
+    }  
+    .btn-lg-con {
+        background-color: #6c757d;
+        color: $admin;
+        border: 0px;
+    }
+    .btn-lg-con:hover {
+        background-color: #272727;
+    }
+}
+@mixin Product {
+    .singleProduct {
+        vertical-align: top;
+        padding: 15px;
+        margin: 10px;
+        border: 1px white solid;
+        width: calc(50% - 23px);
+        display: inline-block;
+        height: auto;
+        max-height: 160px;
+        overflow: hidden;
+        position: relative;
+        transition: all 0.9s ease-out;
+        .productName {
+            border-bottom: 1px solid white;
+            padding-bottom: 10px;
+            display: flex;
+            p {
+                width: 100%;
+                display: inline-block;
+            }
+            i {
+                width: 25px;
+                height: 25px;
+                font-size: 0.95rem;
+            }
+        }
+        .productDescription {
+            padding: 10px 0px 0px 10px;
+            width: calc(100% - 100px);
+            display: inline-block;
+        }
+        .productPicture {
+            display: inline-block;
+            width: 80px;
+            padding-top: 10px;
+            vertical-align: top;
+            img {
+                display: inline-block;
+                width: 80px;
+                height: 80px;
+                margin: 0 auto;
+            }
+        }
+        @media screen and (max-width: $on1080) {
+            .productPicture {
+                img {
+                    width: 75px;
+                    height: 75px;
+                }
+            }
+            .productDescription {
+                width: 70%;
+            }
+        }
+        @media screen and (max-width: $on960) {
+            display: block;
+            width: 60%;
+            margin: 10px auto 10px auto;
+            padding: 15px;
+            border: 1px solid white;
+            border-top: 1px solid white;
+            border-bottom: 1px solid white;
+            border-radius: 0px;
+            text-align: center;
+            left: unset;
+            height: 150px;
+            .productDescription {
+                width: 73%;
+                p {
+                    text-align: left;
+                }
+            }
+            .productPicture { 
+                width: 25%;
+                img {
+                    width: 65px;
+                    height: 65px;
+                }
+            }
+            .singleProduct:hover {
+                max-height: 150px;
+            }
+        }
+        @media screen and (max-width: $on856) {
+            width: 70%;
+        }
+        @media screen and (max-width: $on576) {
+            width: 90%;
+            .productDescription {
+                width: 70%;
+            }
+            .productPicture { 
+                width: 30%;
+                img {
+                    max-width: 80px;
+                    max-height: 80px;
+                }
+            }
+        }
+    }
+}
 body {
     width: 100%;
     min-width: 270px;
@@ -250,7 +367,7 @@ body {
         }
         .options-responsive {
             position: absolute;
-            top: 75px;
+            top: 80px;
             display: block;
             width: 100%;
             text-align: center;
@@ -263,8 +380,7 @@ body {
                 width: 100%;
                 margin: 0px;
                 padding: 15px 0px;
-                background-color: $one;
-                opacity: 0.8;
+                background-color: rgba(39, 39, 39,0.9);
                 box-sizing: border-box;
             }
         }
@@ -285,8 +401,7 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: $one;
-    opacity: 0.8;
+    background-color: rgba(39, 39, 39,0.9);
     height: 100px;
     z-index: 10000;
 }
@@ -326,6 +441,172 @@ body {
 #breaker {
     margin-top: 80px;
 }
+//          SEARCH BAR            //
+
+.searchArea {
+    position: absolute;
+    bottom: 20px;
+    left: calc(50% - 340px);
+    z-index: 2;
+    .searchBar {
+        padding: 8px;
+        width: 680px;
+        margin: 0 auto;
+        // margin-top: 100px;
+        border-radius: 50px;
+        background-color: rgba(180, 180, 180, 0.7);
+        transition: 0.3s ease;
+        
+        form {
+            margin: 0px;
+            width: 400px;
+            margin: 0 auto;
+            padding: 2px 4px 2px 10px;
+            border-radius: 25px;
+            text-align: center;
+            background-color: rgb(255, 255, 255);
+            
+            i {
+                color: $charlie;
+                font-size: 1.2rem;
+                padding: 4px 0px;
+            }
+            #searchBar {
+                background-color: transparent;
+                border: 0px;
+                width: calc(100% - 30px);
+            }
+            #searchBarSubmit {
+                display: none;
+            }
+        }
+    }
+    @media screen and (max-width: $on856) {
+        bottom: 70px;
+    }
+    @media screen and (max-width: $on576) {
+
+        left: calc(50% - 300px);
+        .searchBar {
+            width: 600px;
+            form {
+                width: 200px;
+            }
+        }        
+    }
+}
+.searchBar:hover {
+    background-color: rgba(117, 117, 117, 0.8);
+}
+.hidden {
+    display: none;
+}
+.loaderSmall {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+    img {
+        width: 35px;
+        height: 35px;
+    }
+}
+.searchOutputCover {
+    margin-top: 80px;
+    h2 {
+        text-align: center;
+    }
+    
+    .searchOutput {
+        @include Product();
+        width: 80%;
+        margin: 0 auto;
+        margin-top: 30px;
+        max-height: 600px;
+        // overflow-y: scroll;
+        .singleProduct {
+            padding: 5px;
+            max-width: 470px;
+        }
+        .productPictureSpec {
+            width: 100px;
+            display: inline-block;
+            vertical-align: top;
+            img {
+                width: 100px;
+                height: 100px;
+            }
+            @media screen and (max-width: $on576) {
+                width: 70px;
+                img {
+                    width: 70px;
+                    height: 70px;                    
+                }
+            }
+            @media screen and (max-width: $on426) {
+                width: 40px;
+                img {
+                    width: 40px;
+                    height: 40px;                    
+                }
+            }
+        }
+        .productContent {
+            width: calc(100% - 110px);
+            display: inline-block;
+            min-height: 100px;
+            max-height: 150px;
+            padding-left: 10px;
+            .productName {
+                border-bottom: 1px solid $charlie;
+                padding-bottom: 4px;
+                p {
+                    margin: 0px;
+                    font-size: 1rem;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+            }
+            .productDescriptionSpec {
+                width: 100%;
+                padding-top: 5px;
+                p {
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    margin-bottom: 5px;
+                    font-size: 0.8rem;
+                }
+                span {
+                    text-align: center;
+                    padding: 5px 10px;
+                    background-color: rgba(153, 153, 153, 0.8);
+                    color: $charlie;
+                    border-radius: 20px;
+                    float: right;
+                    transition: 0.3s ease;
+                }
+                span:hover {
+                    background-color: $charlie;
+                    color: white;
+                    cursor: pointer;
+                }
+            }
+            @media screen and (max-width: $on426) {
+                width: calc(100% - 70px);
+               
+            }
+        }
+        .singleProduct:hover {
+            background-color: rgba(201, 201, 201, 0.7);
+        }
+        @media screen and (max-width: $on768) {
+            width: 100%;
+        }
+    }
+}
+
+
 //          NEWS            //
 #newsCover {
     background: url('./photos/slike/bubblesP.jpg');
@@ -433,9 +714,6 @@ body {
         
         .storyContent {
             width: 100%;
-            // overflow: hidden;
-            // text-overflow: ellipsis;
-            // white-space: nowrap;
         }
         .storyFull {
             overflow: unset;
@@ -801,118 +1079,7 @@ body {
             margin: 0px;
             font-size: 0.9rem;
         }
-        .singleProduct {
-            vertical-align: top;
-            padding: 15px;
-            margin: 10px;
-            border: 1px white solid;
-            width: calc(50% - 23px);
-            display: inline-block;
-            height: auto;
-            max-height: 160px;
-            overflow: hidden;
-            position: relative;
-            transition: all 0.9s ease-out;
-            
-            .productName {
-                border-bottom: 1px solid white;
-                padding-bottom: 10px;
-                display: flex;
-
-                p {
-                    width: 100%;
-                    display: inline-block;
-                }
-                i {
-                    width: 25px;
-                    height: 25px;
-                    font-size: 0.95rem;
-                }
-            }
-
-            .productDescription {
-                padding: 10px 0px 0px 10px;
-                width: calc(100% - 100px);
-                display: inline-block;
-
-            }
-            .productPicture {
-                display: inline-block;
-                width: 80px;
-                padding-top: 10px;
-                vertical-align: top;
-                // min-width: 74px;
-                img {
-                    display: inline-block;
-                    width: 80px;
-                    height: 80px;
-                    // padding: 20px;
-                    margin: 0 auto;
-                }
-            }
-            @media screen and (max-width: $on1080) {
-                .productPicture {
-                    img {
-                        width: 75px;
-                        height: 75px;
-                    }
-                }
-                .productDescription {
-                    width: 70%;
-                }
-            }
-            @media screen and (max-width: $on960) {
-                display: block;
-                width: 60%;
-                margin: 10px auto 10px auto;
-                padding: 15px;
-                border: 1px solid white;
-                border-top: 1px solid white;
-                border-bottom: 1px solid white;
-                border-radius: 0px;
-                text-align: center;
-                left: unset;
-                height: 150px;
-
-                .productDescription {
-                    width: 73%;
-                    p {
-                        text-align: left;
-                    }
-                }
-                .productPicture { 
-                    width: 25%;
-                    img {
-                        width: 65px;
-                        height: 65px;
-                    }
-                }
-                .singleProduct:hover {
-                    max-height: 150px;
-                }
-            }
-            @media screen and (max-width: $on856) {
-                width: 70%;
-                
-            }
-            @media screen and (max-width: $on576) {
-                width: 90%;
-
-                .productDescription {
-                    width: 70%;
-                }
-
-                .productPicture { 
-
-                    width: 30%;
-
-                    img {
-                        max-width: 80px;
-                        max-height: 80px;
-                    }
-                }
-            }
-        }
+        @include Product();
         @media screen and (max-width: $on960) {
 
             .singleProduct:hover {
@@ -939,7 +1106,7 @@ body {
             padding-bottom: 10px;
         }
     }
-    #paginator {
+    .paginator {
 
         width: 100%;
         height: auto;
@@ -994,7 +1161,7 @@ body {
         padding-top: 2px;
     }
     .modal-footer {
-        border-top: 1px solid rgb(207, 207, 207);
+        border-top: 0px;
     }
 }
 .modalSingleProduct {
@@ -1555,7 +1722,16 @@ h1 {
         margin-left: 0px;
     }
 }
-
+.queryBody {
+    p {
+        color: white;
+        margin-top: 15px;
+    }
+    a {
+        color: $admin;
+        padding: 5px;
+    }
+}
 //                  FOOTER                    //
 .footer {
     box-shadow: inset 200px 200px 20px 1000px rgba(63, 63, 63, 0.7);    
@@ -1713,6 +1889,71 @@ h1 {
     }
 }
 //                  ADMIN                    //
+.loginCoverSet {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .loginCover {
+        width: 100%;
+        background-color: #272727;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 15px;
+        .errorLogin {
+            color: white;
+        }
+        .loginContent {
+            display: inline-block;
+            width: 350px;
+            .header {
+                color: $admin;
+                display: block;
+                text-align: center;
+            }
+            .logBody {
+                text-align: center;
+                display: flex;
+                justify-content: space-between;
+                .labelLog {
+                    width: 37%;
+                    color: white;
+                    label {
+                        width: 100%;
+                        line-height: 27px;
+                        margin-bottom: 5px;
+                    }
+                }
+                .inputLog {
+                    width: 60%;
+                    input {
+                        width: 100%;
+                        margin-bottom: 5px;
+                        border: 0px;
+                        border-bottom: 1px solid $admin;
+                        background-color: transparent;
+                        color: $admin;
+                    }
+                }
+            }
+            .footerLog {
+                width: 100%;
+                text-align: center;
+                margin-top: 15px;
+                button {
+                    background-color: white;
+                    color: black;
+                    border: 0px;
+                }
+                button:hover {
+                    background-color: $admin;
+                }
+            }
+        }
+    }
+}
 
 .adminHead {
     width: 100%;
@@ -1752,6 +1993,7 @@ h1 {
 .productsSelected {
     width: calc(15% - 10px);
     padding: 20px;
+    padding-left: 5px;
     display: inline-block;
     vertical-align: top;
     background-color: #272727;
@@ -1769,6 +2011,9 @@ h1 {
             float: right;
             font-size: 1rem;
             padding: 5px 0px;
+        }
+        i:hover {
+            cursor: pointer;
         }
     }
 }
@@ -1840,6 +2085,32 @@ h1 {
         }
     }
 }
+.deleteGeneric {
+    .modal-header {
+        background-color: #272727;
+        color: $admin;    
+        i {
+            padding: 5px;
+        }    
+        i:hover {
+            cursor: pointer;
+        }
+    }
+    @include ButtonPreset();
+}
+.editSubGeneric {
+    .modal-header {
+        background-color: #272727;
+        color: $admin;    
+        i {
+            padding: 5px;
+        }    
+        i:hover {
+            cursor: pointer;
+        }
+    }
+    
+}
 .editGeneric {
     
     .modal-header {
@@ -1854,9 +2125,12 @@ h1 {
     }
     .editModalGeneral {
 
-        display: flex;
-        justify-content: space-between;
-    
+      
+        .modal-body {
+            display: flex;
+            justify-content: space-between;
+              
+        }
         .labelGeneral {
            width: 37%;
            label {
@@ -1874,7 +2148,7 @@ h1 {
                 border-bottom: 1px solid $admin;
             }
             .uploadFileInput {
-                width: 60%;
+                width: 66%;
             }
             label {
                 padding: 2px 10px;
@@ -1884,28 +2158,14 @@ h1 {
                 color: white;
                 float: right;
             }
-            #fileToUpload {
+            .noneTypeInput {
                 display: none;
             }
         }
-    }
-    .btn-secondary {
-        border: 0px;
-    }
-    .btn-secondary:hover {
-        background-color: #272727;
-    }    
-    .editMainModal {
-        background-color: #6c757d;
-        color: $admin;
-        border: 0px;
-    }
-    .editMainModal:hover {
-        background-color: #272727;
-    }
 
+    }
+    @include ButtonPreset();
 }
-
 
 //                  GENERAL                    //
 

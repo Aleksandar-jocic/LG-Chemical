@@ -6,7 +6,6 @@ if(isset($_POST['singleStoryInfoWithId'])) {
 getStoryWitId($_POST['singleStoryInfoWithId']);
 // exit();
 };
-
 function getStoryWitId ($id) {
 
     global $connection;

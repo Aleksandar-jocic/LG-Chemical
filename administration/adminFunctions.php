@@ -1,52 +1,8 @@
 <?php include "../productDB/serverConnection.php"; ?>
 
 <?php 
-$connectionAdmin = mysqli_connect('localhost', 'root', '', 'admins');
-mysqli_query($connectionAdmin, "SET NAMES utf8");
-
-//          ADD MAIN PICTURE FILE            //
-
-if(isset($_POST["mainPictureUpload"])) {
-
-    $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
-    $dumper = $_FILES["fileToUpload"];
-    var_dump($dumper);
-    if($check !== false) {
-        echo "File is an image - " . $check["mime"] . ".";
-        $uploadOk = 1;
-
-        addMainPicture();
-    } else {
-        echo "File is not an image.";
-    }
-}
-
-function addMainPicture() {
-    $target_dir = "../photos/productImg/";
-    $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-    $uploadOk = 1;
-    $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-    
-    // Check if file already exists
-    if (file_exists($target_file)) {
-        echo "Sorry, file already exists.";
-        $uploadOk = 0;
-    }
-    // Check if $uploadOk is set to 0 by an error
-    if ($uploadOk == 0) {
-        echo "Sorry, your file was not uploaded.";
-    // if everything is ok, try to upload file
-    } else {
-        if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-            echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
-        } else {
-            echo "Sorry, there was an error uploading your file.";
-        }
-    }
-}
-
-//          ADD MAIN INDEX FILE            //
-//          ADD MAIN ICON FILE            //
+// $connectionAdmin = mysqli_connect('localhost', 'root', '', 'admins');
+// mysqli_query($connectionAdmin, "SET NAMES utf8");
 
 
 //          ADD MAIN ENTRY            //
@@ -187,10 +143,10 @@ if (isset($_POST['changeThisMainId'])) {
 
     $id = $_POST['changeThisMainId'];
 
-    $mainName = $_POST['mainName'];
-    $mainPicture = $_POST['mainPicture'];
-    $mainIndexPicture = $_POST['mainIndexPicture'];
-    $mainIcon = $_POST['mainIcon'];
+    $mainName = $_POST['newMainName'];
+    $mainPicture = $_POST['newMainPicture'];
+    $mainIndexPicture = $_POST['newMainIndexPicture'];
+    $mainIcon = $_POST['newMainIcon'];
     
 
     changeMainBranch($id, $mainName, $mainPicture, $mainIndexPicture, $mainIcon);
@@ -261,6 +217,275 @@ function changeProduct($id, $mainProductId, $subId, $productName, $productPictur
     }
 }
 
+//          ADD MAIN PICTURE FILE            //
+if(isset($_FILES["pictureToUpload"])) {
+
+    $c = $_FILES["pictureToUpload"]["tmp_name"];
+
+    if ($c === "") {
+        die();
+    }
+    $check = getimagesize($_FILES["pictureToUpload"]["tmp_name"]);
+    
+    if($check !== false) {
+
+        $uploadOk = 1;
+
+        addMainPicture();
+    } else {
+        echo "File is not an image.";
+    }
+}
+function addMainPicture() {
+    $target_dir = "../photos/slike/";
+    $target_file = $target_dir . basename($_FILES["pictureToUpload"]["name"]);
+    $uploadOk = 1;
+    $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+    
+    // Check if file already exists
+    if (file_exists($target_file)) {
+        echo "Sorry, file already exists.";
+        $uploadOk = 0;
+    }
+    // Check if $uploadOk is set to 0 by an error
+    if ($uploadOk == 0) {
+        echo "Sorry, your file was not uploaded.";
+    // if everything is ok, try to upload file
+    } else {
+        move_uploaded_file($_FILES["pictureToUpload"]["tmp_name"], $target_file);
+    }
+}
+
+//          ADD NEW MAIN PICTURE FILE            //
+if(isset($_FILES["newPictureToUpload"])) {
+
+    $c = $_FILES["newPictureToUpload"]["tmp_name"];
+
+    if ($c === "") {
+        die();
+    }
+    $check = getimagesize($_FILES["newPictureToUpload"]["tmp_name"]);
+    
+    if($check !== false) {
+
+        $uploadOk = 1;
+
+        addNewMainPicture();
+    } else {
+        echo "File is not an image.";
+    }
+}
+
+function addNewMainPicture() {
+    $target_dir = "../photos/slike/";
+    $target_file = $target_dir . basename($_FILES["newPictureToUpload"]["name"]);
+    $uploadOk = 1;
+    $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+    
+    // Check if file already exists
+    if (file_exists($target_file)) {
+        echo "Sorry, file already exists.";
+        $uploadOk = 0;
+    }
+    // Check if $uploadOk is set to 0 by an error
+    if ($uploadOk == 0) {
+        echo "Sorry, your file was not uploaded.";
+    // if everything is ok, try to upload file
+    } else {
+        move_uploaded_file($_FILES["newPictureToUpload"]["tmp_name"], $target_file);
+    }
+}
+//          ADD MAIN INDEX FILE            //
+if(isset($_FILES["IndexToUpload"])) {
+
+    $c = $_FILES["IndexToUpload"]["tmp_name"];
+
+    if ($c === "") {
+        die();
+    }
+    $check = getimagesize($_FILES["IndexToUpload"]["tmp_name"]);
+    
+    if($check !== false) {
+
+        $uploadOk = 1;
+
+        addMainIndex();
+    } else {
+        echo "File is not an image.";
+    }
+}
+function addMainIndex() {
+    $target_dir = "../photos/indexImg/";
+    $target_file = $target_dir . basename($_FILES["IndexToUpload"]["name"]);
+    $uploadOk = 1;
+    $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+    
+    // Check if file already exists
+    if (file_exists($target_file)) {
+        echo "Sorry, file already exists.";
+        $uploadOk = 0;
+    }
+    // Check if $uploadOk is set to 0 by an error
+    if ($uploadOk == 0) {
+        echo "Sorry, your file was not uploaded.";
+    // if everything is ok, try to upload file
+    } else {
+        move_uploaded_file($_FILES["IndexToUpload"]["tmp_name"], $target_file);
+    }
+}
+//          ADD NEW MAIN INDEX FILE            //
+if(isset($_FILES["newIndexToUpload"])) {
+
+    $c = $_FILES["newIndexToUpload"]["tmp_name"];
+
+    if ($c === "") {
+        die();
+    }
+    $check = getimagesize($_FILES["newIndexToUpload"]["tmp_name"]);
+    
+    if($check !== false) {
+
+        $uploadOk = 1;
+
+        addNewMainIndex();
+    } else {
+        echo "File is not an image.";
+    }
+}
+function addNewMainIndex() {
+    $target_dir = "../photos/indexImg/";
+    $target_file = $target_dir . basename($_FILES["newIndexToUpload"]["name"]);
+    $uploadOk = 1;
+    $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+    
+    // Check if file already exists
+    if (file_exists($target_file)) {
+        echo "Sorry, file already exists.";
+        $uploadOk = 0;
+    }
+    // Check if $uploadOk is set to 0 by an error
+    if ($uploadOk == 0) {
+        echo "Sorry, your file was not uploaded.";
+    // if everything is ok, try to upload file
+    } else {
+        move_uploaded_file($_FILES["newIndexToUpload"]["tmp_name"], $target_file);
+    }
+}
+//          ADD MAIN ICON FILE            //
+if(isset($_FILES["iconToUpload"])) {
+
+    $c = $_FILES["iconToUpload"]["tmp_name"];
+
+    if ($c === "") {
+        die();
+    }
+    $check = getimagesize($_FILES["iconToUpload"]["tmp_name"]);
+    
+    if($check !== false) {
+
+        $uploadOk = 1;
+
+        addMainIcon();
+    } else {
+        echo "File is not an image.";
+    }
+}
+function addMainIcon() {
+    $target_dir = "../photos/icons/";
+    $target_file = $target_dir . basename($_FILES["iconToUpload"]["name"]);
+    $uploadOk = 1;
+    $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+    
+    // Check if file already exists
+    if (file_exists($target_file)) {
+        echo "Sorry, file already exists.";
+        $uploadOk = 0;
+    }
+    // Check if $uploadOk is set to 0 by an error
+    if ($uploadOk == 0) {
+        echo "Sorry, your file was not uploaded.";
+    // if everything is ok, try to upload file
+    } else {
+        move_uploaded_file($_FILES["iconToUpload"]["tmp_name"], $target_file);
+    }
+}
+//          ADD NEW MAIN ICON FILE            //
+if(isset($_FILES["newIconToUpload"])) {
+
+    $c = $_FILES["newIconToUpload"]["tmp_name"];
+
+    if ($c === "") {
+        die();
+    }
+    $check = getimagesize($_FILES["newIconToUpload"]["tmp_name"]);
+    
+    if($check !== false) {
+
+        $uploadOk = 1;
+
+        addNewMainIcon();
+    } else {
+        echo "File is not an image.";
+    }
+}
+function addNewMainIcon() {
+    $target_dir = "../photos/icons/";
+    $target_file = $target_dir . basename($_FILES["newIconToUpload"]["name"]);
+    $uploadOk = 1;
+    $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+    
+    // Check if file already exists
+    if (file_exists($target_file)) {
+        echo "Sorry, file already exists.";
+        $uploadOk = 0;
+    }
+    // Check if $uploadOk is set to 0 by an error
+    if ($uploadOk == 0) {
+        echo "Sorry, your file was not uploaded.";
+    // if everything is ok, try to upload file
+    } else {
+        move_uploaded_file($_FILES["newIconToUpload"]["tmp_name"], $target_file);
+    }
+}
+
+//          ADD MAIN PICTURE FILE            //
+if(isset($_FILES["productPictureToUpload"])) {
+
+    $c = $_FILES["productPictureToUpload"]["tmp_name"];
+
+    if ($c === "") {
+        die();
+    }
+    $check = getimagesize($_FILES["productPictureToUpload"]["tmp_name"]);
+    
+    if($check !== false) {
+
+        $uploadOk = 1;
+
+        addProductPicture();
+    } else {
+        echo "File is not an image.";
+    }
+}
+function addProductPicture() {
+    $target_dir = "../photos/productImg/";
+    $target_file = $target_dir . basename($_FILES["productPictureToUpload"]["name"]);
+    $uploadOk = 1;
+    $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+    
+    // Check if file already exists
+    if (file_exists($target_file)) {
+        echo "Sorry, file already exists.";
+        $uploadOk = 0;
+    }
+    // Check if $uploadOk is set to 0 by an error
+    if ($uploadOk == 0) {
+        echo "Sorry, your file was not uploaded.";
+    // if everything is ok, try to upload file
+    } else {
+        move_uploaded_file($_FILES["productPictureToUpload"]["tmp_name"], $target_file);
+    }
+}
 //              GET ALL MAIN               //
 function getMainProducts () {
     global $connection;
@@ -390,21 +615,8 @@ function getProducts () {
 
 //              GET ALL NEWS               //
 
-function getNews () {
-    global $connectionFeed;
-    $query = "SELECT * FROM story";
-    $select_all_main_groups = mysqli_query($connectionFeed, $query);
-    while($row = mysqli_fetch_assoc($select_all_main_groups)) {
-        $story_title = $row['story_title'];
-        $story_id = $row['story_id'];
-       
-        $writer = "<div class='mainList'><a href='./products.php?main_id={$story_title}#productDisplay'  >$story_id</a></div>";
-                
-        echo $writer;  
-    }
-}
-// function getPartners () {
-//     global $connectionPartners;
+// function getNews () {
+//     global $connectionFeed;
 //     $query = "SELECT * FROM story";
 //     $select_all_main_groups = mysqli_query($connectionFeed, $query);
 //     while($row = mysqli_fetch_assoc($select_all_main_groups)) {
@@ -416,4 +628,17 @@ function getNews () {
 //         echo $writer;  
 //     }
 // }
+// // function getPartners () {
+// //     global $connectionPartners;
+// //     $query = "SELECT * FROM story";
+// //     $select_all_main_groups = mysqli_query($connectionFeed, $query);
+// //     while($row = mysqli_fetch_assoc($select_all_main_groups)) {
+// //         $story_title = $row['story_title'];
+// //         $story_id = $row['story_id'];
+       
+// //         $writer = "<div class='mainList'><a href='./products.php?main_id={$story_title}#productDisplay'  >$story_id</a></div>";
+                
+// //         echo $writer;  
+// //     }
+// // }
 ?>

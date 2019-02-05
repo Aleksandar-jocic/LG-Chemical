@@ -106,10 +106,8 @@ $(document).ready(function () {
       }
     });
   });
-  
 
   //*************          EDIT MAIN ENTRY         *************//
-
   $('.editMain').click(function () {
 
     var id = $(this).attr('rel');
@@ -126,38 +124,61 @@ $(document).ready(function () {
     $('#main_icon').val(main_icon);
 
   });
+  //          main picture upload         //
+  $('#pictureToUpload').change(function() {
 
-  $('.editMainModal').click(function () {
+    var targetFile = $('#pictureToUpload');
+    targetFile = targetFile.val().split("fakepath\\")[1];
+    
+    $('#main_picture').val(targetFile);
+    
+  });
+  //          main index upload         //
+  $('#indexToUpload').change(function() {
 
-    var sameMainId = $(this).attr('rel');
+    var targetFile = $('#indexToUpload');
+    targetFile = targetFile.val().split("fakepath\\")[1];
+    
+    $('#main_index_picture').val(targetFile);
+    
+  });
+  //          main icon upload         //
+  $('#iconToUpload').change(function() {
+
+    var targetFile = $('#iconToUpload');
+    targetFile = targetFile.val().split("fakepath\\")[1];
+    
+    $('#main_icon').val(targetFile);
+    
+  });
+
+  $('#editMainDataForm').submit(function(e) {
+    e.preventDefault();
+    
+    $('#modalMainEdit').modal('hide');
+
+    var sameMainId = $('.editMainModal').attr('rel');
+    console.log(sameMainId);
 
     var newMainName = $('#main_name').val();
     var newMainPicture = $('#main_picture').val();
     var newMainIndexPicture = $('#main_index_picture').val();
     var newMainIcon = $('#main_icon').val();
 
-    // var mainPictureUpload = 1;
-
-    // console.log(mainPictureUpload);
-    
-
-    var data = {
-      changeThisMainId: sameMainId,
-      mainName: newMainName,
-      mainPicture: newMainPicture,
-      mainIndexPicture: newMainIndexPicture,
-      mainIcon: newMainIcon,
-      // mainPictureUpload: mainPictureUpload
-    };
-
     var editRow = $('#edit_' + sameMainId);
-    console.log(editRow.prev()[0].innerText);
+    console.log(editRow);
+    
+    var formData = new FormData(this);
+    formData.append('changeThisMainId', sameMainId);
+    formData.append('newMainName', newMainName);
+    formData.append('newMainPicture', newMainPicture);
+    formData.append('newMainIndexPicture', newMainIndexPicture);
+    formData.append('newMainIcon', newMainIcon);
 
     $.ajax({
-
       url: './adminFunctions.php',
       type: 'POST',
-      data: data,
+      data: formData,
       success: function (response) {
         if (response == 1) {
 
@@ -168,9 +189,13 @@ $(document).ready(function () {
 
           console.log('updated successfully');
         }
-      }
-    })
+      },
+      cache: false,
+      contentType: false,
+      processData: false
+    });
   })
+  
   //*************          EDIT SUB ENTRY         *************//
 
   $('.editSub').click(function () {
@@ -239,9 +264,21 @@ $(document).ready(function () {
     $('#product_description').val(product_description);
 
   });
-  $('.editProductModal').click(function () {
+  //          product picture upload         //
+  $('#productPictureToUpload').change(function() {
 
-    var sameProductId = $(this).attr('rel');
+    var targetFile = $('#productPictureToUpload');
+    targetFile = targetFile.val().split("fakepath\\")[1];
+    
+    $('#product_picture').val(targetFile);
+    
+  });
+  $('#productDataForm').submit(function (e) {
+    e.preventDefault();
+
+    $('#modalProductEdit').modal('hide');
+
+    var sameProductId = $('.editProductModal').attr('rel');
 
     var mainProductId = $('#main_id_product').val();
     var subId = $('#sub_id').val();
@@ -249,23 +286,21 @@ $(document).ready(function () {
     var productPicture = $('#product_picture').val();
     var productDescription = $('#product_description').val();
 
-    var data = {
-      changeThisProductId: sameProductId,
-      mainProductId: mainProductId,
-      subId: subId,
-      productName: productName,
-      productPicture: productPicture,
-      productDescription: productDescription
-    };
+    var formData = new FormData(this);
+    formData.append('changeThisProductId', sameProductId);
+    formData.append('mainProductId', mainProductId);
+    formData.append('subId', subId);
+    formData.append('productName', productName);
+    formData.append('productPicture', productPicture);
+    formData.append('productDescription', productDescription);
 
     var editRow = $('#editProduct_' + sameProductId);
-    console.log(editRow.prev()[0].innerText);
 
     $.ajax({
 
       url: './adminFunctions.php',
       type: 'POST',
-      data: data,
+      data: formData,
       success: function (response) {
         if (response == 1) {
 
@@ -277,13 +312,46 @@ $(document).ready(function () {
 
           console.log('updated successfully');
         }
-      }
+      },
+      cache: false,
+      contentType: false,
+      processData: false
     })
   });
 
   //*************          ADD MAIN ENTRY         *************//
-  $('.addMainEntry').click(function() {
+  $('#newPictureToUpload').change(function() {
 
+    var targetFile = $('#newPictureToUpload');
+    targetFile = targetFile.val().split("fakepath\\")[1];
+    
+    $('#add_main_picture').val(targetFile);
+    
+  });
+  //          main index upload         //
+  $('#newIndexToUpload').change(function() {
+
+    var targetFile = $('#newIndexToUpload');
+    targetFile = targetFile.val().split("fakepath\\")[1];
+    
+    $('#add_main_index_picture').val(targetFile);
+    
+  });
+  //          main icon upload         //
+  $('#newIconToUpload').change(function() {
+
+    var targetFile = $('#newIconToUpload');
+    targetFile = targetFile.val().split("fakepath\\")[1];
+    
+    $('#add_main_icon').val(targetFile);
+    
+  });
+
+  $('#addMainDataForm').submit(function(e) {
+    e.preventDefault();
+
+    $('#modalAddMain').modal('hide');
+    
     var addMain = true;
 
     var mainName = $('#add_main_name').val();
@@ -291,27 +359,31 @@ $(document).ready(function () {
     var mainIndexPicture = $('#add_main_index_picture').val();
     var mainIcon = $('#add_main_icon').val();
 
-    var data = {
-      addMain: addMain,
-      mainName: mainName,
-      mainPicture: mainPicture,
-      mainIndexPicture: mainIndexPicture,
-      mainIcon: mainIcon,
-    }
-    
+    var formData = new FormData(this);
+    formData.append('addMain', addMain);
+    formData.append('mainName', mainName);
+    formData.append('mainPicture', mainPicture);
+    formData.append('mainIndexPicture', mainIndexPicture);
+    formData.append('mainIcon', mainIcon);
+
     $.ajax({
 
       url: './adminFunctions.php',
       type: 'POST',
-      data: data,
+      data: formData,
       success: function (response) {
 
         if (response == 1) {
-          window.location.reload();
+          // window.location.reload();
+          console.log(response);
+          
         }
-      }
+      },
+      cache: false,
+      contentType: false,
+      processData: false
     })
-  });
+  })
 
   //*************          ADD SUB ENTRY         *************//
   $('.addSubEntry').click(function() {

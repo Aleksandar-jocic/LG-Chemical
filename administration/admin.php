@@ -1,6 +1,3 @@
-<?php include "../productDB/serverConnection.php"; ?>
-<?php include "./adminFunctions.php"; ?>
-
 <?php 
   session_start(); 
   if (!isset($_SESSION['username'])) {
@@ -13,6 +10,9 @@
   	header("location: login.php");
   }
 ?>
+<?php include "../productDB/serverConnection.php"; ?>
+<?php include "./adminFunctions.php"; ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,7 +37,7 @@
     <h2>Admin Page</h2>
     <?php  if (isset($_SESSION['username'])) : ?>
     	<p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
-    	<!-- <p> <a href="admin.php?logout='1'" style="color: red;">logout</a> </p> -->
+    	<p> <a href="admin.php?logout='1'" style="color: red;">logout</a> </p>
     <?php endif ?>
 </div>
 <div class="content">
@@ -46,7 +46,6 @@
       <div class="error success" >
       	<h3>
           <?php 
-          	echo $_SESSION['success']; 
           	unset($_SESSION['success']);
           ?>
       	</h3>
@@ -116,27 +115,7 @@
 	}
 ?>
 		</div>
-
-
-
-
-		<!-- // <div>
-		// 	<form action="adminFunctions.php" method="post" enctype="multipart/form-data">
-
-		// 		Select image to upload:
-				
-		// 		<input type="file" name="fileToUpload" id="fileToUpload">
-
-		// 		<input type="submit" value="Upload Image" name="submit">
-				
-		// 	</form>
-		// </div> -->
-
-
-
-
 		<?php include "./adminModal.php"; ?>
-
 		<script src="./admin.js"></script>
 </body>
 </html>

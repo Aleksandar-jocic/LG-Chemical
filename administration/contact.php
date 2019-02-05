@@ -1,5 +1,23 @@
 <?php include "../productDB/serverConnection.php"; ?>
+<html lang="en">
 
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="shortcut icon" href="../photos/favicon.ico" type="image/x-icon">
+	<title>LG Hemija</title>
+	<link rel="stylesheet" href="../css/preLoader.css">
+	<link rel="stylesheet" href="../css/bootstrap.css">
+	<link rel="stylesheet" href="../main.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Montserrat|Dancing+Script|Caveat" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+	 crossorigin="anonymous">
+</head>
+
+<body>
 <?php 
 if(isset($_POST['submit'])){
 
@@ -26,7 +44,27 @@ if(isset($_POST['submit'])){
     
     mail($to,$subject,$message,$headers);
 
-    echo "Mail Sent. Thank you " . $client_name . ", we will contact you shortly. " . $client_email . "<br>" . $message_content;
-    // You can also use header('Location: thank_you.php'); to redirect to another page.
+    ?>
+        <div class="loginCoverSet">
+            <div class="loginCover">
+                <div class="loginContent">
+                    <div class="header ">
+                        <h2>Hvala na upitu!</h2>
+                    </div>
+                    <div class="logBody queryBody">
+                        <p>Kontaktiraćemo Vas uskoro preko email-a: <?php echo $client_email; ?></p>
+                    </div>
+                    <div class="footerLog queryBody">
+                        <a href="../pages/contact.html">
+                            <i class="fas fa-chevron-left"></i> Idi nazad</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+<?php
     }
 ?>
+	<script src="../javascript/preLoader.js"></script>
+	<script src="../javascript/effects.js"></script>
+</body>
+</html>
